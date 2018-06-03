@@ -1,14 +1,11 @@
 //Maya ASCII 2018 scene
 //Name: Eclair.ma
-//Last modified: Mon, Jun 04, 2018 04:39:45 AM
+//Last modified: Mon, Jun 04, 2018 04:20:21 AM
 //Codeset: 932
 requires maya "2018";
 requires -nodeType "HIKSolverNode" -nodeType "HIKCharacterNode" -nodeType "HIKSkeletonGeneratorNode"
-		 -nodeType "HIKControlSetNode" -nodeType "HIKEffectorFromCharacter" -nodeType "HIKFK2State"
-		 -nodeType "HIKState2FK" -nodeType "HIKState2SK" -nodeType "HIKEffector2State" -nodeType "HIKState2Effector"
-		 -nodeType "HIKProperty2State" -nodeType "HIKPinning2State" -dataType "HIKCharacter"
-		 -dataType "HIKCharacterState" -dataType "HIKEffectorState" -dataType "HIKPropertySetState"
-		 "mayaHIK" "1.0_HIK_2016.5";
+		 -nodeType "HIKState2SK" -nodeType "HIKProperty2State" -dataType "HIKCharacter" -dataType "HIKCharacterState"
+		 -dataType "HIKEffectorState" -dataType "HIKPropertySetState" "mayaHIK" "1.0_HIK_2016.5";
 requires "stereoCamera" "10.0";
 requires -nodeType "cgfxShader" "cgfxShader" "cgfxShader 4.5 for Maya 201800.0 (Jun 26 2017)";
 requires -nodeType "ilrOptionsNode" -nodeType "ilrUIOptionsNode" -nodeType "ilrBakeLayerManager"
@@ -24,8 +21,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "884A1010-2641-9C98-0C58-72BFA400F7C8";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 26.713936198602145 28.959186648865963 79.278901586719087 ;
-	setAttr ".r" -type "double3" -8.7383527220482105 2178.5999999995151 -2.0973970591496396e-16 ;
+	setAttr ".t" -type "double3" -6.111970400945296 23.838457208676886 37.085668155412279 ;
+	setAttr ".r" -type "double3" -1.5383527220427204 2151.7999999999511 -5.0209497203518392e-17 ;
 	setAttr ".rp" -type "double3" -3.5527136788005009e-15 -1.4210854715202004e-14 -1.4210854715202004e-14 ;
 	setAttr ".rpt" -type "double3" -1.4251120609342609e-11 1.3718665004119837e-12 1.8830958913412878e-11 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -33,12 +30,12 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".fl" 60;
-	setAttr ".coi" 105.26255905611421;
+	setAttr ".coi" 40.110320520581375;
 	setAttr ".ow" 30;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 5.0160136400023703e-07 13.199949037076347 -1.0050603309444661 ;
+	setAttr ".tp" -type "double3" 6.0725976004700062 24.892545608546691 -0.50124773376694831 ;
 	setAttr ".asp" yes;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
@@ -10352,7 +10349,6 @@ createNode transform -n "SKIN" -p "GEO";
 createNode transform -n "Arm" -p "SKIN";
 	rename -uid "06491304-4FB3-8DEE-16D5-3ABB2D491DFE";
 	addAttr -is true -ci true -k true -sn "currentUVSet" -ln "currentUVSet" -dt "string";
-	addAttr -s false -ci true -sn "ch" -ln "Character" -at "message";
 	setAttr ".t" -type "double3" 0 -16.278543472290039 0 ;
 	setAttr -l on ".tx";
 	setAttr -l on ".ty";
@@ -27783,8 +27779,8 @@ createNode joint -n "Hips" -p "Eclair_Reference";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
+	setAttr ".t" -type "double3" 0 17.490449905395508 0 ;
 	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 17.490449905395508 0 1;
-	setAttr ".ds" 2;
 	setAttr ".typ" 1;
 	setAttr ".radi" 0.52471350000000005;
 createNode joint -n "LeftUpLeg" -p "Hips";
@@ -27794,10 +27790,10 @@ createNode joint -n "LeftUpLeg" -p "Hips";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 1;
+	setAttr ".t" -type "double3" 1.71356201171875 -0.040951206613595303 -0.075529478490352631 ;
 	setAttr ".jo" -type "double3" -1.0129830168048274e-16 1.0129830168048278e-16 -89.999999999999986 ;
 	setAttr ".bps" -type "matrix" 2.2204460492503131e-16 -1 0 0 1 2.2204460492503131e-16 0 0
 		 0 0 1 0 1.7135620545799417 16.393798828125 -0.075529478490352631 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 1;
 	setAttr ".typ" 2;
 	setAttr ".radi" 0.52471350000000005;
@@ -27808,9 +27804,9 @@ createNode joint -n "LeftLeg" -p "LeftUpLeg";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
+	setAttr ".t" -type "double3" 8.9051766849269303 -1.5543122344752192e-15 0 ;
 	setAttr ".bps" -type "matrix" 2.2204460492503131e-16 -1 0 0 1 2.2204460492503131e-16 0 0
 		 0 0 1 0 1.7135620545799417 8.5443220138549805 -0.075529478490352644 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 1;
 	setAttr ".typ" 3;
 	setAttr ".radi" 0.52471350000000005;
@@ -27821,11 +27817,11 @@ createNode joint -n "LeftFoot" -p "LeftLeg";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
+	setAttr ".t" -type "double3" 7.1187809705734253 -2.2204460492503131e-15 -1.3877787807814457e-17 ;
 	setAttr ".jo" -type "double3" 1.5162929588391263 -63.603300781375289 -1.6926900917373879 ;
 	setAttr ".bps" -type "matrix" -0.013132428920259535 -0.44438957705321203 0.89573737396466935 0
 		 0.99991376593717041 -0.0058364178315861827 0.011764221871454646 0 9.70202343493227e-15 0.89581462369921316 0.44442790187682579 0
 		 1.7135620545799424 1.4255410432815552 -0.075529478490352589 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 1;
 	setAttr ".typ" 4;
 	setAttr ".radi" 0.52471350000000005;
@@ -27836,11 +27832,11 @@ createNode joint -n "LeftToeBase" -p "LeftFoot";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 4;
+	setAttr ".t" -type "double3" 2.4647461495423131 3.9692073849906251e-08 -5.1070259132757201e-15 ;
 	setAttr ".jo" -type "double3" 64.200853653932853 5.7377035220878394 102.43734830998898 ;
 	setAttr ".bps" -type "matrix" 0.97437006478523525 1.5265566588595902e-16 -0.22495105434386534 0
 		 -2.0358015058628381e-16 1.0000000000000002 -5.5511151231257827e-16 0 0.22495105434386536 4.9960036108132044e-16 0.97437006478523513 0
 		 1.6811939509577487 0.33023354411125316 2.132235765457156 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 1;
 	setAttr ".typ" 5;
 	setAttr ".radi" 0.52471350000000005;
@@ -27851,8 +27847,8 @@ createNode joint -n "Spine" -p "Hips";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 1;
+	setAttr ".t" -type "double3" 0 2.0502758026123047 0 ;
 	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 19.540725708007813 0 1;
-	setAttr ".ds" 2;
 	setAttr ".typ" 6;
 	setAttr ".radi" 0.52471350000000005;
 createNode joint -n "Spine1" -p "Spine";
@@ -27862,8 +27858,8 @@ createNode joint -n "Spine1" -p "Spine";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
+	setAttr ".t" -type "double3" 0 2.6060543060302734 0 ;
 	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 22.1467808184664 0 1;
-	setAttr ".ds" 2;
 	setAttr ".typ" 6;
 	setAttr ".radi" 0.52471350000000005;
 createNode joint -n "Spine2" -p "Spine1";
@@ -27873,8 +27869,8 @@ createNode joint -n "Spine2" -p "Spine1";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
+	setAttr ".t" -type "double3" 0 2.402435302734375 0 ;
 	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 24.549214416267542 0 1;
-	setAttr ".ds" 2;
 	setAttr ".typ" 6;
 	setAttr ".radi" 0.58966497513940819;
 createNode joint -n "Neck" -p "Spine2";
@@ -27884,8 +27880,8 @@ createNode joint -n "Neck" -p "Spine2";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 4;
+	setAttr ".t" -type "double3" 0 2.1646080017089844 0 ;
 	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 26.713824121483345 0 1;
-	setAttr ".ds" 2;
 	setAttr ".typ" 7;
 	setAttr ".radi" 0.52471350000000005;
 createNode joint -n "Head" -p "Neck";
@@ -27894,8 +27890,8 @@ createNode joint -n "Head" -p "Neck";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
+	setAttr ".t" -type "double3" 0 2.1454200744628906 0 ;
 	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 28.859243392944332 0 1;
-	setAttr ".ds" 2;
 	setAttr ".typ" 8;
 	setAttr ".radi" 0.2;
 createNode joint -n "L_EyeJoint" -p "Head";
@@ -27963,10 +27959,8 @@ createNode joint -n "L_TwinTail1" -p "Head";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 1;
-	setAttr ".ovdt" 1;
-	setAttr ".ove" yes;
 	setAttr ".t" -type "double3" 1.7908100060854437 2.4614332089799333 -1.8133370912699858 ;
-	setAttr ".r" -type "double3" -2.8705057609547983e-15 1.3710886340560578e-14 8.4180161150824614e-16 ;
+	setAttr ".r" -type "double3" -2.8705057609547932e-15 1.3710886340560579e-14 8.4180161150824022e-16 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jot" -type "string" "none";
@@ -27977,7 +27971,7 @@ createNode joint -n "L_TwinTail2" -p "L_TwinTail1";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
 	setAttr ".t" -type "double3" 0.081145991858280003 -1.0726094868278224 -0.021344037178572473 ;
-	setAttr ".r" -type "double3" -6.6155243496981683e-17 -1.0831519883523888e-15 -3.4962399601825947e-15 ;
+	setAttr ".r" -type "double3" -2.6639134222271091e-14 -1.2172849579516538e-13 -8.4370177361024614e-14 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 180 87.165888983693534 ;
@@ -27988,7 +27982,7 @@ createNode joint -n "L_TwinTail3" -p "L_TwinTail2";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
 	setAttr ".t" -type "double3" 1.3044488365309796 -0.047937813206213015 -0.1369811462587216 ;
-	setAttr ".r" -type "double3" -5.5515309995227647e-16 6.3908892793200312e-15 1.0563059377753178e-14 ;
+	setAttr ".r" -type "double3" -4.272952647626341e-16 4.2550819226055669e-14 -1.2834218308259909e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 180 0 -4.0152999296331675 ;
@@ -27999,7 +27993,7 @@ createNode joint -n "L_TwinTail4" -p "L_TwinTail3";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 4;
 	setAttr ".t" -type "double3" 1.4218909341591135 0.13880501048238611 0.21233115297845839 ;
-	setAttr ".r" -type "double3" 1.8013392544153254e-15 1.3708697333696329e-14 1.3706359784868878e-14 ;
+	setAttr ".r" -type "double3" -1.7049202424409208e-14 -1.2099248057298356e-13 -1.529566287714591e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -5.2101360617497203e-16 -4.0352693336176521e-15 14.714079459254624 ;
@@ -28010,7 +28004,7 @@ createNode joint -n "L_TwinTail5" -p "L_TwinTail4";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 5;
 	setAttr ".t" -type "double3" 1.3307797513473152 -0.006322369305425837 0.03296005243459646 ;
-	setAttr ".r" -type "double3" 3.1010876556990654e-15 1.633302523381556e-14 1.151054226092055e-14 ;
+	setAttr ".r" -type "double3" -2.0651525131218422e-14 -2.0278851202030228e-13 -4.7962665068316047e-14 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -1.8862933736187626e-16 -5.0299370303825892e-15 4.2953232519589397 ;
@@ -28021,7 +28015,7 @@ createNode joint -n "L_TwinTail6" -p "L_TwinTail5";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 6;
 	setAttr ".t" -type "double3" 1.4197234819564781 -0.039394105313551489 -0.26056547618714965 ;
-	setAttr ".r" -type "double3" 2.2158004891185088e-15 1.2037156299863966e-14 7.3364241797874795e-15 ;
+	setAttr ".r" -type "double3" -1.561148071871926e-14 -2.2107143774755398e-13 -4.0255211220799764e-14 ;
 	setAttr ".radi" 0.55866624012399946;
 createNode joint -n "L_TwinTail7" -p "L_TwinTail6";
 	rename -uid "03DF0B19-486D-8570-AA85-1285DB79DB00";
@@ -28029,7 +28023,7 @@ createNode joint -n "L_TwinTail7" -p "L_TwinTail6";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 7;
 	setAttr ".t" -type "double3" 1.5189593524619509 0.031629102907473533 -0.65196217370295029 ;
-	setAttr ".r" -type "double3" -2.4341032803873543e-16 -1.748814855433284e-15 1.0525384048827585e-15 ;
+	setAttr ".r" -type "double3" 1.0970335483042408e-14 1.9772238854637063e-13 -2.8241562199996722e-14 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -7.5856270037492409e-17 -5.3959643097510318e-15 1.6108178618116624 ;
@@ -28039,7 +28033,7 @@ createNode joint -n "L_TwinTail8" -p "L_TwinTail7";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".t" -type "double3" 1.4776175626039534 0.026175425016475025 -0.3074191891985068 ;
-	setAttr ".r" -type "double3" 9.9117278014356912e-16 -7.1909017930915339e-15 -5.9656423300780673e-15 ;
+	setAttr ".r" -type "double3" -6.0648431132560777e-14 3.6423101858631153e-13 3.6276612795025528e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 8.7957005900812545e-17 -4.8266368714802295e-16 -20.655646648176873 ;
@@ -28063,10 +28057,8 @@ createNode joint -n "L_SideTail1" -p "Head";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 1;
-	setAttr ".ovdt" 1;
-	setAttr ".ove" yes;
 	setAttr ".t" -type "double3" 1.7828628163155287 1.0060265193835036 0.68787404380251493 ;
-	setAttr ".r" -type "double3" -1.397074143502901e-14 -8.435215412685733e-16 1.0216127865109392e-15 ;
+	setAttr ".r" -type "double3" -1.2020255963815189e-06 -7.2575566264039785e-08 8.7898322022963805e-08 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 180 81.935854157456774 ;
@@ -28080,7 +28072,7 @@ createNode joint -n "L_SideTail2" -p "L_SideTail1";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
 	setAttr ".t" -type "double3" 1.3191376074982213 -1.1932459329347574e-15 -0.041636333169596529 ;
-	setAttr ".r" -type "double3" -2.7304987941568188e-14 -1.0791678770191664e-13 -3.8853093106704288e-13 ;
+	setAttr ".r" -type "double3" -3.1452479728357605e-14 -1.2068423076688693e-13 -4.4584632560580465e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -1.8710190300554001e-16 -8.1434482497087034e-15 2.6323648932349113 ;
@@ -28094,7 +28086,7 @@ createNode joint -n "L_SideTail3" -p "L_SideTail2";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
 	setAttr ".t" -type "double3" 1.1366198731490496 1.9842827250094596e-16 -0.049963599803515696 ;
-	setAttr ".r" -type "double3" -1.3082819169442773e-13 -9.2301829114644909e-13 -8.5239479049967033e-13 ;
+	setAttr ".r" -type "double3" -1.4990330060794472e-13 -1.0518709811860815e-12 -9.7676212756066742e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 6.7037290805497218e-16 1.3058569088311979e-14 5.8774970211307886 ;
@@ -28124,10 +28116,8 @@ createNode joint -n "R_TwinTail1" -p "Head";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 1;
-	setAttr ".ovdt" 1;
-	setAttr ".ove" yes;
 	setAttr ".t" -type "double3" -1.79081 2.4614566070556663 -1.81334 ;
-	setAttr ".r" -type "double3" 2.8704995517758412e-15 1.3710888041185038e-14 8.4179508547328064e-16 ;
+	setAttr ".r" -type "double3" 2.8704995517758423e-15 1.3710888041185038e-14 8.4179508547328123e-16 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jot" -type "string" "none";
@@ -28138,7 +28128,7 @@ createNode joint -n "R_TwinTail2" -p "R_TwinTail1";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
 	setAttr ".t" -type "double3" -0.081150000000000055 -1.0725999999999978 -0.021340000000000137 ;
-	setAttr ".r" -type "double3" 5.3873561278040881e-15 -4.1295155036329209e-14 2.8333738922427205e-14 ;
+	setAttr ".r" -type "double3" 1.436626483630341e-14 -1.1012044029008425e-13 7.5556632665221861e-14 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 180 87.165888983693534 ;
@@ -28149,7 +28139,7 @@ createNode joint -n "R_TwinTail3" -p "R_TwinTail2";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
 	setAttr ".t" -type "double3" 1.3028816924651814 -0.081139446874357368 -0.13698000000000032 ;
-	setAttr ".r" -type "double3" -6.7424711189396541e-15 1.5163435867331265e-14 4.1709998284879281e-14 ;
+	setAttr ".r" -type "double3" -1.7979968237487174e-14 4.0435840558787174e-14 1.1122667197999666e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 179.99999914622634 7.1090936991502021e-23 -4.0152999296331657 ;
@@ -28160,7 +28150,7 @@ createNode joint -n "R_TwinTail4" -p "R_TwinTail3";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 4;
 	setAttr ".t" -type "double3" 1.4149337031875255 -0.19728961764993347 0.21232999706015576 ;
-	setAttr ".r" -type "double3" -2.6327788736715676e-14 -3.117339493435262e-14 5.1540852924903735e-14 ;
+	setAttr ".r" -type "double3" -7.020751360589022e-14 -8.3129031981600386e-14 1.374422603794952e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 1.4507801399845801e-06 -2.1685477212706602e-07 14.714079459254625 ;
@@ -28171,7 +28161,7 @@ createNode joint -n "R_TwinTail5" -p "R_TwinTail4";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 5;
 	setAttr ".t" -type "double3" 1.134438134756401 -0.69570053731984238 0.032960011882640305 ;
-	setAttr ".r" -type "double3" -4.1499044153822489e-14 -5.3709002453103865e-14 2.0362218321816219e-14 ;
+	setAttr ".r" -type "double3" -1.1066416438450264e-13 -1.4322399180508757e-13 5.4299281395027188e-14 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -6.3540165137433185e-09 -1.6943442309202603e-07 4.2953232519588509 ;
@@ -28182,7 +28172,7 @@ createNode joint -n "R_TwinTail6" -p "R_TwinTail5";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 6;
 	setAttr ".t" -type "double3" 1.1070211403398034 -0.88978963391470156 -0.26055998679517289 ;
-	setAttr ".r" -type "double3" -4.0494703988771794e-14 -6.2712814998356263e-14 1.6383624496003845e-14 ;
+	setAttr ".r" -type "double3" -1.0798588207292339e-13 -1.6723419816481566e-13 4.3689650105322758e-14 ;
 	setAttr ".jo" -type "double3" 1.2074182697257331e-06 1.9061081653411072e-21 3.5705634812952666e-15 ;
 	setAttr ".radi" 0.55866624012399946;
 createNode joint -n "R_TwinTail7" -p "R_TwinTail6";
@@ -28191,7 +28181,7 @@ createNode joint -n "R_TwinTail7" -p "R_TwinTail6";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 7;
 	setAttr ".t" -type "double3" 1.1365737103697739 -1.0081849594452539 -0.65196998538634099 ;
-	setAttr ".r" -type "double3" 4.9313284622252998e-14 4.3980340387142679e-14 1.0267927853820945e-14 ;
+	setAttr ".r" -type "double3" 1.3150214581819894e-13 1.1728091451591935e-13 2.7381122932699186e-14 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 8.5164539556574331e-07 -1.5139110764840777e-07 1.6108178618116549 ;
@@ -28201,7 +28191,7 @@ createNode joint -n "R_TwinTail8" -p "R_TwinTail7";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".t" -type "double3" 1.0519380942379435 -1.0379905200305632 -0.30741998555352046 ;
-	setAttr ".r" -type "double3" 2.4802330822183203e-14 1.2052375172672978e-13 -1.2008988471803007e-13 ;
+	setAttr ".r" -type "double3" 6.6139545136902553e-14 3.2139665468575679e-13 -3.2023967579358586e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 6.7213074291741055e-08 -3.6883145270758033e-07 -20.655646648176766 ;
@@ -28225,9 +28215,8 @@ createNode joint -n "R_SideTail1" -p "Head";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 1;
-	setAttr ".ovdt" 1;
-	setAttr ".ove" yes;
 	setAttr ".t" -type "double3" -1.78286 1.0060566070556689 0.58908410623288276 ;
+	setAttr ".r" -type "double3" -1.3110214144500278e-14 4.7663043232760701e-15 1.5301848593708797e-15 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 179.99999914622634 0 -98.064145842543226 ;
@@ -28240,7 +28229,7 @@ createNode joint -n "R_SideTail2" -p "R_SideTail1";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
 	setAttr ".t" -type "double3" 1.1941739070919588 -0.36318794821068956 -0.061739383619517425 ;
-	setAttr ".r" -type "double3" 1.6159198595282173e-15 5.2725873196463501e-15 -4.8817489313218977e-15 ;
+	setAttr ".r" -type "double3" 9.6732175690107837e-15 -5.4408022506709039e-14 2.7568977942958129e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 0 2.6323648932347732 ;
@@ -28254,7 +28243,7 @@ createNode joint -n "R_SideTail3" -p "R_SideTail2";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
 	setAttr ".t" -type "double3" 1.0952766964907958 -0.42157603651686321 -0.063671559212315626 ;
-	setAttr ".r" -type "double3" 4.192027505253521e-15 9.3846367536670814e-15 -7.2197733495203611e-15 ;
+	setAttr ".r" -type "double3" -6.8546810998628307e-13 -1.4822960358287054e-12 1.0606786373889976e-12 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 1.7010614618318302e-06 0 5.8774970211309148 ;
@@ -28286,10 +28275,10 @@ createNode joint -n "RightShoulder" -p "Spine2";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 4;
+	setAttr ".t" -type "double3" -0.69011666237455849 1.6105080274090433 -0.501242995262146 ;
 	setAttr ".jo" -type "double3" -180 0 0 ;
 	setAttr ".bps" -type "matrix" 0.99999999999999978 0 0 0 6.9388939039072284e-18 -1 -1.2490009027033011e-16 -6.9388939039072284e-18
 		 3.8518598887744717e-34 1.2246467991473532e-16 -1 0 -0.69011671394926544 26.15972340521666 -0.50124299999999999 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 2;
 	setAttr ".typ" 9;
 	setAttr ".radi" 0.52471350000000005;
@@ -28300,11 +28289,12 @@ createNode joint -n "RightArm" -p "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|S
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 5;
+	setAttr ".t" -type "double3" -2.4622833544101095 0.29332357916685936 0 ;
+	setAttr ".r" -type "double3" 0 0 -48.047999957437732 ;
 	setAttr ".pa" -type "double3" 0 0 -48.048000283326104 ;
 	setAttr ".bps" -type "matrix" 0.66850779239013214 0.74370513747967981 5.5511151231257827e-17 -3.4694469519536142e-18
 		 0.74370513747968092 -0.66850779239012992 -1.1449174941446927e-16 3.4694469519536142e-18
 		 -1.0004846567008271e-22 1.2246249197406682e-16 -1 -7.7037197775489434e-34 -3.1524000000000001 25.866399999999985 -0.50124299999999988 0.99999999999999989;
-	setAttr ".ds" 2;
 	setAttr ".sd" 2;
 	setAttr ".typ" 10;
 	setAttr ".radi" 0.52471350000000005;
@@ -28315,11 +28305,11 @@ createNode joint -n "RightForeArm" -p "RightArm";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 6;
+	setAttr ".t" -type "double3" -4.3744023580710252 0.20902397741161138 1.1102230246251565e-16 ;
 	setAttr ".jot" -type "string" "none";
 	setAttr ".bps" -type "matrix" 0.66850779239013258 0.74370513747968103 9.1077611612393361e-17 0
 		 0.74370513747968103 -0.66850779239013258 -8.1868592815563918e-17 0 0 1.2246467991473532e-16 -1 0
 		 -5.9212699999999998 22.473399999999998 -0.50124299999999999 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 2;
 	setAttr ".typ" 11;
 	setAttr ".radi" 0.52471350000000005;
@@ -28330,12 +28320,12 @@ createNode joint -n "RightForeArmRoll" -p "RightForeArm";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 7;
+	setAttr ".t" -type "double3" -2.3927692824217601 -2.0699442590199624e-05 -0.073145002126694336 ;
 	setAttr ".jot" -type "string" "xzy";
 	setAttr ".jo" -type "double3" -93.479326146528507 -3.8351729537979913 -4.8296715738080057e-06 ;
 	setAttr ".bps" -type "matrix" 0.66701067068618303 0.74203973729971318 -0.06688642208207049 0
 		 -0.00050259329169503875 0.090222742161449251 0.99592148495594368 0 0.74504799348146111 -0.66425664096419934 0.060552475954392643 0
 		 -7.5208700000000039 20.693899999999996 -0.42809799999999998 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 2;
 	setAttr ".typ" 11;
 	setAttr ".radi" 0.52471350000000005;
@@ -28345,11 +28335,11 @@ createNode joint -n "RightHand" -p "RightForeArmRoll";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
+	setAttr ".t" -type "double3" -2.1211665953644019 -1.1109277318066546e-06 1.416550451338594e-05 ;
 	setAttr ".jot" -type "string" "none";
 	setAttr ".bps" -type "matrix" 0.66701067068618303 0.74203973729971318 -0.06688642208207049 0
 		 -0.00050259329169503875 0.090222742161449251 0.99592148495594368 0 0.74504799348146111 -0.66425664096419934 0.060552475954392643 0
 		 -8.9357000000000042 19.119900000000001 -0.28622099999999973 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 2;
 	setAttr ".typ" 12;
 	setAttr ".radi" 0.52471350000000005;
@@ -28678,7 +28668,7 @@ createNode joint -n "Right_AddShoulder1" -p "RightArm";
 	setAttr ".ovdt" 1;
 	setAttr ".ove" yes;
 	setAttr ".t" -type "double3" 1.3043356023779715 -1.1290207163994452 4.7378542200604556e-09 ;
-	setAttr ".r" -type "double3" -0.00017071617469031349 -2.0914629770802645e-06 -0.00010282589538760005 ;
+	setAttr ".r" -type "double3" -1.2464179552535761e-29 1.4033418597069752e-14 -1.5580224440669717e-30 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 180 4.7339316760844902e-15 90.476179578065455 ;
@@ -28707,9 +28697,9 @@ createNode joint -n "LeftShoulder" -p "Spine2";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 4;
+	setAttr ".t" -type "double3" 0.69048332080376185 1.6105042127117777 -0.5012434720993042 ;
 	setAttr ".bps" -type "matrix" 1 0 0 0 6.9388939039072284e-18 1 -3.4694469519536142e-18 6.9388939039072284e-18
 		 0 0 1 0 0.69048332080376207 26.159719529484242 -0.5012434720993042 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 1;
 	setAttr ".typ" 9;
 	setAttr ".radi" 0.52471350000000005;
@@ -28720,11 +28710,12 @@ createNode joint -n "LeftArm" -p "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Sp
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 5;
+	setAttr ".t" -type "double3" 2.4619193185852764 -0.29328924689146518 0 ;
+	setAttr ".r" -type "double3" 3.4002133059767537e-14 0 -48.048000000000087 ;
 	setAttr ".pa" -type "double3" 3.4002133059767537e-14 0 -48.048000000000087 ;
 	setAttr ".bps" -type "matrix" 0.66850779239013236 -0.74370513747968237 1.9081958235744878e-17 3.4694469519536142e-18
 		 0.74370513747968048 0.66850779239012936 6.9388939039072284e-18 -3.4694469519536142e-18
 		 -1.792825717370771e-21 -2.1810181943663869e-21 1 1.1754943508222875e-38 3.1524026393890305 25.866430282592756 -0.50124347209930409 0.99999999999999989;
-	setAttr ".ds" 2;
 	setAttr ".sd" 1;
 	setAttr ".typ" 10;
 	setAttr ".radi" 0.52471350000000005;
@@ -28735,10 +28726,10 @@ createNode joint -n "LeftForeArm" -p "LeftArm";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 6;
+	setAttr ".t" -type "double3" 4.3744009236089099 -0.2090255732297237 0 ;
 	setAttr ".jot" -type "string" "none";
 	setAttr ".bps" -type "matrix" 0.66850779239013258 -0.74370513747968103 0 0 0.74370513747968103 0.66850779239013258 0 0
 		 0 0 1 0 5.9212705454765455 22.473429796090787 -0.50124347209930409 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 1;
 	setAttr ".typ" 11;
 	setAttr ".radi" 0.52471350000000005;
@@ -28749,12 +28740,12 @@ createNode joint -n "LeftForeArmRoll" -p "LeftForeArm";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 7;
+	setAttr ".t" -type "double3" 2.3927883286108074 -9.091025603424896e-07 0.073145925998687744 ;
 	setAttr ".jot" -type "string" "xzy";
 	setAttr ".jo" -type "double3" -93.479326146528507 -3.8351729537979877 -4.8296715997080133e-06 ;
 	setAttr ".bps" -type "matrix" 0.66701067068618269 -0.74203973729971351 0.066886422082070518 0
 		 -0.0005025932916951012 -0.090222742161449293 -0.99592148495594368 0 0.74504799348146145 0.66425664096419901 -0.060552475954392726 0
 		 7.5208671969727519 20.693900111655861 -0.42809754610061618 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 1;
 	setAttr ".typ" 11;
 	setAttr ".radi" 0.52471350000000005;
@@ -28764,11 +28755,11 @@ createNode joint -n "LeftHand" -p "LeftForeArmRoll";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
+	setAttr ".t" -type "double3" 2.1211509709368386 4.9040918881360085e-08 -1.7831654375299877e-07 ;
 	setAttr ".jot" -type "string" "none";
 	setAttr ".bps" -type "matrix" 0.66701067068618269 -0.74203973729971351 0.066886422082070518 0
 		 -0.0005025932916951012 -0.090222742161449293 -0.99592148495594368 0 0.74504799348146145 0.66425664096419901 -0.060552475954392726 0
 		 8.9356971493442892 19.119922224463298 -0.28622138500213695 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 1;
 	setAttr ".typ" 12;
 	setAttr ".radi" 0.52471350000000005;
@@ -29102,7 +29093,7 @@ createNode joint -n "Left_AddShoulder1" -p "LeftArm";
 	setAttr ".ovrgbf" yes;
 	setAttr ".ovc" 17;
 	setAttr ".t" -type "double3" -1.3043182045720165 1.1290057960199249 0 ;
-	setAttr ".r" -type "double3" -1.4959310853944519e-05 -0.00010248193763785181 6.9758174963108473e-05 ;
+	setAttr ".r" -type "double3" -1.4033418597061789e-14 -6.2320895931619883e-29 1.4951441492455172e-20 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 0 5.6198203368100152 ;
@@ -29130,10 +29121,10 @@ createNode joint -n "RightUpLeg" -p "Hips";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 1;
+	setAttr ".t" -type "double3" -1.713559627532959 -0.040949299264962491 -0.075529500842094421 ;
 	setAttr ".jo" -type "double3" 0 0 -89.999999999999986 ;
 	setAttr ".bps" -type "matrix" 2.2204460492503131e-16 -1 0 0 1 2.2204460492503131e-16 0 0
 		 0 0 1 0 -1.7135596703941514 16.393800735473633 -0.075529500842094421 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 2;
 	setAttr ".typ" 2;
 	setAttr ".radi" 0.52471350000000005;
@@ -29144,9 +29135,9 @@ createNode joint -n "RightLeg" -p "RightUpLeg";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
+	setAttr ".t" -type "double3" 8.9051804996241977 -1.5543122344752192e-15 -1.3877787807814457e-17 ;
 	setAttr ".bps" -type "matrix" 2.2204460492503131e-16 -1 0 0 1 2.2204460492503131e-16 0 0
 		 0 0 1 0 -1.7135596703941514 8.5443201065063477 -0.075529500842094421 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 2;
 	setAttr ".typ" 3;
 	setAttr ".radi" 0.52471350000000005;
@@ -29157,11 +29148,11 @@ createNode joint -n "RightFoot" -p "RightLeg";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
+	setAttr ".t" -type "double3" 7.1187801361083984 -2.2204460492503131e-15 2.7755575615628914e-17 ;
 	setAttr ".jo" -type "double3" -1.3949750644807761 -63.604907086867073 1.5572508395435145 ;
 	setAttr ".bps" -type "matrix" 0.012081235616407988 -0.44439427548791466 0.89574983765533123 0
 		 0.99992701920989258 0.0053692237989665208 -0.010822554680655416 0 -2.1197738612190322e-14 0.89581521495750893 0.44442671010036294 0
 		 -1.7135596703941514 1.4255399703979492 -0.075529500842094352 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 2;
 	setAttr ".typ" 4;
 	setAttr ".radi" 0.52471350000000005;
@@ -29172,993 +29163,20 @@ createNode joint -n "RightToeBase" -p "RightFoot";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 4;
+	setAttr ".t" -type "double3" 2.4647166707739476 -1.1228396434859178e-08 -1.1102230246251565e-15 ;
 	setAttr ".jo" -type "double3" -115.79907132458563 -5.7376880842396165 77.622877919052371 ;
 	setAttr ".bps" -type "matrix" 0.97437006478523513 -2.7755575615628914e-17 0.22495105434386561 0
 		 9.0311862463035301e-17 -0.99999999999999989 -2.2204460492503131e-16 0 0.22495105434386548 1.1102230246251565e-16 -0.97437006478523502 0
 		 -1.6837828475652035 0.33023399114608742 2.132240056991578 1;
-	setAttr ".ds" 2;
 	setAttr ".sd" 2;
 	setAttr ".typ" 5;
 	setAttr ".radi" 0.52471350000000005;
-createNode transform -n "Eclair_Ctrl_Reference" -p "_Eclair";
-	rename -uid "3D2FC851-44C9-CB10-5F69-C0B2E708588F";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr -l on ".ra";
-createNode locator -n "Eclair_Ctrl_ReferenceShape" -p "Eclair_Ctrl_Reference";
-	rename -uid "7B0C07A7-4632-921E-6E33-4FBA420DAA52";
-	setAttr -k off ".v";
-createNode hikIKEffector -n "Eclair_Ctrl_HipsEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "311423F3-42B1-D6F4-1344-E3A298CA11B7";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 4;
-	setAttr ".t" -type "double3" 1.1920928955078125e-06 17.449501037597656 -0.075529485940933228 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr ".rt" 1;
-	setAttr ".rr" 1;
-	setAttr ".radi" 1.7490451519305887;
-	setAttr -l on ".jo" -type "double3" 90 0 90 ;
-	setAttr -l on ".jo";
-	setAttr ".tof" -type "double3" 0 0.87452257596529437 0 ;
-	setAttr ".sof" -type "double3" 1 0.5 0.5 ;
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness";
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_LeftAnkleEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "9C1F72D9-47D8-C132-9A58-83934731339C";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 4;
-	setAttr ".t" -type "double3" 1.71356201171875 1.4255410432815552 -0.075529478490352631 ;
-	setAttr ".r" -type "double3" 0 0 2.0355549961366507e-13 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -26.386741903445039 -89.247546541609751 -179.99999999999963 ;
-	setAttr -l on ".ra";
-	setAttr ".pin" 3;
-	setAttr ".ei" 1;
-	setAttr ".rt" 1;
-	setAttr ".rr" 1;
-	setAttr ".radi" 0.52471354557917671;
-	setAttr -l on ".jo" -type "double3" -88.483708899518462 -63.603300805790639 -91.692688017068875 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness";
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_RightAnkleEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "AC7AF874-4EC3-9937-72B1-B38193792357";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 4;
-	setAttr ".t" -type "double3" -1.713559627532959 1.4255399703979492 -0.075529500842094421 ;
-	setAttr ".r" -type "double3" 7.6333312355124402e-14 0 -2.0355549961366507e-13 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 153.61333432185634 -89.307779609211153 1.3163206073047202e-13 ;
-	setAttr -l on ".ra";
-	setAttr ".pin" 3;
-	setAttr ".ei" 2;
-	setAttr ".rt" 1;
-	setAttr ".rr" 1;
-	setAttr ".radi" 0.52471354557917671;
-	setAttr -l on ".jo" -type "double3" -91.394974538703892 -63.604907093221449 -88.442749747426305 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness";
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_LeftWristEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "ED87298C-4684-4971-DBDB-31874014015F";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 4;
-	setAttr ".t" -type "double3" 8.9356975555419922 19.119922637939453 -0.28622138500213623 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -89.999999999999986 0 0 ;
-	setAttr -l on ".ra";
-	setAttr ".ei" 3;
-	setAttr ".radi" 0.52471354557917671;
-	setAttr -l on ".jo" -type "double3" 89.999999999999986 0 0 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness";
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_RightWristEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "A4466E81-4C2E-B074-39FC-4D9DB6ACD9B7";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 4;
-	setAttr ".t" -type "double3" -8.9357004165649414 19.119899749755859 -0.28622099757194519 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 90.000000000000014 0 180 ;
-	setAttr -l on ".ra";
-	setAttr ".ei" 4;
-	setAttr ".radi" 0.52471354557917671;
-	setAttr -l on ".jo" -type "double3" 90.000000000000014 0 180 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness";
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_LeftKneeEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "EC214745-46F5-CE76-DE0C-BA82F4929504";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 6;
-	setAttr ".t" -type "double3" 1.71356201171875 8.5443220138549805 -0.075529478490352631 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr ".ei" 5;
-	setAttr ".radi" 0.43726128798264718;
-	setAttr -l on ".jo" -type "double3" -90 0 -90 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness" 0.5;
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_RightKneeEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "459726A4-4C00-0BD7-0BC8-C39AC8AA62FA";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 6;
-	setAttr ".t" -type "double3" -1.713559627532959 8.5443201065063477 -0.075529500842094421 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 90 -89.999999999999986 0 ;
-	setAttr -l on ".ra";
-	setAttr ".ei" 6;
-	setAttr ".radi" 0.43726128798264718;
-	setAttr -l on ".jo" -type "double3" -90 0 -89.999999999999986 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness" 0.5;
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_LeftElbowEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "3DC90062-4DD4-A9F5-8013-9A8BF18D7B2D";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 6;
-	setAttr ".t" -type "double3" 5.9212703704833984 22.473430633544922 -0.5012434720993042 ;
-	setAttr ".r" -type "double3" 4.7708320221952759e-15 -1.2722218725854067e-14 -6.3611093629270335e-15 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -94.514309655998034 47.814836518231189 -6.0820524863555319 ;
-	setAttr -l on ".ra";
-	setAttr ".ei" 7;
-	setAttr ".radi" 0.43726128798264718;
-	setAttr -l on ".jo" -type "double3" 93.0332108887076 -2.7300989831610094 -48.048016075133674 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness" 0.5;
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_RightElbowEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "10560C4E-498F-BCC5-6E19-D0A462B46076";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 6;
-	setAttr ".t" -type "double3" -5.9212698936462402 22.473400115966797 -0.501242995262146 ;
-	setAttr ".r" -type "double3" 1.113194138512231e-14 3.1805546814635183e-15 -9.5416640443905503e-15 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 85.485712327782011 47.814741391806521 -6.082032050757717 ;
-	setAttr -l on ".ra";
-	setAttr ".ei" 8;
-	setAttr ".radi" 0.43726128798264718;
-	setAttr -l on ".jo" -type "double3" -86.966798301300486 2.7300999308889522 48.047919725970068 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness" 0.5;
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_ChestOriginEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "228DCA18-4651-C822-CC3A-00ACA4CC0095";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 4;
-	setAttr ".t" -type "double3" 0 19.540725708007813 0 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr ".ei" 9;
-	setAttr ".radi" 0.17490451519305888;
-	setAttr -l on ".jo" -type "double3" 90 0 90 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness";
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_ChestEndEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "E31EEBA2-4BEA-6A18-A1FC-51ADDEE724F7";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 4;
-	setAttr ".t" -type "double3" 0.00018334388732910156 26.159721374511719 -0.5012432336807251 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr ".ei" 10;
-	setAttr ".radi" 1.3992361215444711;
-	setAttr -l on ".jo" -type "double3" 90 0 90 ;
-	setAttr -l on ".jo";
-	setAttr ".tof" -type "double3" 0 -0.87452257596529437 0 ;
-	setAttr ".sof" -type "double3" 1 0.8 0.8 ;
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness";
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_LeftFootEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "8E3AD975-4141-7F6C-A75E-7FBC0E2D247B";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 6;
-	setAttr ".t" -type "double3" 1.6811939477920532 0.33023354411125183 2.1322357654571533 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -180 -89.999999999999986 0 ;
-	setAttr -l on ".ra";
-	setAttr ".ei" 11;
-	setAttr ".radi" 0.34980903038611777;
-	setAttr -l on ".jo" -type "double3" -180 -89.999999999999986 0 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness";
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_RightFootEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "885B5C3D-4A48-58ED-8DC7-5D8E6D65F77A";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 6;
-	setAttr ".t" -type "double3" -1.6837828159332275 0.33023399114608765 2.1322400569915771 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -180 -89.999999999999986 0 ;
-	setAttr -l on ".ra";
-	setAttr ".ei" 12;
-	setAttr ".radi" 0.34980903038611777;
-	setAttr -l on ".jo" -type "double3" -180 -89.999999999999986 0 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness";
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_LeftShoulderEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "D63CDCFE-46B3-3C51-356C-7C8FBF7D0B94";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 4;
-	setAttr ".t" -type "double3" 3.1524026393890381 25.866430282592773 -0.5012434720993042 ;
-	setAttr ".r" -type "double3" 1.5902773407317584e-15 -3.1805546814635168e-15 -6.3611093629270335e-15 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 90 -50.78373010899093 0 ;
-	setAttr -l on ".ra";
-	setAttr ".ei" 13;
-	setAttr ".radi" 0.52471354557917671;
-	setAttr -l on ".jo" -type "double3" -90 0 -50.78373010899093 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness" 0.5;
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_RightShoulderEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "4FBE6BE8-4EAB-DADD-57F1-E9A33DC02115";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 4;
-	setAttr ".t" -type "double3" -3.152400016784668 25.866399765014648 -0.501242995262146 ;
-	setAttr ".r" -type "double3" 1.7655625192200643e-31 6.3611093629270351e-15 3.1805546814635176e-15 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -90 -50.783708358890983 0 ;
-	setAttr -l on ".ra";
-	setAttr ".ei" 14;
-	setAttr ".radi" 0.52471354557917671;
-	setAttr -l on ".jo" -type "double3" 90 0 50.783708358890983 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness" 0.5;
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_HeadEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "1AB6D92D-4D01-EA49-7152-6C88E1687808";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 4;
-	setAttr ".t" -type "double3" 0 28.859243392944336 0 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr ".ei" 15;
-	setAttr ".radi" 0.87452257596529437;
-	setAttr -l on ".jo" -type "double3" 90 0 90 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness";
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_LeftHipEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "0A11DBDD-4D63-2932-47ED-3C8F429797A7";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 6;
-	setAttr ".t" -type "double3" 1.71356201171875 17.449499130249023 -0.075529478490352631 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr ".ei" 16;
-	setAttr ".radi" 0.52471354557917671;
-	setAttr -l on ".jo" -type "double3" -90 0 -90 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness";
-instanceable -a 0;
-createNode hikIKEffector -n "Eclair_Ctrl_RightHipEffector" -p "Eclair_Ctrl_Reference";
-	rename -uid "F7EC1EFB-44D3-B1B4-EFE2-ADA880F3AE32";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	addAttr -ci true -sn "pull" -ln "pull" -min 0 -max 1 -at "double";
-	addAttr -ci true -sn "stiffness" -ln "stiffness" -min 0 -max 1 -at "double";
-	setAttr -k off -cb on ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 6;
-	setAttr ".t" -type "double3" -1.713559627532959 17.449501037597656 -0.075529500842094421 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr ".ei" 17;
-	setAttr ".radi" 0.52471354557917671;
-	setAttr -l on ".jo" -type "double3" -90 0 -90 ;
-	setAttr -l on ".jo";
-	setAttr ".lk" 3;
-	setAttr -cb on ".pull";
-	setAttr -cb on ".stiffness";
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_Hips" -p "Eclair_Ctrl_Reference";
-	rename -uid "84C30474-4C88-9DBB-175C-96BADAF51777";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr ".t" -type "double3" 0 17.490449905395508 0 ;
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" 90 0 90 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.0034980903038611777;
-	setAttr ".lk" 5;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_LeftUpLeg" -p "Eclair_Ctrl_Hips";
-	rename -uid "90CA986F-42CE-85D0-2799-9CB3051EB00C";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" 1.71356201171875 -0.040950775146484375 -0.075529478490352631 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" -90 0 -90 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.69961806077223554;
-	setAttr ".lk" 3;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_LeftLeg" -p "Eclair_Ctrl_LeftUpLeg";
-	rename -uid "B19384AD-4748-1E18-445E-56BD2DF3A540";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" 0 -8.905177116394043 0 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" -90 0 -90 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.69961806077223554;
-	setAttr ".lk" 3;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_LeftFoot" -p "Eclair_Ctrl_LeftLeg";
-	rename -uid "11D76CE9-4B00-3DC8-1AB5-AAA27A339847";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" -2.2204460492503131e-16 -7.1187809705734253 0 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr ".r" -type "double3" 0 0 2.0355549961366507e-13 ;
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -26.386741903445039 -89.247546541609751 -179.99999999999963 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" -88.483708899518462 -63.603300805790639 -91.692688017068875 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.0034980903038611777;
-	setAttr ".lk" 5;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_LeftToeBase" -p "Eclair_Ctrl_LeftFoot";
-	rename -uid "87B3730C-4717-E0E2-05F8-E3B5CBD3655A";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr -l on ".t" -type "double3" -0.032368063926696777 -1.0953074991703033 2.207765243947506 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -180 -89.999999999999986 0 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" -180 -89.999999999999986 0 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0;
-	setAttr ".lk" 0;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_RightUpLeg" -p "Eclair_Ctrl_Hips";
-	rename -uid "32AFDE05-4791-3353-F06F-BABB55203977";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" -1.713559627532959 -0.040948867797851563 -0.075529500842094421 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" -90 0 -90 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.69961806077223554;
-	setAttr ".lk" 3;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_RightLeg" -p "Eclair_Ctrl_RightUpLeg";
-	rename -uid "8FE803C2-4FF1-C08A-A773-FD91D61091C3";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" 0 -8.9051809310913086 0 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 90 -89.999999999999986 0 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" -90 0 -89.999999999999986 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.69961806077223554;
-	setAttr ".lk" 3;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_RightFoot" -p "Eclair_Ctrl_RightLeg";
-	rename -uid "1211BC6A-4636-2F7A-310E-3D80335B6778";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" 0 -7.1187801361083984 -1.3877787807814457e-17 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr ".r" -type "double3" 7.6333312355124402e-14 0 -2.0355549961366507e-13 ;
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 153.61333432185634 -89.307779609211153 1.3163206073047202e-13 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" -91.394974538703892 -63.604907093221449 -88.442749747426305 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.0034980903038611777;
-	setAttr ".lk" 5;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_RightToeBase" -p "Eclair_Ctrl_RightFoot";
-	rename -uid "5F31297B-4E92-3FA1-8E79-C884736C7573";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr -l on ".t" -type "double3" 0.029776811599731445 -1.0953059792518616 2.2077695578336716 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -180 -89.999999999999986 0 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" -180 -89.999999999999986 0 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0;
-	setAttr ".lk" 0;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_Spine" -p "Eclair_Ctrl_Hips";
-	rename -uid "69485979-4812-271D-1B0F-26B95BC928E1";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" 0 2.0502758026123047 0 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" 90 0 90 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 1.7490451519305887;
-	setAttr ".lk" 3;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_Spine1" -p "Eclair_Ctrl_Spine";
-	rename -uid "2EA4672C-4E4E-96AF-9CE0-4096C3F37BA8";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" 0 2.6060543060302734 0 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" 90 0 90 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 2.2737586975097654;
-	setAttr ".lk" 3;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_Spine2" -p "Eclair_Ctrl_Spine1";
-	rename -uid "FA0EAA1F-4826-650F-C653-8C830D0F9A24";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" 0 2.402435302734375 0 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" 90 0 90 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.0034980903038611777;
-	setAttr ".lk" 5;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_LeftShoulder" -p "Eclair_Ctrl_Spine2";
-	rename -uid "F612D79E-4D38-912D-2D0F-74928267F6F7";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" 0.69048333168029785 1.610504150390625 -0.5012434720993042 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 0 0 6.7936455727499947 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" 0 0 -6.7936455727499956 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.52471354557917671;
-	setAttr ".lk" 3;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_LeftArm" -p "Eclair_Ctrl_LeftShoulder";
-	rename -uid "AE5DA6B1-4F58-DED4-06F9-11AD5FE58D47";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" 2.4619193077087402 -0.2932891845703125 0 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr ".r" -type "double3" 1.5902773407317584e-15 -3.1805546814635168e-15 -6.3611093629270335e-15 ;
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 90 -50.78373010899093 0 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" -90 0 -50.78373010899093 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.69961806077223554;
-	setAttr ".lk" 3;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_LeftForeArm" -p "Eclair_Ctrl_LeftArm";
-	rename -uid "4853BCE6-4888-D398-3FF3-879113131221";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" 2.7688677310943604 -3.3929996490478551 0 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr ".r" -type "double3" 4.7708320221952759e-15 -1.2722218725854067e-14 -6.3611093629270335e-15 ;
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -94.514309655998034 47.814836518231189 -6.0820524863555319 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" 93.0332108887076 -2.7300989831610094 -48.048016075133674 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.69961806077223554;
-	setAttr ".lk" 3;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_LeafLeftForeArmRoll1" -p "Eclair_Ctrl_LeftForeArm";
-	rename -uid "8AD9E510-406D-3255-E0F5-13A31C3355EA";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr -l on ".t" -type "double3" 1.5995969772338867 -1.7795295715332031 0.073145925998687689 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr ".r" -type "double3" 1.5902773407317584e-14 9.5416640443905503e-15 3.1805546814635183e-15 ;
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -96.302607019416314 47.589932599780433 -8.5077348231435117 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" 94.25554614535308 -3.8351719238768216 -48.048009686218414 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0;
-	setAttr ".sof" -type "double3" 0 0 0 ;
-	setAttr ".lk" 0;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_LeftHand" -p "Eclair_Ctrl_LeftForeArm";
-	rename -uid "58DA9DF4-4837-BBDD-B7CF-3682EFBA789D";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" 3.0144271850585938 -3.3535079956054688 0.21502208709716791 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -89.999999999999986 0 0 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" 89.999999999999986 0 0 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.0034980903038611777;
-	setAttr ".lk" 5;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_RightShoulder" -p "Eclair_Ctrl_Spine2";
-	rename -uid "40498D0C-4903-595A-B723-10B71838FE4B";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" -0.69011664390563965 1.6105079650878906 -0.501242995262146 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 0 0 -6.7934381859968793 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" 0 0 6.7934381859968793 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.52471354557917671;
-	setAttr ".lk" 3;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_RightArm" -p "Eclair_Ctrl_RightShoulder";
-	rename -uid "009204B9-44D3-F820-5CF1-8B9930E68C32";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" -2.4622833728790283 -0.29332351684570313 0 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr ".r" -type "double3" 1.7655625192200643e-31 6.3611093629270351e-15 3.1805546814635176e-15 ;
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -90 -50.783708358890983 0 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" 90 0 50.783708358890983 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.69961806077223554;
-	setAttr ".lk" 3;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_RightForeArm" -p "Eclair_Ctrl_RightArm";
-	rename -uid "A7B573C2-4EC7-4393-26F2-789B529C3499";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" -2.7688698768615718 -3.3929996490478516 0 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr ".r" -type "double3" 1.113194138512231e-14 3.1805546814635183e-15 -9.5416640443905503e-15 ;
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 85.485712327782011 47.814741391806521 -6.082032050757717 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" -86.966798301300486 2.7300999308889522 48.047919725970068 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.69961806077223554;
-	setAttr ".lk" 3;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_LeafRightForeArmRoll1" -p "Eclair_Ctrl_RightForeArm";
-	rename -uid "285B7134-4743-C3C3-69C7-3FA0F14E970E";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr -l on ".t" -type "double3" -1.5996003150939941 -1.7795009613037109 0.07314500212669367 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr ".r" -type "double3" -1.5902773407317584e-15 3.1805546814635168e-15 -3.1805546814635168e-15 ;
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 83.69727360443693 47.590303001721523 -8.5078453909215135 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" -85.744403631146042 3.8351662225002117 48.048389395019463 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0;
-	setAttr ".sof" -type "double3" 0 0 0 ;
-	setAttr ".lk" 0;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_RightHand" -p "Eclair_Ctrl_RightForeArm";
-	rename -uid "08F2BA34-4224-B059-919C-AE8F5C290787";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" -3.0144305229187003 -3.3535003662109375 0.21502199769020075 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 90.000000000000014 0 180 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" 90.000000000000014 0 180 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.0034980903038611777;
-	setAttr ".lk" 5;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_Neck" -p "Eclair_Ctrl_Spine2";
-	rename -uid "1650F9E4-41F7-B1D7-355C-8B84CD3BDCC2";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" 0 2.1646080017089844 0 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" 90 0 90 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.0034980903038611777;
-	setAttr ".lk" 5;
-instanceable -a 0;
-createNode hikFKJoint -n "Eclair_Ctrl_Head" -p "Eclair_Ctrl_Neck";
-	rename -uid "9B0B24E4-4D16-B53A-7951-109E550588E3";
-	addAttr -s false -ci true -sn "ch" -ln "ControlSet" -at "message";
-	setAttr -k off -cb on ".v";
-	setAttr ".uoc" 1;
-	setAttr ".oc" 1;
-	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" 0 2.1454200744628906 0 ;
-	setAttr -l on ".t";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -l on ".s";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -90 -90 0 ;
-	setAttr -l on ".ra";
-	setAttr -l on ".jo" -type "double3" 90 0 90 ;
-	setAttr -l on ".jo";
-	setAttr ".radi" 0.34980903038611777;
-instanceable -a 0;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "7B3D3ECF-46F4-AEB3-C66E-D8B0E5AE0AC9";
+	rename -uid "02EBF50B-4D5F-B686-1695-3387F0B0A1DA";
 	setAttr -s 63 ".lnk";
 	setAttr -s 63 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "04027647-4BD6-B14D-DA53-7FB8431DA8F6";
+	rename -uid "C6359E7B-4F97-D5F9-EA27-62AEAA63A590";
 	setAttr ".cdl" 18;
 	setAttr -s 22 ".dli[1:21]"  15 7 3 4 9 8 5 6 
 		11 1 21 2 12 10 13 14 16 17 18 19 20;
@@ -30166,7 +29184,7 @@ createNode displayLayerManager -n "layerManager";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "49A352C3-594F-F82D-8509-FA9DE2F0FA8D";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "EF175A8A-495D-198D-BAFB-B88865EC80F9";
+	rename -uid "30CE1247-4EDD-8B80-DFD1-ECAEDFD82E21";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "24265BC8-A14C-EFF6-981E-B6853737A495";
 	setAttr ".g" yes;
@@ -31785,9 +30803,9 @@ createNode file -n "file10";
 createNode place2dTexture -n "place2dTexture10";
 	rename -uid "438C5479-B547-BFF4-B65D-0E9A0ED84C75";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "386BF592-4EE0-86C3-C46E-7984D3AB32A2";
+	rename -uid "F22F0D35-42C3-D182-86EC-1DB5EAAB485A";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "D9A85172-4ED6-82E0-D982-4F98A3FC9F0C";
+	rename -uid "E267AC54-4211-C5EB-5E86-96B8D2E6221F";
 createNode renderLayerManager -n "gia:renderLayerManager";
 	rename -uid "FCB783F4-4C35-F521-CCBA-79AD762F98BA";
 createNode renderLayer -n "gia:defaultRenderLayer";
@@ -32057,6 +31075,7 @@ createNode place2dTexture -n "Mesh:place2dTexture3";
 	rename -uid "62B9226B-4D0A-38C0-EFBB-2D8DFC8D3CB2";
 createNode bump2d -n "Mesh:bump2d1";
 	rename -uid "C8DBD912-4F38-0DF6-2470-EDBE45A4942C";
+	setAttr ".vc1" -type "float3" 0 0.00012000001 0 ;
 	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
 createNode file -n "Mesh:file19";
 	rename -uid "6D7EA103-47BB-3F48-754C-45A1C213A093";
@@ -33543,7 +32562,7 @@ createNode groupParts -n "groupParts179";
 createNode skinCluster -n "skinCluster24";
 	rename -uid "62E4C496-4982-A96D-B7C6-20AF1364D40D";
 	setAttr ".skm" 1;
-	setAttr -s 47 ".bw";
+	setAttr -s 76 ".bw";
 	setAttr ".bw[17]" 1;
 	setAttr ".bw[26]" 1;
 	setAttr ".bw[28]" 1;
@@ -33564,6 +32583,35 @@ createNode skinCluster -n "skinCluster24";
 	setAttr ".bw[60]" 1;
 	setAttr ".bw[61]" 1;
 	setAttr ".bw[64]" 1;
+	setAttr ".bw[117]" -nan;
+	setAttr ".bw[118]" -nan;
+	setAttr ".bw[119]" -nan;
+	setAttr ".bw[120]" -nan;
+	setAttr ".bw[121]" -nan;
+	setAttr ".bw[122]" -nan;
+	setAttr ".bw[123]" -nan;
+	setAttr ".bw[124]" -nan;
+	setAttr ".bw[125]" -nan;
+	setAttr ".bw[126]" -nan;
+	setAttr ".bw[127]" -nan;
+	setAttr ".bw[128]" -nan;
+	setAttr ".bw[129]" -nan;
+	setAttr ".bw[130]" -nan;
+	setAttr ".bw[131]" -nan;
+	setAttr ".bw[132]" -nan;
+	setAttr ".bw[133]" -nan;
+	setAttr ".bw[134]" -nan;
+	setAttr ".bw[135]" -nan;
+	setAttr ".bw[136]" -nan;
+	setAttr ".bw[137]" -nan;
+	setAttr ".bw[138]" -nan;
+	setAttr ".bw[139]" -nan;
+	setAttr ".bw[140]" -nan;
+	setAttr ".bw[141]" -nan;
+	setAttr ".bw[142]" -nan;
+	setAttr ".bw[143]" -nan;
+	setAttr ".bw[144]" -nan;
+	setAttr ".bw[145]" -nan;
 	setAttr ".bw[183]" 0.0078125000000000451;
 	setAttr ".bw[188]" 0.007814006865374163;
 	setAttr ".bw[190]" 0.0078140050172806255;
@@ -33811,7 +32859,7 @@ createNode skinCluster -n "skinCluster24";
 		2 7 0.5 37 0.5
 		2 7 0.50000000171249315 37 0.49999999828750685
 		1 7 1
-		2 7 0.99999997661502027 37 2.3384979764605717e-08
+		2 7 0.99999997661502027 37 2.338497976460572e-08
 		2 7 0.87500000869940031 37 0.12499999130059974
 		2 7 0.75000004936009546 37 0.24999995063990452
 		1 7 1
@@ -35957,7 +35005,7 @@ createNode skinCluster -n "skinCluster28";
 		3 12 0.0035782431716470525 25 8.6168778024243401e-09 29 0.99642174821147522
 		3 12 0.0029549576346905291 29 0.93874444536168178 30 0.058300597003627719
 		3 12 0.0032195343624127929 29 0.97960949757698279 30 0.017170968060604318
-		3 12 0.0049724637317299179 25 2.0717665051430337e-07 29 0.99502732909161973
+		3 12 0.0049724637317299179 25 2.071766505143034e-07 29 0.99502732909161973
 		3 12 0.0052991588985867501 25 1.8982787668068735e-07 29 0.99470065127353657
 		2 12 0.0088738120954662825 29 0.99112618790453366
 		3 12 0.0040425667521433711 25 8.9228413028738808e-08 29 0.99595734401944369
@@ -36479,7 +35527,7 @@ createNode skinCluster -n "skinCluster28";
 		3 38 -1.6244162121984516e-15 39 -9.9989521393441737e-10 40 1.0000000009998968
 		3 38 1.1172309024914559e-07 39 0.15989545286621124 40 0.84010443541069846
 		3 38 2.0319407467011055e-07 39 0.25356754720205493 40 0.74643224960387056
-		3 38 5.0492185715556846e-08 39 0.045847313984849848 40 0.95415263552296437
+		3 38 5.049218571555684e-08 39 0.045847313984849848 40 0.95415263552296437
 		3 38 8.1934634209686032e-08 39 0.090766952916181962 40 0.90923296514918384
 		3 38 3.4959308799321905e-07 39 0.34368230167371927 40 0.6563173487331927
 		3 38 0.095853443627728158 39 0.38112378437655842 40 0.52302277199571345
@@ -36861,7 +35909,7 @@ createNode skinCluster -n "skinCluster28";
 		3 41 0.0035782431716470525 54 8.6168778024243401e-09 58 0.99642174821147522
 		3 41 0.0032195343624127929 58 0.97960949757698279 59 0.017170968060604318
 		3 41 0.0029549576346905291 58 0.93874444536168178 59 0.058300597003627719
-		3 41 0.0049724637317299179 54 2.0717665051430337e-07 58 0.99502732909161973
+		3 41 0.0049724637317299179 54 2.071766505143034e-07 58 0.99502732909161973
 		2 41 0.0088738120954662825 58 0.99112618790453366
 		3 41 0.0052991588985867501 54 1.8982787668068735e-07 58 0.99470065127353657
 		3 41 0.0040425667521433711 54 8.9228413028738808e-08 58 0.99595734401944369
@@ -37423,7 +36471,7 @@ createNode skinCluster -n "skinCluster28";
 		 0.74370513747968092 -0.66850779239013214 1.236907283814224e-16 0 9.1077691021732117e-17 -8.1868635001775071e-17 -1 0
 		 -12.755167900789925 19.427321940904719 -0.5012430000000031 1;
 	setAttr ".pm[40]" -type "matrix" 0.66701067068618425 -0.00050259329169485768 0.74504799348146111 1.3877787886748883e-17
-		 0.74203973729971351 0.090222742161449071 -0.66425664096419956 -1.3877787728880032e-17
+		 0.74203973729971351 0.090222742161449071 -0.66425664096419956 -1.387778772888003e-17
 		 -0.06688642208207049 0.99592148495594368 0.060552475954392768 8.6736173798840287e-19
 		 -10.367829520383429 -1.4444883469578496 19.375391999035084 1.0000000000000004;
 	setAttr ".pm[41]" -type "matrix" 0.66701067068618314 -0.00050259329169493152 0.745047993481462 0
@@ -40661,7 +39709,7 @@ createNode dagPose -n "bindPose2";
 	setAttr ".wm[1]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 17.490449905395508 0 1;
 	setAttr ".wm[2]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 19.540726512436127 0 1;
 	setAttr ".wm[3]" -type "matrix" 1 0 0 0 2.7369110631344083e-48 0.99999999999999989 6.0771633572862712e-64 -6.9388939039072284e-18
-		 0 0 1 0 -3.9443045261050599e-31 22.146779113533167 -8.7581154020301057e-47 0.99999999999999989;
+		 0 0 1 0 -3.944304526105059e-31 22.146779113533167 -8.7581154020301057e-47 0.99999999999999989;
 	setAttr ".wm[4]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 24.549215525211462 0 1;
 	setAttr ".wm[5]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 26.713824121483349 0 1;
 	setAttr ".wm[6]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 28.859243392944325 0 1;
@@ -40947,6 +39995,444 @@ createNode keyingGroup -n "Eclair_LeftFootBPKG";
 createNode keyingGroup -n "Eclair_RightFootBPKG";
 	rename -uid "109776D1-43B4-5EDB-FD96-749B0DFF3DF9";
 	setAttr ".cat" -type "string" "BodyPart";
+createNode HIKCharacterNode -n "Eclair";
+	rename -uid "BB10BF58-4136-7240-D58A-9395848C3F28";
+	setAttr ".OutputCharacterDefinition" -type "HIKCharacter" ;
+	setAttr ".InputCharacterizationLock" yes;
+	setAttr ".ReferenceMinRLimitx" -45;
+	setAttr ".ReferenceMinRLimity" -45;
+	setAttr ".ReferenceMinRLimitz" -45;
+	setAttr ".ReferenceMaxRLimitx" 45;
+	setAttr ".ReferenceMaxRLimity" 45;
+	setAttr ".ReferenceMaxRLimitz" 45;
+	setAttr ".HipsTy" 17.490449905395508;
+	setAttr ".HipsMinRLimitx" -45;
+	setAttr ".HipsMinRLimity" -45;
+	setAttr ".HipsMinRLimitz" -45;
+	setAttr ".HipsMaxRLimitx" 45;
+	setAttr ".HipsMaxRLimity" 45;
+	setAttr ".HipsMaxRLimitz" 45;
+	setAttr ".LeftUpLegTx" 1.71356201171875;
+	setAttr ".LeftUpLegTy" 16.393798828125;
+	setAttr ".LeftUpLegTz" -0.075529478490352631;
+	setAttr ".LeftUpLegRz" -90;
+	setAttr ".LeftUpLegJointOrientx" -1.0129830168048274e-16;
+	setAttr ".LeftUpLegJointOrienty" 1.0129830168048278e-16;
+	setAttr ".LeftUpLegJointOrientz" -89.999999999999986;
+	setAttr ".LeftUpLegMinRLimitx" -45;
+	setAttr ".LeftUpLegMinRLimity" -45;
+	setAttr ".LeftUpLegMinRLimitz" -45;
+	setAttr ".LeftUpLegMaxRLimitx" 45;
+	setAttr ".LeftUpLegMaxRLimity" 45;
+	setAttr ".LeftUpLegMaxRLimitz" 45;
+	setAttr ".LeftLegTx" 1.7135620117187502;
+	setAttr ".LeftLegTy" 8.5443220138549822;
+	setAttr ".LeftLegTz" -0.075529478490352631;
+	setAttr ".LeftLegRz" -90;
+	setAttr ".LeftLegMinRLimitx" -45;
+	setAttr ".LeftLegMinRLimity" -45;
+	setAttr ".LeftLegMinRLimitz" -45;
+	setAttr ".LeftLegMaxRLimitx" 45;
+	setAttr ".LeftLegMaxRLimity" 45;
+	setAttr ".LeftLegMaxRLimitz" 45;
+	setAttr ".LeftFootTx" 1.71356201171875;
+	setAttr ".LeftFootTy" 1.425541043281557;
+	setAttr ".LeftFootTz" -0.075529478490352644;
+	setAttr ".LeftFootRx" 1.5162929588391274;
+	setAttr ".LeftFootRy" -63.60330078137531;
+	setAttr ".LeftFootRz" -91.69269009173739;
+	setAttr ".LeftFootSz" 1.0000000000000002;
+	setAttr ".LeftFootJointOrientx" 1.5162929588391263;
+	setAttr ".LeftFootJointOrienty" -63.603300781375289;
+	setAttr ".LeftFootJointOrientz" -1.6926900917373879;
+	setAttr ".LeftFootMinRLimitx" -45;
+	setAttr ".LeftFootMinRLimity" -45;
+	setAttr ".LeftFootMinRLimitz" -45;
+	setAttr ".LeftFootMaxRLimitx" 45;
+	setAttr ".LeftFootMaxRLimity" 45;
+	setAttr ".LeftFootMaxRLimitz" 45;
+	setAttr ".RightUpLegTx" -1.713559627532959;
+	setAttr ".RightUpLegTy" 16.393800735473633;
+	setAttr ".RightUpLegTz" -0.075529500842094421;
+	setAttr ".RightUpLegRz" -90;
+	setAttr ".RightUpLegJointOrientz" -89.999999999999986;
+	setAttr ".RightUpLegMinRLimitx" -45;
+	setAttr ".RightUpLegMinRLimity" -45;
+	setAttr ".RightUpLegMinRLimitz" -45;
+	setAttr ".RightUpLegMaxRLimitx" 45;
+	setAttr ".RightUpLegMaxRLimity" 45;
+	setAttr ".RightUpLegMaxRLimitz" 45;
+	setAttr ".RightLegTx" -1.7135596275329588;
+	setAttr ".RightLegTy" 8.5443201065063477;
+	setAttr ".RightLegTz" -0.075529500842094435;
+	setAttr ".RightLegRz" -90;
+	setAttr ".RightLegMinRLimitx" -45;
+	setAttr ".RightLegMinRLimity" -45;
+	setAttr ".RightLegMinRLimitz" -45;
+	setAttr ".RightLegMaxRLimitx" 45;
+	setAttr ".RightLegMaxRLimity" 45;
+	setAttr ".RightLegMaxRLimitz" 45;
+	setAttr ".RightFootTx" -1.713559627532959;
+	setAttr ".RightFootTy" 1.4255399703979492;
+	setAttr ".RightFootTz" -0.075529500842094408;
+	setAttr ".RightFootRx" -1.3949750644807759;
+	setAttr ".RightFootRy" -63.604907086867073;
+	setAttr ".RightFootRz" -88.442749160456472;
+	setAttr ".RightFootJointOrientx" -1.3949750644807761;
+	setAttr ".RightFootJointOrienty" -63.604907086867073;
+	setAttr ".RightFootJointOrientz" 1.5572508395435145;
+	setAttr ".RightFootMinRLimitx" -45;
+	setAttr ".RightFootMinRLimity" -45;
+	setAttr ".RightFootMinRLimitz" -45;
+	setAttr ".RightFootMaxRLimitx" 45;
+	setAttr ".RightFootMaxRLimity" 45;
+	setAttr ".RightFootMaxRLimitz" 45;
+	setAttr ".SpineTy" 19.540725708007813;
+	setAttr ".SpineMinRLimitx" -45;
+	setAttr ".SpineMinRLimity" -45;
+	setAttr ".SpineMinRLimitz" -45;
+	setAttr ".SpineMaxRLimitx" 45;
+	setAttr ".SpineMaxRLimity" 45;
+	setAttr ".SpineMaxRLimitz" 45;
+	setAttr ".LeftArmTx" 3.1524026393890381;
+	setAttr ".LeftArmTy" 25.866430282592773;
+	setAttr ".LeftArmTz" -0.5012434720993042;
+	setAttr ".LeftArmRz" -48.048000000000094;
+	setAttr ".LeftArmMinRLimitx" -45;
+	setAttr ".LeftArmMinRLimity" -45;
+	setAttr ".LeftArmMinRLimitz" -45;
+	setAttr ".LeftArmMaxRLimitx" 45;
+	setAttr ".LeftArmMaxRLimity" 45;
+	setAttr ".LeftArmMaxRLimitz" 45;
+	setAttr ".LeftForeArmTx" 5.9212703679628991;
+	setAttr ".LeftForeArmTy" 22.473430631488061;
+	setAttr ".LeftForeArmTz" -0.5012434720993042;
+	setAttr ".LeftForeArmRz" -48.048000000000094;
+	setAttr ".LeftForeArmMinRLimitx" -45;
+	setAttr ".LeftForeArmMinRLimity" -45;
+	setAttr ".LeftForeArmMinRLimitz" -45;
+	setAttr ".LeftForeArmMaxRLimitx" 45;
+	setAttr ".LeftForeArmMaxRLimity" 45;
+	setAttr ".LeftForeArmMaxRLimitz" 45;
+	setAttr ".LeftHandTx" 8.9356975505303264;
+	setAttr ".LeftHandTy" 19.119922633643316;
+	setAttr ".LeftHandTz" -0.28622138500213667;
+	setAttr ".LeftHandRx" -93.479326146528507;
+	setAttr ".LeftHandRy" -3.8351729537979877;
+	setAttr ".LeftHandRz" -48.04800482967169;
+	setAttr ".LeftHandMinRLimitx" -45;
+	setAttr ".LeftHandMinRLimity" -45;
+	setAttr ".LeftHandMinRLimitz" -45;
+	setAttr ".LeftHandMaxRLimitx" 45;
+	setAttr ".LeftHandMaxRLimity" 45;
+	setAttr ".LeftHandMaxRLimitz" 45;
+	setAttr ".RightArmTx" -3.152400016784668;
+	setAttr ".RightArmTy" 25.866399765014645;
+	setAttr ".RightArmTz" -0.501242995262146;
+	setAttr ".RightArmRx" 180;
+	setAttr ".RightArmRz" 48.047999957437739;
+	setAttr ".RightArmMinRLimitx" -45;
+	setAttr ".RightArmMinRLimity" -45;
+	setAttr ".RightArmMinRLimitz" -45;
+	setAttr ".RightArmMaxRLimitx" 45;
+	setAttr ".RightArmMaxRLimity" 45;
+	setAttr ".RightArmMaxRLimitz" 45;
+	setAttr ".RightForeArmTx" -5.9212698936462438;
+	setAttr ".RightForeArmTy" 22.473400115966797;
+	setAttr ".RightForeArmTz" -0.50124299526214611;
+	setAttr ".RightForeArmRx" 180;
+	setAttr ".RightForeArmRz" 48.047999957437739;
+	setAttr ".RightForeArmMinRLimitx" -45;
+	setAttr ".RightForeArmMinRLimity" -45;
+	setAttr ".RightForeArmMinRLimitz" -45;
+	setAttr ".RightForeArmMaxRLimitx" 45;
+	setAttr ".RightForeArmMaxRLimity" 45;
+	setAttr ".RightForeArmMaxRLimitz" 45;
+	setAttr ".RightHandTx" -8.9357004165649432;
+	setAttr ".RightHandTy" 19.119899749755863;
+	setAttr ".RightHandTz" -0.28622099757194541;
+	setAttr ".RightHandRx" 86.520673853471507;
+	setAttr ".RightHandRy" 3.835172953797986;
+	setAttr ".RightHandRz" 48.048004787109313;
+	setAttr ".RightHandSx" 0.99999999999999989;
+	setAttr ".RightHandMinRLimitx" -45;
+	setAttr ".RightHandMinRLimity" -45;
+	setAttr ".RightHandMinRLimitz" -45;
+	setAttr ".RightHandMaxRLimitx" 45;
+	setAttr ".RightHandMaxRLimity" 45;
+	setAttr ".RightHandMaxRLimitz" 45;
+	setAttr ".HeadTy" 28.859243392944336;
+	setAttr ".HeadMinRLimitx" -45;
+	setAttr ".HeadMinRLimity" -45;
+	setAttr ".HeadMinRLimitz" -45;
+	setAttr ".HeadMaxRLimitx" 45;
+	setAttr ".HeadMaxRLimity" 45;
+	setAttr ".HeadMaxRLimitz" 45;
+	setAttr ".LeftToeBaseTx" 1.6811939477920532;
+	setAttr ".LeftToeBaseTy" 0.33023354411125161;
+	setAttr ".LeftToeBaseTz" 2.1322357654571533;
+	setAttr ".LeftToeBaseRy" 13.000000000000032;
+	setAttr ".LeftToeBaseSy" 1.0000000000000002;
+	setAttr ".LeftToeBaseJointOrientx" 64.200853653932853;
+	setAttr ".LeftToeBaseJointOrienty" 5.7377035220878394;
+	setAttr ".LeftToeBaseJointOrientz" 102.43734830998898;
+	setAttr ".LeftToeBaseMinRLimitx" -45;
+	setAttr ".LeftToeBaseMinRLimity" -45;
+	setAttr ".LeftToeBaseMinRLimitz" -45;
+	setAttr ".LeftToeBaseMaxRLimitx" 45;
+	setAttr ".LeftToeBaseMaxRLimity" 45;
+	setAttr ".LeftToeBaseMaxRLimitz" 45;
+	setAttr ".RightToeBaseTx" -1.6837828159332273;
+	setAttr ".RightToeBaseTy" 0.33023399114608698;
+	setAttr ".RightToeBaseTz" 2.1322400569915771;
+	setAttr ".RightToeBaseRx" 180;
+	setAttr ".RightToeBaseRy" -13.000000000000028;
+	setAttr ".RightToeBaseSy" 0.99999999999999978;
+	setAttr ".RightToeBaseSz" 0.99999999999999967;
+	setAttr ".RightToeBaseJointOrientx" -115.79907132458563;
+	setAttr ".RightToeBaseJointOrienty" -5.7376880842396165;
+	setAttr ".RightToeBaseJointOrientz" 77.622877919052371;
+	setAttr ".RightToeBaseMinRLimitx" -45;
+	setAttr ".RightToeBaseMinRLimity" -45;
+	setAttr ".RightToeBaseMinRLimitz" -45;
+	setAttr ".RightToeBaseMaxRLimitx" 45;
+	setAttr ".RightToeBaseMaxRLimity" 45;
+	setAttr ".RightToeBaseMaxRLimitz" 45;
+	setAttr ".LeftShoulderTx" 1.2243316173553467;
+	setAttr ".LeftShoulderTy" 25.638996124267578;
+	setAttr ".LeftShoulderTz" -0.5012434720993042;
+	setAttr ".LeftShoulderMinRLimitx" -45;
+	setAttr ".LeftShoulderMinRLimity" -45;
+	setAttr ".LeftShoulderMinRLimitz" -45;
+	setAttr ".LeftShoulderMaxRLimitx" 45;
+	setAttr ".LeftShoulderMaxRLimity" 45;
+	setAttr ".LeftShoulderMaxRLimitz" 45;
+	setAttr ".RightShoulderTx" -1.224329948425293;
+	setAttr ".RightShoulderTy" 25.638999938964844;
+	setAttr ".RightShoulderTz" -0.501242995262146;
+	setAttr ".RightShoulderRx" 180;
+	setAttr ".RightShoulderJointOrientx" -180;
+	setAttr ".RightShoulderMinRLimitx" -45;
+	setAttr ".RightShoulderMinRLimity" -45;
+	setAttr ".RightShoulderMinRLimitz" -45;
+	setAttr ".RightShoulderMaxRLimitx" 45;
+	setAttr ".RightShoulderMaxRLimity" 45;
+	setAttr ".RightShoulderMaxRLimitz" 45;
+	setAttr ".NeckTy" 26.713823318481445;
+	setAttr ".NeckMinRLimitx" -45;
+	setAttr ".NeckMinRLimity" -45;
+	setAttr ".NeckMinRLimitz" -45;
+	setAttr ".NeckMaxRLimitx" 45;
+	setAttr ".NeckMaxRLimity" 45;
+	setAttr ".NeckMaxRLimitz" 45;
+	setAttr ".Spine1Ty" 22.146780014038086;
+	setAttr ".Spine1MinRLimitx" -45;
+	setAttr ".Spine1MinRLimity" -45;
+	setAttr ".Spine1MinRLimitz" -45;
+	setAttr ".Spine1MaxRLimitx" 45;
+	setAttr ".Spine1MaxRLimity" 45;
+	setAttr ".Spine1MaxRLimitz" 45;
+	setAttr ".Spine2Ty" 24.549215316772461;
+	setAttr ".Spine2MinRLimitx" -45;
+	setAttr ".Spine2MinRLimity" -45;
+	setAttr ".Spine2MinRLimitz" -45;
+	setAttr ".Spine2MaxRLimitx" 45;
+	setAttr ".Spine2MaxRLimity" 45;
+	setAttr ".Spine2MaxRLimitz" 45;
+	setAttr ".LeafLeftForeArmRoll1Tx" 7.5208673438748574;
+	setAttr ".LeafLeftForeArmRoll1Ty" 20.693901058766592;
+	setAttr ".LeafLeftForeArmRoll1Tz" -0.42809754610061646;
+	setAttr ".LeafLeftForeArmRoll1Rx" -93.479326146528507;
+	setAttr ".LeafLeftForeArmRoll1Ry" -3.8351729537979877;
+	setAttr ".LeafLeftForeArmRoll1Rz" -48.04800482967169;
+	setAttr ".LeafLeftForeArmRoll1JointOrientx" -93.479326146528507;
+	setAttr ".LeafLeftForeArmRoll1JointOrienty" -3.8351729537979877;
+	setAttr ".LeafLeftForeArmRoll1JointOrientz" -4.8296715997080133e-06;
+	setAttr ".LeafLeftForeArmRoll1MinRLimitx" -45;
+	setAttr ".LeafLeftForeArmRoll1MinRLimity" -45;
+	setAttr ".LeafLeftForeArmRoll1MinRLimitz" -45;
+	setAttr ".LeafLeftForeArmRoll1MaxRLimitx" 45;
+	setAttr ".LeafLeftForeArmRoll1MaxRLimity" 45;
+	setAttr ".LeafLeftForeArmRoll1MaxRLimitz" 45;
+	setAttr ".LeafRightForeArmRoll1Tx" -7.5208702087402353;
+	setAttr ".LeafRightForeArmRoll1Ty" 20.693899154663082;
+	setAttr ".LeafRightForeArmRoll1Tz" -0.42809799313545221;
+	setAttr ".LeafRightForeArmRoll1Rx" 86.520673853471507;
+	setAttr ".LeafRightForeArmRoll1Ry" 3.835172953797986;
+	setAttr ".LeafRightForeArmRoll1Rz" 48.048004787109313;
+	setAttr ".LeafRightForeArmRoll1Sx" 0.99999999999999989;
+	setAttr ".LeafRightForeArmRoll1JointOrientx" -93.479326146528507;
+	setAttr ".LeafRightForeArmRoll1JointOrienty" -3.8351729537979913;
+	setAttr ".LeafRightForeArmRoll1JointOrientz" -4.8296715738080057e-06;
+	setAttr ".LeafRightForeArmRoll1MinRLimitx" -45;
+	setAttr ".LeafRightForeArmRoll1MinRLimity" -45;
+	setAttr ".LeafRightForeArmRoll1MinRLimitz" -45;
+	setAttr ".LeafRightForeArmRoll1MaxRLimitx" 45;
+	setAttr ".LeafRightForeArmRoll1MaxRLimity" 45;
+	setAttr ".LeafRightForeArmRoll1MaxRLimitz" 45;
+createNode HIKProperty2State -n "HIKproperties1";
+	rename -uid "3A58DED7-465A-46E5-24B2-49BD13CDBBEC";
+	setAttr ".OutputPropertySetState" -type "HIKPropertySetState" ;
+	setAttr ".lkr" 0.60000002384185791;
+	setAttr ".rkr" 0.60000002384185791;
+	setAttr ".FootBottomToAnkle" 1.425541043281557;
+	setAttr ".FootBackToAnkle" 1.103882621973753;
+	setAttr ".FootMiddleToAnkle" 2.207765243947506;
+	setAttr ".FootFrontToMiddle" 1.103882621973753;
+	setAttr ".FootInToAnkle" 1.103882621973753;
+	setAttr ".FootOutToAnkle" 1.103882621973753;
+	setAttr ".HandBottomToWrist" 0.59873031139373767;
+	setAttr ".HandBackToWrist" 0.01;
+	setAttr ".HandMiddleToWrist" 1.4571250610053541;
+	setAttr ".HandFrontToMiddle" 1.4571250610053541;
+	setAttr ".HandInToWrist" 1.4571250610053541;
+	setAttr ".HandOutToWrist" 1.4571250610053541;
+	setAttr ".CtrlPullLeftFoot" 0;
+	setAttr ".CtrlPullRightFoot" 0;
+	setAttr ".CtrlChestPullLeftHand" 0;
+	setAttr ".CtrlChestPullRightHand" 0;
+	setAttr ".LeftHandThumbTip" 0.18710322231054305;
+	setAttr ".LeftHandIndexTip" 0.18710322231054305;
+	setAttr ".LeftHandMiddleTip" 0.18710322231054305;
+	setAttr ".LeftHandRingTip" 0.18710322231054305;
+	setAttr ".LeftHandPinkyTip" 0.18710322231054305;
+	setAttr ".LeftHandExtraFingerTip" 0.18710322231054305;
+	setAttr ".RightHandThumbTip" 0.18710322231054305;
+	setAttr ".RightHandIndexTip" 0.18710322231054305;
+	setAttr ".RightHandMiddleTip" 0.18710322231054305;
+	setAttr ".RightHandRingTip" 0.18710322231054305;
+	setAttr ".RightHandPinkyTip" 0.18710322231054305;
+	setAttr ".RightHandExtraFingerTip" 0.18710322231054305;
+	setAttr ".LeftFootThumbTip" 0.18710322231054305;
+	setAttr ".LeftFootIndexTip" 0.18710322231054305;
+	setAttr ".LeftFootMiddleTip" 0.18710322231054305;
+	setAttr ".LeftFootRingTip" 0.18710322231054305;
+	setAttr ".LeftFootPinkyTip" 0.18710322231054305;
+	setAttr ".LeftFootExtraFingerTip" 0.18710322231054305;
+	setAttr ".RightFootThumbTip" 0.18710322231054305;
+	setAttr ".RightFootIndexTip" 0.18710322231054305;
+	setAttr ".RightFootMiddleTip" 0.18710322231054305;
+	setAttr ".RightFootRingTip" 0.18710322231054305;
+	setAttr ".RightFootPinkyTip" 0.18710322231054305;
+	setAttr ".RightFootExtraFingerTip" 0.18710322231054305;
+	setAttr ".LeftUpLegRollEx" 1;
+	setAttr ".LeftLegRollEx" 1;
+	setAttr ".RightUpLegRollEx" 1;
+	setAttr ".RightLegRollEx" 1;
+	setAttr ".LeftArmRollEx" 1;
+	setAttr ".LeftForeArmRollEx" 1;
+	setAttr ".RightArmRollEx" 1;
+	setAttr ".RightForeArmRollEx" 1;
+	setAttr ".ParamLeafLeftUpLegRoll1" 0;
+	setAttr ".ParamLeafLeftLegRoll1" 0.2;
+	setAttr ".ParamLeafRightUpLegRoll1" 0;
+	setAttr ".ParamLeafRightLegRoll1" 0.2;
+	setAttr ".ParamLeafLeftArmRoll1" 0;
+	setAttr ".ParamLeafLeftForeArmRoll1" 0.2;
+	setAttr ".ParamLeafRightArmRoll1" 0;
+	setAttr ".ParamLeafRightForeArmRoll1" 0.2;
+	setAttr ".ParamLeafLeftUpLegRoll2" 0.22;
+	setAttr ".ParamLeafLeftLegRoll2" 0.4;
+	setAttr ".ParamLeafRightUpLegRoll2" 0.22;
+	setAttr ".ParamLeafRightLegRoll2" 0.4;
+	setAttr ".ParamLeafLeftArmRoll2" 0.22;
+	setAttr ".ParamLeafLeftForeArmRoll2" 0.4;
+	setAttr ".ParamLeafRightArmRoll2" 0.22;
+	setAttr ".ParamLeafRightForeArmRoll2" 0.4;
+	setAttr ".ParamLeafLeftUpLegRoll3" 0.44;
+	setAttr ".ParamLeafLeftLegRoll3" 0.6;
+	setAttr ".ParamLeafRightUpLegRoll3" 0.44;
+	setAttr ".ParamLeafRightLegRoll3" 0.6;
+	setAttr ".ParamLeafLeftArmRoll3" 0.44;
+	setAttr ".ParamLeafLeftForeArmRoll3" 0.6;
+	setAttr ".ParamLeafRightArmRoll3" 0.44;
+	setAttr ".ParamLeafRightForeArmRoll3" 0.6;
+	setAttr ".ParamLeafLeftUpLegRoll4" 0.66;
+	setAttr ".ParamLeafLeftLegRoll4" 0.8;
+	setAttr ".ParamLeafRightUpLegRoll4" 0.66;
+	setAttr ".ParamLeafRightLegRoll4" 0.8;
+	setAttr ".ParamLeafLeftArmRoll4" 0.66;
+	setAttr ".ParamLeafLeftForeArmRoll4" 0.8;
+	setAttr ".ParamLeafRightArmRoll4" 0.66;
+	setAttr ".ParamLeafRightForeArmRoll4" 0.8;
+	setAttr ".ParamLeafLeftUpLegRoll5" 0.9;
+	setAttr ".ParamLeafLeftLegRoll5" 1;
+	setAttr ".ParamLeafRightUpLegRoll5" 0.9;
+	setAttr ".ParamLeafRightLegRoll5" 1;
+	setAttr ".ParamLeafLeftArmRoll5" 0.9;
+	setAttr ".ParamLeafLeftForeArmRoll5" 1;
+	setAttr ".ParamLeafRightArmRoll5" 0.9;
+	setAttr ".ParamLeafRightForeArmRoll5" 1;
+createNode HIKSolverNode -n "HIKSolverNode1";
+	rename -uid "BF404A3F-4B4C-1463-DB71-CD96063BB0CB";
+	setAttr ".ihi" 0;
+	setAttr ".InputStance" yes;
+	setAttr ".InputCharacterState" -type "HIKCharacterState" ;
+	setAttr ".InputEffectorState" -type "HIKEffectorState" ;
+	setAttr ".InputEffectorStateNoAux" -type "HIKEffectorState" ;
+	setAttr ".OutputCharacterState" -type "HIKCharacterState" ;
+createNode HIKState2SK -n "HIKState2SK1";
+	rename -uid "4F7BBE06-48D2-8463-FAE7-A98C8A7F034C";
+	setAttr ".ihi" 0;
+	setAttr ".HipsTy" 17.490449905395508;
+	setAttr ".LeftUpLegTx" 1.71356201171875;
+	setAttr ".LeftUpLegTy" -1.0966510772705078;
+	setAttr ".LeftUpLegTz" -0.075529478490352631;
+	setAttr ".LeftLegTx" 8.9051766849269356;
+	setAttr ".LeftLegTy" -2.2204460492503131e-15;
+	setAttr ".LeftFootTx" 7.1187809705734253;
+	setAttr ".LeftFootTy" -1.7763568394002505e-15;
+	setAttr ".LeftFootTz" -1.3877787807814457e-17;
+	setAttr ".RightUpLegTx" -1.713559627532959;
+	setAttr ".RightUpLegTy" -1.096649169921875;
+	setAttr ".RightUpLegTz" -0.075529500842094421;
+	setAttr ".RightLegTx" 8.9051804996241977;
+	setAttr ".RightLegTy" -1.7763568394002505e-15;
+	setAttr ".RightFootTx" 7.1187801361083984;
+	setAttr ".RightFootTy" -1.9984014443252818e-15;
+	setAttr ".RightFootTz" 4.163336342344337e-17;
+	setAttr ".SpineTy" 2.0502758026123047;
+	setAttr ".LeftArmTx" 2.4619193185852764;
+	setAttr ".LeftArmTy" -0.29328924689146518;
+	setAttr ".LeftArmRz" -48.047999957437732;
+	setAttr ".LeftForeArmTx" 4.3744009237641812;
+	setAttr ".LeftForeArmTy" -0.20902556998017729;
+	setAttr ".LeftForeArmTz" -1.1102230246251565e-16;
+	setAttr ".LeftHandTx" 2.1211509710917689;
+	setAttr ".LeftHandTy" 4.8650790063220484e-08;
+	setAttr ".LeftHandTz" -1.7172889243965983e-07;
+	setAttr ".RightArmTx" -2.4622833544101095;
+	setAttr ".RightArmTy" 0.29332357916685936;
+	setAttr ".RightArmTz" -1.1102230246251565e-16;
+	setAttr ".RightArmRz" -48.047999957437732;
+	setAttr ".RightForeArmTx" -4.3744023580710198;
+	setAttr ".RightForeArmTy" 0.20902397741162204;
+	setAttr ".RightForeArmTz" -3.3306690738754696e-16;
+	setAttr ".RightHandTx" -2.1211665953644037;
+	setAttr ".RightHandTy" -1.1109277324727884e-06;
+	setAttr ".RightHandTz" 1.4165504524044081e-05;
+	setAttr ".HeadTy" 2.1454200744628906;
+	setAttr ".LeftToeBaseTx" 2.4647461495423131;
+	setAttr ".LeftToeBaseTy" 3.9692074293995461e-08;
+	setAttr ".LeftToeBaseTz" -4.6629367034256575e-15;
+	setAttr ".RightToeBaseTx" 2.4647166707739476;
+	setAttr ".RightToeBaseTy" -1.1228396434859178e-08;
+	setAttr ".RightToeBaseTz" -8.8817841970012523e-16;
+	setAttr ".LeftShoulderTx" 1.2243316173553467;
+	setAttr ".LeftShoulderTy" 1.0897808074951172;
+	setAttr ".LeftShoulderTz" -0.5012434720993042;
+	setAttr ".RightShoulderTx" -1.224329948425293;
+	setAttr ".RightShoulderTy" 1.0897846221923828;
+	setAttr ".RightShoulderTz" -0.501242995262146;
+	setAttr ".NeckTy" 2.1646080017089844;
+	setAttr ".Spine1Ty" 2.6060543060302734;
+	setAttr ".Spine2Ty" 2.402435302734375;
+	setAttr ".LeafLeftForeArmRoll1Tx" 2.3927883287660823;
+	setAttr ".LeafLeftForeArmRoll1Ty" -9.0407553798854678e-07;
+	setAttr ".LeafLeftForeArmRoll1Tz" 0.073145925998687744;
+	setAttr ".LeafRightForeArmRoll1Tx" -2.3927692824217548;
+	setAttr ".LeafRightForeArmRoll1Ty" -2.0699442590199624e-05;
+	setAttr ".LeafRightForeArmRoll1Tz" -0.073145002126694503;
 createNode keyingGroup -n "Eclair_FullBodyKG1";
 	rename -uid "05A3BE4A-4C9A-B22C-E135-46B2501B2B8E";
 	setAttr ".ihi" 0;
@@ -41078,797 +40564,6 @@ createNode groupParts -n "groupParts222";
 	rename -uid "4F5AEDE5-4121-8DF2-C2EF-F59C65167620";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[550:742]";
-createNode keyingGroup -n "Eclair_FullBodyKG3";
-	rename -uid "D9AD2321-4FDD-2476-B252-49A92A2D16E9";
-	setAttr ".ihi" 0;
-	setAttr -s 10 ".dnsm";
-	setAttr ".cat" -type "string" "FullBody";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_HipsBPKG2";
-	rename -uid "8C8C0448-478F-6945-1835-41BC7193356E";
-	setAttr ".ihi" 0;
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_ChestBPKG2";
-	rename -uid "7277E704-447C-33A4-4009-14A7F6E55810";
-	setAttr ".ihi" 0;
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_LeftArmBPKG2";
-	rename -uid "24DD09BD-43E7-12C5-B957-1ABADA807371";
-	setAttr ".ihi" 0;
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_RightArmBPKG2";
-	rename -uid "E7D73C11-4D27-9619-5B89-4B9128D997D7";
-	setAttr ".ihi" 0;
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_LeftLegBPKG2";
-	rename -uid "D93FEAA4-4054-0B8D-F1B3-EBA4066C0FC4";
-	setAttr ".ihi" 0;
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_RightLegBPKG2";
-	rename -uid "E14E5C32-455B-E405-8542-7EA5004CCC62";
-	setAttr ".ihi" 0;
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_HeadBPKG2";
-	rename -uid "A1849633-4E32-4F3E-E9CA-6FA2E57A78BE";
-	setAttr ".ihi" 0;
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_LeftHandBPKG3";
-	rename -uid "B484EACD-4833-2B74-B8F1-D884D5D2100D";
-	setAttr ".ihi" 0;
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_RightHandBPKG3";
-	rename -uid "62ECC7F9-465F-172D-6C51-BD807BC02EDF";
-	setAttr ".ihi" 0;
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_LeftFootBPKG3";
-	rename -uid "375DDC86-454A-09D9-64D9-E8AB3DB3C164";
-	setAttr ".ihi" 0;
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_RightFootBPKG3";
-	rename -uid "EB53C4F8-4587-2876-8B93-78930AC7C2BA";
-	setAttr ".cat" -type "string" "BodyPart";
-createNode HIKCharacterNode -n "Eclair";
-	rename -uid "A8D04424-4299-2791-6847-009806AAE093";
-	setAttr ".OutputCharacterDefinition" -type "HIKCharacter" ;
-	setAttr ".InputCharacterizationLock" yes;
-	setAttr ".ReferenceMinRLimitx" -45;
-	setAttr ".ReferenceMinRLimity" -45;
-	setAttr ".ReferenceMinRLimitz" -45;
-	setAttr ".ReferenceMaxRLimitx" 45;
-	setAttr ".ReferenceMaxRLimity" 45;
-	setAttr ".ReferenceMaxRLimitz" 45;
-	setAttr ".HipsTy" 17.490449905395508;
-	setAttr ".HipsMinRLimitx" -45;
-	setAttr ".HipsMinRLimity" -45;
-	setAttr ".HipsMinRLimitz" -45;
-	setAttr ".HipsMaxRLimitx" 45;
-	setAttr ".HipsMaxRLimity" 45;
-	setAttr ".HipsMaxRLimitz" 45;
-	setAttr ".LeftUpLegTx" 1.71356201171875;
-	setAttr ".LeftUpLegTy" 17.449498698781913;
-	setAttr ".LeftUpLegTz" -0.075529478490352631;
-	setAttr ".LeftUpLegRz" -90;
-	setAttr ".LeftUpLegJointOrientx" -1.0129830168048274e-16;
-	setAttr ".LeftUpLegJointOrienty" 1.0129830168048278e-16;
-	setAttr ".LeftUpLegJointOrientz" -89.999999999999986;
-	setAttr ".LeftUpLegMinRLimitx" -45;
-	setAttr ".LeftUpLegMinRLimity" -45;
-	setAttr ".LeftUpLegMinRLimitz" -45;
-	setAttr ".LeftUpLegMaxRLimitx" 45;
-	setAttr ".LeftUpLegMaxRLimity" 45;
-	setAttr ".LeftUpLegMaxRLimitz" 45;
-	setAttr ".LeftLegTx" 1.7135620117187504;
-	setAttr ".LeftLegTy" 8.5443220138549822;
-	setAttr ".LeftLegTz" -0.075529478490352631;
-	setAttr ".LeftLegRz" -90;
-	setAttr ".LeftLegMinRLimitx" -45;
-	setAttr ".LeftLegMinRLimity" -45;
-	setAttr ".LeftLegMinRLimitz" -45;
-	setAttr ".LeftLegMaxRLimitx" 45;
-	setAttr ".LeftLegMaxRLimity" 45;
-	setAttr ".LeftLegMaxRLimitz" 45;
-	setAttr ".LeftFootTx" 1.7135620117187498;
-	setAttr ".LeftFootTy" 1.425541043281557;
-	setAttr ".LeftFootTz" -0.075529478490352644;
-	setAttr ".LeftFootRx" 1.5162929588391274;
-	setAttr ".LeftFootRy" -63.60330078137531;
-	setAttr ".LeftFootRz" -91.69269009173739;
-	setAttr ".LeftFootSz" 1.0000000000000002;
-	setAttr ".LeftFootJointOrientx" 1.5162929588391263;
-	setAttr ".LeftFootJointOrienty" -63.603300781375289;
-	setAttr ".LeftFootJointOrientz" -1.6926900917373879;
-	setAttr ".LeftFootMinRLimitx" -45;
-	setAttr ".LeftFootMinRLimity" -45;
-	setAttr ".LeftFootMinRLimitz" -45;
-	setAttr ".LeftFootMaxRLimitx" 45;
-	setAttr ".LeftFootMaxRLimity" 45;
-	setAttr ".LeftFootMaxRLimitz" 45;
-	setAttr ".RightUpLegTx" -1.713559627532959;
-	setAttr ".RightUpLegTy" 17.449500606130545;
-	setAttr ".RightUpLegTz" -0.075529500842094421;
-	setAttr ".RightUpLegRz" -90;
-	setAttr ".RightUpLegJointOrientz" -89.999999999999986;
-	setAttr ".RightUpLegMinRLimitx" -45;
-	setAttr ".RightUpLegMinRLimity" -45;
-	setAttr ".RightUpLegMinRLimitz" -45;
-	setAttr ".RightUpLegMaxRLimitx" 45;
-	setAttr ".RightUpLegMaxRLimity" 45;
-	setAttr ".RightUpLegMaxRLimitz" 45;
-	setAttr ".RightLegTx" -1.7135596275329585;
-	setAttr ".RightLegTy" 8.5443201065063477;
-	setAttr ".RightLegTz" -0.075529500842094435;
-	setAttr ".RightLegRz" -90;
-	setAttr ".RightLegMinRLimitx" -45;
-	setAttr ".RightLegMinRLimity" -45;
-	setAttr ".RightLegMinRLimitz" -45;
-	setAttr ".RightLegMaxRLimitx" 45;
-	setAttr ".RightLegMaxRLimity" 45;
-	setAttr ".RightLegMaxRLimitz" 45;
-	setAttr ".RightFootTx" -1.7135596275329592;
-	setAttr ".RightFootTy" 1.4255399703979492;
-	setAttr ".RightFootTz" -0.075529500842094408;
-	setAttr ".RightFootRx" -1.3949750644807759;
-	setAttr ".RightFootRy" -63.604907086867073;
-	setAttr ".RightFootRz" -88.442749160456472;
-	setAttr ".RightFootJointOrientx" -1.3949750644807761;
-	setAttr ".RightFootJointOrienty" -63.604907086867073;
-	setAttr ".RightFootJointOrientz" 1.5572508395435145;
-	setAttr ".RightFootMinRLimitx" -45;
-	setAttr ".RightFootMinRLimity" -45;
-	setAttr ".RightFootMinRLimitz" -45;
-	setAttr ".RightFootMaxRLimitx" 45;
-	setAttr ".RightFootMaxRLimity" 45;
-	setAttr ".RightFootMaxRLimitz" 45;
-	setAttr ".SpineTy" 19.540725708007813;
-	setAttr ".SpineMinRLimitx" -45;
-	setAttr ".SpineMinRLimity" -45;
-	setAttr ".SpineMinRLimitz" -45;
-	setAttr ".SpineMaxRLimitx" 45;
-	setAttr ".SpineMaxRLimity" 45;
-	setAttr ".SpineMaxRLimitz" 45;
-	setAttr ".LeftArmTx" 3.1524026393890381;
-	setAttr ".LeftArmTy" 25.866430282592773;
-	setAttr ".LeftArmTz" -0.5012434720993042;
-	setAttr ".LeftArmRz" -48.048000000000094;
-	setAttr ".LeftArmMinRLimitx" -45;
-	setAttr ".LeftArmMinRLimity" -45;
-	setAttr ".LeftArmMinRLimitz" -45;
-	setAttr ".LeftArmMaxRLimitx" 45;
-	setAttr ".LeftArmMaxRLimity" 45;
-	setAttr ".LeftArmMaxRLimitz" 45;
-	setAttr ".LeftForeArmTx" 5.9212703679628946;
-	setAttr ".LeftForeArmTy" 22.473430631488053;
-	setAttr ".LeftForeArmTz" -0.5012434720993042;
-	setAttr ".LeftForeArmRz" -48.048000000000094;
-	setAttr ".LeftForeArmMinRLimitx" -45;
-	setAttr ".LeftForeArmMinRLimity" -45;
-	setAttr ".LeftForeArmMinRLimitz" -45;
-	setAttr ".LeftForeArmMaxRLimitx" 45;
-	setAttr ".LeftForeArmMaxRLimity" 45;
-	setAttr ".LeftForeArmMaxRLimitz" 45;
-	setAttr ".LeftHandTx" 8.9356975505303371;
-	setAttr ".LeftHandTy" 19.119922633643331;
-	setAttr ".LeftHandTz" -0.2862213850021379;
-	setAttr ".LeftHandRx" -93.479326146528507;
-	setAttr ".LeftHandRy" -3.8351729537979877;
-	setAttr ".LeftHandRz" -48.04800482967169;
-	setAttr ".LeftHandMinRLimitx" -45;
-	setAttr ".LeftHandMinRLimity" -45;
-	setAttr ".LeftHandMinRLimitz" -45;
-	setAttr ".LeftHandMaxRLimitx" 45;
-	setAttr ".LeftHandMaxRLimity" 45;
-	setAttr ".LeftHandMaxRLimitz" 45;
-	setAttr ".RightArmTx" -3.152400016784668;
-	setAttr ".RightArmTy" 25.866399765014645;
-	setAttr ".RightArmTz" -0.501242995262146;
-	setAttr ".RightArmRx" 180;
-	setAttr ".RightArmRz" 48.047999957437739;
-	setAttr ".RightArmMinRLimitx" -45;
-	setAttr ".RightArmMinRLimity" -45;
-	setAttr ".RightArmMinRLimitz" -45;
-	setAttr ".RightArmMaxRLimitx" 45;
-	setAttr ".RightArmMaxRLimity" 45;
-	setAttr ".RightArmMaxRLimitz" 45;
-	setAttr ".RightForeArmTx" -5.9212698936462562;
-	setAttr ".RightForeArmTy" 22.473400115966797;
-	setAttr ".RightForeArmTz" -0.50124299526214655;
-	setAttr ".RightForeArmRx" 180;
-	setAttr ".RightForeArmRz" 48.047999957437739;
-	setAttr ".RightForeArmMinRLimitx" -45;
-	setAttr ".RightForeArmMinRLimity" -45;
-	setAttr ".RightForeArmMinRLimitz" -45;
-	setAttr ".RightForeArmMaxRLimitx" 45;
-	setAttr ".RightForeArmMaxRLimity" 45;
-	setAttr ".RightForeArmMaxRLimitz" 45;
-	setAttr ".RightHandTx" -8.9357004165649467;
-	setAttr ".RightHandTy" 19.119899749755866;
-	setAttr ".RightHandTz" -0.28622099757194552;
-	setAttr ".RightHandRx" 86.520673853471507;
-	setAttr ".RightHandRy" 3.835172953797986;
-	setAttr ".RightHandRz" 48.048004787109313;
-	setAttr ".RightHandSx" 0.99999999999999989;
-	setAttr ".RightHandMinRLimitx" -45;
-	setAttr ".RightHandMinRLimity" -45;
-	setAttr ".RightHandMinRLimitz" -45;
-	setAttr ".RightHandMaxRLimitx" 45;
-	setAttr ".RightHandMaxRLimity" 45;
-	setAttr ".RightHandMaxRLimitz" 45;
-	setAttr ".HeadTy" 28.859243392944336;
-	setAttr ".HeadMinRLimitx" -45;
-	setAttr ".HeadMinRLimity" -45;
-	setAttr ".HeadMinRLimitz" -45;
-	setAttr ".HeadMaxRLimitx" 45;
-	setAttr ".HeadMaxRLimity" 45;
-	setAttr ".HeadMaxRLimitz" 45;
-	setAttr ".LeftToeBaseTx" 1.681193947792053;
-	setAttr ".LeftToeBaseTy" 0.33023354411125139;
-	setAttr ".LeftToeBaseTz" 2.1322357654571533;
-	setAttr ".LeftToeBaseRy" 13.000000000000032;
-	setAttr ".LeftToeBaseSy" 1.0000000000000002;
-	setAttr ".LeftToeBaseJointOrientx" 64.200853653932853;
-	setAttr ".LeftToeBaseJointOrienty" 5.7377035220878394;
-	setAttr ".LeftToeBaseJointOrientz" 102.43734830998898;
-	setAttr ".LeftToeBaseMinRLimitx" -45;
-	setAttr ".LeftToeBaseMinRLimity" -45;
-	setAttr ".LeftToeBaseMinRLimitz" -45;
-	setAttr ".LeftToeBaseMaxRLimitx" 45;
-	setAttr ".LeftToeBaseMaxRLimity" 45;
-	setAttr ".LeftToeBaseMaxRLimitz" 45;
-	setAttr ".RightToeBaseTx" -1.6837828159332275;
-	setAttr ".RightToeBaseTy" 0.33023399114608698;
-	setAttr ".RightToeBaseTz" 2.1322400569915771;
-	setAttr ".RightToeBaseRx" 180;
-	setAttr ".RightToeBaseRy" -13.000000000000028;
-	setAttr ".RightToeBaseSy" 0.99999999999999978;
-	setAttr ".RightToeBaseSz" 0.99999999999999967;
-	setAttr ".RightToeBaseJointOrientx" -115.79907132458563;
-	setAttr ".RightToeBaseJointOrienty" -5.7376880842396165;
-	setAttr ".RightToeBaseJointOrientz" 77.622877919052371;
-	setAttr ".RightToeBaseMinRLimitx" -45;
-	setAttr ".RightToeBaseMinRLimity" -45;
-	setAttr ".RightToeBaseMinRLimitz" -45;
-	setAttr ".RightToeBaseMaxRLimitx" 45;
-	setAttr ".RightToeBaseMaxRLimity" 45;
-	setAttr ".RightToeBaseMaxRLimitz" 45;
-	setAttr ".LeftShoulderTx" 0.69048332080376185;
-	setAttr ".LeftShoulderTy" 26.159719529484239;
-	setAttr ".LeftShoulderTz" -0.5012434720993042;
-	setAttr ".LeftShoulderMinRLimitx" -45;
-	setAttr ".LeftShoulderMinRLimity" -45;
-	setAttr ".LeftShoulderMinRLimitz" -45;
-	setAttr ".LeftShoulderMaxRLimitx" 45;
-	setAttr ".LeftShoulderMaxRLimity" 45;
-	setAttr ".LeftShoulderMaxRLimitz" 45;
-	setAttr ".RightShoulderTx" -0.69011666237455849;
-	setAttr ".RightShoulderTy" 26.159723344181504;
-	setAttr ".RightShoulderTz" -0.501242995262146;
-	setAttr ".RightShoulderRx" 180;
-	setAttr ".RightShoulderJointOrientx" -180;
-	setAttr ".RightShoulderMinRLimitx" -45;
-	setAttr ".RightShoulderMinRLimity" -45;
-	setAttr ".RightShoulderMinRLimitz" -45;
-	setAttr ".RightShoulderMaxRLimitx" 45;
-	setAttr ".RightShoulderMaxRLimity" 45;
-	setAttr ".RightShoulderMaxRLimitz" 45;
-	setAttr ".NeckTy" 26.713823318481445;
-	setAttr ".NeckMinRLimitx" -45;
-	setAttr ".NeckMinRLimity" -45;
-	setAttr ".NeckMinRLimitz" -45;
-	setAttr ".NeckMaxRLimitx" 45;
-	setAttr ".NeckMaxRLimity" 45;
-	setAttr ".NeckMaxRLimitz" 45;
-	setAttr ".Spine1Ty" 22.146780014038086;
-	setAttr ".Spine1MinRLimitx" -45;
-	setAttr ".Spine1MinRLimity" -45;
-	setAttr ".Spine1MinRLimitz" -45;
-	setAttr ".Spine1MaxRLimitx" 45;
-	setAttr ".Spine1MaxRLimity" 45;
-	setAttr ".Spine1MaxRLimitz" 45;
-	setAttr ".Spine2Ty" 24.549215316772461;
-	setAttr ".Spine2MinRLimitx" -45;
-	setAttr ".Spine2MinRLimity" -45;
-	setAttr ".Spine2MinRLimitz" -45;
-	setAttr ".Spine2MaxRLimitx" 45;
-	setAttr ".Spine2MaxRLimity" 45;
-	setAttr ".Spine2MaxRLimitz" 45;
-	setAttr ".LeafLeftForeArmRoll1Tx" 7.5208673438748601;
-	setAttr ".LeafLeftForeArmRoll1Ty" 20.693901058766592;
-	setAttr ".LeafLeftForeArmRoll1Tz" -0.42809754610061646;
-	setAttr ".LeafLeftForeArmRoll1Rx" -93.479326146528507;
-	setAttr ".LeafLeftForeArmRoll1Ry" -3.8351729537979877;
-	setAttr ".LeafLeftForeArmRoll1Rz" -48.04800482967169;
-	setAttr ".LeafLeftForeArmRoll1JointOrientx" -93.479326146528507;
-	setAttr ".LeafLeftForeArmRoll1JointOrienty" -3.8351729537979877;
-	setAttr ".LeafLeftForeArmRoll1JointOrientz" -4.8296715997080133e-06;
-	setAttr ".LeafLeftForeArmRoll1MinRLimitx" -45;
-	setAttr ".LeafLeftForeArmRoll1MinRLimity" -45;
-	setAttr ".LeafLeftForeArmRoll1MinRLimitz" -45;
-	setAttr ".LeafLeftForeArmRoll1MaxRLimitx" 45;
-	setAttr ".LeafLeftForeArmRoll1MaxRLimity" 45;
-	setAttr ".LeafLeftForeArmRoll1MaxRLimitz" 45;
-	setAttr ".LeafRightForeArmRoll1Tx" -7.5208702087402362;
-	setAttr ".LeafRightForeArmRoll1Ty" 20.693899154663079;
-	setAttr ".LeafRightForeArmRoll1Tz" -0.42809799313545244;
-	setAttr ".LeafRightForeArmRoll1Rx" 86.520673853471507;
-	setAttr ".LeafRightForeArmRoll1Ry" 3.835172953797986;
-	setAttr ".LeafRightForeArmRoll1Rz" 48.048004787109313;
-	setAttr ".LeafRightForeArmRoll1Sx" 0.99999999999999989;
-	setAttr ".LeafRightForeArmRoll1JointOrientx" -93.479326146528507;
-	setAttr ".LeafRightForeArmRoll1JointOrienty" -3.8351729537979913;
-	setAttr ".LeafRightForeArmRoll1JointOrientz" -4.8296715738080057e-06;
-	setAttr ".LeafRightForeArmRoll1MinRLimitx" -45;
-	setAttr ".LeafRightForeArmRoll1MinRLimity" -45;
-	setAttr ".LeafRightForeArmRoll1MinRLimitz" -45;
-	setAttr ".LeafRightForeArmRoll1MaxRLimitx" 45;
-	setAttr ".LeafRightForeArmRoll1MaxRLimity" 45;
-	setAttr ".LeafRightForeArmRoll1MaxRLimitz" 45;
-createNode HIKProperty2State -n "HIKproperties1";
-	rename -uid "47E53F33-4EAF-9FC1-8E1B-0EA740B1E3CF";
-	setAttr ".OutputPropertySetState" -type "HIKPropertySetState" ;
-	setAttr ".lkr" 0.60000002384185791;
-	setAttr ".rkr" 0.60000002384185791;
-	setAttr ".FootBottomToAnkle" 1.425541043281557;
-	setAttr ".FootBackToAnkle" 1.103882621973753;
-	setAttr ".FootMiddleToAnkle" 2.207765243947506;
-	setAttr ".FootFrontToMiddle" 1.103882621973753;
-	setAttr ".FootInToAnkle" 1.103882621973753;
-	setAttr ".FootOutToAnkle" 1.103882621973753;
-	setAttr ".HandBottomToWrist" 0.64095830622001415;
-	setAttr ".HandBackToWrist" 0.01;
-	setAttr ".HandMiddleToWrist" 1.4571250610053541;
-	setAttr ".HandFrontToMiddle" 1.4571250610053541;
-	setAttr ".HandInToWrist" 1.4571250610053541;
-	setAttr ".HandOutToWrist" 1.4571250610053541;
-	setAttr ".LeftHandThumbTip" 0.20029947069375442;
-	setAttr ".LeftHandIndexTip" 0.20029947069375442;
-	setAttr ".LeftHandMiddleTip" 0.20029947069375442;
-	setAttr ".LeftHandRingTip" 0.20029947069375442;
-	setAttr ".LeftHandPinkyTip" 0.20029947069375442;
-	setAttr ".LeftHandExtraFingerTip" 0.20029947069375442;
-	setAttr ".RightHandThumbTip" 0.20029947069375442;
-	setAttr ".RightHandIndexTip" 0.20029947069375442;
-	setAttr ".RightHandMiddleTip" 0.20029947069375442;
-	setAttr ".RightHandRingTip" 0.20029947069375442;
-	setAttr ".RightHandPinkyTip" 0.20029947069375442;
-	setAttr ".RightHandExtraFingerTip" 0.20029947069375442;
-	setAttr ".LeftFootThumbTip" 0.20029947069375442;
-	setAttr ".LeftFootIndexTip" 0.20029947069375442;
-	setAttr ".LeftFootMiddleTip" 0.20029947069375442;
-	setAttr ".LeftFootRingTip" 0.20029947069375442;
-	setAttr ".LeftFootPinkyTip" 0.20029947069375442;
-	setAttr ".LeftFootExtraFingerTip" 0.20029947069375442;
-	setAttr ".RightFootThumbTip" 0.20029947069375442;
-	setAttr ".RightFootIndexTip" 0.20029947069375442;
-	setAttr ".RightFootMiddleTip" 0.20029947069375442;
-	setAttr ".RightFootRingTip" 0.20029947069375442;
-	setAttr ".RightFootPinkyTip" 0.20029947069375442;
-	setAttr ".RightFootExtraFingerTip" 0.20029947069375442;
-	setAttr ".LeftUpLegRollEx" 1;
-	setAttr ".LeftLegRollEx" 1;
-	setAttr ".RightUpLegRollEx" 1;
-	setAttr ".RightLegRollEx" 1;
-	setAttr ".LeftArmRollEx" 1;
-	setAttr ".LeftForeArmRollEx" 1;
-	setAttr ".RightArmRollEx" 1;
-	setAttr ".RightForeArmRollEx" 1;
-	setAttr ".ParamLeafLeftUpLegRoll1" 0;
-	setAttr ".ParamLeafLeftLegRoll1" 0.2;
-	setAttr ".ParamLeafRightUpLegRoll1" 0;
-	setAttr ".ParamLeafRightLegRoll1" 0.2;
-	setAttr ".ParamLeafLeftArmRoll1" 0;
-	setAttr ".ParamLeafLeftForeArmRoll1" 0.2;
-	setAttr ".ParamLeafRightArmRoll1" 0;
-	setAttr ".ParamLeafRightForeArmRoll1" 0.2;
-	setAttr ".ParamLeafLeftUpLegRoll2" 0.22;
-	setAttr ".ParamLeafLeftLegRoll2" 0.4;
-	setAttr ".ParamLeafRightUpLegRoll2" 0.22;
-	setAttr ".ParamLeafRightLegRoll2" 0.4;
-	setAttr ".ParamLeafLeftArmRoll2" 0.22;
-	setAttr ".ParamLeafLeftForeArmRoll2" 0.4;
-	setAttr ".ParamLeafRightArmRoll2" 0.22;
-	setAttr ".ParamLeafRightForeArmRoll2" 0.4;
-	setAttr ".ParamLeafLeftUpLegRoll3" 0.44;
-	setAttr ".ParamLeafLeftLegRoll3" 0.6;
-	setAttr ".ParamLeafRightUpLegRoll3" 0.44;
-	setAttr ".ParamLeafRightLegRoll3" 0.6;
-	setAttr ".ParamLeafLeftArmRoll3" 0.44;
-	setAttr ".ParamLeafLeftForeArmRoll3" 0.6;
-	setAttr ".ParamLeafRightArmRoll3" 0.44;
-	setAttr ".ParamLeafRightForeArmRoll3" 0.6;
-	setAttr ".ParamLeafLeftUpLegRoll4" 0.66;
-	setAttr ".ParamLeafLeftLegRoll4" 0.8;
-	setAttr ".ParamLeafRightUpLegRoll4" 0.66;
-	setAttr ".ParamLeafRightLegRoll4" 0.8;
-	setAttr ".ParamLeafLeftArmRoll4" 0.66;
-	setAttr ".ParamLeafLeftForeArmRoll4" 0.8;
-	setAttr ".ParamLeafRightArmRoll4" 0.66;
-	setAttr ".ParamLeafRightForeArmRoll4" 0.8;
-	setAttr ".ParamLeafLeftUpLegRoll5" 0.9;
-	setAttr ".ParamLeafLeftLegRoll5" 1;
-	setAttr ".ParamLeafRightUpLegRoll5" 0.9;
-	setAttr ".ParamLeafRightLegRoll5" 1;
-	setAttr ".ParamLeafLeftArmRoll5" 0.9;
-	setAttr ".ParamLeafLeftForeArmRoll5" 1;
-	setAttr ".ParamLeafRightArmRoll5" 0.9;
-	setAttr ".ParamLeafRightForeArmRoll5" 1;
-createNode HIKSolverNode -n "HIKSolverNode1";
-	rename -uid "C9151CC4-4BF1-D700-06C5-70A2679E80A4";
-	setAttr ".ihi" 0;
-	setAttr ".OutputCharacterState" -type "HIKCharacterState" ;
-createNode HIKState2SK -n "HIKState2SK1";
-	rename -uid "E065C243-4B1C-A5A2-1CE4-4286D4DD96EF";
-	setAttr ".ihi" 0;
-	setAttr ".HipsTy" 17.490451812744141;
-	setAttr ".LeftUpLegTx" 1.71356201171875;
-	setAttr ".LeftUpLegTy" -0.040950775146484375;
-	setAttr ".LeftUpLegTz" -0.075529478490352631;
-	setAttr ".LeftLegTx" 8.905177116394043;
-	setAttr ".LeftLegTy" -1.9984014443252818e-15;
-	setAttr ".LeftFootTx" 7.1187810897827131;
-	setAttr ".LeftFootTy" -1.3322676295501878e-15;
-	setAttr ".LeftFootTz" -1.3877787807814457e-17;
-	setAttr ".RightUpLegTx" -1.713559627532959;
-	setAttr ".RightUpLegTy" -0.040948867797851563;
-	setAttr ".RightUpLegTz" -0.075529500842094421;
-	setAttr ".RightLegTx" 8.9051809310913068;
-	setAttr ".RightLegTy" -1.9984014443252818e-15;
-	setAttr ".RightLegTz" -2.7755575615628914e-17;
-	setAttr ".RightFootTx" 7.1187801361084002;
-	setAttr ".RightFootTy" -1.5543122344752192e-15;
-	setAttr ".RightFootTz" 2.7755575615628914e-17;
-	setAttr ".SpineTx" 4.5525268057840067e-16;
-	setAttr ".SpineTy" 2.0502758026123047;
-	setAttr ".SpineTz" 5.0543200800046225e-32;
-	setAttr ".LeftArmTx" 2.4619193077087402;
-	setAttr ".LeftArmTy" -0.29328918457030895;
-	setAttr ".LeftArmRy" 0.00015316027892688672;
-	setAttr ".LeftArmRz" -48.048099210882519;
-	setAttr ".LeftForeArmTx" 4.3744012856815893;
-	setAttr ".LeftForeArmTy" -0.20901799545728394;
-	setAttr ".LeftForeArmTz" 1.169343582962945e-05;
-	setAttr ".LeftForeArmRy" -0.00015595690831870791;
-	setAttr ".LeftForeArmRz" 9.9253444805349502e-05;
-	setAttr ".LeftHandTx" 2.1211509629633518;
-	setAttr ".LeftHandTy" 2.711073407990483e-07;
-	setAttr ".LeftHandTz" -1.6481416054148212e-07;
-	setAttr ".RightArmTx" -2.4622833728790283;
-	setAttr ".RightArmTy" 0.29332351684569957;
-	setAttr ".RightArmTz" -1.1102230246251565e-16;
-	setAttr ".RightArmRy" 0.00025333272770884652;
-	setAttr ".RightArmRz" -48.048152005304658;
-	setAttr ".RightForeArmTx" -4.3744029127072928;
-	setAttr ".RightForeArmTy" 0.20901236890232155;
-	setAttr ".RightForeArmTz" -1.9341379616677479e-05;
-	setAttr ".RightForeArmRy" -0.00025878346467818569;
-	setAttr ".RightForeArmRz" 0.00015204786689483951;
-	setAttr ".RightHandTx" -2.1211665814107601;
-	setAttr ".RightHandTy" -1.5201146814636246e-06;
-	setAttr ".RightHandTz" 1.4140624102765287e-05;
-	setAttr ".HeadTx" 2.3818951876781926e-15;
-	setAttr ".HeadTy" 2.1454200744628906;
-	setAttr ".HeadTz" 1.3222169225845796e-30;
-	setAttr ".LeftToeBaseTx" 2.4647461362984715;
-	setAttr ".LeftToeBaseTy" 3.9518134986593623e-08;
-	setAttr ".LeftToeBaseTz" 2.6697351662718916e-08;
-	setAttr ".RightToeBaseTx" 2.4647166442859847;
-	setAttr ".RightToeBaseTy" -1.090836576622678e-08;
-	setAttr ".RightToeBaseTz" 5.3394747068225001e-08;
-	setAttr ".LeftShoulderTx" 0.69048333168029463;
-	setAttr ".LeftShoulderTy" 1.6105041503906214;
-	setAttr ".LeftShoulderTz" -0.5012434720993042;
-	setAttr ".RightShoulderTx" -0.69011664390564287;
-	setAttr ".RightShoulderTy" 1.6105079650878871;
-	setAttr ".RightShoulderTz" -0.501242995262146;
-	setAttr ".NeckTx" 1.9225581142281317e-15;
-	setAttr ".NeckTy" 2.1646080017089808;
-	setAttr ".NeckTz" 8.5378731383839744e-31;
-	setAttr ".Spine1Tx" 1.1573205975913374e-15;
-	setAttr ".Spine1Ty" 2.6060543060302734;
-	setAttr ".Spine1Tz" 2.5697679486376965e-31;
-	setAttr ".Spine2Tx" 1.6003433929608069e-15;
-	setAttr ".Spine2Ty" 2.402435302734375;
-	setAttr ".Spine2Tz" 5.3302147167132376e-31;
-	setAttr ".LeafLeftForeArmRoll1Tx" 2.3927883321810945;
-	setAttr ".LeafLeftForeArmRoll1Ty" -9.0910223349283115e-07;
-	setAttr ".LeafLeftForeArmRoll1Tz" 0.073145928415043915;
-	setAttr ".LeafRightForeArmRoll1Tx" -2.3927692893802952;
-	setAttr ".LeafRightForeArmRoll1Ty" -2.0699443467719902e-05;
-	setAttr ".LeafRightForeArmRoll1Tz" -0.0731449831108959;
-createNode HIKControlSetNode -n "Eclair_ControlRig";
-	rename -uid "7B83EEC9-42B0-A4DB-E2BB-5F945044EA42";
-	setAttr ".ihi" 0;
-createNode keyingGroup -n "Eclair_FullBodyKG4";
-	rename -uid "6A9D2B14-4DE4-3F31-F530-CC940F683376";
-	setAttr ".ihi" 0;
-	setAttr -s 11 ".dnsm";
-	setAttr -s 42 ".act";
-	setAttr ".cat" -type "string" "FullBody";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_HipsBPKG3";
-	rename -uid "6E55585B-4D36-A828-5CEF-BB895AA18D59";
-	setAttr ".ihi" 0;
-	setAttr -s 12 ".dnsm";
-	setAttr -s 2 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_ChestBPKG3";
-	rename -uid "19C530C3-49B7-7CFB-F916-A89D5E653290";
-	setAttr ".ihi" 0;
-	setAttr -s 21 ".dnsm";
-	setAttr -s 5 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_LeftArmBPKG3";
-	rename -uid "3712FA12-44EC-48BD-6EB5-D3AD1BDE9CB1";
-	setAttr ".ihi" 0;
-	setAttr -s 33 ".dnsm";
-	setAttr -s 8 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_RightArmBPKG3";
-	rename -uid "ACD64C4A-4097-F935-234A-29BCFAAA9883";
-	setAttr ".ihi" 0;
-	setAttr -s 33 ".dnsm";
-	setAttr -s 8 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_LeftLegBPKG3";
-	rename -uid "D40CB8CC-4035-CBBD-24EE-77BA1A15AC41";
-	setAttr ".ihi" 0;
-	setAttr -s 36 ".dnsm";
-	setAttr -s 8 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_RightLegBPKG3";
-	rename -uid "6A330F66-4A67-43C5-B65E-78A86961AC3A";
-	setAttr ".ihi" 0;
-	setAttr -s 36 ".dnsm";
-	setAttr -s 8 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_HeadBPKG3";
-	rename -uid "C52209CD-4743-D39D-8C40-A28A7038B63C";
-	setAttr ".ihi" 0;
-	setAttr -s 12 ".dnsm";
-	setAttr -s 3 ".act";
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_LeftHandBPKG4";
-	rename -uid "6996D4D1-4174-39DA-C5CD-DC9A040517CB";
-	setAttr ".ihi" 0;
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_RightHandBPKG4";
-	rename -uid "CE4D388C-45B4-CE19-1762-54B78D115774";
-	setAttr ".ihi" 0;
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_LeftFootBPKG4";
-	rename -uid "47E24E1D-44EA-C358-D3FE-42A41196F3AD";
-	setAttr ".ihi" 0;
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode keyingGroup -n "Eclair_RightFootBPKG4";
-	rename -uid "98BB1197-413E-E430-FE93-7E8D1EFBDEA2";
-	setAttr ".ihi" 0;
-	setAttr ".cat" -type "string" "BodyPart";
-	setAttr ".mr" yes;
-createNode HIKFK2State -n "HIKFK2State1";
-	rename -uid "0CA9DC4F-4E19-7743-62E4-EB9DBFE140D6";
-	setAttr ".ihi" 0;
-	setAttr ".OutputCharacterState" -type "HIKCharacterState" ;
-createNode HIKEffector2State -n "HIKEffector2State1";
-	rename -uid "A6FBE8C6-4D6D-5D54-236D-4183B40F0A4C";
-	setAttr ".ihi" 0;
-	setAttr ".EFF" -type "HIKEffectorState" ;
-createNode HIKPinning2State -n "HIKPinning2State1";
-	rename -uid "5EAD7A26-4C6F-2EA3-EADA-8F9C6B13FDD9";
-	setAttr ".ihi" 0;
-	setAttr ".OutputEffectorState" -type "HIKEffectorState" ;
-createNode HIKState2FK -n "HIKState2FK1";
-	rename -uid "7D403CF2-47BC-9C91-64B5-6E9AC505ECFD";
-	setAttr ".ihi" 0;
-	setAttr ".HipsGX" -type "matrix" 1 -2.2204460492503131e-16 2.2204460492503131e-16 0
-		 2.2204460492503131e-16 1 2.4651903288156619e-32 0 -2.2204460492503131e-16 2.4651903288156619e-32 1 0
-		 0 17.490451812744141 0 1;
-	setAttr ".LeftUpLegGX" -type "matrix" 1 -2.2204460492503131e-16 2.2204460492503131e-16 0
-		 2.2204460492503131e-16 1 2.4651903288156619e-32 0 -2.2204460492503131e-16 2.4651903288156619e-32 1 0
-		 1.71356201171875 17.449501037597656 -0.075529478490352631 1;
-	setAttr ".LeftLegGX" -type "matrix" 1 0 4.4408920985006262e-16 0 5.2939559203393771e-23 1 -1.1920928955078125e-07 0
-		 -4.4408920985006262e-16 1.1920928955078125e-07 1 0 1.71356201171875 8.5443239212036133 -0.075529478490352631 1;
-	setAttr ".LeftFootGX" -type "matrix" 1 -3.0531133177191805e-16 1.1102230246251565e-16 0
-		 3.0531133177191805e-16 1 8.3266726846886741e-17 0 -1.1102230246251565e-16 -8.3266726846886741e-17 1 0
-		 1.71356201171875 1.4255428314208984 -0.075529478490352631 1;
-	setAttr ".RightUpLegGX" -type "matrix" 1 5.9604644775390625e-08 2.2204460492503131e-16 0
-		 -5.9604644775390625e-08 1 -1.3234889800848443e-23 0 -2.2204460492503131e-16 0 1 0
-		 -1.713559627532959 17.449502944946289 -0.075529500842094421 1;
-	setAttr ".RightLegGX" -type "matrix" 1 -3.5527136788005009e-15 2.9802322387695313e-08 0
-		 -3.5527136788005009e-15 1 2.384185791015625e-07 0 -2.9802322387695313e-08 -2.384185791015625e-07 1 0
-		 -1.713559627532959 8.5443220138549805 -0.075529500842094421 1;
-	setAttr ".RightFootGX" -type "matrix" 1 -5.5511151231257827e-16 -8.4740961634076533e-33 0
-		 5.5511151231257827e-16 1 2.7755575615628914e-17 0 -6.9333433916902335e-33 -2.7755575615628914e-17 1 0
-		 -1.713559627532959 1.425541877746582 -0.075529500842094421 1;
-	setAttr ".SpineGX" -type "matrix" 1 -4.4408920985006262e-16 4.4408920985006262e-16 0
-		 4.4408920985006262e-16 1 9.8607613152626476e-32 0 -4.4408920985006262e-16 9.8607613152626476e-32 1 0
-		 4.5525268057840067e-16 19.540727615356445 5.0543200800046225e-32 1;
-	setAttr ".LeftArmGX" -type "matrix" 1 -1.7285329931837623e-06 -1.6561502889089752e-06 0
-		 1.7285364037888939e-06 1 2.1056757759652101e-06 0 1.6561466509301681e-06 -2.1056785044493154e-06 1 0
-		 3.1524026393890381 25.866432189941406 -0.5012434720993042 1;
-	setAttr ".LeftForeArmGX" -type "matrix" 1 -4.3992587350771828e-15 -5.9604644775390625e-08 0
-		 -2.7061686225238191e-15 1 -1.1920928955078125e-07 0 5.9604644775390625e-08 1.1920928955078125e-07 1 0
-		 5.9212703704833984 22.473432540893555 -0.5012434720993042 1;
-	setAttr ".LeftHandGX" -type "matrix" 1 -9.0205620750793969e-16 9.9920072216264089e-16 0
-		 9.0205620750793969e-16 1 2.2204460492503131e-16 0 -9.9920072216264089e-16 -2.2204460492503131e-16 1 0
-		 8.9356975555419922 19.119924545288086 -0.28622138500213623 1;
-	setAttr ".RightArmGX" -type "matrix" 1 2.7418088848207844e-06 2.7882465474249329e-06 0
-		 -2.7418184345151531e-06 1 3.4388974654575577e-06 0 -2.7882369977305643e-06 -3.4389051961625228e-06 1 0
-		 -3.152400016784668 25.866401672363281 -0.501242995262146 1;
-	setAttr ".RightForeArmGX" -type "matrix" 1 2.9802325940408991e-08 -2.0861622829215776e-07 0
-		 -2.9802313505911115e-08 1 5.9604641222676946e-08 0 2.0861622829215776e-07 -5.9604634117249589e-08 1 0
-		 -5.9212698936462402 22.47340202331543 -0.501242995262146 1;
-	setAttr ".RightHandGX" -type "matrix" 1 -7.8859847356383111e-16 1.1102230246251565e-15 0
-		 7.8859847356383111e-16 1 -1.6653345369377348e-16 0 -1.1102230246251565e-15 1.6653345369377348e-16 1 0
-		 -8.9357004165649414 19.119901657104492 -0.28622099757194519 1;
-	setAttr ".HeadGX" -type "matrix" 1 -1.3322676295501878e-15 1.3322676295501878e-15 0
-		 1.3322676295501878e-15 1 8.8746851837363828e-31 0 -1.3322676295501878e-15 8.8746851837363828e-31 1 0
-		 7.5173699730368693e-15 28.859245300292969 3.0165457037581167e-30 1;
-	setAttr ".LeftToeBaseGX" -type "matrix" 1 -1.8284664651340126e-16 1.1102230246251565e-16 0
-		 1.8284664651340126e-16 1 8.3266726846886741e-17 0 -1.1102230246251565e-16 -8.3266726846886741e-17 1 0
-		 1.6811939477920532 0.33023536205291748 2.1322357654571533 1;
-	setAttr ".RightToeBaseGX" -type "matrix" 1 -4.3264682705406148e-16 -1.2008365396580775e-32 0
-		 4.3264682705406148e-16 1 2.7755575615628914e-17 0 4.0407618309516133e-39 -2.7755575615628914e-17 1 0
-		 -1.6837828159332275 0.33023595809936523 2.1322400569915771 1;
-	setAttr ".LeftShoulderGX" -type "matrix" 1 -9.0205620750793969e-16 8.8817841970012523e-16 0
-		 9.0205620750793969e-16 1 4.0675640425458421e-31 0 -8.8817841970012523e-16 3.944304526105059e-31 1 0
-		 0.69048333168029785 26.159721374511719 -0.5012434720993042 1;
-	setAttr ".RightShoulderGX" -type "matrix" 1 -8.8817841970012523e-16 8.8817841970012523e-16 0
-		 8.8817841970012523e-16 1 3.944304526105059e-31 0 -8.8817841970012523e-16 3.944304526105059e-31 1 0
-		 -0.69011664390563965 26.159725189208984 -0.501242995262146 1;
-	setAttr ".NeckGX" -type "matrix" 1 -1.1102230246251565e-15 1.1102230246251565e-15 0
-		 1.1102230246251565e-15 1 6.1629758220391547e-31 0 -1.1102230246251565e-15 6.1629758220391547e-31 1 0
-		 5.1354747853586766e-15 26.713825225830078 1.6943287811735371e-30 1;
-	setAttr ".Spine1GX" -type "matrix" 1 -6.6613381477509392e-16 6.6613381477509392e-16 0
-		 6.6613381477509392e-16 1 2.2186712959340957e-31 0 -6.6613381477509392e-16 2.2186712959340957e-31 1 0
-		 1.6125732781697381e-15 22.146781921386719 3.0751999566381588e-31 1;
-	setAttr ".Spine2GX" -type "matrix" 1 -8.8817841970012523e-16 8.8817841970012523e-16 0
-		 8.8817841970012523e-16 1 3.944304526105059e-31 0 -8.8817841970012523e-16 3.944304526105059e-31 1 0
-		 3.2129166711305449e-15 24.549217224121094 8.4054146733513964e-31 1;
-	setAttr ".LeafLeftForeArmRoll1GX" -type "matrix" 1 2.9802318834981634e-08 -5.9604644775390625e-08 0
-		 -2.9802325940408991e-08 1 -1.1920928955078125e-07 0 5.9604644775390625e-08 1.1920928955078125e-07 1 0
-		 7.5208673477172852 20.693902969360352 -0.4280974268913269 1;
-	setAttr ".LeafRightForeArmRoll1GX" -type "matrix" 1 2.9802325940408991e-08 -2.0861622829215776e-07 0
-		 -2.9802313505911115e-08 1 5.9604641222676946e-08 0 2.0861622829215776e-07 -5.9604634117249589e-08 1 0
-		 -7.5208702087402344 20.693901062011719 -0.42809778451919556 1;
-createNode HIKState2FK -n "HIKState2FK2";
-	rename -uid "2B4292B3-4BA5-8164-D80D-20B662DD2938";
-	setAttr ".ihi" 0;
-createNode HIKEffectorFromCharacter -n "HIKEffectorFromCharacter1";
-	rename -uid "D9A0F214-464F-025E-9AE4-9C9C8E192A9E";
-	setAttr ".ihi" 0;
-	setAttr ".OutputEffectorState" -type "HIKEffectorState" ;
-createNode HIKEffectorFromCharacter -n "HIKEffectorFromCharacter2";
-	rename -uid "D6428017-43F4-4046-F63A-B5B71B51E515";
-	setAttr ".ihi" 0;
-createNode HIKState2Effector -n "HIKState2Effector1";
-	rename -uid "BA72B823-4540-0226-D8B7-368159FF1E2A";
-	setAttr ".ihi" 0;
-	setAttr ".HipsEffectorGXM[0]" -type "matrix" 1 -2.2204460492503131e-16 2.2204460492503131e-16 0
-		 2.2204460492503131e-16 1 2.4651903288156619e-32 0 -2.2204460492503131e-16 2.4651903288156619e-32 1 0
-		 1.1920928955078125e-06 17.449501037597656 -0.075529485940933228 1;
-	setAttr ".LeftAnkleEffectorGXM[0]" -type "matrix" 1 -3.0531133177191805e-16 1.1102230246251565e-16 0
-		 3.0531133177191805e-16 1 8.3266726846886741e-17 0 -1.1102230246251565e-16 -8.3266726846886741e-17 1 0
-		 1.71356201171875 1.4255428314208984 -0.075529478490352631 1;
-	setAttr ".RightAnkleEffectorGXM[0]" -type "matrix" 1 -5.5511151231257827e-16 -8.4740961634076533e-33 0
-		 5.5511151231257827e-16 1 2.7755575615628914e-17 0 -6.9333433916902335e-33 -2.7755575615628914e-17 1 0
-		 -1.713559627532959 1.425541877746582 -0.075529500842094421 1;
-	setAttr ".LeftWristEffectorGXM[0]" -type "matrix" 1 -9.0205620750793969e-16 9.9920072216264089e-16 0
-		 9.0205620750793969e-16 1 2.2204460492503131e-16 0 -9.9920072216264089e-16 -2.2204460492503131e-16 1 0
-		 8.9356975555419922 19.119924545288086 -0.28622138500213623 1;
-	setAttr ".RightWristEffectorGXM[0]" -type "matrix" 1 -7.8859847356383111e-16 1.1102230246251565e-15 0
-		 7.8859847356383111e-16 1 -1.6653345369377348e-16 0 -1.1102230246251565e-15 1.6653345369377348e-16 1 0
-		 -8.9357004165649414 19.119901657104492 -0.28622099757194519 1;
-	setAttr ".LeftKneeEffectorGXM[0]" -type "matrix" 1 0 4.4408920985006262e-16 0 5.2939559203393771e-23 1 -1.1920928955078125e-07 0
-		 -4.4408920985006262e-16 1.1920928955078125e-07 1 0 1.71356201171875 8.5443239212036133 -0.075529478490352631 1;
-	setAttr ".RightKneeEffectorGXM[0]" -type "matrix" 1 -3.5527136788005009e-15 2.9802322387695313e-08 0
-		 -3.5527136788005009e-15 1 2.384185791015625e-07 0 -2.9802322387695313e-08 -2.384185791015625e-07 1 0
-		 -1.713559627532959 8.5443220138549805 -0.075529500842094421 1;
-	setAttr ".LeftElbowEffectorGXM[0]" -type "matrix" 1 -4.3992587350771828e-15 -5.9604644775390625e-08 0
-		 -2.7061686225238191e-15 1 -1.1920928955078125e-07 0 5.9604644775390625e-08 1.1920928955078125e-07 1 0
-		 5.9212703704833984 22.473432540893555 -0.5012434720993042 1;
-	setAttr ".RightElbowEffectorGXM[0]" -type "matrix" 1 2.9802325940408991e-08 -2.0861622829215776e-07 0
-		 -2.9802313505911115e-08 1 5.9604641222676946e-08 0 2.0861622829215776e-07 -5.9604634117249589e-08 1 0
-		 -5.9212698936462402 22.47340202331543 -0.501242995262146 1;
-	setAttr ".ChestOriginEffectorGXM[0]" -type "matrix" 1 -4.4408920985006262e-16 4.4408920985006262e-16 0
-		 4.4408920985006262e-16 1 9.8607613152626476e-32 0 -4.4408920985006262e-16 9.8607613152626476e-32 1 0
-		 4.5525268057840067e-16 19.540727615356445 5.0543200800046225e-32 1;
-	setAttr ".ChestEndEffectorGXM[0]" -type "matrix" 1 -8.8817841970012523e-16 8.8817841970012523e-16 0
-		 8.8817841970012523e-16 1 3.944304526105059e-31 0 -8.8817841970012523e-16 3.944304526105059e-31 1 0
-		 0.00018334388732910156 26.159723281860352 -0.5012432336807251 1;
-	setAttr ".LeftFootEffectorGXM[0]" -type "matrix" 1 -1.8284664651340126e-16 1.1102230246251565e-16 0
-		 1.8284664651340126e-16 1 8.3266726846886741e-17 0 -1.1102230246251565e-16 -8.3266726846886741e-17 1 0
-		 1.6811939477920532 0.33023536205291748 2.1322357654571533 1;
-	setAttr ".RightFootEffectorGXM[0]" -type "matrix" 1 -4.3264682705406148e-16 -1.2008365396580775e-32 0
-		 4.3264682705406148e-16 1 2.7755575615628914e-17 0 4.0407618309516133e-39 -2.7755575615628914e-17 1 0
-		 -1.6837828159332275 0.33023595809936523 2.1322400569915771 1;
-	setAttr ".LeftShoulderEffectorGXM[0]" -type "matrix" 1 -1.7285329931837623e-06 -1.6561502889089752e-06 0
-		 1.7285364037888939e-06 1 2.1056757759652101e-06 0 1.6561466509301681e-06 -2.1056785044493154e-06 1 0
-		 3.1524026393890381 25.866432189941406 -0.5012434720993042 1;
-	setAttr ".RightShoulderEffectorGXM[0]" -type "matrix" 1 2.7418088848207844e-06 2.7882465474249329e-06 0
-		 -2.7418184345151531e-06 1 3.4388974654575577e-06 0 -2.7882369977305643e-06 -3.4389051961625228e-06 1 0
-		 -3.152400016784668 25.866401672363281 -0.501242995262146 1;
-	setAttr ".HeadEffectorGXM[0]" -type "matrix" 1 -1.3322676295501878e-15 1.3322676295501878e-15 0
-		 1.3322676295501878e-15 1 8.8746851837363828e-31 0 -1.3322676295501878e-15 8.8746851837363828e-31 1 0
-		 7.5173699730368693e-15 28.859245300292969 3.0165457037581167e-30 1;
-	setAttr ".LeftHipEffectorGXM[0]" -type "matrix" 1 -2.2204460492503131e-16 2.2204460492503131e-16 0
-		 2.2204460492503131e-16 1 2.4651903288156619e-32 0 -2.2204460492503131e-16 2.4651903288156619e-32 1 0
-		 1.71356201171875 17.449501037597656 -0.075529478490352631 1;
-	setAttr ".RightHipEffectorGXM[0]" -type "matrix" 1 5.9604644775390625e-08 2.2204460492503131e-16 0
-		 -5.9604644775390625e-08 1 -1.3234889800848443e-23 0 -2.2204460492503131e-16 0 1 0
-		 -1.713559627532959 17.449502944946289 -0.075529500842094421 1;
-createNode HIKState2Effector -n "HIKState2Effector2";
-	rename -uid "2880A33F-4B54-D560-3298-7190A3BE0670";
-	setAttr ".ihi" 0;
-createNode animCurveTL -n "CTRL_translateX";
-	rename -uid "8C18D1C6-4315-BEB0-6000-B39C07BAC907";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "CTRL_translateY";
-	rename -uid "36CE389C-4FA5-C5BC-4DD4-489AAB59057D";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTL -n "CTRL_translateZ";
-	rename -uid "1A605CFC-4A20-D8C7-4B4F-0BBEEAB044F5";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTU -n "CTRL_visibility";
-	rename -uid "7993D58E-4FB6-34B3-6F4C-4491C9A5D7B7";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-	setAttr ".kot[0]"  5;
-createNode animCurveTA -n "CTRL_rotateX";
-	rename -uid "3DAA643F-40E7-D32E-C21F-D8B70A837A0D";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "CTRL_rotateY";
-	rename -uid "51F66E4B-4615-F6F9-1ABC-5D975AEC87BC";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTA -n "CTRL_rotateZ";
-	rename -uid "74EE8D30-4617-B4B0-A93E-4E8CFD5FB7B0";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 0;
-createNode animCurveTU -n "CTRL_scaleX";
-	rename -uid "3C6D7FCC-4F67-648E-B62B-5593A7E3D220";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "CTRL_scaleY";
-	rename -uid "90C25C4A-4403-1553-1A1F-F4ACD3348412";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
-createNode animCurveTU -n "CTRL_scaleZ";
-	rename -uid "8EEA15BA-457B-3960-89EB-C3AA5659C1E2";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  0 1;
 select -ne :time1;
 	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
@@ -41915,16 +40610,7 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 	setAttr ".hwfr" 60;
 select -ne :ikSystem;
-connectAttr "CTRL_translateX.o" "|_Eclair|CTRL.tx";
-connectAttr "CTRL_translateY.o" "|_Eclair|CTRL.ty";
-connectAttr "CTRL_translateZ.o" "|_Eclair|CTRL.tz";
-connectAttr "CTRL_visibility.o" "|_Eclair|CTRL.v";
-connectAttr "CTRL_rotateX.o" "|_Eclair|CTRL.rx";
-connectAttr "CTRL_rotateY.o" "|_Eclair|CTRL.ry";
-connectAttr "CTRL_rotateZ.o" "|_Eclair|CTRL.rz";
-connectAttr "CTRL_scaleX.o" "|_Eclair|CTRL.sx";
-connectAttr "CTRL_scaleY.o" "|_Eclair|CTRL.sy";
-connectAttr "CTRL_scaleZ.o" "|_Eclair|CTRL.sz";
+	setAttr -s 4 ".sol";
 connectAttr "HEADs_pointConstraint1.ctx" "HEADs.tx";
 connectAttr "HEADs_pointConstraint1.cty" "HEADs.ty";
 connectAttr "HEADs_pointConstraint1.ctz" "HEADs.tz";
@@ -42207,105 +40893,15 @@ connectAttr "groupId464.id" "Right_GearShape.iog.og[3].gid";
 connectAttr "tweakSet39.mwc" "Right_GearShape.iog.og[3].gco";
 connectAttr "tweak39.vl[0].vt[0]" "Right_GearShape.twl";
 connectAttr "HONE.di" "Hips.do";
-connectAttr "HIKState2SK1.HipsSx" "Hips.sx";
-connectAttr "HIKState2SK1.HipsSy" "Hips.sy";
-connectAttr "HIKState2SK1.HipsSz" "Hips.sz";
-connectAttr "HIKState2SK1.HipsTx" "Hips.tx";
-connectAttr "HIKState2SK1.HipsTy" "Hips.ty";
-connectAttr "HIKState2SK1.HipsTz" "Hips.tz";
-connectAttr "HIKState2SK1.HipsRx" "Hips.rx";
-connectAttr "HIKState2SK1.HipsRy" "Hips.ry";
-connectAttr "HIKState2SK1.HipsRz" "Hips.rz";
 connectAttr "Hips.s" "LeftUpLeg.is";
-connectAttr "HIKState2SK1.LeftUpLegSx" "LeftUpLeg.sx";
-connectAttr "HIKState2SK1.LeftUpLegSy" "LeftUpLeg.sy";
-connectAttr "HIKState2SK1.LeftUpLegSz" "LeftUpLeg.sz";
-connectAttr "HIKState2SK1.LeftUpLegTx" "LeftUpLeg.tx";
-connectAttr "HIKState2SK1.LeftUpLegTy" "LeftUpLeg.ty";
-connectAttr "HIKState2SK1.LeftUpLegTz" "LeftUpLeg.tz";
-connectAttr "HIKState2SK1.LeftUpLegRx" "LeftUpLeg.rx";
-connectAttr "HIKState2SK1.LeftUpLegRy" "LeftUpLeg.ry";
-connectAttr "HIKState2SK1.LeftUpLegRz" "LeftUpLeg.rz";
 connectAttr "LeftUpLeg.s" "LeftLeg.is";
-connectAttr "HIKState2SK1.LeftLegSx" "LeftLeg.sx";
-connectAttr "HIKState2SK1.LeftLegSy" "LeftLeg.sy";
-connectAttr "HIKState2SK1.LeftLegSz" "LeftLeg.sz";
-connectAttr "HIKState2SK1.LeftLegTx" "LeftLeg.tx";
-connectAttr "HIKState2SK1.LeftLegTy" "LeftLeg.ty";
-connectAttr "HIKState2SK1.LeftLegTz" "LeftLeg.tz";
-connectAttr "HIKState2SK1.LeftLegRx" "LeftLeg.rx";
-connectAttr "HIKState2SK1.LeftLegRy" "LeftLeg.ry";
-connectAttr "HIKState2SK1.LeftLegRz" "LeftLeg.rz";
 connectAttr "LeftLeg.s" "LeftFoot.is";
-connectAttr "HIKState2SK1.LeftFootSx" "LeftFoot.sx";
-connectAttr "HIKState2SK1.LeftFootSy" "LeftFoot.sy";
-connectAttr "HIKState2SK1.LeftFootSz" "LeftFoot.sz";
-connectAttr "HIKState2SK1.LeftFootTx" "LeftFoot.tx";
-connectAttr "HIKState2SK1.LeftFootTy" "LeftFoot.ty";
-connectAttr "HIKState2SK1.LeftFootTz" "LeftFoot.tz";
-connectAttr "HIKState2SK1.LeftFootRx" "LeftFoot.rx";
-connectAttr "HIKState2SK1.LeftFootRy" "LeftFoot.ry";
-connectAttr "HIKState2SK1.LeftFootRz" "LeftFoot.rz";
 connectAttr "LeftFoot.s" "LeftToeBase.is";
-connectAttr "HIKState2SK1.LeftToeBaseTx" "LeftToeBase.tx";
-connectAttr "HIKState2SK1.LeftToeBaseTy" "LeftToeBase.ty";
-connectAttr "HIKState2SK1.LeftToeBaseTz" "LeftToeBase.tz";
-connectAttr "HIKState2SK1.LeftToeBaseRx" "LeftToeBase.rx";
-connectAttr "HIKState2SK1.LeftToeBaseRy" "LeftToeBase.ry";
-connectAttr "HIKState2SK1.LeftToeBaseRz" "LeftToeBase.rz";
-connectAttr "HIKState2SK1.LeftToeBaseSx" "LeftToeBase.sx";
-connectAttr "HIKState2SK1.LeftToeBaseSy" "LeftToeBase.sy";
-connectAttr "HIKState2SK1.LeftToeBaseSz" "LeftToeBase.sz";
 connectAttr "Hips.s" "Spine.is";
-connectAttr "HIKState2SK1.SpineSx" "Spine.sx";
-connectAttr "HIKState2SK1.SpineSy" "Spine.sy";
-connectAttr "HIKState2SK1.SpineSz" "Spine.sz";
-connectAttr "HIKState2SK1.SpineTx" "Spine.tx";
-connectAttr "HIKState2SK1.SpineTy" "Spine.ty";
-connectAttr "HIKState2SK1.SpineTz" "Spine.tz";
-connectAttr "HIKState2SK1.SpineRx" "Spine.rx";
-connectAttr "HIKState2SK1.SpineRy" "Spine.ry";
-connectAttr "HIKState2SK1.SpineRz" "Spine.rz";
 connectAttr "Spine.s" "Spine1.is";
-connectAttr "HIKState2SK1.Spine1Sx" "Spine1.sx";
-connectAttr "HIKState2SK1.Spine1Sy" "Spine1.sy";
-connectAttr "HIKState2SK1.Spine1Sz" "Spine1.sz";
-connectAttr "HIKState2SK1.Spine1Tx" "Spine1.tx";
-connectAttr "HIKState2SK1.Spine1Ty" "Spine1.ty";
-connectAttr "HIKState2SK1.Spine1Tz" "Spine1.tz";
-connectAttr "HIKState2SK1.Spine1Rx" "Spine1.rx";
-connectAttr "HIKState2SK1.Spine1Ry" "Spine1.ry";
-connectAttr "HIKState2SK1.Spine1Rz" "Spine1.rz";
 connectAttr "Spine1.s" "Spine2.is";
-connectAttr "HIKState2SK1.Spine2Sx" "Spine2.sx";
-connectAttr "HIKState2SK1.Spine2Sy" "Spine2.sy";
-connectAttr "HIKState2SK1.Spine2Sz" "Spine2.sz";
-connectAttr "HIKState2SK1.Spine2Tx" "Spine2.tx";
-connectAttr "HIKState2SK1.Spine2Ty" "Spine2.ty";
-connectAttr "HIKState2SK1.Spine2Tz" "Spine2.tz";
-connectAttr "HIKState2SK1.Spine2Rx" "Spine2.rx";
-connectAttr "HIKState2SK1.Spine2Ry" "Spine2.ry";
-connectAttr "HIKState2SK1.Spine2Rz" "Spine2.rz";
 connectAttr "Spine2.s" "Neck.is";
-connectAttr "HIKState2SK1.NeckSx" "Neck.sx";
-connectAttr "HIKState2SK1.NeckSy" "Neck.sy";
-connectAttr "HIKState2SK1.NeckSz" "Neck.sz";
-connectAttr "HIKState2SK1.NeckTx" "Neck.tx";
-connectAttr "HIKState2SK1.NeckTy" "Neck.ty";
-connectAttr "HIKState2SK1.NeckTz" "Neck.tz";
-connectAttr "HIKState2SK1.NeckRx" "Neck.rx";
-connectAttr "HIKState2SK1.NeckRy" "Neck.ry";
-connectAttr "HIKState2SK1.NeckRz" "Neck.rz";
-connectAttr "HIKState2SK1.HeadTx" "Head.tx";
-connectAttr "HIKState2SK1.HeadTy" "Head.ty";
-connectAttr "HIKState2SK1.HeadTz" "Head.tz";
 connectAttr "Neck.s" "Head.is";
-connectAttr "HIKState2SK1.HeadSx" "Head.sx";
-connectAttr "HIKState2SK1.HeadSy" "Head.sy";
-connectAttr "HIKState2SK1.HeadSz" "Head.sz";
-connectAttr "HIKState2SK1.HeadRx" "Head.rx";
-connectAttr "HIKState2SK1.HeadRy" "Head.ry";
-connectAttr "HIKState2SK1.HeadRz" "Head.rz";
 connectAttr "L_EyeJoint_aimConstraint1.crx" "L_EyeJoint.rx";
 connectAttr "L_EyeJoint_aimConstraint1.cry" "L_EyeJoint.ry";
 connectAttr "L_EyeJoint_aimConstraint1.crz" "L_EyeJoint.rz";
@@ -42378,65 +40974,11 @@ connectAttr "R_SideTail4.ty" "effector5.ty";
 connectAttr "R_SideTail4.tz" "effector5.tz";
 connectAttr "Spine2.s" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|RightShoulder.is"
 		;
-connectAttr "HIKState2SK1.RightShoulderSx" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|RightShoulder.sx"
-		;
-connectAttr "HIKState2SK1.RightShoulderSy" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|RightShoulder.sy"
-		;
-connectAttr "HIKState2SK1.RightShoulderSz" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|RightShoulder.sz"
-		;
-connectAttr "HIKState2SK1.RightShoulderTx" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|RightShoulder.tx"
-		;
-connectAttr "HIKState2SK1.RightShoulderTy" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|RightShoulder.ty"
-		;
-connectAttr "HIKState2SK1.RightShoulderTz" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|RightShoulder.tz"
-		;
-connectAttr "HIKState2SK1.RightShoulderRx" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|RightShoulder.rx"
-		;
-connectAttr "HIKState2SK1.RightShoulderRy" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|RightShoulder.ry"
-		;
-connectAttr "HIKState2SK1.RightShoulderRz" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|RightShoulder.rz"
-		;
-connectAttr "HIKState2SK1.RightArmTx" "RightArm.tx";
-connectAttr "HIKState2SK1.RightArmTy" "RightArm.ty";
-connectAttr "HIKState2SK1.RightArmTz" "RightArm.tz";
 connectAttr "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|RightShoulder.s" "RightArm.is"
 		;
-connectAttr "HIKState2SK1.RightArmSx" "RightArm.sx";
-connectAttr "HIKState2SK1.RightArmSy" "RightArm.sy";
-connectAttr "HIKState2SK1.RightArmSz" "RightArm.sz";
-connectAttr "HIKState2SK1.RightArmRx" "RightArm.rx";
-connectAttr "HIKState2SK1.RightArmRy" "RightArm.ry";
-connectAttr "HIKState2SK1.RightArmRz" "RightArm.rz";
 connectAttr "RightArm.s" "RightForeArm.is";
-connectAttr "HIKState2SK1.RightForeArmSx" "RightForeArm.sx";
-connectAttr "HIKState2SK1.RightForeArmSy" "RightForeArm.sy";
-connectAttr "HIKState2SK1.RightForeArmSz" "RightForeArm.sz";
-connectAttr "HIKState2SK1.RightForeArmTx" "RightForeArm.tx";
-connectAttr "HIKState2SK1.RightForeArmTy" "RightForeArm.ty";
-connectAttr "HIKState2SK1.RightForeArmTz" "RightForeArm.tz";
-connectAttr "HIKState2SK1.RightForeArmRx" "RightForeArm.rx";
-connectAttr "HIKState2SK1.RightForeArmRy" "RightForeArm.ry";
-connectAttr "HIKState2SK1.RightForeArmRz" "RightForeArm.rz";
 connectAttr "RightForeArm.s" "RightForeArmRoll.is";
-connectAttr "HIKState2SK1.LeafRightForeArmRoll1Sx" "RightForeArmRoll.sx";
-connectAttr "HIKState2SK1.LeafRightForeArmRoll1Sy" "RightForeArmRoll.sy";
-connectAttr "HIKState2SK1.LeafRightForeArmRoll1Sz" "RightForeArmRoll.sz";
-connectAttr "HIKState2SK1.LeafRightForeArmRoll1Tx" "RightForeArmRoll.tx";
-connectAttr "HIKState2SK1.LeafRightForeArmRoll1Ty" "RightForeArmRoll.ty";
-connectAttr "HIKState2SK1.LeafRightForeArmRoll1Tz" "RightForeArmRoll.tz";
-connectAttr "HIKState2SK1.LeafRightForeArmRoll1Rx" "RightForeArmRoll.rx";
-connectAttr "HIKState2SK1.LeafRightForeArmRoll1Ry" "RightForeArmRoll.ry";
-connectAttr "HIKState2SK1.LeafRightForeArmRoll1Rz" "RightForeArmRoll.rz";
 connectAttr "RightForeArmRoll.s" "RightHand.is";
-connectAttr "HIKState2SK1.RightHandSx" "RightHand.sx";
-connectAttr "HIKState2SK1.RightHandSy" "RightHand.sy";
-connectAttr "HIKState2SK1.RightHandSz" "RightHand.sz";
-connectAttr "HIKState2SK1.RightHandTx" "RightHand.tx";
-connectAttr "HIKState2SK1.RightHandTy" "RightHand.ty";
-connectAttr "HIKState2SK1.RightHandTz" "RightHand.tz";
-connectAttr "HIKState2SK1.RightHandRx" "RightHand.rx";
-connectAttr "HIKState2SK1.RightHandRy" "RightHand.ry";
-connectAttr "HIKState2SK1.RightHandRz" "RightHand.rz";
 connectAttr "RightHand.s" "RightHandThumb1.is";
 connectAttr "RightHandThumb1.s" "RightHandThumb2.is";
 connectAttr "RightHandThumb2.s" "RightHandThumb3.is";
@@ -42464,65 +41006,11 @@ connectAttr "Right_AddShoulder2.ty" "effector2.ty";
 connectAttr "Right_AddShoulder2.tz" "effector2.tz";
 connectAttr "Spine2.s" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|LeftShoulder.is"
 		;
-connectAttr "HIKState2SK1.LeftShoulderSx" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|LeftShoulder.sx"
-		;
-connectAttr "HIKState2SK1.LeftShoulderSy" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|LeftShoulder.sy"
-		;
-connectAttr "HIKState2SK1.LeftShoulderSz" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|LeftShoulder.sz"
-		;
-connectAttr "HIKState2SK1.LeftShoulderTx" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|LeftShoulder.tx"
-		;
-connectAttr "HIKState2SK1.LeftShoulderTy" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|LeftShoulder.ty"
-		;
-connectAttr "HIKState2SK1.LeftShoulderTz" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|LeftShoulder.tz"
-		;
-connectAttr "HIKState2SK1.LeftShoulderRx" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|LeftShoulder.rx"
-		;
-connectAttr "HIKState2SK1.LeftShoulderRy" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|LeftShoulder.ry"
-		;
-connectAttr "HIKState2SK1.LeftShoulderRz" "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|LeftShoulder.rz"
-		;
-connectAttr "HIKState2SK1.LeftArmTx" "LeftArm.tx";
-connectAttr "HIKState2SK1.LeftArmTy" "LeftArm.ty";
-connectAttr "HIKState2SK1.LeftArmTz" "LeftArm.tz";
 connectAttr "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|LeftShoulder.s" "LeftArm.is"
 		;
-connectAttr "HIKState2SK1.LeftArmSx" "LeftArm.sx";
-connectAttr "HIKState2SK1.LeftArmSy" "LeftArm.sy";
-connectAttr "HIKState2SK1.LeftArmSz" "LeftArm.sz";
-connectAttr "HIKState2SK1.LeftArmRx" "LeftArm.rx";
-connectAttr "HIKState2SK1.LeftArmRy" "LeftArm.ry";
-connectAttr "HIKState2SK1.LeftArmRz" "LeftArm.rz";
 connectAttr "LeftArm.s" "LeftForeArm.is";
-connectAttr "HIKState2SK1.LeftForeArmSx" "LeftForeArm.sx";
-connectAttr "HIKState2SK1.LeftForeArmSy" "LeftForeArm.sy";
-connectAttr "HIKState2SK1.LeftForeArmSz" "LeftForeArm.sz";
-connectAttr "HIKState2SK1.LeftForeArmTx" "LeftForeArm.tx";
-connectAttr "HIKState2SK1.LeftForeArmTy" "LeftForeArm.ty";
-connectAttr "HIKState2SK1.LeftForeArmTz" "LeftForeArm.tz";
-connectAttr "HIKState2SK1.LeftForeArmRx" "LeftForeArm.rx";
-connectAttr "HIKState2SK1.LeftForeArmRy" "LeftForeArm.ry";
-connectAttr "HIKState2SK1.LeftForeArmRz" "LeftForeArm.rz";
 connectAttr "LeftForeArm.s" "LeftForeArmRoll.is";
-connectAttr "HIKState2SK1.LeafLeftForeArmRoll1Sx" "LeftForeArmRoll.sx";
-connectAttr "HIKState2SK1.LeafLeftForeArmRoll1Sy" "LeftForeArmRoll.sy";
-connectAttr "HIKState2SK1.LeafLeftForeArmRoll1Sz" "LeftForeArmRoll.sz";
-connectAttr "HIKState2SK1.LeafLeftForeArmRoll1Tx" "LeftForeArmRoll.tx";
-connectAttr "HIKState2SK1.LeafLeftForeArmRoll1Ty" "LeftForeArmRoll.ty";
-connectAttr "HIKState2SK1.LeafLeftForeArmRoll1Tz" "LeftForeArmRoll.tz";
-connectAttr "HIKState2SK1.LeafLeftForeArmRoll1Rx" "LeftForeArmRoll.rx";
-connectAttr "HIKState2SK1.LeafLeftForeArmRoll1Ry" "LeftForeArmRoll.ry";
-connectAttr "HIKState2SK1.LeafLeftForeArmRoll1Rz" "LeftForeArmRoll.rz";
 connectAttr "LeftForeArmRoll.s" "LeftHand.is";
-connectAttr "HIKState2SK1.LeftHandSx" "LeftHand.sx";
-connectAttr "HIKState2SK1.LeftHandSy" "LeftHand.sy";
-connectAttr "HIKState2SK1.LeftHandSz" "LeftHand.sz";
-connectAttr "HIKState2SK1.LeftHandTx" "LeftHand.tx";
-connectAttr "HIKState2SK1.LeftHandTy" "LeftHand.ty";
-connectAttr "HIKState2SK1.LeftHandTz" "LeftHand.tz";
-connectAttr "HIKState2SK1.LeftHandRx" "LeftHand.rx";
-connectAttr "HIKState2SK1.LeftHandRy" "LeftHand.ry";
-connectAttr "HIKState2SK1.LeftHandRz" "LeftHand.rz";
 connectAttr "LeftHand.s" "LeftHandThumb1.is";
 connectAttr "LeftHandThumb1.s" "LeftHandThumb2.is";
 connectAttr "LeftHandThumb2.s" "LeftHandThumb3.is";
@@ -42549,234 +41037,9 @@ connectAttr "Left_AddShoulder2.tx" "effector1.tx";
 connectAttr "Left_AddShoulder2.ty" "effector1.ty";
 connectAttr "Left_AddShoulder2.tz" "effector1.tz";
 connectAttr "Hips.s" "RightUpLeg.is";
-connectAttr "HIKState2SK1.RightUpLegSx" "RightUpLeg.sx";
-connectAttr "HIKState2SK1.RightUpLegSy" "RightUpLeg.sy";
-connectAttr "HIKState2SK1.RightUpLegSz" "RightUpLeg.sz";
-connectAttr "HIKState2SK1.RightUpLegTx" "RightUpLeg.tx";
-connectAttr "HIKState2SK1.RightUpLegTy" "RightUpLeg.ty";
-connectAttr "HIKState2SK1.RightUpLegTz" "RightUpLeg.tz";
-connectAttr "HIKState2SK1.RightUpLegRx" "RightUpLeg.rx";
-connectAttr "HIKState2SK1.RightUpLegRy" "RightUpLeg.ry";
-connectAttr "HIKState2SK1.RightUpLegRz" "RightUpLeg.rz";
 connectAttr "RightUpLeg.s" "RightLeg.is";
-connectAttr "HIKState2SK1.RightLegSx" "RightLeg.sx";
-connectAttr "HIKState2SK1.RightLegSy" "RightLeg.sy";
-connectAttr "HIKState2SK1.RightLegSz" "RightLeg.sz";
-connectAttr "HIKState2SK1.RightLegTx" "RightLeg.tx";
-connectAttr "HIKState2SK1.RightLegTy" "RightLeg.ty";
-connectAttr "HIKState2SK1.RightLegTz" "RightLeg.tz";
-connectAttr "HIKState2SK1.RightLegRx" "RightLeg.rx";
-connectAttr "HIKState2SK1.RightLegRy" "RightLeg.ry";
-connectAttr "HIKState2SK1.RightLegRz" "RightLeg.rz";
 connectAttr "RightLeg.s" "RightFoot.is";
-connectAttr "HIKState2SK1.RightFootSx" "RightFoot.sx";
-connectAttr "HIKState2SK1.RightFootSy" "RightFoot.sy";
-connectAttr "HIKState2SK1.RightFootSz" "RightFoot.sz";
-connectAttr "HIKState2SK1.RightFootTx" "RightFoot.tx";
-connectAttr "HIKState2SK1.RightFootTy" "RightFoot.ty";
-connectAttr "HIKState2SK1.RightFootTz" "RightFoot.tz";
-connectAttr "HIKState2SK1.RightFootRx" "RightFoot.rx";
-connectAttr "HIKState2SK1.RightFootRy" "RightFoot.ry";
-connectAttr "HIKState2SK1.RightFootRz" "RightFoot.rz";
 connectAttr "RightFoot.s" "RightToeBase.is";
-connectAttr "HIKState2SK1.RightToeBaseTx" "RightToeBase.tx";
-connectAttr "HIKState2SK1.RightToeBaseTy" "RightToeBase.ty";
-connectAttr "HIKState2SK1.RightToeBaseTz" "RightToeBase.tz";
-connectAttr "HIKState2SK1.RightToeBaseRx" "RightToeBase.rx";
-connectAttr "HIKState2SK1.RightToeBaseRy" "RightToeBase.ry";
-connectAttr "HIKState2SK1.RightToeBaseRz" "RightToeBase.rz";
-connectAttr "HIKState2SK1.RightToeBaseSx" "RightToeBase.sx";
-connectAttr "HIKState2SK1.RightToeBaseSy" "RightToeBase.sy";
-connectAttr "HIKState2SK1.RightToeBaseSz" "RightToeBase.sz";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_HipsEffector.uagx";
-connectAttr "HIKState2Effector1.HipsEffectorGXM[0]" "Eclair_Ctrl_HipsEffector.agx"
-		;
-connectAttr "HIKState2Effector2.HipsEffectorGXM[0]" "Eclair_Ctrl_HipsEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeftAnkleEffector.uagx";
-connectAttr "HIKState2Effector1.LeftAnkleEffectorGXM[0]" "Eclair_Ctrl_LeftAnkleEffector.agx"
-		;
-connectAttr "HIKState2Effector2.LeftAnkleEffectorGXM[0]" "Eclair_Ctrl_LeftAnkleEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_RightAnkleEffector.uagx";
-connectAttr "HIKState2Effector1.RightAnkleEffectorGXM[0]" "Eclair_Ctrl_RightAnkleEffector.agx"
-		;
-connectAttr "HIKState2Effector2.RightAnkleEffectorGXM[0]" "Eclair_Ctrl_RightAnkleEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeftWristEffector.uagx";
-connectAttr "HIKState2Effector1.LeftWristEffectorGXM[0]" "Eclair_Ctrl_LeftWristEffector.agx"
-		;
-connectAttr "HIKState2Effector2.LeftWristEffectorGXM[0]" "Eclair_Ctrl_LeftWristEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_RightWristEffector.uagx";
-connectAttr "HIKState2Effector1.RightWristEffectorGXM[0]" "Eclair_Ctrl_RightWristEffector.agx"
-		;
-connectAttr "HIKState2Effector2.RightWristEffectorGXM[0]" "Eclair_Ctrl_RightWristEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeftKneeEffector.uagx";
-connectAttr "HIKState2Effector1.LeftKneeEffectorGXM[0]" "Eclair_Ctrl_LeftKneeEffector.agx"
-		;
-connectAttr "HIKState2Effector2.LeftKneeEffectorGXM[0]" "Eclair_Ctrl_LeftKneeEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_RightKneeEffector.uagx";
-connectAttr "HIKState2Effector1.RightKneeEffectorGXM[0]" "Eclair_Ctrl_RightKneeEffector.agx"
-		;
-connectAttr "HIKState2Effector2.RightKneeEffectorGXM[0]" "Eclair_Ctrl_RightKneeEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeftElbowEffector.uagx";
-connectAttr "HIKState2Effector1.LeftElbowEffectorGXM[0]" "Eclair_Ctrl_LeftElbowEffector.agx"
-		;
-connectAttr "HIKState2Effector2.LeftElbowEffectorGXM[0]" "Eclair_Ctrl_LeftElbowEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_RightElbowEffector.uagx";
-connectAttr "HIKState2Effector1.RightElbowEffectorGXM[0]" "Eclair_Ctrl_RightElbowEffector.agx"
-		;
-connectAttr "HIKState2Effector2.RightElbowEffectorGXM[0]" "Eclair_Ctrl_RightElbowEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_ChestOriginEffector.uagx";
-connectAttr "HIKState2Effector1.ChestOriginEffectorGXM[0]" "Eclair_Ctrl_ChestOriginEffector.agx"
-		;
-connectAttr "HIKState2Effector2.ChestOriginEffectorGXM[0]" "Eclair_Ctrl_ChestOriginEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_ChestEndEffector.uagx";
-connectAttr "HIKState2Effector1.ChestEndEffectorGXM[0]" "Eclair_Ctrl_ChestEndEffector.agx"
-		;
-connectAttr "HIKState2Effector2.ChestEndEffectorGXM[0]" "Eclair_Ctrl_ChestEndEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeftFootEffector.uagx";
-connectAttr "HIKState2Effector1.LeftFootEffectorGXM[0]" "Eclair_Ctrl_LeftFootEffector.agx"
-		;
-connectAttr "HIKState2Effector2.LeftFootEffectorGXM[0]" "Eclair_Ctrl_LeftFootEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_RightFootEffector.uagx";
-connectAttr "HIKState2Effector1.RightFootEffectorGXM[0]" "Eclair_Ctrl_RightFootEffector.agx"
-		;
-connectAttr "HIKState2Effector2.RightFootEffectorGXM[0]" "Eclair_Ctrl_RightFootEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeftShoulderEffector.uagx";
-connectAttr "HIKState2Effector1.LeftShoulderEffectorGXM[0]" "Eclair_Ctrl_LeftShoulderEffector.agx"
-		;
-connectAttr "HIKState2Effector2.LeftShoulderEffectorGXM[0]" "Eclair_Ctrl_LeftShoulderEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_RightShoulderEffector.uagx";
-connectAttr "HIKState2Effector1.RightShoulderEffectorGXM[0]" "Eclair_Ctrl_RightShoulderEffector.agx"
-		;
-connectAttr "HIKState2Effector2.RightShoulderEffectorGXM[0]" "Eclair_Ctrl_RightShoulderEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_HeadEffector.uagx";
-connectAttr "HIKState2Effector1.HeadEffectorGXM[0]" "Eclair_Ctrl_HeadEffector.agx"
-		;
-connectAttr "HIKState2Effector2.HeadEffectorGXM[0]" "Eclair_Ctrl_HeadEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeftHipEffector.uagx";
-connectAttr "HIKState2Effector1.LeftHipEffectorGXM[0]" "Eclair_Ctrl_LeftHipEffector.agx"
-		;
-connectAttr "HIKState2Effector2.LeftHipEffectorGXM[0]" "Eclair_Ctrl_LeftHipEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_RightHipEffector.uagx";
-connectAttr "HIKState2Effector1.RightHipEffectorGXM[0]" "Eclair_Ctrl_RightHipEffector.agx"
-		;
-connectAttr "HIKState2Effector2.RightHipEffectorGXM[0]" "Eclair_Ctrl_RightHipEffector.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_Hips.uagx";
-connectAttr "HIKState2FK1.HipsGX" "Eclair_Ctrl_Hips.agx";
-connectAttr "HIKState2FK2.HipsGX" "Eclair_Ctrl_Hips.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeftUpLeg.uagx";
-connectAttr "Eclair_Ctrl_Hips.s" "Eclair_Ctrl_LeftUpLeg.is";
-connectAttr "HIKState2FK1.LeftUpLegGX" "Eclair_Ctrl_LeftUpLeg.agx";
-connectAttr "HIKState2FK2.LeftUpLegGX" "Eclair_Ctrl_LeftUpLeg.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeftLeg.uagx";
-connectAttr "Eclair_Ctrl_LeftUpLeg.s" "Eclair_Ctrl_LeftLeg.is";
-connectAttr "HIKState2FK1.LeftLegGX" "Eclair_Ctrl_LeftLeg.agx";
-connectAttr "HIKState2FK2.LeftLegGX" "Eclair_Ctrl_LeftLeg.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeftFoot.uagx";
-connectAttr "Eclair_Ctrl_LeftLeg.s" "Eclair_Ctrl_LeftFoot.is";
-connectAttr "HIKState2FK1.LeftFootGX" "Eclair_Ctrl_LeftFoot.agx";
-connectAttr "HIKState2FK2.LeftFootGX" "Eclair_Ctrl_LeftFoot.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeftToeBase.uagx";
-connectAttr "Eclair_Ctrl_LeftFoot.s" "Eclair_Ctrl_LeftToeBase.is";
-connectAttr "HIKState2FK1.LeftToeBaseGX" "Eclair_Ctrl_LeftToeBase.agx";
-connectAttr "HIKState2FK2.LeftToeBaseGX" "Eclair_Ctrl_LeftToeBase.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_RightUpLeg.uagx";
-connectAttr "Eclair_Ctrl_Hips.s" "Eclair_Ctrl_RightUpLeg.is";
-connectAttr "HIKState2FK1.RightUpLegGX" "Eclair_Ctrl_RightUpLeg.agx";
-connectAttr "HIKState2FK2.RightUpLegGX" "Eclair_Ctrl_RightUpLeg.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_RightLeg.uagx";
-connectAttr "Eclair_Ctrl_RightUpLeg.s" "Eclair_Ctrl_RightLeg.is";
-connectAttr "HIKState2FK1.RightLegGX" "Eclair_Ctrl_RightLeg.agx";
-connectAttr "HIKState2FK2.RightLegGX" "Eclair_Ctrl_RightLeg.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_RightFoot.uagx";
-connectAttr "Eclair_Ctrl_RightLeg.s" "Eclair_Ctrl_RightFoot.is";
-connectAttr "HIKState2FK1.RightFootGX" "Eclair_Ctrl_RightFoot.agx";
-connectAttr "HIKState2FK2.RightFootGX" "Eclair_Ctrl_RightFoot.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_RightToeBase.uagx";
-connectAttr "Eclair_Ctrl_RightFoot.s" "Eclair_Ctrl_RightToeBase.is";
-connectAttr "HIKState2FK1.RightToeBaseGX" "Eclair_Ctrl_RightToeBase.agx";
-connectAttr "HIKState2FK2.RightToeBaseGX" "Eclair_Ctrl_RightToeBase.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_Spine.uagx";
-connectAttr "Eclair_Ctrl_Hips.s" "Eclair_Ctrl_Spine.is";
-connectAttr "HIKState2FK1.SpineGX" "Eclair_Ctrl_Spine.agx";
-connectAttr "HIKState2FK2.SpineGX" "Eclair_Ctrl_Spine.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_Spine1.uagx";
-connectAttr "Eclair_Ctrl_Spine.s" "Eclair_Ctrl_Spine1.is";
-connectAttr "HIKState2FK1.Spine1GX" "Eclair_Ctrl_Spine1.agx";
-connectAttr "HIKState2FK2.Spine1GX" "Eclair_Ctrl_Spine1.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_Spine2.uagx";
-connectAttr "Eclair_Ctrl_Spine1.s" "Eclair_Ctrl_Spine2.is";
-connectAttr "HIKState2FK1.Spine2GX" "Eclair_Ctrl_Spine2.agx";
-connectAttr "HIKState2FK2.Spine2GX" "Eclair_Ctrl_Spine2.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeftShoulder.uagx";
-connectAttr "Eclair_Ctrl_Spine2.s" "Eclair_Ctrl_LeftShoulder.is";
-connectAttr "HIKState2FK1.LeftShoulderGX" "Eclair_Ctrl_LeftShoulder.agx";
-connectAttr "HIKState2FK2.LeftShoulderGX" "Eclair_Ctrl_LeftShoulder.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeftArm.uagx";
-connectAttr "Eclair_Ctrl_LeftShoulder.s" "Eclair_Ctrl_LeftArm.is";
-connectAttr "HIKState2FK1.LeftArmGX" "Eclair_Ctrl_LeftArm.agx";
-connectAttr "HIKState2FK2.LeftArmGX" "Eclair_Ctrl_LeftArm.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeftForeArm.uagx";
-connectAttr "Eclair_Ctrl_LeftArm.s" "Eclair_Ctrl_LeftForeArm.is";
-connectAttr "HIKState2FK1.LeftForeArmGX" "Eclair_Ctrl_LeftForeArm.agx";
-connectAttr "HIKState2FK2.LeftForeArmGX" "Eclair_Ctrl_LeftForeArm.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeafLeftForeArmRoll1.uagx";
-connectAttr "Eclair_Ctrl_LeftForeArm.s" "Eclair_Ctrl_LeafLeftForeArmRoll1.is";
-connectAttr "HIKState2FK1.LeafLeftForeArmRoll1GX" "Eclair_Ctrl_LeafLeftForeArmRoll1.agx"
-		;
-connectAttr "HIKState2FK2.LeafLeftForeArmRoll1GX" "Eclair_Ctrl_LeafLeftForeArmRoll1.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeftHand.uagx";
-connectAttr "Eclair_Ctrl_LeftForeArm.s" "Eclair_Ctrl_LeftHand.is";
-connectAttr "HIKState2FK1.LeftHandGX" "Eclair_Ctrl_LeftHand.agx";
-connectAttr "HIKState2FK2.LeftHandGX" "Eclair_Ctrl_LeftHand.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_RightShoulder.uagx";
-connectAttr "Eclair_Ctrl_Spine2.s" "Eclair_Ctrl_RightShoulder.is";
-connectAttr "HIKState2FK1.RightShoulderGX" "Eclair_Ctrl_RightShoulder.agx";
-connectAttr "HIKState2FK2.RightShoulderGX" "Eclair_Ctrl_RightShoulder.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_RightArm.uagx";
-connectAttr "Eclair_Ctrl_RightShoulder.s" "Eclair_Ctrl_RightArm.is";
-connectAttr "HIKState2FK1.RightArmGX" "Eclair_Ctrl_RightArm.agx";
-connectAttr "HIKState2FK2.RightArmGX" "Eclair_Ctrl_RightArm.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_RightForeArm.uagx";
-connectAttr "Eclair_Ctrl_RightArm.s" "Eclair_Ctrl_RightForeArm.is";
-connectAttr "HIKState2FK1.RightForeArmGX" "Eclair_Ctrl_RightForeArm.agx";
-connectAttr "HIKState2FK2.RightForeArmGX" "Eclair_Ctrl_RightForeArm.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_LeafRightForeArmRoll1.uagx";
-connectAttr "Eclair_Ctrl_RightForeArm.s" "Eclair_Ctrl_LeafRightForeArmRoll1.is";
-connectAttr "HIKState2FK1.LeafRightForeArmRoll1GX" "Eclair_Ctrl_LeafRightForeArmRoll1.agx"
-		;
-connectAttr "HIKState2FK2.LeafRightForeArmRoll1GX" "Eclair_Ctrl_LeafRightForeArmRoll1.atx"
-		;
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_RightHand.uagx";
-connectAttr "Eclair_Ctrl_RightForeArm.s" "Eclair_Ctrl_RightHand.is";
-connectAttr "HIKState2FK1.RightHandGX" "Eclair_Ctrl_RightHand.agx";
-connectAttr "HIKState2FK2.RightHandGX" "Eclair_Ctrl_RightHand.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_Neck.uagx";
-connectAttr "Eclair_Ctrl_Spine2.s" "Eclair_Ctrl_Neck.is";
-connectAttr "HIKState2FK1.NeckGX" "Eclair_Ctrl_Neck.agx";
-connectAttr "HIKState2FK2.NeckGX" "Eclair_Ctrl_Neck.atx";
-connectAttr "Eclair_ControlRig.rao" "Eclair_Ctrl_Head.uagx";
-connectAttr "Eclair_Ctrl_Neck.s" "Eclair_Ctrl_Head.is";
-connectAttr "HIKState2FK1.HeadGX" "Eclair_Ctrl_Head.agx";
-connectAttr "HIKState2FK2.HeadGX" "Eclair_Ctrl_Head.atx";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
@@ -44410,59 +42673,23 @@ connectAttr "Eclair_HeadBPKG.msg" "Eclair_FullBodyKG.dnsm" -na;
 connectAttr "Eclair_LeftHandBPKG.msg" "Eclair_FullBodyKG.dnsm" -na;
 connectAttr "Eclair_RightHandBPKG.msg" "Eclair_FullBodyKG.dnsm" -na;
 connectAttr "Eclair_LeftFootBPKG.msg" "Eclair_FullBodyKG.dnsm" -na;
-connectAttr "Eclair_HipsBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
-connectAttr "Eclair_ChestBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
-connectAttr "Eclair_LeftArmBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
-connectAttr "Eclair_RightArmBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
-connectAttr "Eclair_LeftLegBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
-connectAttr "Eclair_RightLegBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
-connectAttr "Eclair_HeadBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
-connectAttr "Eclair_LeftHandBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
-connectAttr "Eclair_RightHandBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
-connectAttr "Eclair_LeftFootBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
-connectAttr "Eclair_LeftHandBPKG2.msg" "Eclair_FullBodyKG2.dnsm" -na;
-connectAttr "Eclair_RightHandBPKG2.msg" "Eclair_FullBodyKG2.dnsm" -na;
-connectAttr "Eclair_LeftFootBPKG2.msg" "Eclair_FullBodyKG2.dnsm" -na;
-connectAttr "Eclair_RightFootBPKG2.msg" "Eclair_FullBodyKG2.dnsm" -na;
-connectAttr "layerManager.dli[19]" "HADA.id";
-connectAttr "layerManager.dli[20]" "ATAMA.id";
-connectAttr "layerManager.dli[21]" "KAMI.id";
-connectAttr "skinCluster28.og[0]" "groupParts218.ig";
-connectAttr "groupId491.id" "groupParts218.gi";
-connectAttr "groupParts218.og" "groupParts219.ig";
-connectAttr "groupId492.id" "groupParts219.gi";
-connectAttr "groupParts219.og" "groupParts220.ig";
-connectAttr "groupId493.id" "groupParts220.gi";
-connectAttr "skinCluster30.og[0]" "groupParts221.ig";
-connectAttr "groupId494.id" "groupParts221.gi";
-connectAttr "groupParts221.og" "groupParts222.ig";
-connectAttr "groupId495.id" "groupParts222.gi";
-connectAttr "Eclair_HipsBPKG2.msg" "Eclair_FullBodyKG3.dnsm" -na;
-connectAttr "Eclair_ChestBPKG2.msg" "Eclair_FullBodyKG3.dnsm" -na;
-connectAttr "Eclair_LeftArmBPKG2.msg" "Eclair_FullBodyKG3.dnsm" -na;
-connectAttr "Eclair_RightArmBPKG2.msg" "Eclair_FullBodyKG3.dnsm" -na;
-connectAttr "Eclair_LeftLegBPKG2.msg" "Eclair_FullBodyKG3.dnsm" -na;
-connectAttr "Eclair_RightLegBPKG2.msg" "Eclair_FullBodyKG3.dnsm" -na;
-connectAttr "Eclair_HeadBPKG2.msg" "Eclair_FullBodyKG3.dnsm" -na;
-connectAttr "Eclair_LeftHandBPKG3.msg" "Eclair_FullBodyKG3.dnsm" -na;
-connectAttr "Eclair_RightHandBPKG3.msg" "Eclair_FullBodyKG3.dnsm" -na;
-connectAttr "Eclair_LeftFootBPKG3.msg" "Eclair_FullBodyKG3.dnsm" -na;
 connectAttr "HIKproperties1.msg" "Eclair.propertyState";
+connectAttr "Eclair_Reference.ch" "Eclair.Reference";
 connectAttr "Hips.ch" "Eclair.Hips";
 connectAttr "Spine.ch" "Eclair.Spine";
-connectAttr "Eclair_Reference.ch" "Eclair.Reference";
 connectAttr "Spine1.ch" "Eclair.Spine1";
 connectAttr "Spine2.ch" "Eclair.Spine2";
+connectAttr "Neck.ch" "Eclair.Neck";
 connectAttr "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|LeftShoulder.ch" "Eclair.LeftShoulder"
 		;
 connectAttr "|_Eclair|Eclair_Reference|Hips|Spine|Spine1|Spine2|RightShoulder.ch" "Eclair.RightShoulder"
 		;
 connectAttr "LeftArm.ch" "Eclair.LeftArm";
+connectAttr "RightArm.ch" "Eclair.RightArm";
 connectAttr "LeftForeArm.ch" "Eclair.LeftForeArm";
 connectAttr "RightForeArm.ch" "Eclair.RightForeArm";
 connectAttr "LeftHand.ch" "Eclair.LeftHand";
 connectAttr "RightHand.ch" "Eclair.RightHand";
-connectAttr "RightArm.ch" "Eclair.RightArm";
 connectAttr "LeftUpLeg.ch" "Eclair.LeftUpLeg";
 connectAttr "RightUpLeg.ch" "Eclair.RightUpLeg";
 connectAttr "LeftLeg.ch" "Eclair.LeftLeg";
@@ -44471,64 +42698,12 @@ connectAttr "LeftFoot.ch" "Eclair.LeftFoot";
 connectAttr "RightFoot.ch" "Eclair.RightFoot";
 connectAttr "LeftToeBase.ch" "Eclair.LeftToeBase";
 connectAttr "RightToeBase.ch" "Eclair.RightToeBase";
-connectAttr "Neck.ch" "Eclair.Neck";
 connectAttr "Head.ch" "Eclair.Head";
-connectAttr "LeftForeArmRoll.ch" "Eclair.LeafLeftForeArmRoll1";
 connectAttr "RightForeArmRoll.ch" "Eclair.LeafRightForeArmRoll1";
-connectAttr "Eclair_Ctrl_HipsEffector.pull" "HIKproperties1.CtrlResistHipsPosition"
-		;
-connectAttr "Eclair_Ctrl_HipsEffector.stiffness" "HIKproperties1.CtrlResistHipsOrientation"
-		;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.pull" "HIKproperties1.CtrlPullLeftFoot"
-		;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.pull" "HIKproperties1.CtrlPullRightFoot"
-		;
-connectAttr "Eclair_Ctrl_LeftWristEffector.pull" "HIKproperties1.CtrlChestPullLeftHand"
-		;
-connectAttr "Eclair_Ctrl_RightWristEffector.pull" "HIKproperties1.CtrlChestPullRightHand"
-		;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.pull" "HIKproperties1.CtrlPullLeftKnee"
-		;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.stiffness" "HIKproperties1.CtrlResistLeftKnee"
-		;
-connectAttr "Eclair_Ctrl_RightKneeEffector.pull" "HIKproperties1.CtrlPullRightKnee"
-		;
-connectAttr "Eclair_Ctrl_RightKneeEffector.stiffness" "HIKproperties1.CtrlResistRightKnee"
-		;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.pull" "HIKproperties1.CtrlPullLeftElbow"
-		;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.stiffness" "HIKproperties1.CtrlResistLeftElbow"
-		;
-connectAttr "Eclair_Ctrl_RightElbowEffector.pull" "HIKproperties1.CtrlPullRightElbow"
-		;
-connectAttr "Eclair_Ctrl_RightElbowEffector.stiffness" "HIKproperties1.CtrlResistRightElbow"
-		;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.stiffness" "HIKproperties1.ParamCtrlSpineStiffness"
-		;
-connectAttr "Eclair_Ctrl_ChestEndEffector.pull" "HIKproperties1.CtrlResistChestPosition"
-		;
-connectAttr "Eclair_Ctrl_ChestEndEffector.stiffness" "HIKproperties1.CtrlResistChestOrientation"
-		;
-connectAttr "Eclair_Ctrl_LeftFootEffector.pull" "HIKproperties1.CtrlPullLeftToeBase"
-		;
-connectAttr "Eclair_Ctrl_RightFootEffector.pull" "HIKproperties1.CtrlPullRightToeBase"
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.stiffness" "HIKproperties1.CtrlResistLeftCollar"
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.stiffness" "HIKproperties1.CtrlResistRightCollar"
-		;
-connectAttr "Eclair_Ctrl_HeadEffector.pull" "HIKproperties1.CtrlPullHead";
-connectAttr "Eclair_Ctrl_HeadEffector.stiffness" "HIKproperties1.ParamCtrlNeckStiffness"
-		;
+connectAttr "LeftForeArmRoll.ch" "Eclair.LeafLeftForeArmRoll1";
 connectAttr "HIKproperties1.OutputPropertySetState" "HIKSolverNode1.InputPropertySetState"
 		;
 connectAttr "Eclair.OutputCharacterDefinition" "HIKSolverNode1.InputCharacterDefinition"
-		;
-connectAttr "HIKFK2State1.OutputCharacterState" "HIKSolverNode1.InputCharacterState"
-		;
-connectAttr "HIKPinning2State1.OutputEffectorState" "HIKSolverNode1.InputEffectorState"
-		;
-connectAttr "HIKPinning2State1.OutputEffectorStateNoAux" "HIKSolverNode1.InputEffectorStateNoAux"
 		;
 connectAttr "Eclair.OutputCharacterDefinition" "HIKState2SK1.InputCharacterDefinition"
 		;
@@ -44690,784 +42865,33 @@ connectAttr "RightForeArmRoll.ssc" "HIKState2SK1.LeafRightForeArmRoll1SC";
 connectAttr "RightForeArmRoll.is" "HIKState2SK1.LeafRightForeArmRoll1IS";
 connectAttr "RightForeArmRoll.ro" "HIKState2SK1.LeafRightForeArmRoll1ROrder";
 connectAttr "RightForeArmRoll.ra" "HIKState2SK1.LeafRightForeArmRoll1PostR";
-connectAttr "Eclair.OutputCharacterDefinition" "Eclair_ControlRig.HIC";
-connectAttr "Eclair_Ctrl_Reference.ch" "Eclair_ControlRig.Reference";
-connectAttr "Eclair_Ctrl_Hips.ch" "Eclair_ControlRig.Hips";
-connectAttr "Eclair_Ctrl_LeftUpLeg.ch" "Eclair_ControlRig.LeftUpLeg";
-connectAttr "Eclair_Ctrl_LeftLeg.ch" "Eclair_ControlRig.LeftLeg";
-connectAttr "Eclair_Ctrl_LeftFoot.ch" "Eclair_ControlRig.LeftFoot";
-connectAttr "Eclair_Ctrl_RightUpLeg.ch" "Eclair_ControlRig.RightUpLeg";
-connectAttr "Eclair_Ctrl_RightLeg.ch" "Eclair_ControlRig.RightLeg";
-connectAttr "Eclair_Ctrl_RightFoot.ch" "Eclair_ControlRig.RightFoot";
-connectAttr "Eclair_Ctrl_Spine.ch" "Eclair_ControlRig.Spine";
-connectAttr "Eclair_Ctrl_LeftArm.ch" "Eclair_ControlRig.LeftArm";
-connectAttr "Eclair_Ctrl_LeftForeArm.ch" "Eclair_ControlRig.LeftForeArm";
-connectAttr "Eclair_Ctrl_LeftHand.ch" "Eclair_ControlRig.LeftHand";
-connectAttr "Eclair_Ctrl_RightArm.ch" "Eclair_ControlRig.RightArm";
-connectAttr "Eclair_Ctrl_RightForeArm.ch" "Eclair_ControlRig.RightForeArm";
-connectAttr "Eclair_Ctrl_RightHand.ch" "Eclair_ControlRig.RightHand";
-connectAttr "Eclair_Ctrl_Head.ch" "Eclair_ControlRig.Head";
-connectAttr "Eclair_Ctrl_LeftToeBase.ch" "Eclair_ControlRig.LeftToeBase";
-connectAttr "Eclair_Ctrl_RightToeBase.ch" "Eclair_ControlRig.RightToeBase";
-connectAttr "Eclair_Ctrl_LeftShoulder.ch" "Eclair_ControlRig.LeftShoulder";
-connectAttr "Eclair_Ctrl_RightShoulder.ch" "Eclair_ControlRig.RightShoulder";
-connectAttr "Eclair_Ctrl_Neck.ch" "Eclair_ControlRig.Neck";
-connectAttr "Eclair_Ctrl_Spine1.ch" "Eclair_ControlRig.Spine1";
-connectAttr "Eclair_Ctrl_Spine2.ch" "Eclair_ControlRig.Spine2";
-connectAttr "Eclair_Ctrl_LeafLeftForeArmRoll1.ch" "Eclair_ControlRig.LeafLeftForeArmRoll1"
-		;
-connectAttr "Eclair_Ctrl_LeafRightForeArmRoll1.ch" "Eclair_ControlRig.LeafRightForeArmRoll1"
-		;
-connectAttr "Eclair_Ctrl_HipsEffector.ch" "Eclair_ControlRig.HipsEffector[0]";
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.ch" "Eclair_ControlRig.LeftAnkleEffector[0]"
-		;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.ch" "Eclair_ControlRig.RightAnkleEffector[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftWristEffector.ch" "Eclair_ControlRig.LeftWristEffector[0]"
-		;
-connectAttr "Eclair_Ctrl_RightWristEffector.ch" "Eclair_ControlRig.RightWristEffector[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.ch" "Eclair_ControlRig.LeftKneeEffector[0]"
-		;
-connectAttr "Eclair_Ctrl_RightKneeEffector.ch" "Eclair_ControlRig.RightKneeEffector[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.ch" "Eclair_ControlRig.LeftElbowEffector[0]"
-		;
-connectAttr "Eclair_Ctrl_RightElbowEffector.ch" "Eclair_ControlRig.RightElbowEffector[0]"
-		;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.ch" "Eclair_ControlRig.ChestOriginEffector[0]"
-		;
-connectAttr "Eclair_Ctrl_ChestEndEffector.ch" "Eclair_ControlRig.ChestEndEffector[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftFootEffector.ch" "Eclair_ControlRig.LeftFootEffector[0]"
-		;
-connectAttr "Eclair_Ctrl_RightFootEffector.ch" "Eclair_ControlRig.RightFootEffector[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.ch" "Eclair_ControlRig.LeftShoulderEffector[0]"
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.ch" "Eclair_ControlRig.RightShoulderEffector[0]"
-		;
-connectAttr "Eclair_Ctrl_HeadEffector.ch" "Eclair_ControlRig.HeadEffector[0]";
-connectAttr "Eclair_Ctrl_LeftHipEffector.ch" "Eclair_ControlRig.LeftHipEffector[0]"
-		;
-connectAttr "Eclair_Ctrl_RightHipEffector.ch" "Eclair_ControlRig.RightHipEffector[0]"
-		;
-connectAttr "HIKproperties1.ra" "Eclair_ControlRig.ra";
-connectAttr "Eclair_HipsBPKG3.msg" "Eclair_FullBodyKG4.dnsm" -na;
-connectAttr "Eclair_ChestBPKG3.msg" "Eclair_FullBodyKG4.dnsm" -na;
-connectAttr "Eclair_LeftArmBPKG3.msg" "Eclair_FullBodyKG4.dnsm" -na;
-connectAttr "Eclair_RightArmBPKG3.msg" "Eclair_FullBodyKG4.dnsm" -na;
-connectAttr "Eclair_LeftLegBPKG3.msg" "Eclair_FullBodyKG4.dnsm" -na;
-connectAttr "Eclair_RightLegBPKG3.msg" "Eclair_FullBodyKG4.dnsm" -na;
-connectAttr "Eclair_HeadBPKG3.msg" "Eclair_FullBodyKG4.dnsm" -na;
-connectAttr "Eclair_LeftHandBPKG4.msg" "Eclair_FullBodyKG4.dnsm" -na;
-connectAttr "Eclair_RightHandBPKG4.msg" "Eclair_FullBodyKG4.dnsm" -na;
-connectAttr "Eclair_LeftFootBPKG4.msg" "Eclair_FullBodyKG4.dnsm" -na;
-connectAttr "Eclair_RightFootBPKG4.msg" "Eclair_FullBodyKG4.dnsm" -na;
-connectAttr "Eclair_Ctrl_Hips.msg" "Eclair_FullBodyKG4.act[0]";
-connectAttr "Eclair_Ctrl_LeftUpLeg.msg" "Eclair_FullBodyKG4.act[1]";
-connectAttr "Eclair_Ctrl_LeftLeg.msg" "Eclair_FullBodyKG4.act[2]";
-connectAttr "Eclair_Ctrl_LeftFoot.msg" "Eclair_FullBodyKG4.act[3]";
-connectAttr "Eclair_Ctrl_RightUpLeg.msg" "Eclair_FullBodyKG4.act[4]";
-connectAttr "Eclair_Ctrl_RightLeg.msg" "Eclair_FullBodyKG4.act[5]";
-connectAttr "Eclair_Ctrl_RightFoot.msg" "Eclair_FullBodyKG4.act[6]";
-connectAttr "Eclair_Ctrl_Spine.msg" "Eclair_FullBodyKG4.act[7]";
-connectAttr "Eclair_Ctrl_LeftArm.msg" "Eclair_FullBodyKG4.act[8]";
-connectAttr "Eclair_Ctrl_LeftForeArm.msg" "Eclair_FullBodyKG4.act[9]";
-connectAttr "Eclair_Ctrl_LeftHand.msg" "Eclair_FullBodyKG4.act[10]";
-connectAttr "Eclair_Ctrl_RightArm.msg" "Eclair_FullBodyKG4.act[11]";
-connectAttr "Eclair_Ctrl_RightForeArm.msg" "Eclair_FullBodyKG4.act[12]";
-connectAttr "Eclair_Ctrl_RightHand.msg" "Eclair_FullBodyKG4.act[13]";
-connectAttr "Eclair_Ctrl_Head.msg" "Eclair_FullBodyKG4.act[14]";
-connectAttr "Eclair_Ctrl_LeftToeBase.msg" "Eclair_FullBodyKG4.act[15]";
-connectAttr "Eclair_Ctrl_RightToeBase.msg" "Eclair_FullBodyKG4.act[16]";
-connectAttr "Eclair_Ctrl_LeftShoulder.msg" "Eclair_FullBodyKG4.act[17]";
-connectAttr "Eclair_Ctrl_RightShoulder.msg" "Eclair_FullBodyKG4.act[18]";
-connectAttr "Eclair_Ctrl_Neck.msg" "Eclair_FullBodyKG4.act[19]";
-connectAttr "Eclair_Ctrl_Spine1.msg" "Eclair_FullBodyKG4.act[20]";
-connectAttr "Eclair_Ctrl_Spine2.msg" "Eclair_FullBodyKG4.act[21]";
-connectAttr "Eclair_Ctrl_LeafLeftForeArmRoll1.msg" "Eclair_FullBodyKG4.act[22]";
-connectAttr "Eclair_Ctrl_LeafRightForeArmRoll1.msg" "Eclair_FullBodyKG4.act[23]"
-		;
-connectAttr "Eclair_Ctrl_HipsEffector.msg" "Eclair_FullBodyKG4.act[24]";
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.msg" "Eclair_FullBodyKG4.act[25]";
-connectAttr "Eclair_Ctrl_RightAnkleEffector.msg" "Eclair_FullBodyKG4.act[26]";
-connectAttr "Eclair_Ctrl_LeftWristEffector.msg" "Eclair_FullBodyKG4.act[27]";
-connectAttr "Eclair_Ctrl_RightWristEffector.msg" "Eclair_FullBodyKG4.act[28]";
-connectAttr "Eclair_Ctrl_LeftKneeEffector.msg" "Eclair_FullBodyKG4.act[29]";
-connectAttr "Eclair_Ctrl_RightKneeEffector.msg" "Eclair_FullBodyKG4.act[30]";
-connectAttr "Eclair_Ctrl_LeftElbowEffector.msg" "Eclair_FullBodyKG4.act[31]";
-connectAttr "Eclair_Ctrl_RightElbowEffector.msg" "Eclair_FullBodyKG4.act[32]";
-connectAttr "Eclair_Ctrl_ChestOriginEffector.msg" "Eclair_FullBodyKG4.act[33]";
-connectAttr "Eclair_Ctrl_ChestEndEffector.msg" "Eclair_FullBodyKG4.act[34]";
-connectAttr "Eclair_Ctrl_LeftFootEffector.msg" "Eclair_FullBodyKG4.act[35]";
-connectAttr "Eclair_Ctrl_RightFootEffector.msg" "Eclair_FullBodyKG4.act[36]";
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.msg" "Eclair_FullBodyKG4.act[37]";
-connectAttr "Eclair_Ctrl_RightShoulderEffector.msg" "Eclair_FullBodyKG4.act[38]"
-		;
-connectAttr "Eclair_Ctrl_HeadEffector.msg" "Eclair_FullBodyKG4.act[39]";
-connectAttr "Eclair_Ctrl_LeftHipEffector.msg" "Eclair_FullBodyKG4.act[40]";
-connectAttr "Eclair_Ctrl_RightHipEffector.msg" "Eclair_FullBodyKG4.act[41]";
-connectAttr "Eclair_Ctrl_Hips.rz" "Eclair_HipsBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Hips.ry" "Eclair_HipsBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Hips.rx" "Eclair_HipsBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Hips.tz" "Eclair_HipsBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Hips.ty" "Eclair_HipsBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Hips.tx" "Eclair_HipsBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_HipsEffector.rz" "Eclair_HipsBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_HipsEffector.ry" "Eclair_HipsBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_HipsEffector.rx" "Eclair_HipsBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_HipsEffector.tz" "Eclair_HipsBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_HipsEffector.ty" "Eclair_HipsBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_HipsEffector.tx" "Eclair_HipsBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Hips.msg" "Eclair_HipsBPKG3.act[0]";
-connectAttr "Eclair_Ctrl_HipsEffector.msg" "Eclair_HipsBPKG3.act[1]";
-connectAttr "Eclair_Ctrl_Spine.rz" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Spine.ry" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Spine.rx" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Spine1.rz" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Spine1.ry" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Spine1.rx" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Spine2.rz" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Spine2.ry" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Spine2.rx" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.rz" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.ry" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.rx" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.tz" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.ty" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.tx" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_ChestEndEffector.rz" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_ChestEndEffector.ry" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_ChestEndEffector.rx" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_ChestEndEffector.tz" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_ChestEndEffector.ty" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_ChestEndEffector.tx" "Eclair_ChestBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Spine.msg" "Eclair_ChestBPKG3.act[0]";
-connectAttr "Eclair_Ctrl_Spine1.msg" "Eclair_ChestBPKG3.act[1]";
-connectAttr "Eclair_Ctrl_Spine2.msg" "Eclair_ChestBPKG3.act[2]";
-connectAttr "Eclair_Ctrl_ChestOriginEffector.msg" "Eclair_ChestBPKG3.act[3]";
-connectAttr "Eclair_Ctrl_ChestEndEffector.msg" "Eclair_ChestBPKG3.act[4]";
-connectAttr "Eclair_Ctrl_LeftArm.rz" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftArm.ry" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftArm.rx" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftForeArm.rz" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftForeArm.ry" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftForeArm.rx" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftHand.rz" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftHand.ry" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftHand.rx" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftShoulder.rz" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftShoulder.ry" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftShoulder.rx" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeafLeftForeArmRoll1.rz" "Eclair_LeftArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_LeafLeftForeArmRoll1.ry" "Eclair_LeftArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_LeafLeftForeArmRoll1.rx" "Eclair_LeftArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_LeftWristEffector.rz" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftWristEffector.ry" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftWristEffector.rx" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftWristEffector.tz" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftWristEffector.ty" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftWristEffector.tx" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.rz" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.ry" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.rx" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.tz" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.ty" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.tx" "Eclair_LeftArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.rz" "Eclair_LeftArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.ry" "Eclair_LeftArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.rx" "Eclair_LeftArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.tz" "Eclair_LeftArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.ty" "Eclair_LeftArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.tx" "Eclair_LeftArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_LeftArm.msg" "Eclair_LeftArmBPKG3.act[0]";
-connectAttr "Eclair_Ctrl_LeftForeArm.msg" "Eclair_LeftArmBPKG3.act[1]";
-connectAttr "Eclair_Ctrl_LeftHand.msg" "Eclair_LeftArmBPKG3.act[2]";
-connectAttr "Eclair_Ctrl_LeftShoulder.msg" "Eclair_LeftArmBPKG3.act[3]";
-connectAttr "Eclair_Ctrl_LeafLeftForeArmRoll1.msg" "Eclair_LeftArmBPKG3.act[4]";
-connectAttr "Eclair_Ctrl_LeftWristEffector.msg" "Eclair_LeftArmBPKG3.act[5]";
-connectAttr "Eclair_Ctrl_LeftElbowEffector.msg" "Eclair_LeftArmBPKG3.act[6]";
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.msg" "Eclair_LeftArmBPKG3.act[7]";
-connectAttr "Eclair_Ctrl_RightArm.rz" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightArm.ry" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightArm.rx" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightForeArm.rz" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightForeArm.ry" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightForeArm.rx" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightHand.rz" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightHand.ry" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightHand.rx" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightShoulder.rz" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightShoulder.ry" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightShoulder.rx" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeafRightForeArmRoll1.rz" "Eclair_RightArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_LeafRightForeArmRoll1.ry" "Eclair_RightArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_LeafRightForeArmRoll1.rx" "Eclair_RightArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_RightWristEffector.rz" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightWristEffector.ry" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightWristEffector.rx" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightWristEffector.tz" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightWristEffector.ty" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightWristEffector.tx" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightElbowEffector.rz" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightElbowEffector.ry" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightElbowEffector.rx" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightElbowEffector.tz" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightElbowEffector.ty" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightElbowEffector.tx" "Eclair_RightArmBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.rz" "Eclair_RightArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.ry" "Eclair_RightArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.rx" "Eclair_RightArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.tz" "Eclair_RightArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.ty" "Eclair_RightArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.tx" "Eclair_RightArmBPKG3.dnsm" -na
-		;
-connectAttr "Eclair_Ctrl_RightArm.msg" "Eclair_RightArmBPKG3.act[0]";
-connectAttr "Eclair_Ctrl_RightForeArm.msg" "Eclair_RightArmBPKG3.act[1]";
-connectAttr "Eclair_Ctrl_RightHand.msg" "Eclair_RightArmBPKG3.act[2]";
-connectAttr "Eclair_Ctrl_RightShoulder.msg" "Eclair_RightArmBPKG3.act[3]";
-connectAttr "Eclair_Ctrl_LeafRightForeArmRoll1.msg" "Eclair_RightArmBPKG3.act[4]"
-		;
-connectAttr "Eclair_Ctrl_RightWristEffector.msg" "Eclair_RightArmBPKG3.act[5]";
-connectAttr "Eclair_Ctrl_RightElbowEffector.msg" "Eclair_RightArmBPKG3.act[6]";
-connectAttr "Eclair_Ctrl_RightShoulderEffector.msg" "Eclair_RightArmBPKG3.act[7]"
-		;
-connectAttr "Eclair_Ctrl_LeftUpLeg.rz" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftUpLeg.ry" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftUpLeg.rx" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftLeg.rz" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftLeg.ry" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftLeg.rx" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftFoot.rz" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftFoot.ry" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftFoot.rx" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftToeBase.rz" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftToeBase.ry" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftToeBase.rx" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.rz" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.ry" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.rx" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.tz" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.ty" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.tx" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.rz" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.ry" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.rx" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.tz" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.ty" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.tx" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftFootEffector.rz" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftFootEffector.ry" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftFootEffector.rx" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftFootEffector.tz" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftFootEffector.ty" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftFootEffector.tx" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftHipEffector.rz" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftHipEffector.ry" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftHipEffector.rx" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftHipEffector.tz" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftHipEffector.ty" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftHipEffector.tx" "Eclair_LeftLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_LeftUpLeg.msg" "Eclair_LeftLegBPKG3.act[0]";
-connectAttr "Eclair_Ctrl_LeftLeg.msg" "Eclair_LeftLegBPKG3.act[1]";
-connectAttr "Eclair_Ctrl_LeftFoot.msg" "Eclair_LeftLegBPKG3.act[2]";
-connectAttr "Eclair_Ctrl_LeftToeBase.msg" "Eclair_LeftLegBPKG3.act[3]";
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.msg" "Eclair_LeftLegBPKG3.act[4]";
-connectAttr "Eclair_Ctrl_LeftKneeEffector.msg" "Eclair_LeftLegBPKG3.act[5]";
-connectAttr "Eclair_Ctrl_LeftFootEffector.msg" "Eclair_LeftLegBPKG3.act[6]";
-connectAttr "Eclair_Ctrl_LeftHipEffector.msg" "Eclair_LeftLegBPKG3.act[7]";
-connectAttr "Eclair_Ctrl_RightUpLeg.rz" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightUpLeg.ry" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightUpLeg.rx" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightLeg.rz" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightLeg.ry" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightLeg.rx" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightFoot.rz" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightFoot.ry" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightFoot.rx" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightToeBase.rz" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightToeBase.ry" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightToeBase.rx" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.rz" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.ry" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.rx" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.tz" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.ty" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.tx" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightKneeEffector.rz" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightKneeEffector.ry" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightKneeEffector.rx" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightKneeEffector.tz" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightKneeEffector.ty" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightKneeEffector.tx" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightFootEffector.rz" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightFootEffector.ry" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightFootEffector.rx" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightFootEffector.tz" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightFootEffector.ty" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightFootEffector.tx" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightHipEffector.rz" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightHipEffector.ry" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightHipEffector.rx" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightHipEffector.tz" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightHipEffector.ty" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightHipEffector.tx" "Eclair_RightLegBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_RightUpLeg.msg" "Eclair_RightLegBPKG3.act[0]";
-connectAttr "Eclair_Ctrl_RightLeg.msg" "Eclair_RightLegBPKG3.act[1]";
-connectAttr "Eclair_Ctrl_RightFoot.msg" "Eclair_RightLegBPKG3.act[2]";
-connectAttr "Eclair_Ctrl_RightToeBase.msg" "Eclair_RightLegBPKG3.act[3]";
-connectAttr "Eclair_Ctrl_RightAnkleEffector.msg" "Eclair_RightLegBPKG3.act[4]";
-connectAttr "Eclair_Ctrl_RightKneeEffector.msg" "Eclair_RightLegBPKG3.act[5]";
-connectAttr "Eclair_Ctrl_RightFootEffector.msg" "Eclair_RightLegBPKG3.act[6]";
-connectAttr "Eclair_Ctrl_RightHipEffector.msg" "Eclair_RightLegBPKG3.act[7]";
-connectAttr "Eclair_Ctrl_Head.rz" "Eclair_HeadBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Head.ry" "Eclair_HeadBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Head.rx" "Eclair_HeadBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Neck.rz" "Eclair_HeadBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Neck.ry" "Eclair_HeadBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Neck.rx" "Eclair_HeadBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_HeadEffector.rz" "Eclair_HeadBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_HeadEffector.ry" "Eclair_HeadBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_HeadEffector.rx" "Eclair_HeadBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_HeadEffector.tz" "Eclair_HeadBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_HeadEffector.ty" "Eclair_HeadBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_HeadEffector.tx" "Eclair_HeadBPKG3.dnsm" -na;
-connectAttr "Eclair_Ctrl_Head.msg" "Eclair_HeadBPKG3.act[0]";
-connectAttr "Eclair_Ctrl_Neck.msg" "Eclair_HeadBPKG3.act[1]";
-connectAttr "Eclair_Ctrl_HeadEffector.msg" "Eclair_HeadBPKG3.act[2]";
-connectAttr "Eclair.OutputCharacterDefinition" "HIKFK2State1.InputCharacterDefinition"
-		;
-connectAttr "Eclair_Ctrl_Reference.wm" "HIKFK2State1.ReferenceGX";
-connectAttr "Eclair_Ctrl_Hips.wm" "HIKFK2State1.HipsGX";
-connectAttr "Eclair_Ctrl_LeftUpLeg.wm" "HIKFK2State1.LeftUpLegGX";
-connectAttr "Eclair_Ctrl_LeftLeg.wm" "HIKFK2State1.LeftLegGX";
-connectAttr "Eclair_Ctrl_LeftFoot.wm" "HIKFK2State1.LeftFootGX";
-connectAttr "Eclair_Ctrl_RightUpLeg.wm" "HIKFK2State1.RightUpLegGX";
-connectAttr "Eclair_Ctrl_RightLeg.wm" "HIKFK2State1.RightLegGX";
-connectAttr "Eclair_Ctrl_RightFoot.wm" "HIKFK2State1.RightFootGX";
-connectAttr "Eclair_Ctrl_Spine.wm" "HIKFK2State1.SpineGX";
-connectAttr "Eclair_Ctrl_LeftArm.wm" "HIKFK2State1.LeftArmGX";
-connectAttr "Eclair_Ctrl_LeftForeArm.wm" "HIKFK2State1.LeftForeArmGX";
-connectAttr "Eclair_Ctrl_LeftHand.wm" "HIKFK2State1.LeftHandGX";
-connectAttr "Eclair_Ctrl_RightArm.wm" "HIKFK2State1.RightArmGX";
-connectAttr "Eclair_Ctrl_RightForeArm.wm" "HIKFK2State1.RightForeArmGX";
-connectAttr "Eclair_Ctrl_RightHand.wm" "HIKFK2State1.RightHandGX";
-connectAttr "Eclair_Ctrl_Head.wm" "HIKFK2State1.HeadGX";
-connectAttr "Eclair_Ctrl_LeftToeBase.wm" "HIKFK2State1.LeftToeBaseGX";
-connectAttr "Eclair_Ctrl_RightToeBase.wm" "HIKFK2State1.RightToeBaseGX";
-connectAttr "Eclair_Ctrl_LeftShoulder.wm" "HIKFK2State1.LeftShoulderGX";
-connectAttr "Eclair_Ctrl_RightShoulder.wm" "HIKFK2State1.RightShoulderGX";
-connectAttr "Eclair_Ctrl_Neck.wm" "HIKFK2State1.NeckGX";
-connectAttr "Eclair_Ctrl_Spine1.wm" "HIKFK2State1.Spine1GX";
-connectAttr "Eclair_Ctrl_Spine2.wm" "HIKFK2State1.Spine2GX";
-connectAttr "Eclair_Ctrl_LeafLeftForeArmRoll1.wm" "HIKFK2State1.LeafLeftForeArmRoll1GX"
-		;
-connectAttr "Eclair_Ctrl_LeafRightForeArmRoll1.wm" "HIKFK2State1.LeafRightForeArmRoll1GX"
-		;
-connectAttr "Eclair_Ctrl_HipsEffector.wm" "HIKEffector2State1.HipsEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_HipsEffector.rt" "HIKEffector2State1.HipsEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_HipsEffector.rr" "HIKEffector2State1.HipsEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_HipsEffector.po" "HIKEffector2State1.HipsEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_HipsEffector.pull" "HIKEffector2State1.HipsEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_HipsEffector.stiffness" "HIKEffector2State1.HipsEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.wm" "HIKEffector2State1.LeftAnkleEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.rt" "HIKEffector2State1.LeftAnkleEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.rr" "HIKEffector2State1.LeftAnkleEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.po" "HIKEffector2State1.LeftAnkleEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.pull" "HIKEffector2State1.LeftAnkleEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.stiffness" "HIKEffector2State1.LeftAnkleEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.wm" "HIKEffector2State1.RightAnkleEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.rt" "HIKEffector2State1.RightAnkleEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.rr" "HIKEffector2State1.RightAnkleEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.po" "HIKEffector2State1.RightAnkleEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.pull" "HIKEffector2State1.RightAnkleEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.stiffness" "HIKEffector2State1.RightAnkleEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_LeftWristEffector.wm" "HIKEffector2State1.LeftWristEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftWristEffector.rt" "HIKEffector2State1.LeftWristEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftWristEffector.rr" "HIKEffector2State1.LeftWristEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftWristEffector.po" "HIKEffector2State1.LeftWristEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftWristEffector.pull" "HIKEffector2State1.LeftWristEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_LeftWristEffector.stiffness" "HIKEffector2State1.LeftWristEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_RightWristEffector.wm" "HIKEffector2State1.RightWristEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_RightWristEffector.rt" "HIKEffector2State1.RightWristEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_RightWristEffector.rr" "HIKEffector2State1.RightWristEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_RightWristEffector.po" "HIKEffector2State1.RightWristEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_RightWristEffector.pull" "HIKEffector2State1.RightWristEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_RightWristEffector.stiffness" "HIKEffector2State1.RightWristEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.wm" "HIKEffector2State1.LeftKneeEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.rt" "HIKEffector2State1.LeftKneeEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.rr" "HIKEffector2State1.LeftKneeEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.po" "HIKEffector2State1.LeftKneeEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.pull" "HIKEffector2State1.LeftKneeEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.stiffness" "HIKEffector2State1.LeftKneeEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_RightKneeEffector.wm" "HIKEffector2State1.RightKneeEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_RightKneeEffector.rt" "HIKEffector2State1.RightKneeEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_RightKneeEffector.rr" "HIKEffector2State1.RightKneeEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_RightKneeEffector.po" "HIKEffector2State1.RightKneeEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_RightKneeEffector.pull" "HIKEffector2State1.RightKneeEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_RightKneeEffector.stiffness" "HIKEffector2State1.RightKneeEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.wm" "HIKEffector2State1.LeftElbowEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.rt" "HIKEffector2State1.LeftElbowEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.rr" "HIKEffector2State1.LeftElbowEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.po" "HIKEffector2State1.LeftElbowEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.pull" "HIKEffector2State1.LeftElbowEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.stiffness" "HIKEffector2State1.LeftElbowEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_RightElbowEffector.wm" "HIKEffector2State1.RightElbowEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_RightElbowEffector.rt" "HIKEffector2State1.RightElbowEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_RightElbowEffector.rr" "HIKEffector2State1.RightElbowEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_RightElbowEffector.po" "HIKEffector2State1.RightElbowEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_RightElbowEffector.pull" "HIKEffector2State1.RightElbowEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_RightElbowEffector.stiffness" "HIKEffector2State1.RightElbowEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.wm" "HIKEffector2State1.ChestOriginEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.rt" "HIKEffector2State1.ChestOriginEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.rr" "HIKEffector2State1.ChestOriginEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.po" "HIKEffector2State1.ChestOriginEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.pull" "HIKEffector2State1.ChestOriginEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.stiffness" "HIKEffector2State1.ChestOriginEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_ChestEndEffector.wm" "HIKEffector2State1.ChestEndEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_ChestEndEffector.rt" "HIKEffector2State1.ChestEndEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_ChestEndEffector.rr" "HIKEffector2State1.ChestEndEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_ChestEndEffector.po" "HIKEffector2State1.ChestEndEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_ChestEndEffector.pull" "HIKEffector2State1.ChestEndEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_ChestEndEffector.stiffness" "HIKEffector2State1.ChestEndEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_LeftFootEffector.wm" "HIKEffector2State1.LeftFootEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftFootEffector.rt" "HIKEffector2State1.LeftFootEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftFootEffector.rr" "HIKEffector2State1.LeftFootEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftFootEffector.po" "HIKEffector2State1.LeftFootEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftFootEffector.pull" "HIKEffector2State1.LeftFootEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_LeftFootEffector.stiffness" "HIKEffector2State1.LeftFootEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_RightFootEffector.wm" "HIKEffector2State1.RightFootEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_RightFootEffector.rt" "HIKEffector2State1.RightFootEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_RightFootEffector.rr" "HIKEffector2State1.RightFootEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_RightFootEffector.po" "HIKEffector2State1.RightFootEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_RightFootEffector.pull" "HIKEffector2State1.RightFootEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_RightFootEffector.stiffness" "HIKEffector2State1.RightFootEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.wm" "HIKEffector2State1.LeftShoulderEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.rt" "HIKEffector2State1.LeftShoulderEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.rr" "HIKEffector2State1.LeftShoulderEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.po" "HIKEffector2State1.LeftShoulderEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.pull" "HIKEffector2State1.LeftShoulderEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.stiffness" "HIKEffector2State1.LeftShoulderEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.wm" "HIKEffector2State1.RightShoulderEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.rt" "HIKEffector2State1.RightShoulderEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.rr" "HIKEffector2State1.RightShoulderEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.po" "HIKEffector2State1.RightShoulderEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.pull" "HIKEffector2State1.RightShoulderEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.stiffness" "HIKEffector2State1.RightShoulderEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_HeadEffector.wm" "HIKEffector2State1.HeadEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_HeadEffector.rt" "HIKEffector2State1.HeadEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_HeadEffector.rr" "HIKEffector2State1.HeadEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_HeadEffector.po" "HIKEffector2State1.HeadEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_HeadEffector.pull" "HIKEffector2State1.HeadEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_HeadEffector.stiffness" "HIKEffector2State1.HeadEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_LeftHipEffector.wm" "HIKEffector2State1.LeftHipEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftHipEffector.rt" "HIKEffector2State1.LeftHipEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftHipEffector.rr" "HIKEffector2State1.LeftHipEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftHipEffector.po" "HIKEffector2State1.LeftHipEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftHipEffector.pull" "HIKEffector2State1.LeftHipEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_LeftHipEffector.stiffness" "HIKEffector2State1.LeftHipEffectorStiffness"
-		;
-connectAttr "Eclair_Ctrl_RightHipEffector.wm" "HIKEffector2State1.RightHipEffectorGX[0]"
-		;
-connectAttr "Eclair_Ctrl_RightHipEffector.rt" "HIKEffector2State1.RightHipEffectorReachT[0]"
-		;
-connectAttr "Eclair_Ctrl_RightHipEffector.rr" "HIKEffector2State1.RightHipEffectorReachR[0]"
-		;
-connectAttr "Eclair_Ctrl_RightHipEffector.po" "HIKEffector2State1.RightHipEffectorPivot[0]"
-		;
-connectAttr "Eclair_Ctrl_RightHipEffector.pull" "HIKEffector2State1.RightHipEffectorPull"
-		;
-connectAttr "Eclair_Ctrl_RightHipEffector.stiffness" "HIKEffector2State1.RightHipEffectorStiffness"
-		;
-connectAttr "HIKEffector2State1.EFF" "HIKPinning2State1.InputEffectorState";
-connectAttr "HIKEffector2State1.EFFNA" "HIKPinning2State1.InputEffectorStateNoAux"
-		;
-connectAttr "Eclair_Ctrl_HipsEffector.pint" "HIKPinning2State1.HipsEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_HipsEffector.pinr" "HIKPinning2State1.HipsEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.pint" "HIKPinning2State1.LeftAnkleEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.pinr" "HIKPinning2State1.LeftAnkleEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.pint" "HIKPinning2State1.RightAnkleEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.pinr" "HIKPinning2State1.RightAnkleEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_LeftWristEffector.pint" "HIKPinning2State1.LeftWristEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_LeftWristEffector.pinr" "HIKPinning2State1.LeftWristEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_RightWristEffector.pint" "HIKPinning2State1.RightWristEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_RightWristEffector.pinr" "HIKPinning2State1.RightWristEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.pint" "HIKPinning2State1.LeftKneeEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.pinr" "HIKPinning2State1.LeftKneeEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_RightKneeEffector.pint" "HIKPinning2State1.RightKneeEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_RightKneeEffector.pinr" "HIKPinning2State1.RightKneeEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.pint" "HIKPinning2State1.LeftElbowEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.pinr" "HIKPinning2State1.LeftElbowEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_RightElbowEffector.pint" "HIKPinning2State1.RightElbowEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_RightElbowEffector.pinr" "HIKPinning2State1.RightElbowEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.pint" "HIKPinning2State1.ChestOriginEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.pinr" "HIKPinning2State1.ChestOriginEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_ChestEndEffector.pint" "HIKPinning2State1.ChestEndEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_ChestEndEffector.pinr" "HIKPinning2State1.ChestEndEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_LeftFootEffector.pint" "HIKPinning2State1.LeftFootEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_LeftFootEffector.pinr" "HIKPinning2State1.LeftFootEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_RightFootEffector.pint" "HIKPinning2State1.RightFootEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_RightFootEffector.pinr" "HIKPinning2State1.RightFootEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.pint" "HIKPinning2State1.LeftShoulderEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.pinr" "HIKPinning2State1.LeftShoulderEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.pint" "HIKPinning2State1.RightShoulderEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.pinr" "HIKPinning2State1.RightShoulderEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_HeadEffector.pint" "HIKPinning2State1.HeadEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_HeadEffector.pinr" "HIKPinning2State1.HeadEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_LeftHipEffector.pint" "HIKPinning2State1.LeftHipEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_LeftHipEffector.pinr" "HIKPinning2State1.LeftHipEffectorPinR"
-		;
-connectAttr "Eclair_Ctrl_RightHipEffector.pint" "HIKPinning2State1.RightHipEffectorPinT"
-		;
-connectAttr "Eclair_Ctrl_RightHipEffector.pinr" "HIKPinning2State1.RightHipEffectorPinR"
-		;
-connectAttr "Eclair.OutputCharacterDefinition" "HIKState2FK1.InputCharacterDefinition"
-		;
-connectAttr "HIKSolverNode1.OutputCharacterState" "HIKState2FK1.InputCharacterState"
-		;
-connectAttr "Eclair.OutputCharacterDefinition" "HIKState2FK2.InputCharacterDefinition"
-		;
-connectAttr "HIKSolverNode1.decs" "HIKState2FK2.InputCharacterState";
-connectAttr "HIKSolverNode1.OutputCharacterState" "HIKEffectorFromCharacter1.InputCharacterState"
-		;
-connectAttr "Eclair.OutputCharacterDefinition" "HIKEffectorFromCharacter1.InputCharacterDefinition"
-		;
-connectAttr "HIKproperties1.OutputPropertySetState" "HIKEffectorFromCharacter1.InputPropertySetState"
-		;
-connectAttr "HIKSolverNode1.decs" "HIKEffectorFromCharacter2.InputCharacterState"
-		;
-connectAttr "Eclair.OutputCharacterDefinition" "HIKEffectorFromCharacter2.InputCharacterDefinition"
-		;
-connectAttr "HIKproperties1.OutputPropertySetState" "HIKEffectorFromCharacter2.InputPropertySetState"
-		;
-connectAttr "Eclair_Ctrl_HipsEffector.po" "HIKState2Effector1.HipsEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.po" "HIKState2Effector1.LeftAnkleEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.po" "HIKState2Effector1.RightAnkleEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftWristEffector.po" "HIKState2Effector1.LeftWristEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_RightWristEffector.po" "HIKState2Effector1.RightWristEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.po" "HIKState2Effector1.LeftKneeEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_RightKneeEffector.po" "HIKState2Effector1.RightKneeEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.po" "HIKState2Effector1.LeftElbowEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_RightElbowEffector.po" "HIKState2Effector1.RightElbowEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.po" "HIKState2Effector1.ChestOriginEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_ChestEndEffector.po" "HIKState2Effector1.ChestEndEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftFootEffector.po" "HIKState2Effector1.LeftFootEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_RightFootEffector.po" "HIKState2Effector1.RightFootEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.po" "HIKState2Effector1.LeftShoulderEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.po" "HIKState2Effector1.RightShoulderEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_HeadEffector.po" "HIKState2Effector1.HeadEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftHipEffector.po" "HIKState2Effector1.LeftHipEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_RightHipEffector.po" "HIKState2Effector1.RightHipEffectorpivotOffset[0]"
-		;
-connectAttr "HIKEffectorFromCharacter1.OutputEffectorState" "HIKState2Effector1.InputEffectorState"
-		;
-connectAttr "Eclair_Ctrl_HipsEffector.po" "HIKState2Effector2.HipsEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftAnkleEffector.po" "HIKState2Effector2.LeftAnkleEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_RightAnkleEffector.po" "HIKState2Effector2.RightAnkleEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftWristEffector.po" "HIKState2Effector2.LeftWristEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_RightWristEffector.po" "HIKState2Effector2.RightWristEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftKneeEffector.po" "HIKState2Effector2.LeftKneeEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_RightKneeEffector.po" "HIKState2Effector2.RightKneeEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftElbowEffector.po" "HIKState2Effector2.LeftElbowEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_RightElbowEffector.po" "HIKState2Effector2.RightElbowEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_ChestOriginEffector.po" "HIKState2Effector2.ChestOriginEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_ChestEndEffector.po" "HIKState2Effector2.ChestEndEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftFootEffector.po" "HIKState2Effector2.LeftFootEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_RightFootEffector.po" "HIKState2Effector2.RightFootEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftShoulderEffector.po" "HIKState2Effector2.LeftShoulderEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_RightShoulderEffector.po" "HIKState2Effector2.RightShoulderEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_HeadEffector.po" "HIKState2Effector2.HeadEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_LeftHipEffector.po" "HIKState2Effector2.LeftHipEffectorpivotOffset[0]"
-		;
-connectAttr "Eclair_Ctrl_RightHipEffector.po" "HIKState2Effector2.RightHipEffectorpivotOffset[0]"
-		;
-connectAttr "HIKEffectorFromCharacter2.OutputEffectorState" "HIKState2Effector2.InputEffectorState"
-		;
+connectAttr "Eclair_HipsBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
+connectAttr "Eclair_ChestBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
+connectAttr "Eclair_LeftArmBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
+connectAttr "Eclair_RightArmBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
+connectAttr "Eclair_LeftLegBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
+connectAttr "Eclair_RightLegBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
+connectAttr "Eclair_HeadBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
+connectAttr "Eclair_LeftHandBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
+connectAttr "Eclair_RightHandBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
+connectAttr "Eclair_LeftFootBPKG1.msg" "Eclair_FullBodyKG1.dnsm" -na;
+connectAttr "Eclair_LeftHandBPKG2.msg" "Eclair_FullBodyKG2.dnsm" -na;
+connectAttr "Eclair_RightHandBPKG2.msg" "Eclair_FullBodyKG2.dnsm" -na;
+connectAttr "Eclair_LeftFootBPKG2.msg" "Eclair_FullBodyKG2.dnsm" -na;
+connectAttr "Eclair_RightFootBPKG2.msg" "Eclair_FullBodyKG2.dnsm" -na;
+connectAttr "layerManager.dli[19]" "HADA.id";
+connectAttr "layerManager.dli[20]" "ATAMA.id";
+connectAttr "layerManager.dli[21]" "KAMI.id";
+connectAttr "skinCluster28.og[0]" "groupParts218.ig";
+connectAttr "groupId491.id" "groupParts218.gi";
+connectAttr "groupParts218.og" "groupParts219.ig";
+connectAttr "groupId492.id" "groupParts219.gi";
+connectAttr "groupParts219.og" "groupParts220.ig";
+connectAttr "groupId493.id" "groupParts220.gi";
+connectAttr "skinCluster30.og[0]" "groupParts221.ig";
+connectAttr "groupId494.id" "groupParts221.gi";
+connectAttr "groupParts221.og" "groupParts222.ig";
+connectAttr "groupId495.id" "groupParts222.gi";
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert3SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert4SG.pa" ":renderPartition.st" -na;
