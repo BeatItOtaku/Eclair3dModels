@@ -1,7 +1,7 @@
 //Maya ASCII 2018 scene
 //Name: Eclair.ma
-//Last modified: Fri, Jul 27, 2018 04:20:16 AM
-//Codeset: 932
+//Last modified: Fri, Aug 03, 2018 03:16:07 PM
+//Codeset: UTF-8
 requires maya "2018";
 requires -nodeType "HIKSolverNode" -nodeType "HIKCharacterNode" -nodeType "HIKSkeletonGeneratorNode"
 		 -nodeType "HIKControlSetNode" -nodeType "HIKEffectorFromCharacter" -nodeType "HIKFK2State"
@@ -19,13 +19,13 @@ fileInfo "application" "maya";
 fileInfo "product" "Maya 2018";
 fileInfo "version" "2018";
 fileInfo "cutIdentifier" "201706261615-f9658c4cfc";
-fileInfo "osv" "Microsoft Windows 8 Home Premium Edition, 64-bit  (Build 9200)\n";
+fileInfo "osv" "Mac OS X 10.13.5";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "884A1010-2641-9C98-0C58-72BFA400F7C8";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 45.656335929375686 36.079935187765919 88.927574600617291 ;
-	setAttr ".r" -type "double3" -9.9383527101747546 11546.999999999718 0 ;
+	setAttr ".t" -type "double3" 2.0647002142903044 103.12154472023319 -146.18478754733721 ;
+	setAttr ".r" -type "double3" -29.138352709879264 12058.599999999442 0 ;
 	setAttr ".rp" -type "double3" -3.5527136788005009e-15 -1.4210854715202004e-14 -1.4210854715202004e-14 ;
 	setAttr ".rpt" -type "double3" -1.4251120609342609e-11 1.3718665004119837e-12 1.8830958913412878e-11 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -33,7 +33,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".fl" 60;
-	setAttr ".coi" 105.02482295893365;
+	setAttr ".coi" 166.97316234586376;
 	setAttr ".ow" 30;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
@@ -414,7 +414,7 @@ createNode parentConstraint -n "HEADs_parentConstraint1" -p "HEADs";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -9.4663308626521417e-30 -1.0658141036401503e-14 
 		1.2621774483536189e-29 ;
-	setAttr ".lr" -type "double3" 7.245617446954256e-06 0 0 ;
+	setAttr ".lr" -type "double3" 0.092523912613317633 -0.15133421099398345 0.021884188907174574 ;
 	setAttr ".rst" -type "double3" -3.758684986518437e-15 1.907348622154359e-06 1.1276054112522347e-14 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
@@ -540,7 +540,7 @@ createNode parentConstraint -n "LeftTwintail_GR_parentConstraint1" -p "LeftTwint
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -4.4408920985006262e-16 0 4.4408920985006262e-16 ;
-	setAttr ".lr" -type "double3" 7.245617446954256e-06 0 0 ;
+	setAttr ".lr" -type "double3" 0.092523912613317633 -0.15133421099398345 0.021884188907174581 ;
 	setAttr ".rst" -type "double3" 3.9877210032027053 20.827197746571549 -2.4576009847165219 ;
 	setAttr -k on ".w0";
 createNode transform -n "RightTwintail_GR" -p "ikHandle";
@@ -567,7 +567,7 @@ createNode parentConstraint -n "RightTwintail_GR_parentConstraint1" -p "RightTwi
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 4.4408920985006262e-16 0 0 ;
-	setAttr ".lr" -type "double3" 7.245617446954256e-06 0 0 ;
+	setAttr ".lr" -type "double3" 0.092523912613317633 -0.15133421099398345 0.021884188907174581 ;
 	setAttr ".rst" -type "double3" -3.9877200000000066 20.827201907348623 -2.4575999999999847 ;
 	setAttr -k on ".w0";
 createNode transform -n "LeftShoulderAdd_GR" -p "ikHandle";
@@ -609,7 +609,7 @@ createNode parentConstraint -n "LeftSideTail_GR_parentConstraint1" -p "LeftSideT
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 3.7747582837255322e-15 7.1054273576010019e-15 
 		-3.5527136788005009e-15 ;
-	setAttr ".lr" -type "double3" 7.245617446954256e-06 0 0 ;
+	setAttr ".lr" -type "double3" 0.092523912613317633 -0.15133421099398345 0.021884188907174581 ;
 	setAttr ".rst" -type "double3" 1.0766059460458275 26.399896166804066 0.94601930945402446 ;
 	setAttr -k on ".w0";
 createNode transform -n "RightSideTail_GR" -p "ikHandle";
@@ -637,7 +637,7 @@ createNode parentConstraint -n "RightSideTail_GR_parentConstraint1" -p "RightSid
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 3.7747582837255322e-15 7.1054273576010019e-15 
 		-3.7747582837255322e-15 ;
-	setAttr ".lr" -type "double3" 7.245617446954256e-06 0 0 ;
+	setAttr ".lr" -type "double3" 0.092523912613317633 -0.15133421099398345 0.021884188907174581 ;
 	setAttr ".rst" -type "double3" -1.0064821292012847 26.185874405752454 1.0015774166048099 ;
 	setAttr -k on ".w0";
 createNode transform -n "BLEND_SOURCE" -p "_Eclair";
@@ -27855,7 +27855,7 @@ createNode joint -n "Spine" -p "Hips";
 	setAttr -k off -cb on ".v";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 1;
-	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 19.540725708007813 0 1;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 19.540725708007812 0 1;
 	setAttr ".ds" 2;
 	setAttr ".typ" 6;
 	setAttr ".radi" 0.52471350000000005;
@@ -27970,7 +27970,7 @@ createNode joint -n "L_TwinTail1" -p "Head";
 	setAttr ".ovdt" 1;
 	setAttr ".ove" yes;
 	setAttr ".t" -type "double3" 1.7908100060854437 2.4614332089799333 -1.8133370912699858 ;
-	setAttr ".r" -type "double3" 8.2950019533106629e-06 -6.7366274040317103e-06 -2.1756101279760575e-05 ;
+	setAttr ".r" -type "double3" -2.8705057609547948e-15 1.3710886340560579e-14 8.418016115082419e-16 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jot" -type "string" "none";
@@ -27981,7 +27981,7 @@ createNode joint -n "L_TwinTail2" -p "L_TwinTail1";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
 	setAttr ".t" -type "double3" 0.081145991858280003 -1.0726094868278224 -0.021344037178572473 ;
-	setAttr ".r" -type "double3" -5.0066929322824666e-08 -8.1973992052785625e-07 -2.6459882804314104e-06 ;
+	setAttr ".r" -type "double3" -1.1563617978982065e-13 -5.411421332443292e-13 -3.7557072290616055e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 180 87.165888983693534 ;
@@ -27992,7 +27992,7 @@ createNode joint -n "L_TwinTail3" -p "L_TwinTail2";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
 	setAttr ".t" -type "double3" 1.3044488365309796 -0.047937813206213015 -0.1369811462587216 ;
-	setAttr ".r" -type "double3" -4.2014524547742226e-07 4.8366869343065209e-06 7.9942256931289891e-06 ;
+	setAttr ".r" -type "double3" 5.4726704764199707e-15 1.8975811851328724e-13 -5.6955071628832518e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 180 0 -4.0152999296331675 ;
@@ -28003,7 +28003,7 @@ createNode joint -n "L_TwinTail4" -p "L_TwinTail3";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 4;
 	setAttr ".t" -type "double3" 1.4218909341591135 0.13880501048238611 0.21233115297845839 ;
-	setAttr ".r" -type "double3" 1.3632710027188948e-06 1.0374874979418559e-05 1.0373105899815093e-05 ;
+	setAttr ".r" -type "double3" -6.3934049875544824e-14 -5.3766593768876394e-13 -6.7945610240852213e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -5.2101360617497203e-16 -4.0352693336176521e-15 14.714079459254624 ;
@@ -28014,7 +28014,7 @@ createNode joint -n "L_TwinTail5" -p "L_TwinTail4";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 5;
 	setAttr ".t" -type "double3" 1.3307797513473152 -0.006322369305425837 0.03296005243459646 ;
-	setAttr ".r" -type "double3" 2.3469331873724384e-06 1.2360991763966147e-05 8.7112899202191848e-06 ;
+	setAttr ".r" -type "double3" -8.9068795886452644e-14 -9.0141329840905015e-13 -2.1362692475153329e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -1.8862933736187626e-16 -5.0299370303825892e-15 4.2953232519589397 ;
@@ -28025,7 +28025,7 @@ createNode joint -n "L_TwinTail6" -p "L_TwinTail5";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 6;
 	setAttr ".t" -type "double3" 1.4197234819564781 -0.039394105313551489 -0.26056547618714965 ;
-	setAttr ".r" -type "double3" 1.6769392812716289e-06 9.1098365277816052e-06 5.5522769092134728e-06 ;
+	setAttr ".r" -type "double3" -7.6600106544700923e-14 -9.8258947341304597e-13 -1.759665909822687e-13 ;
 	setAttr ".radi" 0.55866624012399946;
 createNode joint -n "L_TwinTail7" -p "L_TwinTail6";
 	rename -uid "03DF0B19-486D-8570-AA85-1285DB79DB00";
@@ -28033,7 +28033,7 @@ createNode joint -n "L_TwinTail7" -p "L_TwinTail6";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 7;
 	setAttr ".t" -type "double3" 1.5189593524619509 0.031629102907473533 -0.65196217370295029 ;
-	setAttr ".r" -type "double3" -1.8421529490579395e-07 -1.3235200286078604e-06 7.9657126391241528e-07 ;
+	setAttr ".r" -type "double3" 4.4491751895516119e-14 8.7855105084616924e-13 -1.2456506123003496e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -7.5856270037492409e-17 -5.3959643097510318e-15 1.6108178618116624 ;
@@ -28043,7 +28043,7 @@ createNode joint -n "L_TwinTail8" -p "L_TwinTail7";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".t" -type "double3" 1.4776175626039534 0.026175425016475025 -0.3074191891985068 ;
-	setAttr ".r" -type "double3" 7.5012916447689357e-07 -5.4421441568500548e-06 -4.5148559224772638e-06 ;
+	setAttr ".r" -type "double3" -2.6974233048918857e-13 1.6189300695166245e-12 1.6121142006405463e-12 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 8.7957005900812545e-17 -4.8266368714802295e-16 -20.655646648176873 ;
@@ -28070,7 +28070,7 @@ createNode joint -n "L_SideTail1" -p "Head";
 	setAttr ".ovdt" 1;
 	setAttr ".ove" yes;
 	setAttr ".t" -type "double3" 1.7828628163155287 1.0060265193835036 0.68787404380251493 ;
-	setAttr ".r" -type "double3" -1.7788442667062402e-05 7.4417643607389635e-05 0.00014467488881213684 ;
+	setAttr ".r" -type "double3" -1.397074143502901e-14 -8.4352154126857784e-16 1.0216127865109376e-15 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 180 81.935854157456774 ;
@@ -28084,7 +28084,7 @@ createNode joint -n "L_SideTail2" -p "L_SideTail1";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
 	setAttr ".t" -type "double3" 1.3191376074982213 -1.1932459329347574e-15 -0.041636333169596529 ;
-	setAttr ".r" -type "double3" -7.774147759080596e-06 -3.0725560289098389e-05 -0.00011062069954203599 ;
+	setAttr ".r" -type "double3" -1.2872351458025737e-13 -5.0875057053560299e-13 -1.8316458178641005e-12 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -1.8710190300554001e-16 -8.1434482497087034e-15 2.6323648932349113 ;
@@ -28098,7 +28098,7 @@ createNode joint -n "L_SideTail3" -p "L_SideTail2";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
 	setAttr ".t" -type "double3" 1.1366198731490496 1.9842827250094596e-16 -0.049963599803515696 ;
-	setAttr ".r" -type "double3" -3.724878749173631e-05 -0.00026279742716678583 -0.00024268983618256005 ;
+	setAttr ".r" -type "double3" -6.1676147513261056e-13 -4.3513719440236816e-12 -4.01843258379496e-12 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 6.7037290805497218e-16 1.3058569088311979e-14 5.8774970211307886 ;
@@ -28131,7 +28131,7 @@ createNode joint -n "R_TwinTail1" -p "Head";
 	setAttr ".ovdt" 1;
 	setAttr ".ove" yes;
 	setAttr ".t" -type "double3" -1.79081 2.4614566070556663 -1.81334 ;
-	setAttr ".r" -type "double3" 8.6917807090861244e-06 6.7635202851730432e-06 1.9330050450662182e-05 ;
+	setAttr ".r" -type "double3" 2.8704995517758423e-15 1.371088804118504e-14 8.417950854732837e-16 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jot" -type "string" "none";
@@ -28142,7 +28142,7 @@ createNode joint -n "R_TwinTail2" -p "R_TwinTail1";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
 	setAttr ".t" -type "double3" -0.081150000000000055 -1.0725999999999978 -0.021340000000000137 ;
-	setAttr ".r" -type "double3" -3.0442195944906071e-08 -8.0272907785327799e-07 2.5878309383341056e-06 ;
+	setAttr ".r" -type "double3" 5.3873581197405809e-14 -4.129515522775358e-13 2.833373870359136e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 180 87.165888983693534 ;
@@ -28153,7 +28153,7 @@ createNode joint -n "R_TwinTail3" -p "R_TwinTail2";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
 	setAttr ".t" -type "double3" 1.3028816924651814 -0.081139446874357368 -0.13698000000000032 ;
-	setAttr ".r" -type "double3" 6.0558755610050516e-07 4.7097405129760153e-06 -7.8190586455645865e-06 ;
+	setAttr ".r" -type "double3" -6.7424782417709866e-14 1.5163436596017539e-13 4.1709997450511536e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 179.99999914622634 7.1090936991502021e-23 -4.0152999296331657 ;
@@ -28164,7 +28164,7 @@ createNode joint -n "R_TwinTail4" -p "R_TwinTail3";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 4;
 	setAttr ".t" -type "double3" 1.4149337031875255 -0.19728961764993347 0.21232999706015576 ;
-	setAttr ".r" -type "double3" 4.2124282612157304e-06 9.3274800741798357e-06 -1.0145761747196394e-05 ;
+	setAttr ".r" -type "double3" -2.6327800876479822e-13 -3.1173387092844061e-13 5.1540851626367317e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 1.4507801399845801e-06 -2.1685477212706602e-07 14.714079459254625 ;
@@ -28175,7 +28175,7 @@ createNode joint -n "R_TwinTail5" -p "R_TwinTail4";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 5;
 	setAttr ".t" -type "double3" 1.134438134756401 -0.69570053731984238 0.032960011882640305 ;
-	setAttr ".r" -type "double3" 6.0840870468776656e-06 1.069661231238292e-05 -8.5201574580049185e-06 ;
+	setAttr ".r" -type "double3" -4.1499050254897767e-13 -5.3708997267796485e-13 2.0362219206651534e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -6.3540165137433185e-09 -1.6943442309202603e-07 4.2953232519588509 ;
@@ -28186,7 +28186,7 @@ createNode joint -n "R_TwinTail6" -p "R_TwinTail5";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 6;
 	setAttr ".t" -type "double3" 1.1070211403398034 -0.88978963391470156 -0.26055998679517289 ;
-	setAttr ".r" -type "double3" 4.5231881884007204e-06 7.849918053592066e-06 -5.4306155140103782e-06 ;
+	setAttr ".r" -type "double3" -4.0494698825115394e-13 -6.2712820168334672e-13 1.6383622195028091e-13 ;
 	setAttr ".jo" -type "double3" 1.2074182697257331e-06 1.9061081653411072e-21 3.5705634812952666e-15 ;
 	setAttr ".radi" 0.55866624012399946;
 createNode joint -n "R_TwinTail7" -p "R_TwinTail6";
@@ -28195,7 +28195,7 @@ createNode joint -n "R_TwinTail7" -p "R_TwinTail6";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 7;
 	setAttr ".t" -type "double3" 1.1365737103697739 -1.0081849594452539 -0.65196998538634099 ;
-	setAttr ".r" -type "double3" -7.6230534367156287e-07 -1.0616846520217266e-06 -7.7912131938387049e-07 ;
+	setAttr ".r" -type "double3" 4.93132930841881e-13 4.3980332205963546e-13 1.0267924134114965e-13 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 8.5164539556574331e-07 -1.5139110764840777e-07 1.6108178618116549 ;
@@ -28205,7 +28205,7 @@ createNode joint -n "R_TwinTail8" -p "R_TwinTail7";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".t" -type "double3" 1.0519380942379435 -1.0379905200305632 -0.30741998555352046 ;
-	setAttr ".r" -type "double3" -9.4593836180461623e-07 -5.2892630717590913e-06 4.4157369899960694e-06 ;
+	setAttr ".r" -type "double3" 2.4802330910910251e-13 1.2052375176754855e-12 -1.2008988480544076e-12 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 6.7213074291741055e-08 -3.6883145270758033e-07 -20.655646648176766 ;
@@ -28232,7 +28232,7 @@ createNode joint -n "R_SideTail1" -p "Head";
 	setAttr ".ovdt" 1;
 	setAttr ".ove" yes;
 	setAttr ".t" -type "double3" -1.78286 1.0060566070556689 0.58908410623288276 ;
-	setAttr ".r" -type "double3" 2.5694409954111451e-05 4.906711491913217e-05 -7.2542536236799076e-05 ;
+	setAttr ".r" -type "double3" -1.3110214144500284e-14 4.7663043232760559e-15 1.5301848593708762e-15 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 179.99999914622634 0 -98.064145842543226 ;
@@ -28245,7 +28245,7 @@ createNode joint -n "R_SideTail2" -p "R_SideTail1";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
 	setAttr ".t" -type "double3" 1.1941739070919588 -0.36318794821068956 -0.061739383619517425 ;
-	setAttr ".r" -type "double3" 7.8141801787686743e-07 -7.2029500122129617e-06 3.5363593043378003e-05 ;
+	setAttr ".r" -type "double3" 2.8540467670877772e-14 -2.6308159297750988e-13 1.2916241364839809e-12 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 0 2.6323648932347732 ;
@@ -28259,7 +28259,7 @@ createNode joint -n "R_SideTail3" -p "R_SideTail2";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
 	setAttr ".t" -type "double3" 1.0952766964907958 -0.42157603651686321 -0.063671559212315626 ;
-	setAttr ".r" -type "double3" -9.0026195780892266e-05 -0.00019344077925311764 0.0001386914537079788 ;
+	setAttr ".r" -type "double3" -3.2881272533284238e-12 -7.0652535797938482e-12 5.0655828404169385e-12 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 1.7010614618318302e-06 0 5.8774970211309148 ;
@@ -28669,7 +28669,7 @@ createNode joint -n "Right_AddShoulder1" -p "RightArm";
 	setAttr ".ovdt" 1;
 	setAttr ".ove" yes;
 	setAttr ".t" -type "double3" 1.3043356023779715 -1.1290207163994452 4.7378542200604556e-09 ;
-	setAttr ".r" -type "double3" 0.17430051945428443 -0.3848151379757328 -25.058019753142975 ;
+	setAttr ".r" -type "double3" 0.90627493189854713 -0.48137670940507082 -24.714617046512792 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 180 4.7339316760844902e-15 90.476179578065455 ;
@@ -29078,7 +29078,7 @@ createNode joint -n "Left_AddShoulder1" -p "LeftArm";
 	setAttr ".ovrgbf" yes;
 	setAttr ".ovc" 17;
 	setAttr ".t" -type "double3" -1.3043182045720165 1.1290057960199249 0 ;
-	setAttr ".r" -type "double3" -0.40362853127131687 0.13359167676004813 25.475991399325601 ;
+	setAttr ".r" -type "double3" -0.30510290200333628 -0.11923281585824735 25.834652174957334 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 0 5.6198203368100152 ;
@@ -29199,7 +29199,7 @@ createNode hikIKEffector -n "Eclair_Ctrl_LeftAnkleEffector" -p "Eclair_Ctrl_Refe
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -26.386741903445021 -89.247546541609807 -179.99999999999915 ;
+	setAttr -l on ".ra" -type "double3" -26.386741903445134 -89.247546541609793 -179.99999999999926 ;
 	setAttr -l on ".ra";
 	setAttr ".pin" 3;
 	setAttr ".ei" 1;
@@ -29223,7 +29223,7 @@ createNode hikIKEffector -n "Eclair_Ctrl_RightAnkleEffector" -p "Eclair_Ctrl_Ref
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 153.61333432185987 -89.307779609211124 0 ;
+	setAttr -l on ".ra" -type "double3" 153.61333432186021 -89.307779609211138 0 ;
 	setAttr -l on ".ra";
 	setAttr ".pin" 3;
 	setAttr ".ei" 2;
@@ -29352,7 +29352,7 @@ createNode hikIKEffector -n "Eclair_Ctrl_RightElbowEffector" -p "Eclair_Ctrl_Ref
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 85.485712327782238 47.814741391806507 -6.0820320507576513 ;
+	setAttr -l on ".ra" -type "double3" 85.485712327782238 47.814741391806507 -6.0820320507576575 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 8;
 	setAttr ".radi" 0.43726128798264718;
@@ -29459,7 +29459,7 @@ createNode hikIKEffector -n "Eclair_Ctrl_LeftShoulderEffector" -p "Eclair_Ctrl_R
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 89.999999999999957 -50.783730108990916 0 ;
+	setAttr -l on ".ra" -type "double3" 89.999999999999972 -50.783730108990916 -1.0061077224136235e-14 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 13;
 	setAttr ".radi" 0.52471354557917671;
@@ -29480,7 +29480,7 @@ createNode hikIKEffector -n "Eclair_Ctrl_RightShoulderEffector" -p "Eclair_Ctrl_
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -89.999999999999986 -50.783708358890998 0 ;
+	setAttr -l on ".ra" -type "double3" -89.999999999999972 -50.783708358890998 5.0305362719679585e-15 ;
 	setAttr -l on ".ra";
 	setAttr ".ei" 14;
 	setAttr ".radi" 0.52471354557917671;
@@ -29633,7 +29633,7 @@ createNode hikFKJoint -n "Eclair_Ctrl_LeftFoot" -p "Eclair_Ctrl_LeftLeg";
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -26.386741903445582 -89.247546541609765 -179.99999999999989 ;
+	setAttr -l on ".ra" -type "double3" -26.386741903445795 -89.247546541609765 -179.99999999999986 ;
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -88.483708899518462 -63.603300805790639 -91.692688017068875 ;
 	setAttr -l on ".jo";
@@ -29669,7 +29669,7 @@ createNode hikFKJoint -n "Eclair_Ctrl_RightUpLeg" -p "Eclair_Ctrl_Hips";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 1;
 	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" -1.713559627532959 -0.040948867797851563 -0.075529500842094421 ;
+	setAttr -l on ".t" -type "double3" -1.713559627532959 -0.040948867797851562 -0.075529500842094421 ;
 	setAttr -l on ".t";
 	setAttr -k off ".tx";
 	setAttr -k off ".ty";
@@ -29838,7 +29838,7 @@ createNode hikFKJoint -n "Eclair_Ctrl_LeftShoulder" -p "Eclair_Ctrl_Spine2";
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 0 0 6.7936455727500009 ;
+	setAttr -l on ".ra" -type "double3" 0 0 6.7936455727500018 ;
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 0 0 -6.7936455727499956 ;
 	setAttr -l on ".jo";
@@ -29861,7 +29861,7 @@ createNode hikFKJoint -n "Eclair_Ctrl_LeftArm" -p "Eclair_Ctrl_LeftShoulder";
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 89.999999999999957 -50.783730108990916 0 ;
+	setAttr -l on ".ra" -type "double3" 89.999999999999972 -50.783730108990916 -1.0061077224136235e-14 ;
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -90 0 -50.78373010899093 ;
 	setAttr -l on ".jo";
@@ -29906,7 +29906,7 @@ createNode hikFKJoint -n "Eclair_Ctrl_LeafLeftForeArmRoll1" -p "Eclair_Ctrl_Left
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -96.302607019416371 47.589932599780447 -8.507734823143549 ;
+	setAttr -l on ".ra" -type "double3" -96.302607019416399 47.589932599780447 -8.5077348231435632 ;
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 94.25554614535308 -3.8351719238768216 -48.048009686218414 ;
 	setAttr -l on ".jo";
@@ -29967,7 +29967,7 @@ createNode hikFKJoint -n "Eclair_Ctrl_RightArm" -p "Eclair_Ctrl_RightShoulder";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 1;
 	setAttr ".ovc" 25;
-	setAttr -l on ".t" -type "double3" -2.4622833728790283 -0.29332351684570313 0 ;
+	setAttr -l on ".t" -type "double3" -2.4622833728790283 -0.29332351684570312 0 ;
 	setAttr -l on ".t";
 	setAttr -k off ".tx";
 	setAttr -k off ".ty";
@@ -29976,7 +29976,7 @@ createNode hikFKJoint -n "Eclair_Ctrl_RightArm" -p "Eclair_Ctrl_RightShoulder";
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" -89.999999999999986 -50.783708358890998 0 ;
+	setAttr -l on ".ra" -type "double3" -89.999999999999972 -50.783708358890998 5.0305362719679585e-15 ;
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" 90 0 50.783708358890983 ;
 	setAttr -l on ".jo";
@@ -29999,7 +29999,7 @@ createNode hikFKJoint -n "Eclair_Ctrl_RightForeArm" -p "Eclair_Ctrl_RightArm";
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 85.485712327782124 47.814741391806535 -6.0820320507576859 ;
+	setAttr -l on ".ra" -type "double3" 85.485712327782124 47.814741391806542 -6.0820320507576886 ;
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -86.966798301300486 2.7300999308889522 48.047919725970068 ;
 	setAttr -l on ".jo";
@@ -30021,7 +30021,7 @@ createNode hikFKJoint -n "Eclair_Ctrl_LeafRightForeArmRoll1" -p "Eclair_Ctrl_Rig
 	setAttr -k off ".sx";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
-	setAttr -l on ".ra" -type "double3" 83.697273604436958 47.590303001721551 -8.5078453909215792 ;
+	setAttr -l on ".ra" -type "double3" 83.697273604436973 47.590303001721551 -8.5078453909215792 ;
 	setAttr -l on ".ra";
 	setAttr -l on ".jo" -type "double3" -85.744403631146042 3.8351662225002117 48.048389395019463 ;
 	setAttr -l on ".jo";
@@ -30098,11 +30098,11 @@ createNode hikFKJoint -n "Eclair_Ctrl_Head" -p "Eclair_Ctrl_Neck";
 	setAttr ".radi" 0.34980903038611777;
 instanceable -a 0;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "D169000A-4A7C-9D7D-1039-FCB88D0213BB";
+	rename -uid "31A6026B-7C4A-313D-4D33-F4A0734029F3";
 	setAttr -s 63 ".lnk";
 	setAttr -s 63 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "A92D0387-4FD4-6C11-0BB2-C7A551DECE11";
+	rename -uid "4731F4CE-D447-2698-3FEB-5AB8D3C05BF6";
 	setAttr ".cdl" 17;
 	setAttr -s 22 ".dli[1:21]"  15 7 3 4 9 8 5 6 
 		11 1 21 2 12 10 13 14 16 17 18 19 20;
@@ -30110,7 +30110,7 @@ createNode displayLayerManager -n "layerManager";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "49A352C3-594F-F82D-8509-FA9DE2F0FA8D";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "77A1600D-4ECD-FA44-E385-0ABB33C5EE0C";
+	rename -uid "95083C52-6744-644A-ECD5-F5B0F54A9540";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "24265BC8-A14C-EFF6-981E-B6853737A495";
 	setAttr ".g" yes;
@@ -30118,19 +30118,19 @@ createNode script -n "uiConfigurationScriptNode";
 	rename -uid "DEF520FE-6142-1E56-F284-6E8974CDC0C5";
 	setAttr ".b" -type "string" (
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n"
-		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
+		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
 		+ "            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 0\n            -nurbsCurves 0\n            -nurbsSurfaces 0\n            -polymeshes 1\n            -subdivSurfaces 0\n            -planes 0\n            -lights 0\n            -cameras 1\n            -controlVertices 0\n            -hulls 0\n            -grid 1\n            -imagePlane 0\n            -joints 1\n            -ikHandles 1\n            -deformers 0\n            -dynamics 0\n            -particleInstancers 0\n            -fluids 0\n"
-		+ "            -hairSystems 0\n            -follicles 0\n            -nCloths 0\n            -nParticles 0\n            -nRigids 0\n            -dynamicConstraints 0\n            -locators 0\n            -manipulators 1\n            -pluginShapes 0\n            -dimensions 0\n            -handles 0\n            -pivots 0\n            -textures 0\n            -strokes 0\n            -motionTrails 0\n            -clipGhosts 0\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 494\n            -height 347\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 0 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"wireframe\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
+		+ "            -hairSystems 0\n            -follicles 0\n            -nCloths 0\n            -nParticles 0\n            -nRigids 0\n            -dynamicConstraints 0\n            -locators 0\n            -manipulators 1\n            -pluginShapes 0\n            -dimensions 0\n            -handles 0\n            -pivots 0\n            -textures 0\n            -strokes 0\n            -motionTrails 0\n            -clipGhosts 0\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 524\n            -height 338\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 0 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"wireframe\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 0\n            -nurbsCurves 0\n            -nurbsSurfaces 0\n            -polymeshes 1\n            -subdivSurfaces 0\n            -planes 0\n            -lights 0\n            -cameras 0\n            -controlVertices 0\n"
-		+ "            -hulls 0\n            -grid 1\n            -imagePlane 0\n            -joints 1\n            -ikHandles 0\n            -deformers 0\n            -dynamics 0\n            -particleInstancers 0\n            -fluids 0\n            -hairSystems 0\n            -follicles 0\n            -nCloths 0\n            -nParticles 0\n            -nRigids 0\n            -dynamicConstraints 0\n            -locators 0\n            -manipulators 1\n            -pluginShapes 0\n            -dimensions 0\n            -handles 0\n            -pivots 0\n            -textures 0\n            -strokes 0\n            -motionTrails 0\n            -clipGhosts 0\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 494\n            -height 346\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 0 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 0\n            -grid 1\n            -imagePlane 0\n            -joints 1\n            -ikHandles 0\n            -deformers 0\n            -dynamics 0\n            -particleInstancers 0\n            -fluids 0\n            -hairSystems 0\n            -follicles 0\n            -nCloths 0\n            -nParticles 0\n            -nRigids 0\n            -dynamicConstraints 0\n            -locators 0\n            -manipulators 1\n            -pluginShapes 0\n            -dimensions 0\n            -handles 0\n            -pivots 0\n            -textures 0\n            -strokes 0\n            -motionTrails 0\n            -clipGhosts 0\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 523\n            -height 338\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 0 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 1\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
-		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
-		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 494\n            -height 346\n"
+		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
+		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 524\n            -height 338\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
-		+ "            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
-		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 0\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 0\n            -planes 0\n            -lights 0\n            -cameras 0\n            -controlVertices 1\n            -hulls 0\n            -grid 1\n            -imagePlane 0\n            -joints 1\n            -ikHandles 1\n            -deformers 0\n            -dynamics 0\n            -particleInstancers 0\n            -fluids 0\n            -hairSystems 0\n            -follicles 0\n            -nCloths 0\n            -nParticles 0\n            -nRigids 0\n            -dynamicConstraints 0\n            -locators 0\n            -manipulators 1\n            -pluginShapes 0\n            -dimensions 0\n            -handles 0\n            -pivots 0\n"
-		+ "            -textures 0\n            -strokes 0\n            -motionTrails 0\n            -clipGhosts 0\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1459\n            -height 739\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 0 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n"
+		+ "            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
+		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 0\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 0\n            -planes 0\n            -lights 0\n            -cameras 0\n            -controlVertices 1\n            -hulls 0\n            -grid 1\n            -imagePlane 0\n            -joints 0\n            -ikHandles 0\n            -deformers 0\n            -dynamics 0\n            -particleInstancers 0\n            -fluids 0\n            -hairSystems 0\n            -follicles 0\n            -nCloths 0\n            -nParticles 0\n            -nRigids 0\n            -dynamicConstraints 0\n            -locators 0\n            -manipulators 1\n            -pluginShapes 0\n            -dimensions 0\n            -handles 0\n            -pivots 0\n"
+		+ "            -textures 0\n            -strokes 0\n            -motionTrails 0\n            -clipGhosts 0\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1320\n            -height 720\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 0 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n"
 		+ "            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n"
 		+ "            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
 		+ "\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 1\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n"
@@ -30151,18 +30151,18 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -editorChanged \"updateModelPanelBar\" \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"smoothShaded\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 0\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n"
-		+ "                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -rendererOverrideName \"stereoOverrideVP2\" \n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n"
+		+ "                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 16384\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -rendererOverrideName \"stereoOverrideVP2\" \n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n"
 		+ "                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n"
 		+ "                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n"
 		+ "                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap true\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 0\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 0\\n    -planes 0\\n    -lights 0\\n    -cameras 0\\n    -controlVertices 1\\n    -hulls 0\\n    -grid 1\\n    -imagePlane 0\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 0\\n    -dynamics 0\\n    -particleInstancers 0\\n    -fluids 0\\n    -hairSystems 0\\n    -follicles 0\\n    -nCloths 0\\n    -nParticles 0\\n    -nRigids 0\\n    -dynamicConstraints 0\\n    -locators 0\\n    -manipulators 1\\n    -pluginShapes 0\\n    -dimensions 0\\n    -handles 0\\n    -pivots 0\\n    -textures 0\\n    -strokes 0\\n    -motionTrails 0\\n    -clipGhosts 0\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1459\\n    -height 739\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 0 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 0\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 0\\n    -planes 0\\n    -lights 0\\n    -cameras 0\\n    -controlVertices 1\\n    -hulls 0\\n    -grid 1\\n    -imagePlane 0\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 0\\n    -dynamics 0\\n    -particleInstancers 0\\n    -fluids 0\\n    -hairSystems 0\\n    -follicles 0\\n    -nCloths 0\\n    -nParticles 0\\n    -nRigids 0\\n    -dynamicConstraints 0\\n    -locators 0\\n    -manipulators 1\\n    -pluginShapes 0\\n    -dimensions 0\\n    -handles 0\\n    -pivots 0\\n    -textures 0\\n    -strokes 0\\n    -motionTrails 0\\n    -clipGhosts 0\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1459\\n    -height 739\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 0 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 0\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 0\\n    -planes 0\\n    -lights 0\\n    -cameras 0\\n    -controlVertices 1\\n    -hulls 0\\n    -grid 1\\n    -imagePlane 0\\n    -joints 0\\n    -ikHandles 0\\n    -deformers 0\\n    -dynamics 0\\n    -particleInstancers 0\\n    -fluids 0\\n    -hairSystems 0\\n    -follicles 0\\n    -nCloths 0\\n    -nParticles 0\\n    -nRigids 0\\n    -dynamicConstraints 0\\n    -locators 0\\n    -manipulators 1\\n    -pluginShapes 0\\n    -dimensions 0\\n    -handles 0\\n    -pivots 0\\n    -textures 0\\n    -strokes 0\\n    -motionTrails 0\\n    -clipGhosts 0\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1320\\n    -height 720\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 0 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 0\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 0\\n    -planes 0\\n    -lights 0\\n    -cameras 0\\n    -controlVertices 1\\n    -hulls 0\\n    -grid 1\\n    -imagePlane 0\\n    -joints 0\\n    -ikHandles 0\\n    -deformers 0\\n    -dynamics 0\\n    -particleInstancers 0\\n    -fluids 0\\n    -hairSystems 0\\n    -follicles 0\\n    -nCloths 0\\n    -nParticles 0\\n    -nRigids 0\\n    -dynamicConstraints 0\\n    -locators 0\\n    -manipulators 1\\n    -pluginShapes 0\\n    -dimensions 0\\n    -handles 0\\n    -pivots 0\\n    -textures 0\\n    -strokes 0\\n    -motionTrails 0\\n    -clipGhosts 0\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1320\\n    -height 720\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 0 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "E4C26267-D547-CAA1-DD73-5B9DC4784593";
-	setAttr ".b" -type "string" "playbackOptions -min 901 -max 1101 -ast 0 -aet 1600 ";
+	setAttr ".b" -type "string" "playbackOptions -min 901 -max 1100 -ast 0 -aet 1600 ";
 	setAttr ".st" 6;
 createNode groupId -n "groupId13";
 	rename -uid "BE2EEF1B-1B42-ED8A-5E15-AFAC12F4D868";
@@ -31729,9 +31729,9 @@ createNode file -n "file10";
 createNode place2dTexture -n "place2dTexture10";
 	rename -uid "438C5479-B547-BFF4-B65D-0E9A0ED84C75";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "1F0B3FA8-4FD5-069C-C08E-02BA16156E43";
+	rename -uid "6C3C02B9-0741-45B7-745C-DEB0083B718C";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "9732F381-4065-FB33-EF5A-B9BFE5233CF6";
+	rename -uid "BB643FC5-3D44-9449-7A9B-EE88A9B1F365";
 createNode renderLayerManager -n "gia:renderLayerManager";
 	rename -uid "FCB783F4-4C35-F521-CCBA-79AD762F98BA";
 createNode renderLayer -n "gia:defaultRenderLayer";
@@ -40673,7 +40673,7 @@ createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].vl" -type "double2" -415.27243411326322 -353.69392954232217 ;
 	setAttr ".tgi[0].vh" -type "double2" 637.7689578656657 173.85112577786111 ;
 	setAttr -s 2 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" -284.66226196289063;
+	setAttr ".tgi[0].ni[0].x" -284.66226196289062;
 	setAttr ".tgi[0].ni[0].y" 108.94798278808594;
 	setAttr ".tgi[0].ni[0].nvs" 18305;
 	setAttr ".tgi[0].ni[1].x" 321.42855834960938;
@@ -41020,7 +41020,7 @@ createNode HIKCharacterNode -n "Eclair";
 	setAttr ".RightFootMaxRLimitx" 45;
 	setAttr ".RightFootMaxRLimity" 45;
 	setAttr ".RightFootMaxRLimitz" 45;
-	setAttr ".SpineTy" 19.540725708007813;
+	setAttr ".SpineTy" 19.540725708007812;
 	setAttr ".SpineMinRLimitx" -45;
 	setAttr ".SpineMinRLimity" -45;
 	setAttr ".SpineMinRLimitz" -45;
@@ -41300,120 +41300,128 @@ createNode HIKSolverNode -n "HIKSolverNode1";
 createNode HIKState2SK -n "HIKState2SK1";
 	rename -uid "E065C243-4B1C-A5A2-1CE4-4286D4DD96EF";
 	setAttr ".ihi" 0;
-	setAttr ".HipsTx" -0.0014356193132698536;
-	setAttr ".HipsTy" 17.342187881469727;
-	setAttr ".HipsTz" -0.013781502842903137;
-	setAttr ".HipsRx" -9.922124078630961e-05;
-	setAttr ".HipsRy" -0.039448190508310541;
-	setAttr ".HipsRz" 0.10234841000174837;
-	setAttr ".LeftUpLegTx" 1.7135633625179418;
-	setAttr ".LeftUpLegTy" -0.040950472584825093;
-	setAttr ".LeftUpLegTz" -0.075529542635986324;
-	setAttr ".LeftUpLegRx" -0.02243319903389665;
-	setAttr ".LeftUpLegRy" -3.46531543788553;
-	setAttr ".LeftUpLegRz" 5.2577972642662125;
-	setAttr ".LeftLegTx" 8.9051945069741851;
-	setAttr ".LeftLegTy" 7.4257593318804993e-07;
-	setAttr ".LeftLegTz" -8.3435615222393622e-05;
-	setAttr ".LeftLegRx" -5.1829750410894277;
-	setAttr ".LeftLegRy" 5.5676843770436397;
-	setAttr ".LeftFootTx" 7.1187791051993088;
-	setAttr ".LeftFootTy" 1.6662435773362461e-06;
-	setAttr ".LeftFootTz" -1.2130233008056379e-06;
-	setAttr ".LeftFootRx" -2.7047818482580048;
-	setAttr ".LeftFootRy" -1.6077310509511995;
-	setAttr ".LeftFootRz" 2.5608060098467074;
-	setAttr ".RightUpLegTx" -1.7135610975474782;
-	setAttr ".RightUpLegTy" -0.040949229263667064;
-	setAttr ".RightUpLegTz" -0.075529496679080543;
-	setAttr ".RightUpLegRx" -0.096514749063571964;
-	setAttr ".RightUpLegRy" 4.1984591085061771;
-	setAttr ".RightUpLegRz" -4.7751423771998258;
-	setAttr ".RightLegTx" 8.9051790028167677;
-	setAttr ".RightLegTy" -2.6603227354371484e-06;
-	setAttr ".RightLegTz" -9.139132638846803e-05;
-	setAttr ".RightLegRx" 13.111208667379749;
-	setAttr ".RightLegRy" 0.12618431142962636;
-	setAttr ".RightLegRz" -0.00013020043062459419;
-	setAttr ".RightFootTx" 7.1187837469829551;
-	setAttr ".RightFootTy" -5.7268628284035117e-07;
-	setAttr ".RightFootTz" 2.3372433437529594e-06;
-	setAttr ".RightFootRx" 9.1288052393957457;
-	setAttr ".RightFootRy" -2.4034592350539747;
-	setAttr ".RightFootRz" -5.4665613089009657;
-	setAttr ".SpineTx" -3.116450089657441e-08;
-	setAttr ".SpineTy" 2.0502771664600701;
-	setAttr ".SpineTz" 3.6048665441601457e-10;
-	setAttr ".SpineRy" 0.039448171664704067;
-	setAttr ".SpineRz" -0.10234719867756978;
-	setAttr ".LeftArmTx" 2.4619193613383006;
-	setAttr ".LeftArmTy" -0.2932892347261209;
-	setAttr ".LeftArmTz" -2.1251847437397942e-07;
-	setAttr ".LeftArmRx" 0.45477444996040045;
-	setAttr ".LeftArmRy" 0.027525279275664439;
-	setAttr ".LeftArmRz" -79.518395494508667;
-	setAttr ".LeftForeArmTx" 4.3744065194901154;
-	setAttr ".LeftForeArmTy" -0.20902429980732862;
-	setAttr ".LeftForeArmTz" 1.2097651760356598e-06;
-	setAttr ".LeftForeArmRx" -2.8673852719032618;
-	setAttr ".LeftForeArmRy" 2.5743145667101222;
-	setAttr ".LeftForeArmRz" -8.0063404587040637e-05;
-	setAttr ".LeftHandTx" 2.1211509628431848;
-	setAttr ".LeftHandTy" 5.1931817512951284e-07;
-	setAttr ".LeftHandTz" 1.7885645853255028e-08;
-	setAttr ".LeftHandRx" 2.2882999491345619;
-	setAttr ".LeftHandRy" 0.054864641229499994;
-	setAttr ".LeftHandRz" 0.0042427693661230281;
-	setAttr ".RightArmTx" -2.4622830808315896;
-	setAttr ".RightArmTy" 0.29332346668234166;
-	setAttr ".RightArmTz" 2.0109267329093683e-07;
-	setAttr ".RightArmRx" 0.48650666477547511;
-	setAttr ".RightArmRy" -0.088499490317730495;
-	setAttr ".RightArmRz" -81.012580625490457;
-	setAttr ".RightForeArmTx" -4.3744040943969615;
-	setAttr ".RightForeArmTy" 0.20902461544503481;
-	setAttr ".RightForeArmTz" 4.799343520378585e-07;
-	setAttr ".RightForeArmRx" -2.8681600924074866;
-	setAttr ".RightForeArmRy" 2.574429380256253;
-	setAttr ".RightForeArmRz" 0.00032220464544827852;
-	setAttr ".RightHandTx" -2.1211680648713696;
-	setAttr ".RightHandTy" -9.9150532406611092e-07;
-	setAttr ".RightHandTz" 1.6560670216492213e-05;
-	setAttr ".RightHandRx" 2.2889063893072779;
-	setAttr ".RightHandRy" 0.054979277078241524;
-	setAttr ".RightHandRz" 0.0042222225739941641;
-	setAttr ".HeadTx" -6.4212336836622086e-11;
-	setAttr ".HeadTy" 2.1454200744624963;
-	setAttr ".HeadTz" 1.3477346000739798e-06;
-	setAttr ".LeftToeBaseTx" 2.4647494779581294;
-	setAttr ".LeftToeBaseTy" 4.4192354664573941e-08;
-	setAttr ".LeftToeBaseTz" -9.3161102743266611e-07;
-	setAttr ".RightToeBaseTx" 2.4647188134818805;
-	setAttr ".RightToeBaseTy" -9.2129637607740733e-07;
-	setAttr ".RightToeBaseTz" -5.3612648742706881e-07;
-	setAttr ".LeftShoulderTx" 0.69048339173111439;
-	setAttr ".LeftShoulderTy" 1.6105043878818392;
-	setAttr ".LeftShoulderTz" -0.50124241584732521;
-	setAttr ".RightShoulderTx" -0.69011658385474428;
-	setAttr ".RightShoulderTy" 1.6105082307053813;
-	setAttr ".RightShoulderTz" -0.50124193579996668;
-	setAttr ".NeckTx" -1.3896419171627317e-10;
-	setAttr ".NeckTy" 2.1646080017085687;
-	setAttr ".NeckTz" 1.3601583927960043e-06;
-	setAttr ".Spine1Tx" 6.9140066935591271e-12;
-	setAttr ".Spine1Ty" 2.6060543060297796;
-	setAttr ".Spine1Tz" 1.6375859427219391e-06;
-	setAttr ".Spine2Tx" 4.9601550297651009e-11;
-	setAttr ".Spine2Ty" 2.4024353027339167;
-	setAttr ".Spine2Tz" 1.5093188542227715e-06;
-	setAttr ".LeafLeftForeArmRoll1Tx" 2.3927882682211248;
-	setAttr ".LeafLeftForeArmRoll1Ty" -1.3967618857080311e-06;
-	setAttr ".LeafLeftForeArmRoll1Tz" 0.073145831524076943;
-	setAttr ".LeafLeftForeArmRoll1Rx" 0.57224096619256437;
-	setAttr ".LeafRightForeArmRoll1Tx" -2.3927684425973865;
-	setAttr ".LeafRightForeArmRoll1Ty" -2.1169589411229595e-05;
-	setAttr ".LeafRightForeArmRoll1Tz" -0.073144968389571297;
-	setAttr ".LeafRightForeArmRoll1Rx" 0.57238971033472463;
+	setAttr ".HipsTx" -0.023859873414039612;
+	setAttr ".HipsTy" 17.339408874511719;
+	setAttr ".HipsTz" -0.013732858002185822;
+	setAttr ".HipsRx" -0.0001236373688022325;
+	setAttr ".HipsRy" -0.027445417155462046;
+	setAttr ".HipsRz" 0.099010985557067166;
+	setAttr ".LeftUpLegTx" 1.7135646495229502;
+	setAttr ".LeftUpLegTy" -0.040949777297932144;
+	setAttr ".LeftUpLegTz" -0.075529519882935311;
+	setAttr ".LeftUpLegRx" -0.026824746700830081;
+	setAttr ".LeftUpLegRy" -3.4832468859146291;
+	setAttr ".LeftUpLegRz" 5.3420812196384073;
+	setAttr ".LeftLegTx" 8.9051850915551451;
+	setAttr ".LeftLegTy" 3.4001711846087801e-07;
+	setAttr ".LeftLegTz" 1.287855664766635e-05;
+	setAttr ".LeftLegRx" -5.1735549252049307;
+	setAttr ".LeftLegRy" 5.6039050152493113;
+	setAttr ".LeftFootTx" 7.1187835309709238;
+	setAttr ".LeftFootTy" 1.2837633867057718e-06;
+	setAttr ".LeftFootTz" 1.1809571515142281e-07;
+	setAttr ".LeftFootRx" -2.7737042855541949;
+	setAttr ".LeftFootRy" -1.6176225544928171;
+	setAttr ".LeftFootRz" 2.5177182948309076;
+	setAttr ".RightUpLegTx" -1.713561304606287;
+	setAttr ".RightUpLegTy" -0.040947885435109299;
+	setAttr ".RightUpLegTz" -0.075529491195086104;
+	setAttr ".RightUpLegRx" -0.077492270745648698;
+	setAttr ".RightUpLegRy" 3.8423544502180542;
+	setAttr ".RightUpLegRz" -4.6909754854399637;
+	setAttr ".RightLegTx" 8.9051951090289219;
+	setAttr ".RightLegTy" -4.6708110459370289e-06;
+	setAttr ".RightLegTz" -7.2763667462449888e-05;
+	setAttr ".RightLegRx" 13.100681852957898;
+	setAttr ".RightLegRy" 0.9362444042676763;
+	setAttr ".RightLegRz" -0.00017093042455582498;
+	setAttr ".RightFootTx" 7.1187743279196862;
+	setAttr ".RightFootTy" -1.2234843480563029e-06;
+	setAttr ".RightFootTz" 4.8936237040386743e-07;
+	setAttr ".RightFootRx" 9.1942205843491109;
+	setAttr ".RightFootRy" -2.8585891281657276;
+	setAttr ".RightFootRz" -5.467029852283984;
+	setAttr ".SpineTx" -4.0766515906065504e-08;
+	setAttr ".SpineTy" 2.0502750492699171;
+	setAttr ".SpineTz" 4.82600232346031e-10;
+	setAttr ".SpineRy" 0.045680020658465402;
+	setAttr ".SpineRz" -0.095912714585404096;
+	setAttr ".LeftArmTx" 2.4619238561887604;
+	setAttr ".LeftArmTy" -0.29328878917203483;
+	setAttr ".LeftArmTz" -1.9551144647689256e-07;
+	setAttr ".LeftArmRx" 0.45477428165870881;
+	setAttr ".LeftArmRy" 0.027516666260621738;
+	setAttr ".LeftArmRz" -79.518384144131716;
+	setAttr ".LeftForeArmTx" 4.3744052113386118;
+	setAttr ".LeftForeArmTy" -0.20902916868146004;
+	setAttr ".LeftForeArmTz" 4.1549753604375184e-07;
+	setAttr ".LeftForeArmRx" -2.8673852571707799;
+	setAttr ".LeftForeArmRy" 2.5743248291629457;
+	setAttr ".LeftForeArmRz" -0.00010260633008171016;
+	setAttr ".LeftHandTx" 2.1211531307323153;
+	setAttr ".LeftHandTy" 3.3730831050515775e-07;
+	setAttr ".LeftHandTz" 1.1078277850629092e-07;
+	setAttr ".LeftHandRx" 2.2883048997102295;
+	setAttr ".LeftHandRy" 0.054860531816159783;
+	setAttr ".LeftHandRz" 0.0042393530405249362;
+	setAttr ".RightArmTx" -2.4622879918557108;
+	setAttr ".RightArmTy" 0.29332389341233522;
+	setAttr ".RightArmTz" 2.3792801517874551e-07;
+	setAttr ".RightArmRx" 0.74600587942365937;
+	setAttr ".RightArmRy" -0.67598081502549157;
+	setAttr ".RightArmRz" -80.997540778216674;
+	setAttr ".RightForeArmTx" -4.3744056875060586;
+	setAttr ".RightForeArmTy" 0.20902421245415681;
+	setAttr ".RightForeArmTz" -1.8410384597378204e-06;
+	setAttr ".RightForeArmRx" -2.1197406194963517;
+	setAttr ".RightForeArmRy" 1.2983256755618546;
+	setAttr ".RightForeArmRz" -0.26388986523841673;
+	setAttr ".RightHandTx" -2.1211668261640888;
+	setAttr ".RightHandTy" -8.4270600897440318e-07;
+	setAttr ".RightHandTz" 1.4778310444718556e-05;
+	setAttr ".RightHandRx" 1.460589662533659;
+	setAttr ".RightHandRy" 0.29877173155827408;
+	setAttr ".RightHandRz" 0.19166299566118847;
+	setAttr ".HeadTx" 8.5001568284059914e-11;
+	setAttr ".HeadTy" 2.1454189040137734;
+	setAttr ".HeadTz" 1.8773185665732495e-08;
+	setAttr ".HeadRx" 0.046216766284294337;
+	setAttr ".HeadRy" -0.1407938957446227;
+	setAttr ".HeadRz" 0.011492201120178165;
+	setAttr ".LeftToeBaseTx" 2.4647473371555164;
+	setAttr ".LeftToeBaseTy" -4.3850147157797892e-07;
+	setAttr ".LeftToeBaseTz" 9.5140937350635113e-09;
+	setAttr ".RightToeBaseTx" 2.464719706351949;
+	setAttr ".RightToeBaseTy" -1.9347203439323835e-07;
+	setAttr ".RightToeBaseTz" 8.4529558397328231e-07;
+	setAttr ".LeftShoulderTx" 0.69048349843006696;
+	setAttr ".LeftShoulderTy" 1.6105037987434407;
+	setAttr ".LeftShoulderTz" -0.50124262625916771;
+	setAttr ".RightShoulderTx" -0.69011702746889159;
+	setAttr ".RightShoulderTy" 1.6105078772339674;
+	setAttr ".RightShoulderTz" -0.5012420976326426;
+	setAttr ".NeckTx" -1.9036209067402332e-10;
+	setAttr ".NeckTy" 2.164649966543525;
+	setAttr ".NeckTz" 1.4293465002424011e-06;
+	setAttr ".NeckRx" 0.046369906420796594;
+	setAttr ".NeckRy" -0.14114164600663434;
+	setAttr ".NeckRz" 0.0074075678800761061;
+	setAttr ".Spine1Tx" -5.584298579108804e-10;
+	setAttr ".Spine1Ty" 2.6060543098404132;
+	setAttr ".Spine1Tz" 1.7205563670828067e-06;
+	setAttr ".Spine1Ry" 0.056188082302470542;
+	setAttr ".Spine2Tx" -2.5065369883836564e-09;
+	setAttr ".Spine2Ty" 2.40243530624684;
+	setAttr ".Spine2Tz" 1.5850743891269309e-06;
+	setAttr ".Spine2Ry" 0.056188046844101454;
+	setAttr ".LeafLeftForeArmRoll1Tx" 2.3927889346553286;
+	setAttr ".LeafLeftForeArmRoll1Ty" -1.8359733067185857e-06;
+	setAttr ".LeafLeftForeArmRoll1Tz" 0.073145994498074796;
+	setAttr ".LeafLeftForeArmRoll1Rx" 0.57223303234944356;
+	setAttr ".LeafRightForeArmRoll1Tx" -2.392768980824485;
+	setAttr ".LeafRightForeArmRoll1Ty" -2.0589929603076484e-05;
+	setAttr ".LeafRightForeArmRoll1Tz" -0.07314496636375134;
+	setAttr ".LeafRightForeArmRoll1Rx" 0.34025089754931387;
 createNode keyingGroup -n "Eclair_FullBodyKG4";
 	rename -uid "6A9D2B14-4DE4-3F31-F530-CC940F683376";
 	setAttr ".ihi" 0;
@@ -41587,153 +41595,153 @@ createNode HIKPinning2State -n "HIKPinning2State1";
 createNode HIKState2FK -n "HIKState2FK1";
 	rename -uid "07457E19-4C9C-A1CD-A68D-48B932F7860B";
 	setAttr ".ihi" 0;
-	setAttr ".HipsGX" -type "matrix" 0.99999809265136719 0.0017863152315840125 0.00068850070238113403 0
-		 -0.0017863145330920815 0.99999833106994629 -1.7317368019575952e-06 0 -0.00068850268144160509 5.0185479949504952e-07 0.99999970197677612 0
-		 -0.0014356193132698536 17.342187881469727 -0.013781502842903137 1;
-	setAttr ".LeftUpLegGX" -type "matrix" 0.99562954902648926 0.093392066657543182 0.00029463318060152233 0
-		 -0.09320320188999176 0.99380695819854736 -0.060508992522954941 0 -0.0059438678435981274 0.060217071324586868 0.99816781282424927 0
-		 1.712249755859375 17.304298400878906 -0.088131166994571686 1;
-	setAttr ".LeftLegGX" -type "matrix" 0.99127596616744995 0.09630671888589859 -0.089982643723487854 0
-		 -0.093340493738651276 0.99496054649353027 0.036620266735553741 0 0.093055963516235352 -0.027901768684387207 0.99526983499526978 0
-		 2.5422449111938477 8.4542512893676758 0.45062980055809021 1;
-	setAttr ".LeftFootGX" -type "matrix" 0.98582494258880615 0.074564695358276367 -0.15029671788215637 0
-		 -0.074564650654792786 0.9972001314163208 0.0056436965242028236 0 0.15029674768447876 0.0056431246921420097 0.98862475156784058 0
-		 3.2067155838012695 1.3713469505310059 0.18993687629699707 1;
-	setAttr ".RightUpLegGX" -type "matrix" 0.99668604135513306 -0.081342272460460663 -0.00099371874239295721 0
-		 0.081196263432502747 0.99400192499160767 0.073266811668872833 0 -0.0049719307571649551 -0.073104672133922577 0.99731224775314331 0
-		 -1.714868426322937 17.298177719116211 -0.09049069881439209 1;
-	setAttr ".RightLegGX" -type "matrix" 0.96953517198562622 -0.096303842961788177 0.22522693872451782 0
-		 0.081187479197978973 0.99383801221847534 0.075463026762008667 0 -0.23110644519329071 -0.054878443479537964 0.97137945890426636 0
-		 -2.4379374980926514 8.4464225769042969 -0.74303579330444336 1;
-	setAttr ".RightFootGX" -type "matrix" 0.92737054824829102 1.4713034346414133e-08 0.37414473295211792 0
-		 -1.1693978763105406e-07 1.0000002384185791 2.5052730734387296e-07 0 -0.37414473295211792 -2.7608399477685452e-07 0.92737054824829102 0
-		 -3.0158936977386475 1.3715047836303711 -1.2802386283874512 1;
-	setAttr ".SpineGX" -type "matrix" 1 2.0372675990643074e-08 2.3238242441436796e-09 0
-		 -2.0372675990643074e-08 1 1.2645986657844333e-07 0 -2.3238215796084205e-09 -1.2645986657844333e-07 1 0
-		 -0.0050980905070900917 19.392461776733398 -0.013785053044557571 1;
-	setAttr ".LeftArmGX" -type "matrix" 0.85288763046264648 -0.52206498384475708 0.005582065787166357 0
-		 0.5220378041267395 0.85290372371673584 0.0056629530154168606 0 -0.00771739287301898 -0.0019158129580318928 0.99996852874755859 0
-		 3.1473045349121094 25.718166351318359 -0.51502770185470581 1;
-	setAttr ".LeftForeArmGX" -type "matrix" 0.85206311941146851 -0.51980042457580566 -0.061614099889993668 0
-		 0.521079421043396 0.85348969697952271 0.0056523382663726807 0 0.049648899585008621 -0.03692198172211647 0.99808424711227417 0
-		 3.7375657558441162 21.378730773925781 -0.51878488063812256 1;
-	setAttr ".LeftHandGX" -type "matrix" 0.85423564910888672 -0.51930814981460571 -0.024514654651284218 0
-		 0.51988601684570313 0.85334247350692749 0.039057165384292603 0 0.00063668563961982727 -0.046108845621347427 0.99893647432327271 0
-		 4.569279670715332 16.941707611083984 -0.50886166095733643 1;
-	setAttr ".RightArmGX" -type "matrix" 0.83897906541824341 0.54411435127258301 -0.0073476764373481274 0
-		 -0.54409551620483398 0.83901119232177734 0.004527166485786438 0 0.0086280778050422668 0.00019964016973972321 0.99996286630630493 0
-		 -3.1574978828430176 25.718135833740234 -0.51502722501754761 1;
-	setAttr ".RightForeArmGX" -type "matrix" 0.83827519416809082 0.54195123910903931 0.059864707291126251 0
-		 -0.54314649105072021 0.83962607383728027 0.0045069772750139236 0 -0.047821398824453354 -0.036293387413024902 0.99819648265838623 0
-		 -3.6344053745269775 21.364788055419922 -0.51004362106323242 1;
-	setAttr ".RightHandGX" -type "matrix" 0.84042727947235107 0.5414462685585022 0.022754158824682236 0
-		 -0.54192227125167847 0.83957260847091675 0.037919502705335617 0 0.0014276029542088509 -0.044199574738740921 0.99902158975601196 0
-		 -4.3501672744750977 16.907623291015625 -0.49098140001296997 1;
-	setAttr ".HeadGX" -type "matrix" 1 2.0372677766999914e-08 2.3238251323220993e-09 0
-		 -2.0372677766999914e-08 1 1.2645988078929804e-07 0 -2.3238224677868402e-09 -1.2645988078929804e-07 1 0
-		 -0.0050982804968953133 28.710979461669922 -0.013783874921500683 1;
-	setAttr ".LeftToeBaseGX" -type "matrix" 0.98582541942596436 0.074564710259437561 -0.15029674768447876 0
-		 -0.074564665555953979 0.997200608253479 0.0056436974555253983 0 0.15029677748680115 0.005643126554787159 0.98862522840499878 0
-		 3.5882978439331055 0.28914904594421387 2.3712742328643799 1;
-	setAttr ".RightToeBaseGX" -type "matrix" 0.92737054824829102 1.4713034346414133e-08 0.37414473295211792 0
-		 -1.1693978763105406e-07 1.0000002384185791 2.5052730734387296e-07 0 -0.37414473295211792 -2.7608399477685452e-07 0.92737054824829102 0
-		 -3.8143057823181152 0.27619647979736328 0.77832317352294922 1;
-	setAttr ".LeftShoulderGX" -type "matrix" 1 2.0372677766999914e-08 2.3238246882328895e-09 0
-		 -2.0372677766999914e-08 1 1.2645988078929804e-07 0 -2.3238220236976304e-09 -1.2645988078929804e-07 1 0
-		 0.68538516759872437 26.011455535888672 -0.51502764225006104 1;
-	setAttr ".RightShoulderGX" -type "matrix" 1 2.0372677766999914e-08 2.3238246882328895e-09 0
-		 -2.0372677766999914e-08 1 1.2645988078929804e-07 0 -2.3238220236976304e-09 -1.2645988078929804e-07 1 0
-		 -0.69521480798721313 26.011459350585938 -0.51502716541290283 1;
-	setAttr ".NeckGX" -type "matrix" 1 2.0372677766999914e-08 2.3238249102774944e-09 0
-		 -2.0372677766999914e-08 1 1.2645988078929804e-07 0 -2.3238222457422353e-09 -1.2645988078929804e-07 1 0
-		 -0.0050982367247343063 26.565559387207031 -0.013784145936369896 1;
-	setAttr ".Spine1GX" -type "matrix" 1 2.0372675990643074e-08 2.3238244661882845e-09 0
-		 -2.0372675990643074e-08 1 1.2645988078929804e-07 0 -2.3238218016530254e-09 -1.2645988078929804e-07 1 0
-		 -0.0050981435924768448 21.998516082763672 -0.013784723356366158 1;
-	setAttr ".Spine2GX" -type "matrix" 1 2.0372677766999914e-08 2.3238246882328895e-09 0
-		 -2.0372677766999914e-08 1 1.2645988078929804e-07 0 -2.3238220236976304e-09 -1.2645988078929804e-07 1 0
-		 -0.0050981924869120121 24.400951385498047 -0.013784419745206833 1;
-	setAttr ".LeafLeftForeArmRoll1GX" -type "matrix" 0.85274273157119751 -0.51951092481613159 -0.054209735244512558 0
-		 0.52080839872360229 0.8535846471786499 0.012341327965259552 0 0.039861135184764862 -0.038756862282752991 0.99845361709594727 0
-		 4.1768784523010254 19.025749206542969 -0.55439537763595581 1;
-	setAttr ".LeafRightForeArmRoll1GX" -type "matrix" 0.83895611763000488 0.54166501760482788 0.052458208054304123 0
-		 -0.54287189245223999 0.83974099159240723 0.011197136715054512 0 -0.037986204028129578 -0.037871994078159332 0.99856054782867432 0
-		 -4.0122795104980469 19.001113891601563 -0.54081034660339355 1;
+	setAttr ".HipsGX" -type "matrix" 0.99999856948852539 0.0017280669417232275 0.00047901296056807041 0
+		 -0.0017280658939853311 0.99999862909317017 -2.157879180231248e-06 0 -0.00047901595826260746 1.3301097396833939e-06 1 0
+		 -0.023859873414039612 17.339408874511719 -0.013732858002185822 1;
+	setAttr ".LeftUpLegGX" -type "matrix" 0.99549710750579834 0.09479396790266037 9.4205597633845173e-06 0
+		 -0.09461800754070282 0.99365532398223877 -0.060803353786468506 0 -0.0057731512933969498 0.060528658330440521 0.9981500506401062 0
+		 1.6898089647293091 17.301420211791992 -0.088441461324691772 1;
+	setAttr ".LeftLegGX" -type "matrix" 0.99112635850906372 0.097725696861743927 -0.090101949870586395 0
+		 -0.09472985565662384 0.99481689929962158 0.036957316100597382 0 0.093246623873710632 -0.028094023466110229 0.9952467679977417 0
+		 2.5324001312255859 8.4527387619018555 0.45303636789321899 1;
+	setAttr ".LeftFootGX" -type "matrix" 0.98582541942596436 0.074564725160598755 -0.15029674768447876 0
+		 -0.074564673006534576 0.99720054864883423 0.0056436760351061821 0 0.15029677748680115 0.005643149372190237 0.98862522840499878 0
+		 3.2067606449127197 1.3708534240722656 0.1899452805519104 1;
+	setAttr ".RightUpLegGX" -type "matrix" 0.99679720401763916 -0.079968877136707306 -0.00087187066674232483 0
+		 0.079847224056720734 0.99454987049102783 0.067048422992229462 0 -0.0044946679845452309 -0.066903285682201385 0.99774956703186035 0
+		 -1.7373114824295044 17.295499801635742 -0.09008307009935379 1;
+	setAttr ".RightLegGX" -type "matrix" 0.9695391058921814 -0.096736349165439606 0.22502487897872925 0
+		 0.07976609468460083 0.99332356452941895 0.083342522382736206 0 -0.23158474266529083 -0.062854468822479248 0.97078222036361694 0
+		 -2.4483695030212402 8.4388465881347656 -0.68723487854003906 1;
+	setAttr ".RightFootGX" -type "matrix" 0.92737054824829102 2.7921309708744957e-08 0.37414473295211792 0
+		 -1.3298770795699966e-07 1.0000002384185791 2.5500173705950147e-07 0 -0.37414473295211792 -2.8623770731428522e-07 0.92737054824829102 0
+		 -3.0162065029144287 1.3676013946533203 -1.2805311679840088 1;
+	setAttr ".SpineGX" -type "matrix" 1 5.4073756473371759e-05 -0.00031825093901716173 0
+		 -5.4073982028057799e-05 1 -6.9595284912793431e-07 0 0.00031825088080950081 7.1316185312753078e-07 1 0
+		 -0.027402924373745918 19.389680862426758 -0.013737281784415245 1;
+	setAttr ".LeftArmGX" -type "matrix" 0.85292649269104004 -0.52201884984970093 0.0036383648402988911 0
+		 0.522003173828125 0.85293203592300415 0.0044720671139657497 0 -0.005437780637294054 -0.0019151057349517941 0.99998366832733154 0
+		 3.1235115528106689 25.715555191040039 -0.52217024564743042 1;
+	setAttr ".LeftForeArmGX" -type "matrix" 0.85194844007492065 -0.51975446939468384 -0.06355585902929306 0
+		 0.52104485034942627 0.85351765155792236 0.0044637690298259258 0 0.051925983279943466 -0.036918357014656067 0.99796843528747559 0
+		 3.7139930725097656 21.376152038574219 -0.52726942300796509 1;
+	setAttr ".LeftHandGX" -type "matrix" 0.85420548915863037 -0.51926213502883911 -0.026461461558938026 0
+		 0.51992785930633545 0.85337060689926147 0.037871234118938446 0 0.002916327677667141 -0.046107858419418335 0.99893254041671753 0
+		 4.545966625213623 16.939170837402344 -0.5192381739616394 1;
+	setAttr ".RightArmGX" -type "matrix" 0.83899092674255371 0.5437968373298645 -0.019482621923089027 0
+		 -0.54388070106506348 0.83916205167770386 0.0011677783913910389 0 0.016984106972813606 0.0096164653077721596 0.99980974197387695 0
+		 -3.1812844276428223 25.715183258056641 -0.50779742002487183 1;
+	setAttr ".RightForeArmGX" -type "matrix" 0.83657771348953247 0.54735779762268066 0.023180486634373665 0
+		 -0.54736447334289551 0.83686822652816772 -0.0066219442524015903 0 -0.023023582994937897 -0.00714840367436409 0.99970942735671997 0
+		 -3.6589550971984863 21.362201690673828 -0.45781296491622925 1;
+	setAttr ".RightHandGX" -type "matrix" 0.83491700887680054 0.55037355422973633 0.0015986489597707987 0
+		 -0.5503193736076355 0.83478623628616333 0.016744140535593033 0 0.0078810015693306923 -0.014859736897051334 0.99985843896865845 0
+		 -4.3501238822937012 16.904254913330078 -0.29052251577377319 1;
+	setAttr ".HeadGX" -type "matrix" 0.99999678134918213 0.00038194993976503611 0.0026412780862301588 0
+		 -0.00038621603744104505 0.99999898672103882 0.001614841166883707 0 -0.0026406578253954649 -0.001615855609998107 0.99999552965164185 0
+		 -0.028184507042169571 28.70823860168457 -0.012008228339254856 1;
+	setAttr ".LeftToeBaseGX" -type "matrix" 0.98582494258880615 0.074564710259437561 -0.15029671788215637 0
+		 -0.074564658105373383 0.99720007181167603 0.0056436746381223202 0 0.15029674768447876 0.0056431489065289497 0.98862475156784058 0
+		 3.5883426666259766 0.28865730762481689 2.3712811470031738 1;
+	setAttr ".RightToeBaseGX" -type "matrix" 0.92737054824829102 2.7921313261458636e-08 0.37414470314979553 0
+		 -1.3298770795699966e-07 1.0000002384185791 2.5500173705950147e-07 0 -0.37414470314979553 -2.8623770731428522e-07 0.92737054824829102 0
+		 -3.8146183490753174 0.27229404449462891 0.77803230285644531 1;
+	setAttr ".LeftShoulderGX" -type "matrix" 0.99999761581420898 5.407225398812443e-05 -0.0022795828990638256 0
+		 -5.4073978390078992e-05 1.0000002384185791 -6.9595256491084001e-07 0 0.0022795828990638256 8.1921683658947586e-07 0.99999761581420898 0
+		 0.66157823801040649 26.008710861206055 -0.51655828952789307 1;
+	setAttr ".RightShoulderGX" -type "matrix" 0.99999761581420898 5.407225398812443e-05 -0.0022795828990638256 0
+		 -5.4073978390078992e-05 1.0000002384185791 -6.9595256491084001e-07 0 0.0022795828990638256 8.1921683658947586e-07 0.99999761581420898 0
+		 -0.71901869773864746 26.008640289306641 -0.51341056823730469 1;
+	setAttr ".NeckGX" -type "matrix" 1.0000003576278687 0.00018336056382395327 0.00018380196706857532 0
+		 -0.0001835090370150283 0.99999994039535522 0.00080824637552723289 0 -0.00018365371215622872 -0.00080828007776290178 1 0
+		 -0.027790803462266922 26.562820434570312 -0.013742273673415184 1;
+	setAttr ".Spine1GX" -type "matrix" 0.99999922513961792 5.4073025239631534e-05 -0.0012989176902920008 0
+		 -5.4073982028057799e-05 1.0000001192092896 -6.9595256491084001e-07 0 0.0012989176902920008 7.6618960065388819e-07 0.99999922513961792 0
+		 -0.027543844655156136 21.995735168457031 -0.013739095069468021 1;
+	setAttr ".Spine2GX" -type "matrix" 0.99999761581420898 5.407225398812443e-05 -0.0022795828990638256 0
+		 -5.4073978390078992e-05 1.0000002384185791 -6.9595256491084001e-07 0 0.0022795828990638256 8.1921683658947586e-07 0.99999761581420898 0
+		 -0.027673754841089249 24.398170471191406 -0.013740767724812031 1;
+	setAttr ".LeafLeftForeArmRoll1GX" -type "matrix" 0.85264462232589722 -0.51946491003036499 -0.056153088808059692 0
+		 0.52078914642333984 0.85361248254776001 0.011153241619467735 0 0.042139265686273575 -0.038753673434257507 0.99835985898971558 0
+		 4.1533498764038086 19.023193359375 -0.56387919187545776 1;
+	setAttr ".LeafRightForeArmRoll1GX" -type "matrix" 0.83688348531723022 0.54705893993377686 0.018776506185531616 0
+		 -0.54711174964904785 0.83705532550811768 -0.0026535452343523502 0 -0.017168622463941574 -0.0080521386116743088 0.99982011318206787 0
+		 -4.0247936248779297 18.996917724609375 -0.4099850058555603 1;
 createNode HIKState2FK -n "HIKState2FK2";
 	rename -uid "C98A48B7-49E7-60B4-77C5-C183673EFBE4";
 	setAttr ".ihi" 0;
-	setAttr ".HipsGX" -type "matrix" 0.99999809265136719 0.0017863152315840125 0.00068850070238113403 0
-		 -0.0017863145330920815 0.99999833106994629 -1.7317368019575952e-06 0 -0.00068850268144160509 5.0185479949504952e-07 0.99999970197677612 0
-		 -0.0014356193132698536 17.342187881469727 -0.013781502842903137 1;
-	setAttr ".LeftUpLegGX" -type "matrix" 0.99562954902648926 0.093392066657543182 0.00029463318060152233 0
-		 -0.09320320188999176 0.99380695819854736 -0.060508992522954941 0 -0.0059438678435981274 0.060217071324586868 0.99816781282424927 0
-		 1.712249755859375 17.304298400878906 -0.088131166994571686 1;
-	setAttr ".LeftLegGX" -type "matrix" 0.99127596616744995 0.09630671888589859 -0.089982643723487854 0
-		 -0.093340493738651276 0.99496054649353027 0.036620266735553741 0 0.093055963516235352 -0.027901768684387207 0.99526983499526978 0
-		 2.5422449111938477 8.4542512893676758 0.45062980055809021 1;
-	setAttr ".LeftFootGX" -type "matrix" 0.98582494258880615 0.074564695358276367 -0.15029671788215637 0
-		 -0.074564650654792786 0.9972001314163208 0.0056436965242028236 0 0.15029674768447876 0.0056431246921420097 0.98862475156784058 0
-		 3.2067155838012695 1.3713469505310059 0.18993687629699707 1;
-	setAttr ".RightUpLegGX" -type "matrix" 0.99668604135513306 -0.081342272460460663 -0.00099371874239295721 0
-		 0.081196263432502747 0.99400192499160767 0.073266811668872833 0 -0.0049719307571649551 -0.073104672133922577 0.99731224775314331 0
-		 -1.714868426322937 17.298177719116211 -0.09049069881439209 1;
-	setAttr ".RightLegGX" -type "matrix" 0.96953517198562622 -0.096303842961788177 0.22522693872451782 0
-		 0.081187479197978973 0.99383801221847534 0.075463026762008667 0 -0.23110644519329071 -0.054878443479537964 0.97137945890426636 0
-		 -2.4379374980926514 8.4464225769042969 -0.74303579330444336 1;
-	setAttr ".RightFootGX" -type "matrix" 0.92737054824829102 1.4713034346414133e-08 0.37414473295211792 0
-		 -1.1693978763105406e-07 1.0000002384185791 2.5052730734387296e-07 0 -0.37414473295211792 -2.7608399477685452e-07 0.92737054824829102 0
-		 -3.0158936977386475 1.3715047836303711 -1.2802386283874512 1;
-	setAttr ".SpineGX" -type "matrix" 1 2.0372675990643074e-08 2.3238242441436796e-09 0
-		 -2.0372675990643074e-08 1 1.2645986657844333e-07 0 -2.3238215796084205e-09 -1.2645986657844333e-07 1 0
-		 -0.0050980905070900917 19.392461776733398 -0.013785053044557571 1;
-	setAttr ".LeftArmGX" -type "matrix" 0.85288763046264648 -0.52206498384475708 0.005582065787166357 0
-		 0.5220378041267395 0.85290372371673584 0.0056629530154168606 0 -0.00771739287301898 -0.0019158129580318928 0.99996852874755859 0
-		 3.1473045349121094 25.718166351318359 -0.51502770185470581 1;
-	setAttr ".LeftForeArmGX" -type "matrix" 0.85206311941146851 -0.51980042457580566 -0.061614099889993668 0
-		 0.521079421043396 0.85348969697952271 0.0056523382663726807 0 0.049648899585008621 -0.03692198172211647 0.99808424711227417 0
-		 3.7375657558441162 21.378730773925781 -0.51878488063812256 1;
-	setAttr ".LeftHandGX" -type "matrix" 0.85423564910888672 -0.51930814981460571 -0.024514654651284218 0
-		 0.51988601684570313 0.85334247350692749 0.039057165384292603 0 0.00063668563961982727 -0.046108845621347427 0.99893647432327271 0
-		 4.569279670715332 16.941707611083984 -0.50886166095733643 1;
-	setAttr ".RightArmGX" -type "matrix" 0.83897906541824341 0.54411435127258301 -0.0073476764373481274 0
-		 -0.54409551620483398 0.83901119232177734 0.004527166485786438 0 0.0086280778050422668 0.00019964016973972321 0.99996286630630493 0
-		 -3.1574978828430176 25.718135833740234 -0.51502722501754761 1;
-	setAttr ".RightForeArmGX" -type "matrix" 0.83827519416809082 0.54195123910903931 0.059864707291126251 0
-		 -0.54314649105072021 0.83962607383728027 0.0045069772750139236 0 -0.047821398824453354 -0.036293387413024902 0.99819648265838623 0
-		 -3.6344053745269775 21.364788055419922 -0.51004362106323242 1;
-	setAttr ".RightHandGX" -type "matrix" 0.84042727947235107 0.5414462685585022 0.022754158824682236 0
-		 -0.54192227125167847 0.83957260847091675 0.037919502705335617 0 0.0014276029542088509 -0.044199574738740921 0.99902158975601196 0
-		 -4.3501672744750977 16.907623291015625 -0.49098140001296997 1;
-	setAttr ".HeadGX" -type "matrix" 1 2.0372677766999914e-08 2.3238251323220993e-09 0
-		 -2.0372677766999914e-08 1 1.2645988078929804e-07 0 -2.3238224677868402e-09 -1.2645988078929804e-07 1 0
-		 -0.0050982804968953133 28.710979461669922 -0.013783874921500683 1;
-	setAttr ".LeftToeBaseGX" -type "matrix" 0.98582541942596436 0.074564710259437561 -0.15029674768447876 0
-		 -0.074564665555953979 0.997200608253479 0.0056436974555253983 0 0.15029677748680115 0.005643126554787159 0.98862522840499878 0
-		 3.5882978439331055 0.28914904594421387 2.3712742328643799 1;
-	setAttr ".RightToeBaseGX" -type "matrix" 0.92737054824829102 1.4713034346414133e-08 0.37414473295211792 0
-		 -1.1693978763105406e-07 1.0000002384185791 2.5052730734387296e-07 0 -0.37414473295211792 -2.7608399477685452e-07 0.92737054824829102 0
-		 -3.8143057823181152 0.27619647979736328 0.77832317352294922 1;
-	setAttr ".LeftShoulderGX" -type "matrix" 1 2.0372677766999914e-08 2.3238246882328895e-09 0
-		 -2.0372677766999914e-08 1 1.2645988078929804e-07 0 -2.3238220236976304e-09 -1.2645988078929804e-07 1 0
-		 0.68538516759872437 26.011455535888672 -0.51502764225006104 1;
-	setAttr ".RightShoulderGX" -type "matrix" 1 2.0372677766999914e-08 2.3238246882328895e-09 0
-		 -2.0372677766999914e-08 1 1.2645988078929804e-07 0 -2.3238220236976304e-09 -1.2645988078929804e-07 1 0
-		 -0.69521480798721313 26.011459350585938 -0.51502716541290283 1;
-	setAttr ".NeckGX" -type "matrix" 1 2.0372677766999914e-08 2.3238249102774944e-09 0
-		 -2.0372677766999914e-08 1 1.2645988078929804e-07 0 -2.3238222457422353e-09 -1.2645988078929804e-07 1 0
-		 -0.0050982367247343063 26.565559387207031 -0.013784145936369896 1;
-	setAttr ".Spine1GX" -type "matrix" 1 2.0372675990643074e-08 2.3238244661882845e-09 0
-		 -2.0372675990643074e-08 1 1.2645988078929804e-07 0 -2.3238218016530254e-09 -1.2645988078929804e-07 1 0
-		 -0.0050981435924768448 21.998516082763672 -0.013784723356366158 1;
-	setAttr ".Spine2GX" -type "matrix" 1 2.0372677766999914e-08 2.3238246882328895e-09 0
-		 -2.0372677766999914e-08 1 1.2645988078929804e-07 0 -2.3238220236976304e-09 -1.2645988078929804e-07 1 0
-		 -0.0050981924869120121 24.400951385498047 -0.013784419745206833 1;
-	setAttr ".LeafLeftForeArmRoll1GX" -type "matrix" 0.85274273157119751 -0.51951092481613159 -0.054209735244512558 0
-		 0.52080839872360229 0.8535846471786499 0.012341327965259552 0 0.039861135184764862 -0.038756862282752991 0.99845361709594727 0
-		 4.1768784523010254 19.025749206542969 -0.55439537763595581 1;
-	setAttr ".LeafRightForeArmRoll1GX" -type "matrix" 0.83895611763000488 0.54166501760482788 0.052458208054304123 0
-		 -0.54287189245223999 0.83974099159240723 0.011197136715054512 0 -0.037986204028129578 -0.037871994078159332 0.99856054782867432 0
-		 -4.0122795104980469 19.001113891601563 -0.54081034660339355 1;
+	setAttr ".HipsGX" -type "matrix" 0.99999856948852539 0.0017280669417232275 0.00047901296056807041 0
+		 -0.0017280658939853311 0.99999862909317017 -2.157879180231248e-06 0 -0.00047901595826260746 1.3301097396833939e-06 1 0
+		 -0.023859873414039612 17.339408874511719 -0.013732858002185822 1;
+	setAttr ".LeftUpLegGX" -type "matrix" 0.99549710750579834 0.09479396790266037 9.4205597633845173e-06 0
+		 -0.09461800754070282 0.99365532398223877 -0.060803353786468506 0 -0.0057731512933969498 0.060528658330440521 0.9981500506401062 0
+		 1.6898089647293091 17.301420211791992 -0.088441461324691772 1;
+	setAttr ".LeftLegGX" -type "matrix" 0.99112635850906372 0.097725696861743927 -0.090101949870586395 0
+		 -0.09472985565662384 0.99481689929962158 0.036957316100597382 0 0.093246623873710632 -0.028094023466110229 0.9952467679977417 0
+		 2.5324001312255859 8.4527387619018555 0.45303636789321899 1;
+	setAttr ".LeftFootGX" -type "matrix" 0.98582541942596436 0.074564725160598755 -0.15029674768447876 0
+		 -0.074564673006534576 0.99720054864883423 0.0056436760351061821 0 0.15029677748680115 0.005643149372190237 0.98862522840499878 0
+		 3.2067606449127197 1.3708534240722656 0.1899452805519104 1;
+	setAttr ".RightUpLegGX" -type "matrix" 0.99679720401763916 -0.079968877136707306 -0.00087187066674232483 0
+		 0.079847224056720734 0.99454987049102783 0.067048422992229462 0 -0.0044946679845452309 -0.066903285682201385 0.99774956703186035 0
+		 -1.7373114824295044 17.295499801635742 -0.09008307009935379 1;
+	setAttr ".RightLegGX" -type "matrix" 0.9695391058921814 -0.096736349165439606 0.22502487897872925 0
+		 0.07976609468460083 0.99332356452941895 0.083342522382736206 0 -0.23158474266529083 -0.062854468822479248 0.97078222036361694 0
+		 -2.4483695030212402 8.4388465881347656 -0.68723487854003906 1;
+	setAttr ".RightFootGX" -type "matrix" 0.92737054824829102 2.7921309708744957e-08 0.37414473295211792 0
+		 -1.3298770795699966e-07 1.0000002384185791 2.5500173705950147e-07 0 -0.37414473295211792 -2.8623770731428522e-07 0.92737054824829102 0
+		 -3.0162065029144287 1.3676013946533203 -1.2805311679840088 1;
+	setAttr ".SpineGX" -type "matrix" 1 5.4073756473371759e-05 -0.00031825093901716173 0
+		 -5.4073982028057799e-05 1 -6.9595284912793431e-07 0 0.00031825088080950081 7.1316185312753078e-07 1 0
+		 -0.027402924373745918 19.389680862426758 -0.013737281784415245 1;
+	setAttr ".LeftArmGX" -type "matrix" 0.85292649269104004 -0.52201884984970093 0.0036383648402988911 0
+		 0.522003173828125 0.85293203592300415 0.0044720671139657497 0 -0.005437780637294054 -0.0019151057349517941 0.99998366832733154 0
+		 3.1235115528106689 25.715555191040039 -0.52217024564743042 1;
+	setAttr ".LeftForeArmGX" -type "matrix" 0.85194844007492065 -0.51975446939468384 -0.06355585902929306 0
+		 0.52104485034942627 0.85351765155792236 0.0044637690298259258 0 0.051925983279943466 -0.036918357014656067 0.99796843528747559 0
+		 3.7139930725097656 21.376152038574219 -0.52726942300796509 1;
+	setAttr ".LeftHandGX" -type "matrix" 0.85420548915863037 -0.51926213502883911 -0.026461461558938026 0
+		 0.51992785930633545 0.85337060689926147 0.037871234118938446 0 0.002916327677667141 -0.046107858419418335 0.99893254041671753 0
+		 4.545966625213623 16.939170837402344 -0.5192381739616394 1;
+	setAttr ".RightArmGX" -type "matrix" 0.83899092674255371 0.5437968373298645 -0.019482621923089027 0
+		 -0.54388070106506348 0.83916205167770386 0.0011677783913910389 0 0.016984106972813606 0.0096164653077721596 0.99980974197387695 0
+		 -3.1812844276428223 25.715183258056641 -0.50779742002487183 1;
+	setAttr ".RightForeArmGX" -type "matrix" 0.83657771348953247 0.54735779762268066 0.023180486634373665 0
+		 -0.54736447334289551 0.83686822652816772 -0.0066219442524015903 0 -0.023023582994937897 -0.00714840367436409 0.99970942735671997 0
+		 -3.6589550971984863 21.362201690673828 -0.45781296491622925 1;
+	setAttr ".RightHandGX" -type "matrix" 0.83491700887680054 0.55037355422973633 0.0015986489597707987 0
+		 -0.5503193736076355 0.83478623628616333 0.016744140535593033 0 0.0078810015693306923 -0.014859736897051334 0.99985843896865845 0
+		 -4.3501238822937012 16.904254913330078 -0.29052251577377319 1;
+	setAttr ".HeadGX" -type "matrix" 0.99999678134918213 0.00038194993976503611 0.0026412780862301588 0
+		 -0.00038621603744104505 0.99999898672103882 0.001614841166883707 0 -0.0026406578253954649 -0.001615855609998107 0.99999552965164185 0
+		 -0.028184507042169571 28.70823860168457 -0.012008228339254856 1;
+	setAttr ".LeftToeBaseGX" -type "matrix" 0.98582494258880615 0.074564710259437561 -0.15029671788215637 0
+		 -0.074564658105373383 0.99720007181167603 0.0056436746381223202 0 0.15029674768447876 0.0056431489065289497 0.98862475156784058 0
+		 3.5883426666259766 0.28865730762481689 2.3712811470031738 1;
+	setAttr ".RightToeBaseGX" -type "matrix" 0.92737054824829102 2.7921313261458636e-08 0.37414470314979553 0
+		 -1.3298770795699966e-07 1.0000002384185791 2.5500173705950147e-07 0 -0.37414470314979553 -2.8623770731428522e-07 0.92737054824829102 0
+		 -3.8146183490753174 0.27229404449462891 0.77803230285644531 1;
+	setAttr ".LeftShoulderGX" -type "matrix" 0.99999761581420898 5.407225398812443e-05 -0.0022795828990638256 0
+		 -5.4073978390078992e-05 1.0000002384185791 -6.9595256491084001e-07 0 0.0022795828990638256 8.1921683658947586e-07 0.99999761581420898 0
+		 0.66157823801040649 26.008710861206055 -0.51655828952789307 1;
+	setAttr ".RightShoulderGX" -type "matrix" 0.99999761581420898 5.407225398812443e-05 -0.0022795828990638256 0
+		 -5.4073978390078992e-05 1.0000002384185791 -6.9595256491084001e-07 0 0.0022795828990638256 8.1921683658947586e-07 0.99999761581420898 0
+		 -0.71901869773864746 26.008640289306641 -0.51341056823730469 1;
+	setAttr ".NeckGX" -type "matrix" 1.0000003576278687 0.00018336056382395327 0.00018380196706857532 0
+		 -0.0001835090370150283 0.99999994039535522 0.00080824637552723289 0 -0.00018365371215622872 -0.00080828007776290178 1 0
+		 -0.027790803462266922 26.562820434570312 -0.013742273673415184 1;
+	setAttr ".Spine1GX" -type "matrix" 0.99999922513961792 5.4073025239631534e-05 -0.0012989176902920008 0
+		 -5.4073982028057799e-05 1.0000001192092896 -6.9595256491084001e-07 0 0.0012989176902920008 7.6618960065388819e-07 0.99999922513961792 0
+		 -0.027543844655156136 21.995735168457031 -0.013739095069468021 1;
+	setAttr ".Spine2GX" -type "matrix" 0.99999761581420898 5.407225398812443e-05 -0.0022795828990638256 0
+		 -5.4073978390078992e-05 1.0000002384185791 -6.9595256491084001e-07 0 0.0022795828990638256 8.1921683658947586e-07 0.99999761581420898 0
+		 -0.027673754841089249 24.398170471191406 -0.013740767724812031 1;
+	setAttr ".LeafLeftForeArmRoll1GX" -type "matrix" 0.85264462232589722 -0.51946491003036499 -0.056153088808059692 0
+		 0.52078914642333984 0.85361248254776001 0.011153241619467735 0 0.042139265686273575 -0.038753673434257507 0.99835985898971558 0
+		 4.1533498764038086 19.023193359375 -0.56387919187545776 1;
+	setAttr ".LeafRightForeArmRoll1GX" -type "matrix" 0.83688348531723022 0.54705893993377686 0.018776506185531616 0
+		 -0.54711174964904785 0.83705532550811768 -0.0026535452343523502 0 -0.017168622463941574 -0.0080521386116743088 0.99982011318206787 0
+		 -4.0247936248779297 18.996917724609375 -0.4099850058555603 1;
 createNode HIKEffectorFromCharacter -n "HIKEffectorFromCharacter1";
 	rename -uid "5DA282A4-45DD-8D52-F8FA-57A1EEE2E5C4";
 	setAttr ".ihi" 0;
@@ -41745,117 +41753,117 @@ createNode HIKEffectorFromCharacter -n "HIKEffectorFromCharacter2";
 createNode HIKState2Effector -n "HIKState2Effector1";
 	rename -uid "AB9E306B-4C51-BBBB-D63E-098265359789";
 	setAttr ".ihi" 0;
-	setAttr ".HipsEffectorGXM[0]" -type "matrix" 0.99999809265136719 0.0017863152315840125 0.00068850070238113403 0
-		 -0.0017863145330920815 0.99999833106994629 -1.7317368019575952e-06 0 -0.00068850268144160509 5.0185479949504952e-07 0.99999970197677612 0
-		 -0.0013093352317810059 17.301239013671875 -0.089310929179191589 1;
-	setAttr ".LeftAnkleEffectorGXM[0]" -type "matrix" 0.98582494258880615 0.074564695358276367 -0.15029671788215637 0
-		 -0.074564650654792786 0.9972001314163208 0.0056436965242028236 0 0.15029674768447876 0.0056431246921420097 0.98862475156784058 0
-		 3.2067155838012695 1.3713469505310059 0.18993687629699707 1;
-	setAttr ".RightAnkleEffectorGXM[0]" -type "matrix" 0.92737054824829102 1.4713034346414133e-08 0.37414473295211792 0
-		 -1.1693978763105406e-07 1.0000002384185791 2.5052730734387296e-07 0 -0.37414473295211792 -2.7608399477685452e-07 0.92737054824829102 0
-		 -3.0158936977386475 1.3715047836303711 -1.2802386283874512 1;
-	setAttr ".LeftWristEffectorGXM[0]" -type "matrix" 0.85423564910888672 -0.51930814981460571 -0.024514654651284218 0
-		 0.5198860764503479 0.85334253311157227 0.039057169109582901 0 0.00063668563961982727 -0.046108845621347427 0.99893647432327271 0
-		 4.569279670715332 16.941707611083984 -0.50886166095733643 1;
-	setAttr ".RightWristEffectorGXM[0]" -type "matrix" 0.84042727947235107 0.5414462685585022 0.022754158824682236 0
-		 -0.54192227125167847 0.83957260847091675 0.037919502705335617 0 0.0014276029542088509 -0.044199574738740921 0.99902158975601196 0
-		 -4.3501672744750977 16.907623291015625 -0.49098140001296997 1;
-	setAttr ".LeftKneeEffectorGXM[0]" -type "matrix" 0.99127596616744995 0.09630671888589859 -0.089982643723487854 0
-		 -0.093340493738651276 0.99496054649353027 0.036620266735553741 0 0.093055963516235352 -0.027901768684387207 0.99526983499526978 0
-		 2.5422449111938477 8.4542512893676758 0.45062980055809021 1;
-	setAttr ".RightKneeEffectorGXM[0]" -type "matrix" 0.96953517198562622 -0.096303842961788177 0.22522693872451782 0
-		 0.081187479197978973 0.99383801221847534 0.075463026762008667 0 -0.2311064600944519 -0.054878447204828262 0.97137951850891113 0
-		 -2.4379374980926514 8.4464225769042969 -0.74303579330444336 1;
-	setAttr ".LeftElbowEffectorGXM[0]" -type "matrix" 0.85206311941146851 -0.51980042457580566 -0.061614099889993668 0
-		 0.521079421043396 0.85348969697952271 0.0056523382663726807 0 0.049648899585008621 -0.03692198172211647 0.99808424711227417 0
-		 3.7375657558441162 21.378730773925781 -0.51878488063812256 1;
-	setAttr ".RightElbowEffectorGXM[0]" -type "matrix" 0.8382752537727356 0.54195129871368408 0.05986471101641655 0
-		 -0.54314649105072021 0.83962607383728027 0.0045069772750139236 0 -0.047821398824453354 -0.036293387413024902 0.99819648265838623 0
-		 -3.6344053745269775 21.364788055419922 -0.51004362106323242 1;
-	setAttr ".ChestOriginEffectorGXM[0]" -type "matrix" 1 2.0372675990643074e-08 2.3238242441436796e-09 0
-		 -2.0372675990643074e-08 1 1.2645986657844333e-07 0 -2.3238215796084205e-09 -1.2645986657844333e-07 1 0
-		 -0.0050980905070900917 19.392461776733398 -0.013785053044557571 1;
-	setAttr ".ChestEndEffectorGXM[0]" -type "matrix" 1 2.0372677766999914e-08 2.3238246882328895e-09 0
-		 -2.0372677766999914e-08 1 1.2645988078929804e-07 0 -2.3238220236976304e-09 -1.2645988078929804e-07 1 0
-		 -0.0049148201942443848 26.011457443237305 -0.51502740383148193 1;
-	setAttr ".LeftFootEffectorGXM[0]" -type "matrix" 0.98582541942596436 0.074564710259437561 -0.15029674768447876 0
-		 -0.074564665555953979 0.997200608253479 0.0056436974555253983 0 0.15029677748680115 0.005643126554787159 0.98862522840499878 0
-		 3.5882978439331055 0.28914904594421387 2.3712742328643799 1;
-	setAttr ".RightFootEffectorGXM[0]" -type "matrix" 0.92737054824829102 1.4713034346414133e-08 0.37414473295211792 0
-		 -1.1693978763105406e-07 1.0000002384185791 2.5052730734387296e-07 0 -0.37414473295211792 -2.7608399477685452e-07 0.92737054824829102 0
-		 -3.8143057823181152 0.27619647979736328 0.77832317352294922 1;
-	setAttr ".LeftShoulderEffectorGXM[0]" -type "matrix" 0.85288763046264648 -0.52206498384475708 0.005582065787166357 0
-		 0.5220378041267395 0.85290372371673584 0.0056629530154168606 0 -0.00771739287301898 -0.0019158129580318928 0.99996852874755859 0
-		 3.1473045349121094 25.718166351318359 -0.51502770185470581 1;
-	setAttr ".RightShoulderEffectorGXM[0]" -type "matrix" 0.83897906541824341 0.54411435127258301 -0.0073476764373481274 0
-		 -0.54409551620483398 0.83901119232177734 0.004527166485786438 0 0.0086280778050422668 0.00019964016973972321 0.99996286630630493 0
-		 -3.1574978828430176 25.718135833740234 -0.51502722501754761 1;
-	setAttr ".HeadEffectorGXM[0]" -type "matrix" 1 2.0372677766999914e-08 2.3238251323220993e-09 0
-		 -2.0372677766999914e-08 1 1.2645988078929804e-07 0 -2.3238224677868402e-09 -1.2645988078929804e-07 1 0
-		 -0.0050982804968953133 28.710979461669922 -0.013783874921500683 1;
-	setAttr ".LeftHipEffectorGXM[0]" -type "matrix" 0.99562960863113403 0.093392074108123779 0.00029463320970535278 0
-		 -0.09320320188999176 0.99380695819854736 -0.060508992522954941 0 -0.0059438678435981274 0.060217071324586868 0.99816781282424927 0
-		 1.712249755859375 17.304298400878906 -0.088131166994571686 1;
-	setAttr ".RightHipEffectorGXM[0]" -type "matrix" 0.99668610095977783 -0.08134227991104126 -0.00099371885880827904 0
-		 0.081196263432502747 0.99400192499160767 0.073266811668872833 0 -0.0049719307571649551 -0.073104672133922577 0.99731224775314331 0
-		 -1.714868426322937 17.298177719116211 -0.09049069881439209 1;
+	setAttr ".HipsEffectorGXM[0]" -type "matrix" 0.99999856948852539 0.0017280669417232275 0.00047901296056807041 0
+		 -0.0017280660104006529 0.99999868869781494 -2.1578794076049235e-06 0 -0.00047901598736643791 1.3301098533702316e-06 1.0000001192092896 0
+		 -0.023751258850097656 17.298460006713867 -0.089262261986732483 1;
+	setAttr ".LeftAnkleEffectorGXM[0]" -type "matrix" 0.98582541942596436 0.074564725160598755 -0.15029674768447876 0
+		 -0.074564680457115173 0.997200608253479 0.0056436765007674694 0 0.15029677748680115 0.005643149372190237 0.98862522840499878 0
+		 3.2067606449127197 1.3708534240722656 0.1899452805519104 1;
+	setAttr ".RightAnkleEffectorGXM[0]" -type "matrix" 0.92737054824829102 2.7921309708744957e-08 0.37414473295211792 0
+		 -1.3298770795699966e-07 1.0000002384185791 2.5500173705950147e-07 0 -0.37414473295211792 -2.8623770731428522e-07 0.92737054824829102 0
+		 -3.0162065029144287 1.3676013946533203 -1.2805311679840088 1;
+	setAttr ".LeftWristEffectorGXM[0]" -type "matrix" 0.85420554876327515 -0.51926219463348389 -0.026461463421583176 0
+		 0.51992785930633545 0.85337060689926147 0.037871234118938446 0 0.002916327677667141 -0.046107858419418335 0.99893254041671753 0
+		 4.545966625213623 16.939170837402344 -0.5192381739616394 1;
+	setAttr ".RightWristEffectorGXM[0]" -type "matrix" 0.83491700887680054 0.55037355422973633 0.0015986489597707987 0
+		 -0.55031943321228027 0.83478629589080811 0.016744142398238182 0 0.0078810025006532669 -0.014859737828373909 0.99985849857330322 0
+		 -4.3501238822937012 16.904254913330078 -0.29052251577377319 1;
+	setAttr ".LeftKneeEffectorGXM[0]" -type "matrix" 0.9911264181137085 0.097725704312324524 -0.090101957321166992 0
+		 -0.09472985565662384 0.99481689929962158 0.036957316100597382 0 0.093246623873710632 -0.028094023466110229 0.9952467679977417 0
+		 2.5324001312255859 8.4527387619018555 0.45303636789321899 1;
+	setAttr ".RightKneeEffectorGXM[0]" -type "matrix" 0.96953916549682617 -0.096736356616020203 0.22502489387989044 0
+		 0.07976609468460083 0.99332356452941895 0.083342522382736206 0 -0.23158474266529083 -0.062854468822479248 0.97078222036361694 0
+		 -2.4483695030212402 8.4388465881347656 -0.68723487854003906 1;
+	setAttr ".LeftElbowEffectorGXM[0]" -type "matrix" 0.85194844007492065 -0.51975446939468384 -0.06355585902929306 0
+		 0.52104490995407104 0.85351771116256714 0.0044637694954872131 0 0.051925983279943466 -0.036918357014656067 0.99796843528747559 0
+		 3.7139930725097656 21.376152038574219 -0.52726942300796509 1;
+	setAttr ".RightElbowEffectorGXM[0]" -type "matrix" 0.83657771348953247 0.54735779762268066 0.023180486634373665 0
+		 -0.54736447334289551 0.83686822652816772 -0.0066219442524015903 0 -0.023023584857583046 -0.0071484041400253773 0.99970948696136475 0
+		 -3.6589550971984863 21.362201690673828 -0.45781296491622925 1;
+	setAttr ".ChestOriginEffectorGXM[0]" -type "matrix" 1 5.4073756473371759e-05 -0.00031825093901716173 0
+		 -5.4073982028057799e-05 1 -6.9595284912793431e-07 0 0.00031825088080950081 7.1316185312753078e-07 1 0
+		 -0.027402924373745918 19.389680862426758 -0.013737281784415245 1;
+	setAttr ".ChestEndEffectorGXM[0]" -type "matrix" 0.99999761581420898 5.407225398812443e-05 -0.0022795828990638256 0
+		 -5.4073978390078992e-05 1.0000002384185791 -6.9595256491084001e-07 0 0.0022795828990638256 8.1921683658947586e-07 0.99999761581420898 0
+		 -0.028720229864120483 26.008674621582031 -0.51498442888259888 1;
+	setAttr ".LeftFootEffectorGXM[0]" -type "matrix" 0.98582494258880615 0.074564710259437561 -0.15029671788215637 0
+		 -0.074564665555953979 0.9972001314163208 0.0056436751037836075 0 0.15029674768447876 0.0056431489065289497 0.98862475156784058 0
+		 3.5883426666259766 0.28865730762481689 2.3712811470031738 1;
+	setAttr ".RightFootEffectorGXM[0]" -type "matrix" 0.92737054824829102 2.7921313261458636e-08 0.37414470314979553 0
+		 -1.3298770795699966e-07 1.0000002384185791 2.5500173705950147e-07 0 -0.37414470314979553 -2.8623770731428522e-07 0.92737054824829102 0
+		 -3.8146183490753174 0.27229404449462891 0.77803230285644531 1;
+	setAttr ".LeftShoulderEffectorGXM[0]" -type "matrix" 0.85292649269104004 -0.52201884984970093 0.0036383648402988911 0
+		 0.52200323343276978 0.85293209552764893 0.004472067579627037 0 -0.005437780637294054 -0.0019151057349517941 0.99998366832733154 0
+		 3.1235115528106689 25.715555191040039 -0.52217024564743042 1;
+	setAttr ".RightShoulderEffectorGXM[0]" -type "matrix" 0.83899098634719849 0.54379689693450928 -0.019482623785734177 0
+		 -0.54388070106506348 0.83916205167770386 0.0011677783913910389 0 0.016984108835458755 0.0096164662390947342 0.99980980157852173 0
+		 -3.1812844276428223 25.715183258056641 -0.50779742002487183 1;
+	setAttr ".HeadEffectorGXM[0]" -type "matrix" 0.99999678134918213 0.00038194993976503611 0.0026412780862301588 0
+		 -0.00038621603744104505 0.99999898672103882 0.001614841166883707 0 -0.0026406578253954649 -0.001615855609998107 0.99999552965164185 0
+		 -0.028184507042169571 28.70823860168457 -0.012008228339254856 1;
+	setAttr ".LeftHipEffectorGXM[0]" -type "matrix" 0.99549716711044312 0.094793975353240967 9.4205606728792191e-06 0
+		 -0.09461800754070282 0.99365532398223877 -0.060803353786468506 0 -0.0057731512933969498 0.060528658330440521 0.9981500506401062 0
+		 1.6898089647293091 17.301420211791992 -0.088441461324691772 1;
+	setAttr ".RightHipEffectorGXM[0]" -type "matrix" 0.99679720401763916 -0.079968877136707306 -0.00087187066674232483 0
+		 0.079847224056720734 0.99454987049102783 0.067048422992229462 0 -0.0044946679845452309 -0.066903285682201385 0.99774956703186035 0
+		 -1.7373114824295044 17.295499801635742 -0.09008307009935379 1;
 createNode HIKState2Effector -n "HIKState2Effector2";
 	rename -uid "F50D81A9-4703-F8BB-5375-55B10503D4A6";
 	setAttr ".ihi" 0;
-	setAttr ".HipsEffectorGXM[0]" -type "matrix" 0.99999809265136719 0.0017863152315840125 0.00068850070238113403 0
-		 -0.0017863145330920815 0.99999833106994629 -1.7317368019575952e-06 0 -0.00068850268144160509 5.0185479949504952e-07 0.99999970197677612 0
-		 -0.0013093352317810059 17.301239013671875 -0.089310929179191589 1;
-	setAttr ".LeftAnkleEffectorGXM[0]" -type "matrix" 0.98582494258880615 0.074564695358276367 -0.15029671788215637 0
-		 -0.074564650654792786 0.9972001314163208 0.0056436965242028236 0 0.15029674768447876 0.0056431246921420097 0.98862475156784058 0
-		 3.2067155838012695 1.3713469505310059 0.18993687629699707 1;
-	setAttr ".RightAnkleEffectorGXM[0]" -type "matrix" 0.92737054824829102 1.4713034346414133e-08 0.37414473295211792 0
-		 -1.1693978763105406e-07 1.0000002384185791 2.5052730734387296e-07 0 -0.37414473295211792 -2.7608399477685452e-07 0.92737054824829102 0
-		 -3.0158936977386475 1.3715047836303711 -1.2802386283874512 1;
-	setAttr ".LeftWristEffectorGXM[0]" -type "matrix" 0.85423564910888672 -0.51930814981460571 -0.024514654651284218 0
-		 0.5198860764503479 0.85334253311157227 0.039057169109582901 0 0.00063668563961982727 -0.046108845621347427 0.99893647432327271 0
-		 4.569279670715332 16.941707611083984 -0.50886166095733643 1;
-	setAttr ".RightWristEffectorGXM[0]" -type "matrix" 0.84042727947235107 0.5414462685585022 0.022754158824682236 0
-		 -0.54192227125167847 0.83957260847091675 0.037919502705335617 0 0.0014276029542088509 -0.044199574738740921 0.99902158975601196 0
-		 -4.3501672744750977 16.907623291015625 -0.49098140001296997 1;
-	setAttr ".LeftKneeEffectorGXM[0]" -type "matrix" 0.99127596616744995 0.09630671888589859 -0.089982643723487854 0
-		 -0.093340493738651276 0.99496054649353027 0.036620266735553741 0 0.093055963516235352 -0.027901768684387207 0.99526983499526978 0
-		 2.5422449111938477 8.4542512893676758 0.45062980055809021 1;
-	setAttr ".RightKneeEffectorGXM[0]" -type "matrix" 0.96953517198562622 -0.096303842961788177 0.22522693872451782 0
-		 0.081187479197978973 0.99383801221847534 0.075463026762008667 0 -0.2311064600944519 -0.054878447204828262 0.97137951850891113 0
-		 -2.4379374980926514 8.4464225769042969 -0.74303579330444336 1;
-	setAttr ".LeftElbowEffectorGXM[0]" -type "matrix" 0.85206311941146851 -0.51980042457580566 -0.061614099889993668 0
-		 0.521079421043396 0.85348969697952271 0.0056523382663726807 0 0.049648899585008621 -0.03692198172211647 0.99808424711227417 0
-		 3.7375657558441162 21.378730773925781 -0.51878488063812256 1;
-	setAttr ".RightElbowEffectorGXM[0]" -type "matrix" 0.8382752537727356 0.54195129871368408 0.05986471101641655 0
-		 -0.54314649105072021 0.83962607383728027 0.0045069772750139236 0 -0.047821398824453354 -0.036293387413024902 0.99819648265838623 0
-		 -3.6344053745269775 21.364788055419922 -0.51004362106323242 1;
-	setAttr ".ChestOriginEffectorGXM[0]" -type "matrix" 1 2.0372675990643074e-08 2.3238242441436796e-09 0
-		 -2.0372675990643074e-08 1 1.2645986657844333e-07 0 -2.3238215796084205e-09 -1.2645986657844333e-07 1 0
-		 -0.0050980905070900917 19.392461776733398 -0.013785053044557571 1;
-	setAttr ".ChestEndEffectorGXM[0]" -type "matrix" 1 2.0372677766999914e-08 2.3238246882328895e-09 0
-		 -2.0372677766999914e-08 1 1.2645988078929804e-07 0 -2.3238220236976304e-09 -1.2645988078929804e-07 1 0
-		 -0.0049148201942443848 26.011457443237305 -0.51502740383148193 1;
-	setAttr ".LeftFootEffectorGXM[0]" -type "matrix" 0.98582541942596436 0.074564710259437561 -0.15029674768447876 0
-		 -0.074564665555953979 0.997200608253479 0.0056436974555253983 0 0.15029677748680115 0.005643126554787159 0.98862522840499878 0
-		 3.5882978439331055 0.28914904594421387 2.3712742328643799 1;
-	setAttr ".RightFootEffectorGXM[0]" -type "matrix" 0.92737054824829102 1.4713034346414133e-08 0.37414473295211792 0
-		 -1.1693978763105406e-07 1.0000002384185791 2.5052730734387296e-07 0 -0.37414473295211792 -2.7608399477685452e-07 0.92737054824829102 0
-		 -3.8143057823181152 0.27619647979736328 0.77832317352294922 1;
-	setAttr ".LeftShoulderEffectorGXM[0]" -type "matrix" 0.85288763046264648 -0.52206498384475708 0.005582065787166357 0
-		 0.5220378041267395 0.85290372371673584 0.0056629530154168606 0 -0.00771739287301898 -0.0019158129580318928 0.99996852874755859 0
-		 3.1473045349121094 25.718166351318359 -0.51502770185470581 1;
-	setAttr ".RightShoulderEffectorGXM[0]" -type "matrix" 0.83897906541824341 0.54411435127258301 -0.0073476764373481274 0
-		 -0.54409551620483398 0.83901119232177734 0.004527166485786438 0 0.0086280778050422668 0.00019964016973972321 0.99996286630630493 0
-		 -3.1574978828430176 25.718135833740234 -0.51502722501754761 1;
-	setAttr ".HeadEffectorGXM[0]" -type "matrix" 1 2.0372677766999914e-08 2.3238251323220993e-09 0
-		 -2.0372677766999914e-08 1 1.2645988078929804e-07 0 -2.3238224677868402e-09 -1.2645988078929804e-07 1 0
-		 -0.0050982804968953133 28.710979461669922 -0.013783874921500683 1;
-	setAttr ".LeftHipEffectorGXM[0]" -type "matrix" 0.99562960863113403 0.093392074108123779 0.00029463320970535278 0
-		 -0.09320320188999176 0.99380695819854736 -0.060508992522954941 0 -0.0059438678435981274 0.060217071324586868 0.99816781282424927 0
-		 1.712249755859375 17.304298400878906 -0.088131166994571686 1;
-	setAttr ".RightHipEffectorGXM[0]" -type "matrix" 0.99668610095977783 -0.08134227991104126 -0.00099371885880827904 0
-		 0.081196263432502747 0.99400192499160767 0.073266811668872833 0 -0.0049719307571649551 -0.073104672133922577 0.99731224775314331 0
-		 -1.714868426322937 17.298177719116211 -0.09049069881439209 1;
+	setAttr ".HipsEffectorGXM[0]" -type "matrix" 0.99999856948852539 0.0017280669417232275 0.00047901296056807041 0
+		 -0.0017280660104006529 0.99999868869781494 -2.1578794076049235e-06 0 -0.00047901598736643791 1.3301098533702316e-06 1.0000001192092896 0
+		 -0.023751258850097656 17.298460006713867 -0.089262261986732483 1;
+	setAttr ".LeftAnkleEffectorGXM[0]" -type "matrix" 0.98582541942596436 0.074564725160598755 -0.15029674768447876 0
+		 -0.074564680457115173 0.997200608253479 0.0056436765007674694 0 0.15029677748680115 0.005643149372190237 0.98862522840499878 0
+		 3.2067606449127197 1.3708534240722656 0.1899452805519104 1;
+	setAttr ".RightAnkleEffectorGXM[0]" -type "matrix" 0.92737054824829102 2.7921309708744957e-08 0.37414473295211792 0
+		 -1.3298770795699966e-07 1.0000002384185791 2.5500173705950147e-07 0 -0.37414473295211792 -2.8623770731428522e-07 0.92737054824829102 0
+		 -3.0162065029144287 1.3676013946533203 -1.2805311679840088 1;
+	setAttr ".LeftWristEffectorGXM[0]" -type "matrix" 0.85420554876327515 -0.51926219463348389 -0.026461463421583176 0
+		 0.51992785930633545 0.85337060689926147 0.037871234118938446 0 0.002916327677667141 -0.046107858419418335 0.99893254041671753 0
+		 4.545966625213623 16.939170837402344 -0.5192381739616394 1;
+	setAttr ".RightWristEffectorGXM[0]" -type "matrix" 0.83491700887680054 0.55037355422973633 0.0015986489597707987 0
+		 -0.55031943321228027 0.83478629589080811 0.016744142398238182 0 0.0078810025006532669 -0.014859737828373909 0.99985849857330322 0
+		 -4.3501238822937012 16.904254913330078 -0.29052251577377319 1;
+	setAttr ".LeftKneeEffectorGXM[0]" -type "matrix" 0.9911264181137085 0.097725704312324524 -0.090101957321166992 0
+		 -0.09472985565662384 0.99481689929962158 0.036957316100597382 0 0.093246623873710632 -0.028094023466110229 0.9952467679977417 0
+		 2.5324001312255859 8.4527387619018555 0.45303636789321899 1;
+	setAttr ".RightKneeEffectorGXM[0]" -type "matrix" 0.96953916549682617 -0.096736356616020203 0.22502489387989044 0
+		 0.07976609468460083 0.99332356452941895 0.083342522382736206 0 -0.23158474266529083 -0.062854468822479248 0.97078222036361694 0
+		 -2.4483695030212402 8.4388465881347656 -0.68723487854003906 1;
+	setAttr ".LeftElbowEffectorGXM[0]" -type "matrix" 0.85194844007492065 -0.51975446939468384 -0.06355585902929306 0
+		 0.52104490995407104 0.85351771116256714 0.0044637694954872131 0 0.051925983279943466 -0.036918357014656067 0.99796843528747559 0
+		 3.7139930725097656 21.376152038574219 -0.52726942300796509 1;
+	setAttr ".RightElbowEffectorGXM[0]" -type "matrix" 0.83657771348953247 0.54735779762268066 0.023180486634373665 0
+		 -0.54736447334289551 0.83686822652816772 -0.0066219442524015903 0 -0.023023584857583046 -0.0071484041400253773 0.99970948696136475 0
+		 -3.6589550971984863 21.362201690673828 -0.45781296491622925 1;
+	setAttr ".ChestOriginEffectorGXM[0]" -type "matrix" 1 5.4073756473371759e-05 -0.00031825093901716173 0
+		 -5.4073982028057799e-05 1 -6.9595284912793431e-07 0 0.00031825088080950081 7.1316185312753078e-07 1 0
+		 -0.027402924373745918 19.389680862426758 -0.013737281784415245 1;
+	setAttr ".ChestEndEffectorGXM[0]" -type "matrix" 0.99999761581420898 5.407225398812443e-05 -0.0022795828990638256 0
+		 -5.4073978390078992e-05 1.0000002384185791 -6.9595256491084001e-07 0 0.0022795828990638256 8.1921683658947586e-07 0.99999761581420898 0
+		 -0.028720229864120483 26.008674621582031 -0.51498442888259888 1;
+	setAttr ".LeftFootEffectorGXM[0]" -type "matrix" 0.98582494258880615 0.074564710259437561 -0.15029671788215637 0
+		 -0.074564665555953979 0.9972001314163208 0.0056436751037836075 0 0.15029674768447876 0.0056431489065289497 0.98862475156784058 0
+		 3.5883426666259766 0.28865730762481689 2.3712811470031738 1;
+	setAttr ".RightFootEffectorGXM[0]" -type "matrix" 0.92737054824829102 2.7921313261458636e-08 0.37414470314979553 0
+		 -1.3298770795699966e-07 1.0000002384185791 2.5500173705950147e-07 0 -0.37414470314979553 -2.8623770731428522e-07 0.92737054824829102 0
+		 -3.8146183490753174 0.27229404449462891 0.77803230285644531 1;
+	setAttr ".LeftShoulderEffectorGXM[0]" -type "matrix" 0.85292649269104004 -0.52201884984970093 0.0036383648402988911 0
+		 0.52200323343276978 0.85293209552764893 0.004472067579627037 0 -0.005437780637294054 -0.0019151057349517941 0.99998366832733154 0
+		 3.1235115528106689 25.715555191040039 -0.52217024564743042 1;
+	setAttr ".RightShoulderEffectorGXM[0]" -type "matrix" 0.83899098634719849 0.54379689693450928 -0.019482623785734177 0
+		 -0.54388070106506348 0.83916205167770386 0.0011677783913910389 0 0.016984108835458755 0.0096164662390947342 0.99980980157852173 0
+		 -3.1812844276428223 25.715183258056641 -0.50779742002487183 1;
+	setAttr ".HeadEffectorGXM[0]" -type "matrix" 0.99999678134918213 0.00038194993976503611 0.0026412780862301588 0
+		 -0.00038621603744104505 0.99999898672103882 0.001614841166883707 0 -0.0026406578253954649 -0.001615855609998107 0.99999552965164185 0
+		 -0.028184507042169571 28.70823860168457 -0.012008228339254856 1;
+	setAttr ".LeftHipEffectorGXM[0]" -type "matrix" 0.99549716711044312 0.094793975353240967 9.4205606728792191e-06 0
+		 -0.09461800754070282 0.99365532398223877 -0.060803353786468506 0 -0.0057731512933969498 0.060528658330440521 0.9981500506401062 0
+		 1.6898089647293091 17.301420211791992 -0.088441461324691772 1;
+	setAttr ".RightHipEffectorGXM[0]" -type "matrix" 0.99679720401763916 -0.079968877136707306 -0.00087187066674232483 0
+		 0.079847224056720734 0.99454987049102783 0.067048422992229462 0 -0.0044946679845452309 -0.066903285682201385 0.99774956703186035 0
+		 -1.7373114824295044 17.295499801635742 -0.09008307009935379 1;
 createNode animCurveTA -n "Eclair_Ctrl_Hips_rotateZ";
 	rename -uid "C79F199C-4E76-4763-4170-65AC498CE85E";
 	setAttr ".tan" 18;
@@ -41867,7 +41875,7 @@ createNode animCurveTA -n "Eclair_Ctrl_Hips_rotateZ";
 		 590 -0.41007671215347619 650 -0.41121075540914653 701 -9.9221103791581142e-05 710 6.7736694037158633
 		 715 8.5425051412100359 760 8.9339024163131722 775 4.655831901046886 810 3.4982677952583936
 		 825 7.8191899922664891 860 8.9339024163131722 870 8.4070048192624309 901 -9.9221103791581142e-05
-		 930 -0.15182181222451727 990 0.00023393721749723911 1000 0.000233937217497249 1030 -0.0097388878633657954
+		 930 -0.15182181222451729 990 0.00023393721749723911 1000 0.000233937217497249 1030 -0.0097388878633657954
 		 1101 -9.9221103791581142e-05;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 9 1 2 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 1 
@@ -42118,15 +42126,15 @@ createNode animCurveTA -n "Eclair_Ctrl_HipsEffector_rotateX";
 	rename -uid "FD458C93-4623-E241-340B-2EA6C284E1D3";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 -0.039448291665427293 75 -0.01247586759086909
-		 150 -0.039448291665427293 225 -0.01247660675703563 301 -0.0394482916654273 330 -0.085383104654764494
-		 350 -0.35043889217368046 390 -0.085381638442577387 420 -0.059711302794752119 430 -0.058341099244687722
-		 460 -0.060030021876008255 470 -0.059933962299398943 500 -0.059701193692168204 530 -0.059805196612934326
-		 590 -0.11779767361235334 650 -0.035520950554416682 701 -0.039448362551223817 710 -32.164251950615437
-		 715 -48.480310917296883 760 -57.470335549222284 775 -73.666235284702466 810 -77.561368394202873
-		 825 -65.72378973756048 860 -57.470336216305192 870 -45.212162108421282 901 -0.039448364766305935
-		 930 0.5168956371534057 990 -0.047267200333305719 1000 -0.047267200333305691 1030 1.5748823073080984
-		 1101 -0.039448364766306927;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 -0.039448292403852489 75 -0.012475866944385091
+		 150 -0.039448292403852489 225 -0.012476606871878491 301 -0.039448292403852496 330 -0.085383104415387781
+		 350 -0.35043889255242816 390 -0.085381638340524174 420 -0.05971130387024718 430 -0.058341098530980656
+		 460 -0.060030021608559352 470 -0.059933962536316908 500 -0.059701194044996811 530 -0.059805196371365332
+		 590 -0.11779767428675844 650 -0.035520950835679604 701 -0.039448363289585391 710 -32.164252423687316
+		 715 -48.480310917296883 760 -57.470335549215065 775 -73.666235473088705 810 -77.561368576113409
+		 825 -65.723790082752757 860 -57.470336045917435 870 -45.212162027171914 901 -0.039448365504665343
+		 930 0.51689562736717121 990 -0.047267199609846218 1000 -0.047267199609846149 1030 1.5748823309459503
+		 1101 -0.039448365504666537;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 9 2 2 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 
 		18 2 18 18 18 9 9;
@@ -42138,15 +42146,15 @@ createNode animCurveTA -n "Eclair_Ctrl_HipsEffector_rotateY";
 	rename -uid "871D5E10-4145-28DB-3F68-8E9E718B73FB";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 0.10234814585026011 75 -0.43488333196189488
-		 150 0.1023481458502601 225 -0.4348956795670651 301 0.1023481458502601 330 9.5229931046697089
-		 350 10.838208074602827 390 9.5229909587523078 420 8.1591254139657714 430 7.669815746437588
-		 460 6.1845015801445404 470 5.8562960690128243 500 2.9785747000423917 530 -4.5017350376506027
-		 590 -6.4553919916279323 650 -3.6833768881548492 701 0.10234832976192913 710 7.2619825957751454
-		 715 11.816800885919172 760 14.475823129740382 775 16.379611721474625 810 16.606127190747443
-		 825 16.261604987822999 860 14.475823327383186 870 10.812934002389712 901 0.10234833550891473
-		 930 -0.37584312445219203 990 -0.34904389933553925 1000 -0.34904389933553925 1030 -0.35237433297904125
-		 1101 0.10234833550891438;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 0.10234814776608836 75 -0.43488331988523571
+		 150 0.10234814776608837 225 -0.43489568171231124 301 0.10234814776608837 330 9.5229930786304866
+		 350 10.838208086800039 390 9.52299094765071 420 8.1591255349434704 430 7.6698156724577853
+		 460 6.1845015598021007 470 5.8562960859570836 500 2.9785747149108515 530 -4.501735012793997
+		 590 -6.4553920373734046 650 -3.6833769345367231 701 0.10234833167759232 710 7.2619827285705734
+		 715 11.816800885919172 760 14.475823129738181 775 16.379611763882846 810 16.606127227940693
+		 825 16.261605085232659 860 14.475823275338151 870 10.812933977976726 901 0.10234833742457236
+		 930 -0.3758431173564406 990 -0.34904389399332852 1000 -0.34904389399332852 1030 -0.35237433826540104
+		 1101 0.1023483374245724;
 	setAttr -s 32 ".kit[2:31]"  9 9 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -42158,15 +42166,15 @@ createNode animCurveTA -n "Eclair_Ctrl_HipsEffector_rotateZ";
 	rename -uid "10BB538E-4593-491C-4270-0D8E51C7D206";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 -9.9221122013435004e-05 75 2.841786250095685
-		 150 -9.9221122013859144e-05 225 2.8419085280316181 301 -9.9221122014256721e-05 330 -0.013852671563645695
-		 350 0.19910271415075789 390 -0.013839840478811094 420 -0.17119611550645514 430 -0.22524657276684859
-		 460 -0.38654948073990009 470 -0.42209638787412701 500 -0.41907964395203695 530 -0.41127935969545792
-		 590 -0.41007691644395572 650 -0.41121109796004851 701 -9.9221363618483499e-05 710 6.7736696482793235
-		 715 8.5425054944598866 760 8.9339023975842444 775 4.6558322390642086 810 3.4982677437824274
-		 825 7.8191900237042162 860 8.9339024078471052 870 8.4070051019046907 901 -9.9221371168573664e-05
-		 930 -0.1518217700048502 990 0.00023393721171305256 1000 0.00023393721171304722 1030 -0.0097388880822572646
-		 1101 -9.9221371168555029e-05;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 -9.9221124530260023e-05 75 2.8417861711040135
+		 150 -9.9221124530870605e-05 225 2.8419085420635679 301 -9.9221124531268182e-05 330 -0.013852671505653568
+		 350 0.19910271434022597 390 -0.013839840454101936 420 -0.17119611813016519 430 -0.22524657053983649
+		 460 -0.38654947945147089 470 -0.4220963891096946 500 -0.41907964605427861 530 -0.4112793574318091
+		 590 -0.41007691931787121 650 -0.41121110313247455 701 -9.9221366135097397e-05 710 6.773669716254795
+		 715 8.5425054944598866 760 8.9339023975841325 775 4.6558322220433439 810 3.4982677240390512
+		 825 7.8191900107095691 860 8.9339024051605129 870 8.4070050951397679 901 -9.9221373684392407e-05
+		 930 -0.15182176710117043 990 0.00023393720592891569 1000 0.00023393720592890019 1030 -0.0097388883011053293
+		 1101 -9.9221373685159602e-05;
 	setAttr -s 32 ".kit[2:31]"  9 9 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -42226,7 +42234,7 @@ createNode animCurveTL -n "Eclair_Ctrl_HipsEffector_translateY";
 		 530 16.554370880126953 590 16.667461395263672 650 16.767307281494141 701 17.301239013671875
 		 710 14.312667846679688 715 13.065784454345703 760 12.628606796264648 775 12.628606796264648
 		 810 12.628606796264648 825 12.628606796264648 860 12.628606796264648 870 13.435413360595703
-		 901 17.301239013671875 930 17.091873168945313 990 17.105621337890625 1000 17.105621337890625
+		 901 17.301239013671875 930 17.091873168945312 990 17.105621337890625 1000 17.105621337890625
 		 1030 17.104804992675781 1101 17.301239013671875;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 9 1 2 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 1 
@@ -42262,7 +42270,7 @@ createNode animCurveTL -n "Eclair_Ctrl_HipsEffector_translateX";
 		 75 -0.28328937292098999 150 -0.0013093352317810059 225 0.31911396980285645 301 -0.0013093352317810059
 		 330 3.0250468254089355 350 3.3674068450927734 390 3.0250473022460938 420 3.0199127197265625
 		 430 3.0184073448181152 460 3.0143494606018066 470 3.0139520168304443 500 1.4036426544189453
-		 530 -1.9921402931213379 590 -2.7930984497070313 650 -2.3946123123168945 701 -0.0013093352317810059
+		 530 -1.9921402931213379 590 -2.7930984497070312 650 -2.3946123123168945 701 -0.0013093352317810059
 		 710 -0.22291302680969238 715 -0.38458430767059326 760 -0.4660811722278595 775 -1.3111351728439331
 		 810 -1.4917073249816895 825 -0.46606343984603882 860 -0.46608176827430725 870 -0.46134081482887268
 		 901 -0.0013093352317810059 930 -1.437253475189209 990 -1.58833909034729 1000 -1.58833909034729
@@ -42646,14 +42654,14 @@ createNode animCurveTA -n "Eclair_Ctrl_ChestOriginEffector_rotateX";
 	rename -uid "A6AA8C23-481A-EB41-2A78-3181577C12C0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 0 75 0.06850240619249455 150 0 225 0.068500756564835522
-		 301 0 330 -0.37671950076295535 350 -0.11141662176470325 390 -0.00056687552160109499
-		 420 0.025601487078163801 430 0.027612114644710393 460 0.028915515081709409 470 0.02966151358195664
-		 500 0.033280708526912055 530 0.042225866416297483 590 -0.027409616356118972 650 0.071659700997054529
-		 701 0 710 -32.119428951423046 715 -48.425700002679186 760 -57.408687705957043 775 -73.840851698334603
-		 810 -77.780908349043031 825 -65.701943646508013 860 -57.408687805980243 870 -45.157011807796707
-		 901 0 930 0.5627733977955377 990 3.7514167755167123e-06 1000 3.7514167754881626e-06
-		 1030 2.0507747658057052 1101 0;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 0 75 0.068502407858947373 150 0 225 0.068500755764046475
+		 301 0 330 -0.37671949641066516 350 -0.11141662238971967 390 -0.00056687552185345205
+		 420 0.025601486802713149 430 0.027612114260411939 460 0.028915514949751371 470 0.029661513637819083
+		 500 0.033280708075589208 530 0.042225866265621491 590 -0.027409616274804292 650 0.071659699111367964
+		 701 0 710 -32.119429312023627 715 -48.425700002679186 760 -57.408687705955955 775 -73.840851782769818
+		 810 -77.780908894060744 825 -65.701943841449662 860 -57.408687780472754 870 -45.157012229105675
+		 901 0 930 0.56277340787589603 990 3.7514167755167123e-06 1000 3.7514167754873592e-06
+		 1030 2.0507748101807648 1101 0;
 	setAttr -s 32 ".kit[1:31]"  2 9 9 2 2 9 9 2 
 		18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 18 
 		2 18 18 18 9 9;
@@ -42665,14 +42673,13 @@ createNode animCurveTA -n "Eclair_Ctrl_ChestOriginEffector_rotateY";
 	rename -uid "68D3CA8C-4F46-86C6-ECB9-20A1D8E4FA70";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 0 75 0.4850939855681411 150 0 225 0.48508497974817416
-		 301 0 330 -0.094503478944259381 350 4.0372222632763251 390 6.3892592868287377 420 5.3606712576025437
-		 430 4.9696729518079064 460 3.7492221168779238 470 3.4469481154573196 500 1.1390121047479982
-		 530 -4.8554591220280994 590 -7.3249822126031994 650 -3.8095031708282665 701 0 710 7.1777596991572707
-		 715 11.750620979404399 760 14.420996680252962 775 16.369665864581627 810 16.601094540558158
-		 825 16.224916701794157 860 14.420996709912295 870 10.738507753019043 901 0 930 -0.062079921170193092
-		 990 7.4785228477050887e-05 1000 7.4785228477050603e-05 1030 0.00010355112738738947
-		 1101 0;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 0 75 0.48509399534005582 150 0 225 0.48508497505237552
+		 301 0 330 -0.0945034778503063 350 4.0372222895998613 390 6.3892592882312558 420 5.3606711644571243
+		 430 4.9696728302451376 460 3.7492220805268315 470 3.4469481288045589 500 1.1390120865621669
+		 530 -4.8554591105163309 590 -7.3249823479071665 650 -3.8095030895693216 701 0 710 7.1777597997636358
+		 715 11.750620979404399 760 14.420996680252632 775 16.369665883554596 810 16.601094651687553
+		 825 16.22491675688395 860 14.420996702113515 870 10.738507879377689 901 0 930 -0.062079922268990034
+		 990 7.4785228477038473e-05 1000 7.4785228477034556e-05 1030 0.00010355112962235 1101 0;
 	setAttr -s 32 ".kit[0:31]"  18 2 9 9 2 2 9 9 
 		2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 
 		2 2 2 2 2 9 9;
@@ -42684,15 +42691,15 @@ createNode animCurveTA -n "Eclair_Ctrl_ChestOriginEffector_rotateZ";
 	rename -uid "841A4978-4E70-7B90-FA87-D9891E6E55D7";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 7.2456378056847206e-06 75 3.2793567178160754
-		 150 7.2456378056848113e-06 225 3.2792393312032386 301 7.2456378056848113e-06 330 -0.053176943134583911
-		 350 0.44675276931187402 390 -0.010333958809134758 420 -0.20947448892717316 430 -0.27538185078235738
-		 460 -0.4683569736505438 470 -0.50702440679617278 500 -0.5044741854190441 530 -0.49847365344420097
-		 590 -0.49651308864560628 650 -0.49834200410014806 701 7.2456378056848113e-06 710 6.8297834750340973
-		 715 8.6204490925030424 760 9.0218468484049996 775 4.6886077029055162 810 3.5188262007183675
-		 825 7.903248352939034 860 9.0218468501501192 870 8.478453957037793 901 7.2456378056848113e-06
-		 930 -0.14787728003882036 990 4.7103349166482492e-06 1000 4.7103349166569338e-06 1030 1.4098327457591453e-05
-		 1101 7.2456378056847571e-06;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 7.2456378056847071e-06 75 3.2793567841707487
+		 150 7.2456378056848113e-06 225 3.2792392993177013 301 7.2456378056848113e-06 330 -0.053176942523744039
+		 350 0.4467527722048793 390 -0.010333958811421975 420 -0.20947448529501428 430 -0.27538184405456445
+		 460 -0.46835696911071967 470 -0.50702440875890975 500 -0.50447417736938749 530 -0.49847365225451745
+		 590 -0.49651309784713049 650 -0.49834199339873558 701 7.2456378056848113e-06 710 6.8297835278509158
+		 715 8.6204490925030424 760 9.0218468484049819 775 4.6886076953018732 810 3.5188261416302291
+		 825 7.9032483458989038 860 9.021846849693878 870 8.4784539931477276 901 7.2456378056848113e-06
+		 930 -0.14787728269265143 990 4.7103349166482492e-06 1000 4.7103349166559242e-06 1030 1.4098327802720914e-05
+		 1101 7.2456378056847435e-06;
 	setAttr -s 32 ".kit[0:31]"  18 2 9 9 2 2 9 9 
 		2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 
 		2 2 2 2 2 9 9;
@@ -42794,7 +42801,7 @@ createNode animCurveTL -n "Eclair_Ctrl_ChestOriginEffector_translateX";
 		 430 2.7392263412475586 460 2.7889809608459473 470 2.8004975318908691 500 1.2948982715606689
 		 530 -1.8280811309814453 590 -2.5581378936767578 650 -2.2603137493133545 701 -0.0050981654785573483
 		 710 -0.52714478969573975 715 -0.86818528175354004 760 -1.05048668384552 775 -1.9704010486602783
-		 810 -2.160041332244873 825 -1.1177593469619751 860 -1.0504871606826782 870 -0.90631484985351563
+		 810 -2.160041332244873 825 -1.1177593469619751 860 -1.0504871606826782 870 -0.90631484985351562
 		 901 -0.0050981654785573483 930 -1.4228556156158447 990 -1.5756628513336182 1000 -1.5756628513336182
 		 1030 -1.5732320547103882 1101 -0.0050981654785573483;
 	setAttr -s 32 ".kit[1:31]"  2 9 9 1 2 9 9 2 
@@ -42831,14 +42838,14 @@ createNode animCurveTA -n "Eclair_Ctrl_ChestEndEffector_rotateX";
 	rename -uid "E96C2EBF-4EF2-BC96-4648-EB95579AFB8A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 0 75 -0.00023532676336373413 150 0
-		 225 -0.0002359538518749727 301 0 330 -0.0069664100757412147 350 1.7056224423261544e-05
-		 390 1.5857678776740396e-05 420 0.050035116412530625 430 0.063970872754904679 460 0.1130354937975042
-		 470 0.12464447155768205 500 0.12550090235974057 530 0.12701721024899465 590 0.13148099483373096
-		 650 0.12685975964574189 701 0 710 -32.103089655599241 715 -48.407779084543066 760 -57.408669698612613
-		 775 -78.13824129675983 810 -82.883649346310534 825 -66.483005565989743 860 -57.408671394322575
-		 870 -45.194393140270527 901 0 930 0.56290221174069888 990 3.7514167755167123e-06
-		 1000 3.7514167754881626e-06 1030 9.9202037992426266 1101 0;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 0 75 -0.00023532701101967743 150 0
+		 225 -0.00023595330029115637 301 0 330 -0.0069664101094052159 350 1.7056224842836963e-05
+		 390 1.5857679162006152e-05 420 0.050035117061461437 430 0.063970870130536775 460 0.11303549309938624
+		 470 0.1246444710832697 500 0.1255008994819351 530 0.12701721194920709 590 0.13148099583447934
+		 650 0.12685976119501882 701 0 710 -32.103089113002831 715 -48.407779084543066 760 -57.408669698593968
+		 775 -78.138241517783101 810 -82.883649880176733 825 -66.48300510563891 860 -57.408670961890024
+		 870 -45.194393059308048 901 0 930 0.56290221915033067 990 3.7514167755167123e-06
+		 1000 3.7514167754873592e-06 1030 9.9202036839050844 1101 0;
 	setAttr -s 32 ".kit[1:31]"  2 9 9 2 2 9 9 2 
 		18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 18 
 		2 18 18 18 9 9;
@@ -42850,13 +42857,13 @@ createNode animCurveTA -n "Eclair_Ctrl_ChestEndEffector_rotateY";
 	rename -uid "937889A2-43CB-79C0-2CF6-A9A60626799D";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 0 75 0.86698609125652459 150 0 225 0.86697747909779088
-		 301 0 330 -3.459018721759366 350 -3.339918864268796 390 -3.3399216138764602 420 -3.026011591552825
-		 430 -3.0235267843760218 460 -3.1833160651695755 470 -3.3814397940381076 500 -3.4102996848200164
-		 530 -3.4614785830705865 590 -15.335346141205417 650 1.7660135714671192 701 0 710 7.0640699417854931
-		 715 11.71019936642128 760 14.421007563536339 775 16.656621815256521 810 16.838931415280733
-		 825 16.302911610787408 860 14.421008066356457 870 10.847846348418415 901 0 930 -0.13046967258355063
-		 990 7.4785228477050887e-05 1000 7.4785228477050603e-05 1030 0.00010376868622004838
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 0 75 0.86698609925316905 150 0 225 0.86697746128850528
+		 301 0 330 -3.4590187384590454 350 -3.339918929863019 390 -3.3399216771353615 420 -3.0260116176772804
+		 430 -3.0235267022600998 460 -3.1833160520473647 470 -3.3814397854773701 500 -3.4102996328345321
+		 530 -3.4614786138413245 590 -15.335346176693047 650 1.7660136004515872 701 0 710 7.0640697915695005
+		 715 11.71019936642128 760 14.42100756353064 775 16.656621860086631 810 16.838931510368798
+		 825 16.302911482506264 860 14.421007934142306 870 10.84784632411921 901 0 930 -0.13046967429216899
+		 990 7.4785228477026045e-05 1000 7.4785228477034556e-05 1030 0.00010376868502862902
 		 1101 0;
 	setAttr -s 32 ".kit[0:31]"  18 2 9 9 2 2 9 9 
 		2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 
@@ -42869,15 +42876,15 @@ createNode animCurveTA -n "Eclair_Ctrl_ChestEndEffector_rotateZ";
 	rename -uid "9E2C50DC-461A-6336-5C14-B6BDF00413BD";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 7.2456378056847206e-06 75 -3.5162555071757997
-		 150 7.2456378056848113e-06 225 -3.5163688644806435 301 7.2456378056848113e-06 330 -0.00013728509999571815
-		 350 -0.00014671550813425736 390 -0.00015279427277066482 420 -0.9477406238210816 430 -1.232357795605991
-		 460 -2.0150441640567145 470 -2.1119685266049961 500 -2.11198845439031 530 -2.1119985364364555
-		 590 -2.1390656869092557 650 -2.1003858419817605 701 7.2456378056848113e-06 710 6.9583330072054057
-		 715 8.7073797182378794 760 9.0218490053371756 775 3.4629648279899099 810 2.0498987395502737
-		 825 7.723913388349521 860 9.0218490349225089 870 8.2831061432447193 901 7.2456378056848113e-06
-		 930 -0.12876649532563689 990 4.7103349166482492e-06 1000 4.7103349166569338e-06 1030 1.1957089585650265e-05
-		 1101 7.2456378056847571e-06;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 7.2456378056847071e-06 75 -3.5162555396215409
+		 150 7.2456378056848113e-06 225 -3.5163687922178508 301 7.2456378056848113e-06 330 -0.00013728509964243708
+		 350 -0.00014671551102953667 390 -0.00015279427567749617 420 -0.94774063202545877
+		 430 -1.232357762042692 460 -2.0150441557206116 470 -2.1119685212368076 500 -2.1119884220656564
+		 530 -2.1119985552886598 590 -2.139065692054992 650 -2.100385876394169 701 7.2456378056848113e-06
+		 710 6.9583329249684525 715 8.7073797182378794 760 9.0218490053368434 775 3.4629648037328109
+		 810 2.0498986711430551 825 7.7239134071515183 860 9.0218490271877858 870 8.2831061367389101
+		 901 7.2456378056848113e-06 930 -0.12876649702860446 990 4.7103349166482492e-06 1000 4.7103349166559242e-06
+		 1030 1.1957089342534058e-05 1101 7.2456378056847435e-06;
 	setAttr -s 32 ".kit[0:31]"  18 2 9 9 2 2 9 9 
 		2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 
 		2 2 2 2 2 9 9;
@@ -43611,15 +43618,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftWristEffector_rotateX";
 	rename -uid "D5A597A3-4A42-C02D-BC38-26BB34CC4336";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 0 1 3.0928676523856402 75 -7.5853804966504343
-		 150 3.0928676523856415 225 -10.800383403305904 301 3.0928676523856398 330 3.212854636838713
-		 350 3.2007734227399101 360 3.2007734227399101 390 3.2090290558988972 420 -4.2784210770896749
-		 430 -6.2796653804312701 460 -11.322665209962123 470 -11.841974005470897 500 -11.846506468423003
-		 530 -16.417698327196852 590 -1.8951619271202271 650 3.3637564197802892 701 3.0928679920971214
-		 710 -30.51813752252783 715 -35.563499827340664 760 -36.615494575388375 775 -36.622817117963194
-		 810 -36.615458639827388 825 -36.608253555596448 860 -36.615504634595233 870 -33.772454162311789
-		 901 3.0928679921433271 930 2.1559291235456906 990 -11.137555163355431 1000 3.092864043986626
-		 1030 3.0928488467355932 1101 3.0928679921433284;
+	setAttr -s 33 ".ktv[0:32]"  0 0 1 3.0928676773273795 75 -7.5853803475613359
+		 150 3.0928676773273795 225 -10.80038351229534 301 3.0928676773273795 330 3.2128546368387152
+		 350 3.2007734227399132 360 3.2007734227399132 390 3.2090290558988972 420 -4.2784210773525047
+		 430 -6.279665379010142 460 -11.322665208169528 470 -11.841974005470897 500 -11.846506469904872
+		 530 -16.417698327594206 590 -1.8951619271212354 650 3.3637564192368199 701 3.092867992113713
+		 710 -30.518137372073063 715 -35.563499827340664 760 -36.615494575388375 775 -36.622817117963969
+		 810 -36.615458640229228 825 -36.608253555706085 860 -36.615504635024621 870 -33.772454206213375
+		 901 3.0928679921565263 930 2.1559291365516611 990 -11.137554833518866 1000 3.0928639733791599
+		 1030 3.0928489668933503 1101 3.092867992156529;
 	setAttr -s 33 ".kit[1:32]"  2 9 9 2 2 9 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 
 		18 2 18 18 18 9 9;
@@ -43631,15 +43638,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftWristEffector_rotateY";
 	rename -uid "E8480151-4210-82E8-967A-D6BB10CD9564";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 0 1 -31.285851973487048 75 -32.901185418570101
-		 150 -31.285851973487048 225 -30.499091057290979 301 -31.285851973487048 330 -34.743242908560056
-		 350 -29.417485666451793 360 -29.417485666451793 390 -34.62415238183717 420 -31.795067550882088
-		 430 -30.799746422333325 460 -27.784385120291748 470 -27.631046057265745 500 -27.659673624135657
-		 530 -31.280998042256986 590 -43.334943906764742 650 -32.405046138617294 701 -31.285854590983082
-		 710 3.2200611168669275 715 18.580807828050549 760 22.661333143636135 775 22.603965267472777
-		 810 22.661406899809691 825 21.394937862993764 860 22.661336553306199 870 13.219141630038838
-		 901 -31.285854591339138 930 -31.169624681819105 990 -29.423225945813943 1000 -31.285735570991122
-		 1030 -31.285707510770038 1101 -31.285854591339138;
+	setAttr -s 33 ".ktv[0:32]"  0 0 1 -31.285852165664544 75 -32.901184959101862
+		 150 -31.285852165664544 225 -30.49909128196299 301 -31.285852165664544 330 -34.743242908560077
+		 350 -29.417485666451824 360 -29.417485666451824 390 -34.62415238183717 420 -31.7950675523055
+		 430 -30.799746417197639 460 -27.784385116994589 470 -27.631046057265745 500 -27.659673626725088
+		 530 -31.280998042780542 590 -43.334943906778825 650 -32.405046135099994 701 -31.285854591110922
+		 710 3.2200609954077906 715 18.580807828050553 760 22.661333143636135 775 22.603965267467647
+		 810 22.661406897756979 825 21.394937856570873 860 22.661336564229124 870 13.219141725294422
+		 901 -31.285854591440852 930 -31.169624818754826 990 -29.423225318332932 1000 -31.285735026957191
+		 1030 -31.285708025172674 1101 -31.285854591440845;
 	setAttr -s 33 ".kit[0:32]"  18 2 9 9 2 2 9 9 
 		9 2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 
 		2 2 2 2 2 2 9 9;
@@ -43651,15 +43658,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftWristEffector_rotateZ";
 	rename -uid "DD3CA65C-458E-14EA-4A3E-32B0EAD4691A";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 0 1 -1.6438102486469059 75 5.1722504204584459
-		 150 -1.6438102486469053 225 7.1206158699259801 301 -1.6438102486469053 330 -1.7022425818981228
-		 350 -1.721597417331322 360 -1.721597417331322 390 -1.7070362423461414 420 2.8946498738732194
-		 430 4.2143877771998541 460 7.6923400232440873 470 8.0506563456442173 500 8.052971549638583
-		 530 11.415053106818057 590 1.1995811873044686 650 -3.3244078240606245 701 -1.6438104885879166
-		 710 66.149726267477007 715 98.300829295242238 760 113.44612346130175 775 133.53057881257772
-		 810 138.08089682757065 825 122.36287759326594 860 113.44612209350628 870 89.886270783458571
-		 901 -1.6438104886205513 930 -1.5733427432550544 990 8.457051196331058 1000 -1.6438091901008332
-		 1030 -11.563993142787062 1101 -1.6438104886205576;
+	setAttr -s 33 ".ktv[0:32]"  0 0 1 -1.6438102662634608 75 5.1722502992425659
+		 150 -1.6438102662634602 225 7.1206159559402735 301 -1.6438102662634602 330 -1.7022425818981248
+		 350 -1.7215974173313244 360 -1.7215974173313244 390 -1.7070362423461414 420 2.8946498740850468
+		 430 4.2143877760648856 460 7.6923400218233269 470 8.0506563456442173 500 8.052971550812682
+		 530 11.4150531071418 590 1.1995811873052988 650 -3.3244078235206609 701 -1.6438104885996352
+		 710 66.149725886989103 715 98.300829295242238 760 113.44612346130175 775 133.53057881256473
+		 810 138.08089682225216 825 122.36287757794355 860 113.44612211799222 870 89.886271008399646
+		 901 -1.6438104886298766 930 -1.573342754155028 990 8.4570509155200444 1000 -1.6438091402302271
+		 1030 -11.563993379015869 1101 -1.6438104886298814;
 	setAttr -s 33 ".kit[0:32]"  18 2 9 9 2 2 9 9 
 		9 2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 
 		2 2 2 2 2 2 9 9;
@@ -43718,7 +43725,7 @@ createNode animCurveTL -n "Eclair_Ctrl_LeftWristEffector_translateY";
 		 75 16.918510437011719 150 16.94171142578125 225 16.901811599731445 301 16.94171142578125
 		 330 16.321849822998047 350 16.359584808349609 360 16.359584808349609 390 16.314544677734375
 		 420 16.435813903808594 430 16.484096527099609 460 16.636337280273438 470 16.638275146484375
-		 500 16.444250106811523 530 16.250377655029297 590 15.244169235229492 650 16.461135864257813
+		 500 16.444250106811523 530 16.250377655029297 590 15.244169235229492 650 16.461135864257812
 		 701 16.94171142578125 710 16.927358627319336 715 17.100128173828125 760 16.937387466430664
 		 775 16.927854537963867 810 16.937397003173828 825 16.737865447998047 860 16.937385559082031
 		 870 16.980113983154297 901 16.94171142578125 930 16.730201721191406 990 17.01826286315918
@@ -43797,15 +43804,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftElbowEffector_rotateX";
 	rename -uid "1D04B8F5-4CEF-550F-0F67-08A3E1365F08";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 -7.0977920615693848e-06 1 -3.0046489380663126
-		 75 -1.1694931354102787 150 -3.0046489380663131 225 3.6786048630739985 301 -3.0046489380663144
-		 330 -3.1523981961033529 350 -2.8401182764928135 360 -2.8401182764928135 390 -3.1526641072972295
-		 420 3.6771780869196129 430 6.0142269364679137 460 12.926653758424946 470 13.579642681212549
-		 500 13.570572996797367 530 16.661959289980814 590 3.1125739211879115 650 -3.6675123284963536
-		 701 -3.0046495681404903 710 44.824077846733907 715 58.891955213596866 760 58.237491294067986
-		 775 43.462329118464716 810 38.156829017153726 825 53.36204523862861 860 58.237488449517571
-		 870 56.693896395527972 901 -3.0046495682207461 930 -3.6300758381769409 990 16.797787751186952
-		 1000 -3.0045144946191269 1030 -11.644145019290759 1101 -3.0046495682207492;
+	setAttr -s 33 ".ktv[0:32]"  0 -7.0977920615693636e-06 1 -3.0046489847778957
+		 75 -1.169493084283175 150 -3.0046489847778957 225 3.678604860112145 301 -3.0046489847778974
+		 330 -3.1523981961033507 350 -2.8401182764928112 360 -2.8401182764928112 390 -3.1526641072972295
+		 420 3.6771780867824293 430 6.0142269367209718 460 12.926653757937078 470 13.579642681212549
+		 500 13.570572996737445 530 16.661959289907241 590 3.1125739211897292 650 -3.6675123287482041
+		 701 -3.0046495681693295 710 44.824077877532716 715 58.891955213596866 760 58.237491294067986
+		 775 43.462329118495248 810 38.156829017152262 825 53.36204523858963 860 58.237488449076643
+		 870 56.693896423718364 901 -3.0046495682436398 930 -3.6300758684267644 990 16.797788048906789
+		 1000 -3.0045145204546233 1030 -11.644145350876034 1101 -3.0046495682436416;
 	setAttr -s 33 ".kit[1:32]"  2 9 9 2 2 9 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 
 		18 2 18 18 18 9 9;
@@ -43817,15 +43824,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftElbowEffector_rotateY";
 	rename -uid "F8DA0C19-4934-C779-D430-5AA10FFA2070";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 1.7187112693607938e-13 1 -31.422873182949083
-		 75 -32.238711376004616 150 -31.422873182949083 225 -29.643326294005778 301 -31.422873182949083
-		 330 -34.874533865571443 350 -29.571003576778153 360 -29.571003576778153 390 -34.755745741381219
-		 420 -30.746399332769332 430 -29.640741740374555 460 -26.900934575649668 470 -26.813265797296324
-		 500 -26.841037090932307 530 -30.220756872368241 590 -42.978477884877414 650 -32.579977067639092
-		 701 -31.422879378416209 710 -22.600287134422281 715 -37.403474047982513 760 -46.184924184457564
-		 775 -58.126781246737629 810 -60.071974670866929 825 -52.892135352010044 860 -46.18493072283065
-		 870 -33.956049703007245 901 -31.422879379205451 930 -31.156946169746274 990 -28.756979603124741
-		 1000 -31.423056567127105 1030 -31.654277022259372 1101 -31.422879379205451;
+	setAttr -s 33 ".ktv[0:32]"  0 1.7187112693607781e-13 1 -31.422873642260218
+		 75 -32.238711027556263 150 -31.422873642260218 225 -29.643325899413867 301 -31.422873642260218
+		 330 -34.874533865571408 350 -29.571003576778143 360 -29.571003576778143 390 -34.755745741381219
+		 420 -30.74639933074824 430 -29.640741742180474 460 -26.900934574355901 470 -26.813265797296324
+		 500 -26.841037090781153 530 -30.220756872183767 590 -42.978477884948269 650 -32.57997706977887
+		 701 -31.422879378699776 710 -22.600287180602571 715 -37.40347404798252 760 -46.184924184457572
+		 775 -58.126781246714089 810 -60.071974670867732 825 -52.892135352089177 860 -46.184930726414542
+		 870 -33.956049780841724 901 -31.422879379430544 930 -31.156946396144146 990 -28.756980214801956
+		 1000 -31.42305682117042 1030 -31.654277873010177 1101 -31.422879379430544;
 	setAttr -s 33 ".kit[0:32]"  18 2 9 9 2 2 9 9 
 		9 2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 
 		2 2 2 2 2 2 9 9;
@@ -43837,15 +43844,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftElbowEffector_rotateZ";
 	rename -uid "CE48AE81-4108-0DB6-9FEA-14AA6663EEBA";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 2.7748038004419093e-06 1 -0.73295538261566495
-		 75 10.104168884885159 150 -0.73295538261566417 225 13.091228272575083 301 -0.73295538261566417
-		 330 -0.46401769915237223 350 -1.0399193572336787 360 -1.0399193572336787 390 -0.4751525022996545
-		 420 6.6415212439404874 430 8.5713983213642653 460 13.517869535714704 470 14.04039089745805
-		 500 14.04622897416866 530 18.913034771354912 590 5.7453892573311043 650 -1.1764550827552978
-		 701 -0.73295535730502948 710 65.055973622387626 715 98.42804954039029 760 114.87143266256332
-		 775 140.11085140096691 810 147.74510954844777 825 123.70301087603377 860 114.87143425614846
-		 870 87.545232042372632 901 -0.73295535730180594 930 0.076716078466646603 990 13.66356581325541
-		 1000 -0.73263046822469835 1030 -2.857304860079839 1101 -0.73295535730180872;
+	setAttr -s 33 ".ktv[0:32]"  0 2.7748038004418923e-06 1 -0.73295538073922151
+		 75 10.104168754255646 150 -0.73295538073922117 225 13.091228092790354 301 -0.73295538073922117
+		 330 -0.46401769915237268 350 -1.0399193572336789 360 -1.0399193572336789 390 -0.4751525022996545
+		 420 6.641521243522523 430 8.571398321836579 460 13.517869535189627 470 14.04039089745805
+		 500 14.046228974105253 530 18.913034771262804 590 5.7453892573407854 650 -1.1764550827632039
+		 701 -0.73295535730387118 710 65.055973682406403 715 98.428049540390305 760 114.87143266256332
+		 775 140.11085140089861 810 147.7451095484507 825 123.70301087618158 860 114.87143426144355
+		 870 87.545232132917008 901 -0.73295535730089001 930 0.076716087486243367 990 13.663566021916177
+		 1000 -0.73263046718415126 1030 -2.85730484622301 1101 -0.73295535730088923;
 	setAttr -s 33 ".kit[0:32]"  18 2 9 9 2 2 9 9 
 		9 2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 
 		2 2 2 2 2 2 9 9;
@@ -43899,9 +43906,9 @@ createNode animCurveTL -n "Eclair_Ctrl_LeftElbowEffector_translateY";
 	setAttr -s 33 ".ktv[0:32]"  0 22.473432540893555 1 21.378734588623047
 		 75 21.323158264160156 150 21.378734588623047 225 21.235389709472656 301 21.378734588623047
 		 330 20.800971984863281 350 20.767208099365234 360 20.767208099365234 390 20.792491912841797
-		 420 20.843616485595703 430 20.860828399658203 460 20.911453247070313 470 20.905019760131836
+		 420 20.843616485595703 430 20.860828399658203 460 20.911453247070312 470 20.905019760131836
 		 500 20.711521148681641 530 20.512790679931641 590 19.745534896850586 650 20.913665771484375
-		 701 21.378734588623047 710 19.394424438476563 715 18.545366287231445 760 18.141571044921875
+		 701 21.378734588623047 710 19.394424438476562 715 18.545366287231445 760 18.141571044921875
 		 775 18.135562896728516 810 18.141580581665039 825 18.025318145751953 860 18.141571044921875
 		 870 18.787261962890625 901 21.378734588623047 930 21.163551330566406 990 21.328891754150391
 		 1000 21.183084487915039 1030 21.182273864746094 1101 21.378734588623047;
@@ -43982,15 +43989,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftShoulderEffector_rotateX";
 	rename -uid "C9C55623-4D1E-BCD2-D71F-919E6EB9B984";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 2.7610539183157981e-06 1 0.4830284880534777
-		 75 -1.0633477680842975 150 0.48302848805347748 225 0.1078434737033153 301 0.48302848805347798
-		 330 0.49336054481473618 350 0.565285384972672 360 0.565285384972672 390 0.48694470960270247
-		 420 2.0942344762108061 430 2.5688255950721075 460 3.8825989564928509 470 4.0355769113581701
-		 500 4.0412782100314644 530 7.227276768878399 590 4.7969128628892657 650 -0.16296695929110544
-		 701 0.48302853257075229 710 27.891582835527458 715 41.376094881113872 760 48.412606970670026
-		 775 59.390607538486599 810 61.55083859274805 825 54.476571928933154 860 48.412586212624696
-		 870 39.042739351958055 901 0.48302853257670281 930 -0.17779255213649212 990 7.3092199868774905
-		 1000 0.48299000249648011 1030 -8.5307856784602603 1101 0.48302853257670597;
+	setAttr -s 33 ".ktv[0:32]"  0 2.7610539183122892e-06 1 0.48302849133030823
+		 75 -1.0633477674396064 150 0.48302849133030817 225 0.10784347355367174 301 0.48302849133030867
+		 330 0.49336054481473557 350 0.56528538497267233 360 0.56528538497267233 390 0.48694470960270247
+		 420 2.0942344758222626 430 2.56882559417115 460 3.8825989578918119 470 4.035576911358171
+		 500 4.0412782094890138 530 7.227276769634301 590 4.7969128629168685 650 -0.16296695928476818
+		 701 0.4830285325728898 710 27.891583259803994 715 41.376094881113872 760 48.412606970683726
+		 775 59.39060724803555 810 61.55083875021591 825 54.476572335511925 860 48.412586047916804
+		 870 39.042739740352765 901 0.48302853257840117 930 -0.17779255340459357 990 7.3092197341274598
+		 1000 0.48298999876754767 1030 -8.53078583920494 1101 0.48302853257840594;
 	setAttr -s 33 ".kit[1:32]"  2 9 9 2 2 9 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 
 		18 2 18 18 18 9 9;
@@ -44002,15 +44009,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftShoulderEffector_rotateY";
 	rename -uid "074609D7-49A0-EEE0-FAC0-FD999A7D30F7";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 9.903774145169951e-05 1 31.470280052033839
-		 75 30.724852507194242 150 31.470280052033839 225 29.35523185419768 301 31.470280052033839
-		 330 34.92917577856565 350 29.605410144870564 360 29.605410144870564 390 34.810082491776683
-		 420 30.468477708658774 430 29.302121999521255 460 26.362501874657717 470 26.258942354943212
-		 500 26.287285776196352 530 29.836524133157017 590 41.346325239874893 650 31.22837320351773
-		 701 31.470282507362125 710 3.3681065902656084 715 -0.53533541932899587 760 1.209684631544889
-		 775 12.329215028848466 810 15.130024959584691 825 5.8752857005437384 860 1.2094771877145472
-		 870 0.4637552685475308 901 31.470282507690435 930 31.239053799699644 990 27.906444662564347
-		 1000 31.470084374418906 1030 31.582697579362637 1101 31.470282507690435;
+	setAttr -s 33 ".ktv[0:32]"  0 9.9037741451573648e-05 1 31.470280232765816
+		 75 30.724852498049593 150 31.470280232765816 225 29.35523183798027 301 31.470280232765816
+		 330 34.929175778565622 350 29.605410144870579 360 29.605410144870579 390 34.810082491776683
+		 420 30.468477705542053 430 29.302121993830657 460 26.362501880085926 470 26.258942354943208
+		 500 26.287285774176233 530 29.836524134891864 590 41.346325239994833 650 31.228373196472266
+		 701 31.470282507480029 710 3.3681067052169902 715 -0.53533541932899587 760 1.2096846315502157
+		 775 12.329214819977217 810 15.130025084470615 825 5.8752859139381233 860 1.2094771236331838
+		 870 0.46375537007007589 901 31.470282507784173 930 31.239053971686204 990 27.906444105912414
+		 1000 31.470084168736623 1030 31.582698130039237 1101 31.470282507784173;
 	setAttr -s 33 ".kit[0:32]"  18 2 9 9 2 2 9 9 
 		9 2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 
 		2 2 2 2 2 2 9 9;
@@ -44022,15 +44029,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftShoulderEffector_rotateZ";
 	rename -uid "FDB4B79C-4A11-208F-DEDC-399DF11C57E6";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 0.00015346696171060259 1 0.057632464636160854
-		 75 -3.0671395192837858 150 0.057632464636160632 225 0.50985646091744175 301 0.057632464636161229
-		 330 0.058577638083145298 350 0.22876102350503205 360 0.22876102350503205 390 0.059621615364702514
-		 420 4.5864556766380993 430 5.9182463698058125 460 9.5355171538885823 470 9.8869815669130325
-		 500 9.8893258905208263 530 14.738561088900971 590 6.9365408839948506 650 0.49497730542110185
-		 701 0.057632481909728854 710 -16.864601766135699 715 -32.450121979576316 760 -39.836979580001383
-		 775 -51.264588975979358 810 -53.667907289511113 825 -44.248827386823017 860 -39.836714030686593
-		 870 -27.990506682601882 901 0.057632481912041122 930 -0.086462066481302363 990 14.89297718268142
-		 1000 0.057633649028667591 1030 1.6187889852465707 1101 0.057632481912040123;
+	setAttr -s 33 ".ktv[0:32]"  0 0.0001534669617104076 1 0.057632465907634815
+		 75 -3.0671395181474281 150 0.057632465907634677 225 0.50985646058385592 301 0.057632465907635176
+		 330 0.058577638083145075 350 0.22876102350503216 360 0.22876102350503216 390 0.059621615364702514
+		 420 4.5864556760386677 430 5.9182463683628281 460 9.5355171562802958 470 9.8869815669130325
+		 500 9.8893258895944403 530 14.738561090032826 590 6.9365408840274236 650 0.49497730530547596
+		 701 0.057632481910558288 710 -16.864602011246983 715 -32.450121979576316 760 -39.836979580012382
+		 775 -51.264588741684882 810 -53.667907416709028 825 -44.248827699744986 860 -39.836713898538839
+		 870 -27.990506954845554 901 0.057632481912699492 930 -0.086462067336276135 990 14.892976798170755
+		 1000 0.057633647581737849 1030 1.6187889693852617 1101 0.057632481912699693;
 	setAttr -s 33 ".kit[0:32]"  18 2 9 9 2 2 9 9 
 		9 2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 
 		2 2 2 2 2 2 9 9;
@@ -44539,7 +44546,7 @@ createNode animCurveTA -n "Eclair_Ctrl_RightHand_rotateX";
 		 701 -1.9131135300655457 710 14.782329010157135 715 22.180528252178593 760 24.929487338983019
 		 775 24.929478184716082 810 24.929492980270975 825 24.929473034817256 860 24.929472851043126
 		 870 20.766415693646028 901 -1.9131135300655457 930 47.539014312976569 990 51.789505045207171
-		 1000 51.790817742219112 1030 38.796564418867554 1101 -1.9131135300655457;
+		 1000 51.790817742219119 1030 38.796564418867554 1101 -1.9131135300655457;
 	setAttr -s 33 ".kit[1:32]"  2 9 9 1 2 9 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 1 
 		18 1 18 18 18 9 9;
@@ -44790,15 +44797,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightWristEffector_rotateX";
 	rename -uid "FCD21A80-4810-830E-1812-A793A53C2063";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 0 1 -3.013571662203165 75 13.456011819568342
-		 150 -3.0135716622031654 225 1.8896354548352119 301 -3.0135716622031645 330 -2.9056096883639522
-		 350 -3.0885503558473957 360 -3.0885503558473957 390 -2.9096475967579329 420 5.2916782315176976
-		 430 7.6279915992341465 460 13.814985750634944 470 14.40245428918508 500 14.396567336315721
-		 530 18.062643035290421 590 28.244381449888724 650 16.218543202900918 701 -3.0135718430863641
-		 710 7.627157352892918 715 7.9662076697011237 760 6.7935863138737389 775 6.7417540629068364
-		 810 6.7935795438564046 825 5.6182694393840817 860 6.7935714432818166 870 8.0773537822747787
-		 901 -3.0135718430994363 930 132.59927207877959 990 143.51212125957434 1000 140.16102073417758
-		 1030 112.2992943267034 1101 -3.0135718430994265;
+	setAttr -s 33 ".ktv[0:32]"  0 0 1 -3.0135716767227669 75 13.456011450369665
+		 150 -3.0135716767227665 225 1.8896354733448983 301 -3.0135716767227665 330 -2.9056096883637794
+		 350 -3.0885503558473957 360 -3.0885503558473957 390 -2.9096475967579338 420 5.291678232841365
+		 430 7.627991600034715 460 13.814985747127777 470 14.40245428918508 500 14.396567336463789
+		 530 18.062643038649941 590 28.244381449896675 650 16.218543204654495 701 -3.0135718430910905
+		 710 7.6271572906537788 715 7.9662076697011299 760 6.7935863140087713 775 6.7417540287315338
+		 810 6.7935795091646156 825 5.6182694605875305 860 6.7935714494006758 870 8.077353851695662
+		 901 -3.0135718431031129 930 132.59927207877962 990 143.51212133136056 1000 140.16102092319278
+		 1030 112.29929438178439 1101 -3.0135718431031031;
 	setAttr -s 33 ".kit[1:32]"  2 9 9 2 2 9 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 
 		18 2 18 18 18 9 9;
@@ -44810,15 +44817,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightWristEffector_rotateY";
 	rename -uid "FDEE5A47-4B82-3002-9D31-E398A0D7C2BE";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 0 1 32.782129865163562 75 34.056637507983396
-		 150 32.782129865163562 225 34.290276804712654 301 32.782129865163562 330 29.324239276162182
-		 350 32.403501411053938 360 32.403501411053938 390 29.443337472862737 420 29.555411213879957
-		 430 29.174445259140697 460 27.317820605164449 470 26.903677009533048 500 26.875294322701091
-		 530 18.126452867046773 590 2.8197003377286363 650 25.835216282646165 701 32.782131340389597
-		 710 17.279130975412333 715 7.1226381636170082 760 3.2474985655680433 775 3.2214505536649622
-		 810 3.2475917322362395 825 2.8162440428564048 860 3.2474918293522235 870 9.9710595794877204
-		 901 32.782131340496214 930 24.145199250535118 990 18.742893759374908 1000 19.874052728890863
-		 1030 -10.145711051910611 1101 32.782131340496214;
+	setAttr -s 33 ".ktv[0:32]"  0 0 1 32.782129983580838 75 34.056636884866883
+		 150 32.782129983580838 225 34.290277049228138 301 32.782129983580838 330 29.324239276160821
+		 350 32.403501411053938 360 32.403501411053938 390 29.443337472862737 420 29.555411219280831
+		 430 29.174445261387646 460 27.317820600081561 470 26.903677009533048 500 26.875294322903954
+		 530 18.126452869564762 590 2.8197003377277712 650 25.835216284685981 701 32.782131340428151
+		 710 17.279130639539012 715 7.1226381636170162 760 3.2474985657140274 775 3.2214505004862435
+		 810 3.2475916732101999 825 2.8162440708129921 860 3.2474918359673768 870 9.9710597569635091
+		 901 32.782131340526213 930 24.145199250535118 990 18.742893723913735 1000 19.874052661810854
+		 1030 -10.14571111511799 1101 32.782131340526213;
 	setAttr -s 33 ".kit[0:32]"  18 2 9 9 2 2 9 9 
 		9 2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 
 		2 2 2 2 2 2 9 9;
@@ -44830,15 +44837,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightWristEffector_rotateZ";
 	rename -uid "A21FC75C-4AFD-3E34-E4AC-AC8293455357";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 0 1 -1.550875703484931 75 10.159927989400671
-		 150 -1.5508757034849314 225 1.037598837626817 301 -1.5508757034849305 330 -1.5021228657200543
-		 350 -1.5960366762986158 360 -1.5960366762986158 390 -1.49713599867824 420 4.1973867889636747
-		 430 5.8243183866992503 460 10.026290274257343 470 10.414310297029223 500 10.411420028585104
-		 530 13.683517637152372 590 23.603185686769454 650 11.760847486309665 701 -1.5508758305342571
-		 710 -27.306323016033399 715 -37.49196600183388 760 -43.498082976843115 775 -63.58818743274643
-		 810 -68.132911635521012 825 -52.491760471722941 860 -43.498086113240319 870 -35.833476257952121
-		 901 -1.5508758305434394 930 56.879467964750305 990 61.325060865310938 1000 48.615023472938681
-		 1030 91.938921928407837 1101 -1.5508758305434394;
+	setAttr -s 33 ".ktv[0:32]"  0 0 1 -1.5508757136832567 75 10.159927671487596
+		 150 -1.5508757136832574 225 1.0375988512008503 301 -1.5508757136832558 330 -1.5021228657199359
+		 350 -1.5960366762986158 360 -1.5960366762986158 390 -1.4971359986782404 420 4.1973867901205173
+		 430 5.8243183873827515 460 10.026290271373091 470 10.414310297029223 500 10.41142002870639
+		 530 13.683517639894115 590 23.603185686776115 650 11.760847487741957 701 -1.5508758305375776
+		 710 -27.306322529041939 715 -37.491966001833902 760 -43.498082977959598 775 -63.58818692326512
+		 810 -68.132911053222017 825 -52.491760753982113 860 -43.49808616383298 870 -35.833476777210429
+		 901 -1.550875830546022 930 56.879467964750326 990 61.325060890379007 1000 48.615023535205111
+		 1030 91.938921963921004 1101 -1.550875830546022;
 	setAttr -s 33 ".kit[0:32]"  18 2 9 9 2 2 9 9 
 		9 2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 
 		2 2 2 2 2 2 9 9;
@@ -44854,8 +44861,8 @@ createNode animCurveTL -n "Eclair_Ctrl_RightWristEffector_translateZ";
 		 75 -0.14049267768859863 150 -0.49098196625709534 225 -0.17594629526138306 301 -0.49098196625709534
 		 330 -0.51570653915405273 350 -0.52732968330383301 360 -0.52732968330383301 390 -0.51276874542236328
 		 420 -0.40520972013473511 430 -0.38123595714569092 460 -0.33250069618225098 470 -0.32904636859893799
-		 500 -0.32908535003662109 530 -0.397216796875 590 -0.25354385375976563 650 0.17436587810516357
-		 701 -0.49098196625709534 710 -8.7971963882446289 715 -12.628250122070313 760 -14.043662071228027
+		 500 -0.32908535003662109 530 -0.397216796875 590 -0.25354385375976562 650 0.17436587810516357
+		 701 -0.49098196625709534 710 -8.7971963882446289 715 -12.628250122070312 760 -14.043662071228027
 		 775 -16.315143585205078 810 -16.915727615356445 825 -14.12726879119873 860 -13.665258407592773
 		 870 -11.599617958068848 901 -0.49098196625709534 930 5.369452953338623 990 5.24853515625
 		 1000 5.24853515625 1030 4.680750846862793 1101 -0.49098196625709534;
@@ -44933,11 +44940,11 @@ createNode animCurveTL -n "Eclair_Ctrl_RightWristEffector_translateX";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 33 ".ktv[0:32]"  0 -8.9357004165649414 1 -4.3501691818237305
-		 75 -4.5958633422851563 150 -4.3501691818237305 225 -4.2562680244445801 301 -4.3501691818237305
+		 75 -4.5958633422851562 150 -4.3501691818237305 225 -4.2562680244445801 301 -4.3501691818237305
 		 330 -2.031470775604248 350 -1.5452454090118408 360 -1.5452454090118408 390 -2.4492268562316895
 		 420 -2.4803910255432129 430 -2.4718430042266846 460 -2.4044613838195801 470 -2.393728494644165
-		 500 -3.7489428520202637 530 -7.4727044105529785 590 -8.4471206665039063 650 -7.4370608329772949
-		 701 -4.3501691818237305 710 -5.9176712036132813 715 -5.4075698852539063 760 -4.7524995803833008
+		 500 -3.7489428520202637 530 -7.4727044105529785 590 -8.4471206665039062 650 -7.4370608329772949
+		 701 -4.3501691818237305 710 -5.9176712036132812 715 -5.4075698852539062 760 -4.7524995803833008
 		 775 -3.0966808795928955 810 -2.6792442798614502 825 -3.7202451229095459 860 -4.7524919509887695
 		 870 -5.6294755935668945 901 -4.3501691818237305 930 -5.9016847610473633 990 -5.9211888313293457
 		 1000 -7.1401486396789551 1030 -0.70259523391723633 1101 -4.3501691818237305;
@@ -44975,15 +44982,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightElbowEffector_rotateX";
 	rename -uid "D94C0C01-4999-BA91-F551-EAB735EB31B5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 1.1078376707344905e-05 1 -3.1121200261598774
-		 75 9.9294981615039397 150 -3.1121200261598752 225 -6.2298010761909177 301 -3.1121200261598783
-		 330 -2.9689335240711654 350 -3.0410311455444856 360 -3.0410311455444856 390 -2.9674491129290481
-		 420 5.9137712669495999 430 8.6640198428447537 460 16.380556265566351 470 17.209183623267982
-		 500 17.219811483762843 530 25.92722971252892 590 41.895459423385255 650 15.651025101668008
-		 701 -3.1121202144126148 710 -5.4120692512581696 715 1.0258261349771367 760 2.8761123184016082
-		 775 -10.520794981947553 810 -13.466070673624341 825 -2.2751543323879346 860 2.8761118515744881
-		 870 -0.81674864737957598 901 -3.1121202144253228 930 28.372196043135993 990 35.834235107429421
-		 1000 39.750203414696728 1030 14.818280138047424 1101 -3.1121202144253242;
+	setAttr -s 33 ".ktv[0:32]"  0 1.1078376707344839e-05 1 -3.1121200414083665
+		 75 9.9294980846293051 150 -3.1121200414083656 225 -6.2298008997526981 301 -3.1121200414083678
+		 330 -2.9689335240708616 350 -3.0410311455444856 360 -3.0410311455444856 390 -2.9674491129290481
+		 420 5.9137712662033861 430 8.6640198437197355 460 16.380556265297987 470 17.209183623267982
+		 500 17.2198114834348 530 25.927229712400742 590 41.895459423385269 650 15.651025101634547
+		 701 -3.1121202144172138 710 -5.4120693702141116 715 1.025826136002876 760 2.8761123357005909
+		 775 -10.520794967631556 810 -13.466070829956163 825 -2.2751543341979059 860 2.8761119573846217
+		 870 -0.81674864917693846 901 -3.1121202144288906 930 28.37219604313599 990 35.834235030764575
+		 1000 39.750203350824613 1030 14.818280139196967 1101 -3.1121202144288929;
 	setAttr -s 33 ".kit[1:32]"  2 9 9 2 2 9 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 
 		18 2 18 18 18 9 9;
@@ -44995,15 +45002,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightElbowEffector_rotateY";
 	rename -uid "3CE628C4-44C3-C006-820C-668AAA03119F";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 -1.9462043956144805e-06 1 -32.906113845420514
-		 75 -33.218532329399252 150 -32.906113845420514 225 -34.00318892705247 301 -32.906113845420514
-		 330 -29.454313353173422 350 -32.53505953809892 360 -32.53505953809892 390 -29.573161542882584
-		 420 -28.286840120926339 430 -27.815317875082773 460 -26.437337766580281 470 -26.131775512005706
-		 500 -26.104606301564871 530 -17.813829872594368 590 -5.5651166801444738 650 -25.077119678360447
-		 701 -32.906115646759012 710 -14.289072370018381 715 -7.8091028797562778 760 -7.3046973790878775
-		 775 -14.209536216806921 810 -16.086221906259638 825 -10.400051538293884 860 -7.3047047167887946
-		 870 -9.6475716691233675 901 -32.9061156468806 930 14.068616688023779 990 17.454518558035691
-		 1000 23.227431190963113 1030 -11.25712824490525 1101 -32.9061156468806;
+	setAttr -s 33 ".ktv[0:32]"  0 -1.9462043956144687e-06 1 -32.9061139913291
+		 75 -33.218531877658059 150 -32.9061139913291 225 -34.003188258232377 301 -32.9061139913291
+		 330 -29.454313353170559 350 -32.53505953809892 360 -32.53505953809892 390 -29.573161542882584
+		 420 -28.286840116106582 430 -27.815317878722606 460 -26.437337766024331 470 -26.131775512005706
+		 500 -26.104606300925564 530 -17.813829872473331 590 -5.5651166801444818 650 -25.07711967828677
+		 701 -32.906115646803016 710 -14.289072734976433 715 -7.8091028834382854 760 -7.3046974060936236
+		 775 -14.209536178612643 810 -16.086222273029072 825 -10.400051476250958 860 -7.3047048819710465
+		 870 -9.6475716166818817 901 -32.906115646914749 930 14.068616688023786 990 17.454518602115645
+		 1000 23.227431215400127 1030 -11.25712824218189 1101 -32.906115646914749;
 	setAttr -s 33 ".kit[0:32]"  18 2 9 9 2 2 9 9 
 		9 2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 
 		2 2 2 2 2 2 9 9;
@@ -45015,15 +45022,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightElbowEffector_rotateZ";
 	rename -uid "8411DA9C-4F4C-5122-D19B-1A8E2899DB7F";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 5.5615261944901161e-06 1 -0.48244582733185237
-		 75 16.268605250012509 150 -0.48244582733185104 225 4.4888051308070489 301 -0.48244582733185265
-		 330 -0.74366781915905267 350 -0.59838541713397331 360 -0.59838541713397331 390 -0.73374899724224785
-		 420 7.6411245782780863 430 10.014049017661415 460 16.244059976421916 470 16.825507757483749
-		 500 16.819149178805073 530 21.035348696854818 590 35.883622303007861 650 18.707794575111137
-		 701 -0.48244579964561557 710 -6.2614954070739461 715 -15.91396581168493 760 -21.923315979243455
-		 775 -32.967714883583028 810 -35.211718183703773 825 -27.904230463555955 860 -21.923301041587379
-		 870 -13.525917729628931 901 -0.48244579964374695 930 104.02578994754347 990 112.95201615161395
-		 1000 104.44539956054525 1030 150.66211172119668 1101 -0.48244579964375495;
+	setAttr -s 33 ".ktv[0:32]"  0 5.5615261944900831e-06 1 -0.48244582508926404
+		 75 16.268605046641213 150 -0.4824458250892642 225 4.4888049824568999 301 -0.4824458250892642
+		 330 -0.74366781915905678 350 -0.59838541713397331 360 -0.59838541713397331 390 -0.73374899724224785
+		 420 7.6411245771260576 430 10.014049018775893 460 16.244059976157196 470 16.825507757483749
+		 500 16.819149178489358 530 21.035348696759478 590 35.883622303007883 650 18.707794575066597
+		 701 -0.48244579964493811 710 -6.2614955506507259 715 -15.913965819471928 760 -21.923316069409466
+		 775 -32.967714809800256 810 -35.211718825652575 825 -27.904230301399419 860 -21.923301593092123
+		 870 -13.525917655996565 901 -0.48244579964322221 930 104.02578994754347 990 112.95201593626277
+		 1000 104.44539942146797 1030 150.66211170343806 1101 -0.4824457996432206;
 	setAttr -s 33 ".kit[0:32]"  18 2 9 9 2 2 9 9 
 		9 2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 
 		2 2 2 2 2 2 9 9;
@@ -45166,15 +45173,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightShoulderEffector_rotateX";
 	rename -uid "5D9B0A80-463E-2C5F-8534-0297C0663E2D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 3.4774439579222284e-10 1 0.44788972183946446
-		 75 3.9464602894231566 150 0.44788972183946435 225 -2.3283517875195012 301 0.44788972183946435
-		 330 0.44668777234107904 350 0.49888799782677379 360 0.49888799782677379 390 0.4530028833754644
-		 420 2.9373941100897958 430 3.6717235632217782 460 5.638196462967425 470 5.7722717944211075
-		 500 5.7647900371637828 530 5.735995292575959 590 1.9810574546976507 650 3.3457110610759284
-		 701 0.44788974266406822 710 -18.29770382264196 715 -20.041092565967904 760 -18.986489615063796
-		 775 -22.594291337776397 810 -22.992741865021934 825 -19.887148447476189 860 -18.98580135678597
-		 870 -20.14444552280013 901 0.44788974266553522 930 -14.56764295988312 990 -16.188470818425035
-		 1000 -22.975759417876048 1030 0.29222656269306557 1101 0.44788974266553516;
+	setAttr -s 33 ".ktv[0:32]"  0 3.477443957888148e-10 1 0.44788972351662304
+		 75 3.9464603530993463 150 0.44788972351662293 225 -2.3283518025602774 301 0.44788972351662293
+		 330 0.44668777234103707 350 0.49888799782677407 360 0.49888799782677407 390 0.4530028833754644
+		 420 2.9373941106633641 430 3.6717235629876463 460 5.6381964600322148 470 5.7722717944211075
+		 500 5.7647900401962042 530 5.7359952915009877 590 1.9810574542773698 650 3.3457110673510022
+		 701 0.44788974266459897 710 -18.297703759394601 715 -20.041092565967904 760 -18.986489615063796
+		 775 -22.594291257889228 810 -22.992741908280049 825 -19.887148424219792 860 -18.985801338018806
+		 870 -20.144445524488514 901 0.44788974266594872 930 -14.567642968824005 990 -16.188470428625049
+		 1000 -22.975759283417769 1030 0.29222630706618941 1101 0.44788974266594783;
 	setAttr -s 33 ".kit[1:32]"  2 9 9 2 2 9 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 
 		18 2 18 18 18 9 9;
@@ -45186,15 +45193,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightShoulderEffector_rotateY";
 	rename -uid "4CCA6F76-4D52-28D2-D69D-0498DDDD48DE";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 0.00015709435023758837 1 32.964474431508116
-		 75 31.535612762363538 150 32.964474431508116 225 31.976185839862719 301 32.964474431508116
-		 330 29.505369415068785 350 32.587775622051716 360 32.587775622051716 390 29.624495402651412
-		 420 28.189122236489563 430 27.713399635703276 460 26.346696091948036 470 26.044180618905642
-		 500 26.016110398442134 530 18.167658447514626 590 4.2920399471348736 650 24.010075995359021
-		 701 32.964475825704817 710 30.082343250289689 715 34.712747125439108 760 38.612538850214996
-		 775 53.914756184398627 810 57.459362648706247 825 44.817859852568347 860 38.61320321746333
-		 870 33.993212762351227 901 32.964475825803092 930 15.648946212136666 990 14.22184739958233
-		 1000 7.6706302817162859 1030 37.370412338758889 1101 32.964475825803092;
+	setAttr -s 33 ".ktv[0:32]"  0 0.00015709435023628608 1 32.964474543793024
+		 75 31.535613068289923 150 32.964474543793024 225 31.976185951101119 301 32.964474543793024
+		 330 29.505369415066209 350 32.587775622051716 360 32.587775622051716 390 29.624495402651412
+		 420 28.189122239729894 430 27.713399634670289 460 26.346696083978358 470 26.044180618905642
+		 500 26.016110406402735 530 18.167658445512554 590 4.2920399466509176 650 24.010076022960483
+		 701 32.964475825740365 710 30.082342952991684 715 34.712747125439108 760 38.612538850214996
+		 775 53.91475630441365 810 57.459362595828786 825 44.817859904325658 860 38.613203285046495
+		 870 33.993212847707888 901 32.964475825830732 930 15.648946218234572 990 14.221847193443542
+		 1000 7.6706302661401553 1030 37.370412772053662 1101 32.964475825830732;
 	setAttr -s 33 ".kit[0:32]"  18 2 9 9 2 2 9 9 
 		9 2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 
 		2 2 2 2 2 2 9 9;
@@ -45206,15 +45213,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightShoulderEffector_rotateZ";
 	rename -uid "043E514D-424F-A9BC-6E52-E68015327B79";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 33 ".ktv[0:32]"  0 0.00025366012460719127 1 -0.077711913372999222
-		 75 6.2063172022790303 150 -0.077711913372998265 225 -4.9721914597091539 301 -0.077711913372998265
-		 330 -0.074128432879548817 350 0.0096962764804619812 360 0.0096962764804619742 390 -0.075115156003627045
-		 420 6.0738865402503395 430 7.8848271263357486 460 12.768054906810249 470 13.207760325396267
-		 500 13.204643653751729 530 19.262589836588941 590 32.247864589110215 650 7.8240433115029635
-		 701 -0.077711910686785277 710 41.008985071972191 715 63.985333272471102 760 75.515204387807159
-		 775 85.704592563555025 810 88.216648059910071 825 81.42352024371435 860 75.516320069638482
-		 870 58.443876900910418 901 -0.077711910686596025 930 -23.528426190992015 990 -25.283181591343094
-		 1000 -23.177736286477526 1030 -51.10391597941036 1101 -0.077711910686602395;
+	setAttr -s 33 ".ktv[0:32]"  0 0.00025366012460680811 1 -0.077711913156658596
+		 75 6.2063172841014955 150 -0.077711913156657736 225 -4.9721914823152851 301 -0.077711913156657736
+		 330 -0.074128432879553063 350 0.0096962764804620055 360 0.0096962764804620037 390 -0.075115156003627045
+		 420 6.0738865411261731 430 7.884827125969065 460 12.768054902007941 470 13.207760325396267
+		 500 13.204643658762315 530 19.262589834115396 590 32.247864584780238 650 7.8240433222028196
+		 701 -0.077711910686716887 710 41.008984726569182 715 63.985333272471102 760 75.515204387807159
+		 775 85.704592806137384 810 88.216647946760929 825 81.423520345827157 860 75.516320198688462
+		 870 58.443877029294747 901 -0.077711910686545135 930 -23.528426203898761 990 -25.283181037028527
+		 1000 -23.177736150957756 1030 -51.103916745997275 1101 -0.077711910686551505;
 	setAttr -s 33 ".kit[0:32]"  18 2 9 9 2 2 9 9 
 		9 2 2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 
 		2 2 2 2 2 2 9 9;
@@ -45359,7 +45366,7 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftUpLeg_rotateZ";
 		 710 -48.004089343639464 715 -56.842356552200258 760 -57.686156260930161 775 -38.870876148060148
 		 810 -32.391795659422833 825 -52.866292460232103 860 -57.34555139375604 870 -53.728669540977847
 		 901 -3.4783787174668404 930 -3.5947888154079046 990 -1.0446751850436122 1000 -1.0446751850436122
-		 1030 -1.5029221923811003 1101 -3.4783787174668404;
+		 1030 -1.5029221923811005 1101 -3.4783787174668404;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 2 1 2 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 1 
 		18 1 18 18 18 9 9;
@@ -45768,7 +45775,7 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftToeBase_rotateY";
 		 390 0 420 0 430 0 460 0 470 0 500 -2.5321854294285792e-06 530 0 590 0 650 0 701 0
 		 710 -7.517003262259926e-06 715 -1.7017028979621582e-05 760 -1.6180408974405751e-05
 		 775 -5.5929515351186556e-05 810 -6.0689149677209965e-05 825 -8.3344628618248435e-06
-		 860 -2.6636675498497585e-05 870 -4.1169924998138014e-05 901 0 930 -1.685178457789564e-06
+		 860 -2.6636675498497585e-05 870 -4.1169924998138014e-05 901 0 930 -1.6851784577895642e-06
 		 990 -4.1110427977432623e-06 1000 -4.1110427977432623e-06 1030 0 1101 0;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 2 1 2 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 1 
@@ -45820,16 +45827,16 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftAnkleEffector_rotateX";
 	rename -uid "58F01AC6-47A8-C95E-851E-31ABE8BC1E80";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 -3.104089763367335e-14 75 1.9308634994428698e-05
-		 150 -3.1040898004477867e-14 225 2.7596846277780043e-05 301 -3.1040898004477867e-14
-		 330 4.4192413024429695e-06 350 1.2934056827855147e-05 390 1.7768314417500467e-06
-		 420 7.8445703150366141e-06 430 9.0417354853026983e-06 460 7.0771038318884016e-06
-		 470 6.6899020159069778e-06 500 1.3418171478455453e-05 530 2.3124320466722045e-05
-		 590 -2.9356469691626472e-05 650 0 701 -1.5681619642166958e-14 710 16.686721326647483
-		 715 27.982612005522295 760 36.397392062667727 775 36.623383565223612 810 36.397373317716102
-		 825 41.025668205990065 860 36.397352250206744 870 25.609375732441308 901 -1.5902773407317584e-14
-		 930 -0.28640802133695048 990 1.8138877914621013e-06 1000 1.8138877914623796e-06 1030 9.6737131136421491e-06
-		 1101 -1.5350548108407532e-14;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 -3.0820897767985075e-14 75 1.9308635078049742e-05
+		 150 -3.0820899042984807e-14 225 2.7596846452420693e-05 301 -3.0820899042984807e-14
+		 330 4.4192412882408621e-06 350 1.2934056791901804e-05 390 1.7768314407126785e-06
+		 420 7.8445703340676911e-06 430 9.0417355091699912e-06 460 7.0771038194847874e-06
+		 470 6.6899020133301579e-06 500 1.3418171481787835e-05 530 2.3124320314892758e-05
+		 590 -2.9356469468458993e-05 650 0 701 -1.5570476951346653e-14 710 16.686721313383639
+		 715 27.982612005522299 760 36.397392062758307 775 36.623383360503013 810 36.397373803543516
+		 825 41.025668527010346 860 36.397352373708983 870 25.60937542292222 901 -1.5902773407317584e-14
+		 930 -0.28640802777159957 990 1.8138877923069362e-06 1000 1.8138877922945382e-06 1030 9.6737131223223919e-06
+		 1101 -1.5241752813345722e-14;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 2 2 2 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 
 		18 2 18 18 18 9 9;
@@ -45841,15 +45848,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftAnkleEffector_rotateY";
 	rename -uid "3447F8CE-4392-13A2-9767-C28266861F35";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 -9.6585552331489435 75 -10.266173956693372
-		 150 -9.6585552331489435 225 -10.266171212358021 301 -9.6585552331489435 330 -9.6585106964397944
-		 350 -9.658509471843729 390 -9.6585070812622487 420 -9.6585013951196128 430 -9.6585016134131685
-		 460 -9.658508109793841 470 -9.6585062031681179 500 -9.6585053347834045 530 -9.6585146775480446
-		 590 -9.6585162279897681 650 -9.6585237521800629 701 -9.6585708502784726 710 22.845759248688047
-		 715 38.724917288760174 760 46.805222362681427 775 46.986353594910859 810 46.805211619740412
-		 825 50.199603758137741 860 46.805207983224449 870 35.909703260458464 901 -9.658571186905851
-		 930 -10.226680530573576 990 -9.6585822065533247 1000 -9.6585822065533247 1030 -9.6585853707007256
-		 1101 -9.6585711869058475;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 -9.6585554568427519 75 -10.266173996338113
+		 150 -9.6585554568427519 225 -10.266171273970549 301 -9.6585554568427519 330 -9.658510660771725
+		 350 -9.6585094448548166 390 -9.658507071216345 420 -9.6585014253733945 430 -9.6585016421199246
+		 460 -9.6585080924583462 470 -9.6585061993456236 500 -9.6585053371154412 530 -9.6585146136640887
+		 590 -9.6585161531170343 650 -9.6585236239806491 701 -9.6585709632866479 710 22.845759232519203
+		 715 38.724917288760174 760 46.805222362745148 775 46.98635345209744 810 46.80521196154735
+		 825 50.199603947399218 860 46.805208070115278 870 35.909702944283609 901 -9.658571297528189
+		 930 -10.226680754086498 990 -9.6585822390740894 1000 -9.6585822390740894 1030 -9.6585853807955839
+		 1101 -9.6585712975281854;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -45861,16 +45868,16 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftAnkleEffector_rotateZ";
 	rename -uid "5899AC27-4A45-1331-06E3-8D9140804821";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 1.5564809454764202e-05 75 -2.2886701925722242e-05
-		 150 1.5564809454764202e-05 225 -1.2396672072183546e-05 301 1.5564809454764202e-05
-		 330 7.3263768199937964e-06 350 2.6005485944358952e-06 390 9.3656251740640008e-06
-		 420 2.1788190668221126e-05 430 1.3096978002904088e-05 460 2.9375224530365913e-06
-		 470 3.0295791620220523e-06 500 -2.6052251863326906e-06 530 5.2212936275450489e-06
-		 590 -1.0755960699822196e-05 650 0 701 1.556483492323338e-05 710 2.229700707368147
-		 715 8.1904421506525225 760 13.983259579558661 775 14.149627596538533 810 13.983242876651302
-		 825 17.478796413891079 860 13.983232211882081 870 6.7313496164400961 901 1.5564835472069435e-05
-		 930 0.045768144129737134 990 1.8578715009915171e-05 1000 1.8578715009913247e-05 1030 1.7362218343518315e-05
-		 1101 1.556483547194404e-05;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 1.5564809819564833e-05 75 -2.2886702022089851e-05
+		 150 1.5564809819564833e-05 225 -1.2396672162669806e-05 301 1.5564809819564833e-05
+		 330 7.3263767940094226e-06 350 2.6005485901721868e-06 390 9.3656251643640827e-06
+		 420 2.1788190735185745e-05 430 1.3096978039999113e-05 460 2.9375224487870879e-06
+		 470 3.0295791610350607e-06 500 -2.6052251872462486e-06 530 5.2212936056734741e-06
+		 590 -1.0755960634900536e-05 650 0 701 1.5564835107527512e-05 710 2.2297007030440961
+		 715 8.1904421506525242 760 13.983259579621507 775 14.149627454011771 810 13.983243213723147
+		 825 17.478796650606412 860 13.983232297569138 870 6.731349450006741 901 1.5564835652565912e-05
+		 930 0.045768145711169106 990 1.8578715072700065e-05 1000 1.8578715072695342e-05 1030 1.7362218361017636e-05
+		 1101 1.5564835652347347e-05;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -45885,7 +45892,7 @@ createNode animCurveTL -n "Eclair_Ctrl_LeftAnkleEffector_translateZ";
 	setAttr -s 32 ".ktv[0:31]"  0 -0.075529478490352631 1 0.18993699550628662
 		 75 0.39158415794372559 150 0.18993699550628662 225 0.39158153533935547 301 0.18993699550628662
 		 330 -1.3076741695404053 350 -1.3076748847961426 390 -1.3076738119125366 420 -1.3076673746109009
-		 430 -1.3076673746109009 460 -1.3076692819595337 470 -1.3076753616333008 500 -1.3078079223632813
+		 430 -1.3076673746109009 460 -1.3076692819595337 470 -1.3076753616333008 500 -1.3078079223632812
 		 530 -1.3078100681304932 590 -1.3078271150588989 650 -1.3078219890594482 701 0.18993699550628662
 		 710 0.23406827449798584 715 0.21427124738693237 760 0.18993961811065674 775 0.18994629383087158
 		 810 0.18995153903961182 825 0.1899448037147522 860 0.18993723392486572 870 0.14175379276275635
@@ -45927,7 +45934,7 @@ createNode animCurveTL -n "Eclair_Ctrl_LeftAnkleEffector_translateY";
 		 430 1.4541006088256836 460 1.454075813293457 470 1.4539775848388672 500 1.4522724151611328
 		 530 1.452275276184082 590 1.4522027969360352 650 1.4522342681884766 701 1.3713459968566895
 		 710 1.3688802719116211 715 1.36993408203125 760 1.3712410926818848 775 1.3712501525878906
-		 810 1.3712363243103027 825 1.371211051940918 860 1.3712496757507324 870 1.3738784790039063
+		 810 1.3712363243103027 825 1.371211051940918 860 1.3712496757507324 870 1.3738784790039062
 		 901 1.3713459968566895 930 1.345705509185791 990 1.3726649284362793 1000 1.3726649284362793
 		 1030 1.3727388381958008 1101 1.3713459968566895;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 2 1 2 9 9 
@@ -45999,15 +46006,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftKneeEffector_rotateX";
 	rename -uid "65218F11-4734-50C4-F422-E39C811CF9F9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 -5.3628468797472886 75 -6.3768617399655954
-		 150 -5.3628468797472877 225 -6.3268208501113348 301 -5.3628468797472886 330 -5.3708209488605601
-		 350 -5.1435757083259768 390 -5.3708177697486841 420 -5.3220417222012504 430 -5.3072987580243751
-		 460 -5.2731365828682488 470 -5.2648812846014108 500 -6.5287436303321069 530 -8.4872501110371825
-		 590 -6.7367303862836208 650 -5.9442177119187445 701 -5.3628534351676125 710 22.350042115732695
-		 715 35.631104863139264 760 43.421147967008231 775 54.191802128648611 810 57.807558376829938
-		 825 47.920831195103631 860 42.243206295743363 870 32.704087758919627 901 -5.3628535967008997
-		 930 -6.0988151348497635 990 -5.0609928410799974 1000 -5.0609928410799974 1030 -5.6627552831937296
-		 1101 -5.3628535967008997;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 -5.3628469641480754 75 -6.3768616831720824
+		 150 -5.3628469641480745 225 -6.3268209569691214 301 -5.3628469641480754 330 -5.370820952626107
+		 350 -5.1435757081424036 390 -5.3708177696578145 420 -5.3220416980121579 430 -5.3072987723613689
+		 460 -5.2731365543165367 470 -5.2648812846106932 500 -6.5287436390686135 530 -8.4872501197256742
+		 590 -6.7367303817655744 650 -5.9442176821003274 701 -5.3628534892617408 710 22.350042292367679
+		 715 35.631104863139257 760 43.421147966910091 775 54.191801302446322 810 57.807559061353672
+		 825 47.920830701809123 860 42.243206074399637 870 32.704088157775402 901 -5.3628536500482351
+		 930 -6.0988150928956539 990 -5.0609927971912922 1000 -5.0609927971912922 1030 -5.6627552810296002
+		 1101 -5.3628536500482351;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 2 2 2 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 
 		18 2 18 18 18 9 9;
@@ -46019,15 +46026,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftKneeEffector_rotateY";
 	rename -uid "B7646CDE-4B74-4FEC-2214-5184A1701691";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 -5.3558231646060293 75 -6.7491949700060268
-		 150 -5.3558231646060284 225 -6.1638266460526419 301 -5.3558231646060284 330 1.8918724712559014
-		 350 3.066869818741047 390 1.8918907230597035 420 1.8799506150490044 430 1.8754107057124596
-		 460 1.8620990340245682 470 1.8595414661112928 500 -3.8995474675679267 530 -16.333516478419021
-		 590 -19.347638827508629 650 -17.768853900497604 701 -5.3558294474194659 710 -21.769717660737932
-		 715 -30.75259459419609 760 -35.665911889660393 775 -42.146589881760079 810 -41.762938272704268
-		 825 -41.645353764780964 860 -36.226969038928139 870 -29.779025683477307 901 -5.3558296022353886
-		 930 -10.480611520478927 990 -11.086785423062828 1000 -11.086785423062828 1030 -11.087880389003214
-		 1101 -5.3558296022353868;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 -5.3558232454970174 75 -6.7491949197429078
+		 150 -5.3558232454970165 225 -6.1638267325707927 301 -5.3558232454970165 330 1.8918724731075629
+		 350 3.0668698185984442 390 1.891890723015019 420 1.8799506027265445 430 1.8754107130921409
+		 460 1.8620990189284237 470 1.8595414661162251 500 -3.8995474707369961 530 -16.333516489617455
+		 590 -19.347638817968082 650 -17.768853829418905 701 -5.3558294992640878 710 -21.769717867717482
+		 715 -30.752594594196083 760 -35.665911889589616 775 -42.146589505643639 810 -41.762938523885836
+		 825 -41.645353410609168 860 -36.226968863688676 870 -29.779026068901572 901 -5.3558296533642746
+		 930 -10.480611451608716 990 -11.086785326398216 1000 -11.086785326398216 1030 -11.087880384729219
+		 1101 -5.3558296533642729;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -46039,15 +46046,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftKneeEffector_rotateZ";
 	rename -uid "AA2253DF-4F6E-DF7A-D060-FA9EE3AD2AAF";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 -9.2114098990826044e-06 1 2.1071837790115158
-		 75 9.8424622382900022 150 2.1071837790115158 225 10.185459691172273 301 2.1071837790115175
-		 330 13.608314143577546 350 14.171383580018661 390 13.608312803631637 420 15.127841028820654
-		 430 15.596799424205445 460 16.881507157870782 470 17.110730659700927 500 21.703128661903232
-		 530 18.657416927448423 590 10.054713805314856 650 6.8063656844084468 701 2.1071866078508736
-		 710 14.749228161211782 715 8.6988986516226241 760 5.3210553165052943 775 -10.870114516243049
-		 810 -16.897095550049571 825 6.5952047312568371 860 8.4121458153611233 870 11.77464347566527
-		 901 2.1071866775568173 930 1.5449436298332471 990 -0.93379660789176999 1000 -0.93379660789177021
-		 1030 -1.1557100247687093 1101 2.1071866775568173;
+	setAttr -s 32 ".ktv[0:31]"  0 -9.2114098990825756e-06 1 2.1071838154327116
+		 75 9.8424621547691249 150 2.1071838154327107 225 10.185459855009444 301 2.107183815432712
+		 330 13.608314153511664 350 14.171383579475295 390 13.608312803391909 420 15.127840956728404
+		 430 15.596799468476512 460 16.881507061267712 470 17.110730659732841 500 21.703128688518223
+		 530 18.657416942992054 590 10.054713799319378 650 6.8063656514884734 701 2.1071866311939407
+		 710 14.749228254753017 715 8.6988986516226205 760 5.3210553165261985 775 -10.8701140757987
+		 810 -16.897095953896986 825 6.5952048613218741 860 8.4121458476367348 870 11.774643513309575
+		 901 2.1071867005776226 930 1.5449436156951852 990 -0.93379660398871656 1000 -0.93379660398871667
+		 1030 -1.1557100245327643 1101 2.1071867005776226;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -46064,7 +46071,7 @@ createNode animCurveTL -n "Eclair_Ctrl_LeftKneeEffector_translateZ";
 		 330 0.36634200811386108 350 0.43267279863357544 390 0.36634442210197449 420 0.54914867877960205
 		 430 0.60530626773834229 460 0.7584911584854126 470 0.78570669889450073 500 1.3186068534851074
 		 530 0.87763911485671997 590 -0.13515618443489075 650 -0.50439012050628662 701 0.45054513216018677
-		 710 1.9171807765960693 715 1.1395339965820313 760 0.72628498077392578 775 -0.80540895462036133
+		 710 1.9171807765960693 715 1.1395339965820312 760 0.72628498077392578 775 -0.80540895462036133
 		 810 -1.3534054756164551 825 0.800933837890625 860 1.0300354957580566 870 1.4026055335998535
 		 901 0.45054513216018677 930 0.39758044481277466 990 0.076063916087150574 1000 0.076063916087150574
 		 1030 0.049008816480636597 1101 0.45054513216018677;
@@ -46194,15 +46201,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftFootEffector_rotateX";
 	rename -uid "CA131160-45EF-E4CF-B7A9-788C19F3DC49";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 4.3254240443196892 75 4.6021308284340998
-		 150 4.3254240443196892 225 4.6021371187859881 301 4.3254240443196892 330 4.3254071894899315
-		 350 4.3254141649440472 390 4.3254031945296365 420 4.3254062520225647 430 4.325407316784049
-		 460 4.3254084004386764 470 4.3254071754104739 500 4.3254123707616925 530 4.3254241263996516
-		 590 4.3253773868867205 650 4.3254078418311455 701 4.3254311473000282 710 4.1063600723828815
-		 715 3.9379754886049017 760 3.7886325224265707 775 3.7841853597285842 810 3.788617064535809
-		 825 3.6922944730953851 860 3.7886078504934231 870 3.9757518386853059 901 4.325431300404845
-		 930 4.3290979661794537 990 4.3254387994170225 1000 4.3254387994170225 1030 4.3254460430399
-		 1101 4.325431300404845;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 4.3254241460600662 75 4.6021308464896116
+		 150 4.3254241460600662 225 4.6021371494882368 301 4.3254241460600662 330 4.3254071732992152
+		 350 4.3254141526933862 390 4.3254031899706833 420 4.3254062657789492 430 4.3254073298370059
+		 460 4.3254083925562332 470 4.3254071736741375 500 4.325412367223449 530 4.3254240989013306
+		 590 4.3253773547804295 650 4.3254077855160018 701 4.3254311986983911 710 4.1063601315795433
+		 715 3.9379754886049017 760 3.7886325224376938 775 3.7841853436174815 810 3.7886170058179851
+		 825 3.6922944527182322 860 3.7886078562703616 870 3.9757518381701953 901 4.3254313507180822
+		 930 4.3290980578352851 990 4.3254388008264089 1000 4.3254388008264089 1030 4.3254460452130585
+		 1101 4.3254313507180822;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 2 2 2 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 
 		18 2 18 18 18 9 9;
@@ -46214,15 +46221,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftFootEffector_rotateY";
 	rename -uid "BAA023C1-42B0-D1B2-F4D4-02B6E376978B";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 -8.6441086362081041 75 -9.1867627136070951
-		 150 -8.6441086362081041 225 -9.1867557030896201 301 -8.6441086362081041 330 -8.6440671634202246
-		 350 -8.6440623241760033 390 -8.6440651103560846 420 -8.64405722666217 430 -8.6440569412859656
-		 460 -8.6440636747710133 470 -8.6440621492040304 500 -8.6440601902930574 530 -8.6440626647661905
-		 590 -8.6440875200235396 650 -8.6440807774324924 701 -8.6441225901197729 710 27.736613118514821
-		 715 46.310318789654268 760 56.468681999599696 775 56.706655256067009 810 56.468612810020154
-		 825 61.04123155655887 860 56.468639324953813 870 42.921303322221583 901 -8.6441228908964742
-		 930 -9.2784211891767896 990 -8.6441361480863286 1000 -8.6441361480863286 1030 -8.6441322788246708
-		 1101 -8.644122890896476;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 -8.6441088360786136 75 -9.1867627489586621
+		 150 -8.6441088360786136 225 -9.1867557632025925 301 -8.6441088360786136 330 -8.6440671316133439
+		 350 -8.6440623001094714 390 -8.644065101399951 420 -8.6440572536867553 430 -8.6440569669286429
+		 460 -8.6440636592858624 470 -8.6440621457929776 500 -8.6440601833421429 530 -8.644062610745614
+		 590 -8.6440874569497517 650 -8.6440806668005123 701 -8.6441226910926243 710 27.736613487608743
+		 715 46.310318789654268 760 56.468681999708494 775 56.70665509831305 810 56.468612235644066
+		 825 61.041231354524129 860 56.468639381463852 870 42.921303317752816 901 -8.6441229897375802
+		 930 -9.2784213819402659 990 -8.6441361508550916 1000 -8.6441361508550916 1030 -8.6441322830938621
+		 1101 -8.644122989737582;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -46234,15 +46241,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftFootEffector_rotateZ";
 	rename -uid "9CDB4A77-4B4F-051D-3A9B-67A60B47D772";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 -0.3270435397354492 75 -0.36996259791184544
-		 150 -0.3270435397354492 225 -0.36995172413622163 301 -0.3270435397354492 330 -0.32704863486469349
-		 350 -0.32705312219929156 390 -0.32704640961122439 420 -0.3270335100990201 430 -0.32704217525245799
-		 460 -0.32705282685744996 470 -0.3270525888739923 500 -0.32705814871720679 530 -0.32705067192394877
-		 590 -0.32706777731455228 650 -0.32705704271854424 701 -0.32704460726412105 710 -0.36522043227503204
-		 715 -0.46792525463698281 760 -0.58505877865926381 775 -0.58879207656968424 810 -0.58507245143388065
-		 825 -0.66750543218250813 860 -0.58507625035674093 870 -0.44140189280507497 901 -0.32704463027473168
-		 930 -0.32761373118631815 990 -0.32704277599526721 1000 -0.32704277599526721 1030 -0.32704377200660217
-		 1101 -0.32704463027473168;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 -0.32704355502631005 75 -0.36996260079454651
+		 150 -0.32704355502631005 225 -0.36995172903799495 301 -0.32704355502631005 330 -0.32704863243132531
+		 350 -0.32705312035807987 390 -0.32704640892604298 420 -0.32703351216647425 430 -0.32704217721421908
+		 460 -0.32705282567275884 470 -0.32705258861302988 500 -0.32705814818542267 530 -0.3270506677911118
+		 590 -0.32706777248900659 650 -0.32705703425460081 701 -0.32704461498894455 710 -0.36522042271293303
+		 715 -0.46792525463698281 760 -0.58505877865462386 775 -0.5887920833251068 810 -0.58507247592939515
+		 825 -0.66750544150618873 860 -0.58507624794675983 870 -0.44140189295703702 901 -0.32704463783646859
+		 930 -0.32761374546920607 990 -0.32704277620708783 1000 -0.32704277620708783 1030 -0.32704377233321225
+		 1101 -0.32704463783646859;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -46375,15 +46382,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftHipEffector_rotateX";
 	rename -uid "B5C49E52-4CD5-FAF5-2C0E-3B9681E8D64B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 0.34190597791010513 75 1.9815298410453308
-		 150 0.34190597791010502 225 1.8993393959014873 301 0.34190597791010502 330 -0.54937849872854316
-		 350 -0.59340154681067558 390 -0.54939382715443341 420 -0.47104514015059057 430 -0.44650787812331805
-		 460 -0.39188725501909366 470 -0.3771613364803893 500 1.1410163484775855 530 3.963601433305616
-		 590 2.4473927842998657 650 1.290081513787589 701 0.34190488412308717 710 27.886380697432362
-		 715 37.722126830402118 760 43.613312719472106 775 58.828198433288151 810 62.475606512306648
-		 825 50.885700582307507 860 43.283923285531159 870 36.429230316566311 901 0.34190485491721584
-		 930 -0.1203745765837746 990 0.12041388765630497 1000 0.12041388765630499 1030 -1.4442241641794511
-		 1101 0.34190485491721584;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 0.34190596475569562 75 1.9815299138926998
+		 150 0.34190596475569546 225 1.8993394402427199 301 0.34190596475569546 330 -0.5493784884614028
+		 350 -0.59340155128269156 390 -0.54939383624147498 420 -0.47104515253028473 430 -0.44650786619277838
+		 460 -0.39188725934012997 470 -0.37716133453556178 500 1.1410163310234573 530 3.9636014552452234
+		 590 2.4473927740291099 650 1.2900815156315739 701 0.34190487435757172 710 27.886381034482525
+		 715 37.722126830402118 760 43.613312719471878 775 58.828198068852586 810 62.47560698487149
+		 825 50.885700957606815 860 43.283922828326588 870 36.429230795451083 901 0.34190484524219117
+		 930 -0.12037458129934975 990 0.12041389089999376 1000 0.12041389089999378 1030 -1.4442241657164012
+		 1101 0.34190484524218895;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 2 2 2 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 
 		18 2 18 18 18 9 9;
@@ -46395,15 +46402,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftHipEffector_rotateY";
 	rename -uid "6FD38C77-4F23-2C1B-F1BE-6EA89430F2C7";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 -5.3479443655294192 75 -6.5069209329371791
-		 150 -5.3479443655294192 225 -5.9112065043225845 301 -5.3479443655294192 330 1.8102427676580162
-		 350 3.030771522562473 390 1.8102485489867788 420 1.827063012724166 430 1.8339406698388834
-		 460 1.8529823097153182 470 1.8591256738945399 500 -3.8626586799022391 530 -16.17505804575768
-		 590 -19.214993795454532 650 -17.723637556213149 701 -5.3479328378841711 710 4.3707556199029973
-		 715 7.5924519022435328 760 8.8508297744742102 775 4.6460689363993293 810 2.5529271923903223
-		 825 11.227961853597561 860 9.2154052282368237 870 6.5856275013123788 901 -5.3479325300772986
-		 930 -10.533943557661081 990 -11.086427551338053 1000 -11.086427551338053 1030 -11.088657822928422
-		 1101 -5.3479325300772986;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 -5.3479442268925039 75 -6.5069210950949179
+		 150 -5.3479442268925039 225 -5.91120659861972 301 -5.3479442268925039 330 1.8102427368212242
+		 350 3.0307715420290076 390 1.8102485762784948 420 1.8270630542826209 430 1.8339406282267414
+		 460 1.8529823261218148 470 1.8591256663033724 500 -3.862658634719184 530 -16.175058114634055
+		 590 -19.214993717582445 650 -17.723637591918877 701 -5.3479327349633312 710 4.3707558108976707
+		 715 7.5924519022435319 760 8.8508297744740432 775 4.6460687471833007 810 2.5529274135793631
+		 825 11.227962113077503 860 9.2154048908506532 870 6.5856278138391797 901 -5.3479324281101324
+		 930 -10.533943330393289 990 -11.086427710364918 1000 -11.086427710364918 1030 -11.088657835574127
+		 1101 -5.3479324281101324;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -46415,15 +46422,15 @@ createNode animCurveTA -n "Eclair_Ctrl_LeftHipEffector_rotateZ";
 	rename -uid "0C75CE66-435A-2682-BDC4-33A9488AF8AF";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 4.8296734128992375e-06 1 -3.4826699107759631
-		 75 -14.263986871561151 150 -3.4826699107759622 225 -14.534586645449595 301 -3.4826699107759622
-		 330 -3.0513859622883741 350 -3.6899730327875533 390 -3.0514975217851621 420 -4.2485652178239635
-		 430 -4.6155723045150507 460 -5.6143619528332334 470 -5.7911923023823118 500 -9.2522156034169889
-		 530 -6.6489147002320008 590 0.18582905863773178 650 2.6278411235502683 701 -3.4826623248375763
-		 710 -41.744453907180556 715 -49.881754758253358 760 -51.296258246157066 775 -46.800301021243605
-		 810 -46.000680433428251 825 -47.011201887856458 860 -50.598683726169561 870 -46.771044893382026
-		 901 -3.4826621222806908 930 -3.6429888181737944 990 -1.0527232052521909 1000 -1.0527232052521911
-		 1030 -1.1930823960327328 1101 -3.4826621222806922;
+	setAttr -s 32 ".ktv[0:31]"  0 4.8296734128992341e-06 1 -3.4826698195438759
+		 75 -14.263987247959331 150 -3.4826698195438759 225 -14.534586891233177 301 -3.4826698195438741
+		 330 -3.0513859097023164 350 -3.6899730567761897 390 -3.0514975683273677 420 -4.2485653156536971
+		 430 -4.615572198483715 460 -5.6143620031831079 470 -5.7911922784345089 500 -9.2522154916264867
+		 530 -6.6489147324858733 590 0.18582905960903023 650 2.6278411286341985 701 -3.4826622571089887
+		 710 -41.744454443395703 715 -49.881754758253358 760 -51.296258246156796 775 -46.800300747790089
+		 810 -46.000680758700248 825 -47.011202224294529 860 -50.598683164407539 870 -46.771045544371155
+		 901 -3.4826620551796825 930 -3.6429887386997759 990 -1.0527232207641326 1000 -1.0527232207641326
+		 1030 -1.1930823972508857 1101 -3.4826620551796852;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -46480,7 +46487,7 @@ createNode animCurveTL -n "Eclair_Ctrl_LeftHipEffector_translateY";
 		 430 17.178844451904297 460 17.120328903198242 470 17.109149932861328 500 16.820135116577148
 		 530 16.419889450073242 590 16.474836349487305 650 16.657232284545898 701 17.304298400878906
 		 710 14.387155532836914 715 13.105232238769531 760 12.631787300109863 775 12.630578994750977
-		 810 12.631787300109863 825 12.611537933349609 860 12.631787300109863 870 13.481643676757813
+		 810 12.631787300109863 825 12.611537933349609 860 12.631787300109863 870 13.481643676757812
 		 901 17.304298400878906 930 17.080591201782227 990 17.095182418823242 1000 17.095182418823242
 		 1030 17.094261169433594 1101 17.304298400878906;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 2 1 2 9 9 
@@ -46905,7 +46912,7 @@ createNode animCurveTA -n "Eclair_Ctrl_RightFoot_rotateX";
 		 530 8.4739431206947735 590 5.9537273349879172 650 7.5286353697789075 701 8.9002091011609465
 		 710 28.342669445343038 715 32.842030705117295 760 34.889878502431834 775 22.295260360809245
 		 810 18.433327574707679 825 34.70388558376542 860 35.949316752533456 870 31.136324439374434
-		 901 8.9002091011609465 930 6.6191504162430013 990 6.0146467629511839 1000 6.0146467629511839
+		 901 8.9002091011609465 930 6.6191504162430022 990 6.0146467629511839 1000 6.0146467629511839
 		 1030 6.4579533289119508 1101 8.9002091011609465;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 2 1 2 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 1 
@@ -47022,15 +47029,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightAnkleEffector_rotateX";
 	rename -uid "57AF87AE-47DC-8617-C6B6-27A72D7D7E7A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 10.143614443252652 75 10.838124885025728
-		 150 10.143614443252652 225 10.838156174530978 301 10.143614443252652 330 10.143609225018251
-		 350 10.143603390464431 390 10.143611225726412 420 10.143622796140765 430 10.143615796984056
-		 460 10.143616812100102 470 10.143613688405797 500 10.143601288894748 530 10.143571844016471
-		 590 10.143532482654155 650 10.14353170647972 701 10.143610540550458 710 27.118159822035313
-		 715 41.012516851139189 760 51.527756078535241 775 51.805835681513052 810 51.527843219809014
-		 825 57.142418573662276 860 51.527737088193078 870 50.041257167187808 901 10.14361052844103
-		 930 9.7856275244185067 990 10.143550794337807 1000 10.143550794337807 1030 10.143529167532929
-		 1101 10.14361052844103;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 10.143614297339887 75 10.838125146021374
+		 150 10.143614297339887 225 10.838156241382979 301 10.143614297339887 330 10.143609224688602
+		 350 10.143603390458424 390 10.143611225726659 420 10.143622815102194 430 10.143615771237837
+		 460 10.143616807855416 470 10.143613688403621 500 10.143601297599984 530 10.14357181835226
+		 590 10.143532499234754 650 10.143531699850154 701 10.143610536363784 710 27.118160150795951
+		 715 41.012516851139189 760 51.527756078535532 775 51.805835095544388 810 51.527843996255953
+		 825 57.142418427258498 860 51.527736790963594 870 50.041257396106843 901 10.143610524694108
+		 930 9.7856274578489675 990 10.143550853919308 1000 10.143550853919308 1030 10.14352921046987
+		 1101 10.143610524694109;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 2 2 2 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 
 		18 2 18 18 18 9 9;
@@ -47042,15 +47049,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightAnkleEffector_rotateY";
 	rename -uid "F29D8B87-4B29-B225-7886-9DBAEA4438AE";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 19.593088038950199 75 20.811888494102796
-		 150 19.593088038950199 225 20.811921678264067 301 19.593088038950199 330 19.593000244319938
-		 350 19.593003130688334 390 19.593039830297759 420 19.593032823237536 430 19.592998523076012
-		 460 19.592996668310274 470 19.592997973465163 500 19.593003519180911 530 19.592979721570615
-		 590 19.592915549740269 650 19.592917350867243 701 19.593081130291324 710 42.755245551230992
-		 715 53.14067933569784 760 57.888217357978334 775 57.987947234998458 810 57.88825164808901
-		 825 59.691466377657498 860 57.888212146134777 870 40.214699770724557 901 19.593081108854914
-		 930 19.237361462461237 990 19.592985274610303 1000 19.592985274610303 1030 19.592956447233071
-		 1101 19.593081108854914;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 19.593087780651867 75 20.81188894807131
+		 150 19.593087780651867 225 20.811921794544386 301 19.593087780651867 330 19.593000243736384
+		 350 19.593003130677697 390 19.593039830298203 420 19.593032856803422 430 19.592998477499602
+		 460 19.592996660796256 470 19.592997973461312 500 19.593003534591098 530 19.592979676139166
+		 590 19.592915579091716 650 19.59291733913139 701 19.593081122879966 710 42.755245872864251
+		 715 53.14067933569784 760 57.888217357978448 775 57.987947026057348 810 57.888251928181724
+		 825 59.69146633606627 860 57.888212038912769 870 40.214699836314956 901 19.593081102222019
+		 930 19.237361341638362 990 19.592985380083142 1000 19.592985380083142 1030 19.592956523241352
+		 1101 19.593081102222019;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -47062,15 +47069,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightAnkleEffector_rotateZ";
 	rename -uid "66BCAF31-4EAC-2830-D66B-F79279CDB6C1";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 1.6365072937912635 75 1.8689250244250752
-		 150 1.6365072937912635 225 1.8689303190995599 301 1.6365072937912635 330 1.636489165813483
-		 350 1.6364841340838963 390 1.6364910663632959 420 1.6364916911809648 430 1.6364887166560371
-		 460 1.6364889289965077 470 1.6364886035192863 500 1.6364636594309019 530 1.6364359853008517
-		 590 1.6364130437927542 650 1.6364062164463582 701 1.6365060270824443 710 10.504282527765378
-		 715 20.811442985060953 760 29.453157048551049 775 29.687878832898456 810 29.453238249793245
-		 825 34.238462618718437 860 29.453132933031611 870 35.084661093443003 901 1.6365060231520598
-		 930 1.3687458779262525 990 1.6364834747162149 1000 1.6364834747162149 1030 1.6364582369268719
-		 1101 1.6365060231520601;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 1.6365072464320221 75 1.8689251143898116
+		 150 1.6365072464320221 225 1.8689303421433432 301 1.6365072464320221 330 1.6364891657064875
+		 350 1.6364841340819467 390 1.6364910663633769 420 1.6364916973352821 430 1.6364887082995905
+		 460 1.6364889276188106 470 1.6364886035185804 500 1.6364636622563402 530 1.6364359769711319
+		 590 1.6364130491742119 650 1.6364062142946458 701 1.6365060257235662 710 10.504282748790477
+		 715 20.811442985060953 760 29.45315704855129 775 29.687878338044783 810 29.4532389047748
+		 825 34.238462492780464 860 29.45313268230009 870 35.084661284833885 901 1.6365060219359111
+		 930 1.368745857830671 990 1.6364834940545958 1000 1.6364834940545958 1030 1.6364582508628294
+		 1101 1.6365060219359135;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -47207,15 +47214,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightKneeEffector_rotateX";
 	rename -uid "333F5A9C-4DAF-A2B1-2BAF-79B97F257F91";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 1.7075472861417992e-06 1 13.407690226326192
-		 75 14.914522732304643 150 13.407690226326192 225 15.013153599991398 301 13.407690226326192
-		 330 14.513378793821424 350 15.495789883284566 390 14.51339453775647 420 14.227303755532727
-		 430 14.122024673758235 460 13.670819077243683 470 13.545136994441036 500 15.26274423264532
-		 530 13.568849376894631 590 13.230193126489839 650 13.402266534146975 701 13.407691285865777
-		 710 38.278635451330103 715 56.711938837134319 760 65.68618399008534 775 69.168106164299815
-		 810 70.071076383806087 825 70.582723096171975 860 66.157199611588808 870 47.302521684095673
-		 901 13.407691299113061 930 12.684068209408828 990 13.148261569066211 1000 13.148261569066211
-		 1030 12.537036221258846 1101 13.407691299113063;
+	setAttr -s 32 ".ktv[0:31]"  0 1.7075472861417628e-06 1 13.407690248102563
+		 75 14.914522473083826 150 13.407690248102563 225 15.013153861993272 301 13.407690248102563
+		 330 14.513378793966179 350 15.495789883286022 390 14.513394537756454 420 14.227303737388658
+		 430 14.122024661210256 460 13.670819093563752 470 13.545136994441068 500 15.262744243691234
+		 530 13.568849377427492 590 13.230193142182701 650 13.402266520249624 701 13.407691290354377
+		 710 38.278635518109894 715 56.711938837134319 760 65.68618399008534 775 69.168106317773791
+		 810 70.07107633561931 825 70.582723063843801 860 66.157199789927859 870 47.302521675146501
+		 901 13.407691303385514 930 12.684068039745727 990 13.148261481344912 1000 13.148261481344912
+		 1030 12.53703652050665 1101 13.407691303385517;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 2 2 2 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 
 		18 2 18 18 18 9 9;
@@ -47227,15 +47234,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightKneeEffector_rotateY";
 	rename -uid "42122AC8-429A-6A69-3610-ECAC28572FFE";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 -2.0355549880792532e-13 1 4.6567969320859177
-		 75 4.1480415727903379 150 4.6567969320859177 225 4.7355317852027108 301 4.6567969320859177
-		 330 15.770651679195652 350 16.933181976637901 390 15.770648352909387 420 15.732955914344529
-		 430 15.717451372647316 460 15.669661108405803 470 15.65755593620962 500 9.631913589254447
-		 530 0.049210414586787758 590 -2.0345523957685505 650 -0.43859761055358348 701 4.6567972530875226
-		 710 -13.526579789201106 715 -14.609595325594043 760 -15.425168038102719 775 -24.399752006339774
-		 810 -26.44045180276699 825 -13.831868070847964 860 -14.13903628191362 870 -20.338699269285375
-		 901 4.6567972571009646 930 -0.41715150041086196 990 -1.0815408586473056 1000 -1.0815408586473056
-		 1030 -0.77322052169383959 1101 4.6567972571009655;
+	setAttr -s 32 ".ktv[0:31]"  0 -2.0355549880791946e-13 1 4.6567969386833585
+		 75 4.1480415419103487 150 4.6567969386833585 225 4.7355318260218491 301 4.6567969386833585
+		 330 15.770651679322668 350 16.933181976639087 390 15.770648352909374 420 15.732955897706075
+		 430 15.717451360936927 460 15.669661124897329 470 15.657555936209658 500 9.6319135937984992
+		 530 0.049210414485973721 590 -2.0345524009900759 650 -0.4385976076810838 701 4.6567972544474019
+		 710 -13.526579858820815 715 -14.60959532559405 760 -15.425168038102719 775 -24.399752103362804
+		 810 -26.44045177352865 825 -13.831868051989975 860 -14.139036397132296 870 -20.338699259262064
+		 901 4.6567972583953612 930 -0.41715147076728765 990 -1.0815408395070261 1000 -1.0815408395070261
+		 1030 -0.77322058090732237 1101 4.656797258395363;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -47247,15 +47254,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightKneeEffector_rotateZ";
 	rename -uid "3D3F1513-42F5-5D09-016D-228AEEC02CE2";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 1.3660378336844265e-05 1 4.3487052962037449
-		 75 17.308120113680594 150 4.3487052962037458 225 17.073085538654404 301 4.3487052962037458
-		 330 10.093157606958542 350 14.135403415081214 390 10.093236708008547 420 8.5942501602167169
-		 430 7.9648955017184671 460 5.1120366889061515 470 4.3362643901510358 500 19.027202649610118
-		 530 21.840442803900636 590 19.419311961986086 650 19.625484336735685 701 4.3487056765400034
-		 710 56.262329273033885 715 47.6481144059371 760 45.280636088055374 775 34.712909823362033
-		 810 31.199736206654375 825 42.542503998274313 860 45.787235195123351 870 55.584082731194698
-		 901 4.3487056812952991 930 16.069957873693035 990 15.25766650269493 1000 15.25766650269493
-		 1030 15.357074864752509 1101 4.3487056812952991;
+	setAttr -s 32 ".ktv[0:31]"  0 1.3660378336844163e-05 1 4.3487053040206707
+		 75 17.308119815434424 150 4.3487053040206698 225 17.073085834030795 301 4.3487053040206698
+		 330 10.093157607068427 350 14.135403415082575 390 10.093236708008536 420 8.5942501478169913
+		 430 7.9648954935663125 460 5.1120366968238375 470 4.33626439015105 500 19.027202662950891
+		 530 21.840442804764429 590 19.419311985476504 650 19.62548431621526 701 4.348705678151247
+		 710 56.262329389219204 715 47.648114405937115 760 45.280636088055374 775 34.712909863709342
+		 810 31.199736197973575 825 42.542503983423963 860 45.787235296801043 870 55.584082719506895
+		 901 4.3487056828289559 930 16.06995765782365 990 15.257666400450612 1000 15.257666400450612
+		 1030 15.357075233081273 1101 4.3487056828289541;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -47273,7 +47280,7 @@ createNode animCurveTL -n "Eclair_Ctrl_RightKneeEffector_translateZ";
 		 430 -0.33122232556343079 460 -0.6697813868522644 470 -0.76176446676254272 500 1.0027498006820679
 		 530 1.3901622295379639 590 0.89042651653289795 650 0.69908261299133301 701 -0.74223065376281738
 		 710 -5.1779985427856445 715 -9.8318195343017578 760 -11.431272506713867 775 -12.615580558776855
-		 810 -13.005447387695313 825 -11.633699417114258 860 -11.359543800354004 870 -8.1640663146972656
+		 810 -13.005447387695312 825 -11.633699417114258 860 -11.359543800354004 870 -8.1640663146972656
 		 901 -0.74223065376281738 930 0.58024758100509644 990 0.59280610084533691 1000 0.59280610084533691
 		 1030 0.60487401485443115 1101 -0.74223065376281738;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 2 1 2 9 9 
@@ -47395,17 +47402,16 @@ createNode animCurveTA -n "Eclair_Ctrl_RightFootEffector_rotateX";
 	rename -uid "F86E52B3-46CB-FF08-BD3F-238FD857EC42";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 6.5331759758561929e-06 75 1.711183346582944e-14
-		 150 6.5331759758561929e-06 225 1.1244275502842331e-05 301 6.5331759758561929e-06
-		 330 4.6591901953764289e-05 350 4.0292117237253102e-05 390 2.8290539431277423e-05
-		 420 4.2450554983868366e-05 430 5.3559319236954024e-05 460 5.5410314139343952e-05
-		 470 5.1795194122400379e-05 500 3.8064538188415559e-05 530 2.4364377828549994e-05
-		 590 2.1355369723707316e-05 650 1.9951843685859747e-05 701 6.5331717020271521e-06
-		 710 6.2036616334213619e-05 715 9.2748958942596811e-05 760 9.3470147145007846e-05
-		 775 0.00010318093462502708 810 8.4359267438323098e-05 825 9.7731273393104328e-05
-		 860 9.2395134000950322e-05 870 25.855243349323153 901 6.5331716875429937e-06 930 -0.13945562076456264
-		 990 1.7783358638712881e-06 1000 1.7783358638672365e-06 1030 -2.7753962690877637e-06
-		 1101 6.533171688607776e-06;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 6.5331758160678456e-06 75 1.6410896542979757e-14
+		 150 6.5331758160678456e-06 225 1.1244275590395102e-05 301 6.5331758160678456e-06
+		 330 4.6591901952919431e-05 350 4.0292117237247416e-05 390 2.8290539431276779e-05
+		 420 4.2450555090077326e-05 430 5.3559319124724706e-05 460 5.5410314176429548e-05
+		 470 5.1795194122392526e-05 500 3.8064538255906046e-05 530 2.4364377797145729e-05
+		 590 2.1355369741072152e-05 650 1.995184367944952e-05 701 6.5331716974423466e-06 710 6.2036616946107415e-05
+		 715 9.2748958942596771e-05 760 9.3470147145007683e-05 775 0.00010318093402779354
+		 810 8.4359267398240347e-05 825 9.7731272826928492e-05 860 9.2395133888234875e-05
+		 870 25.855242986176947 901 6.5331716843624392e-06 930 -0.13945561984138008 990 1.778335888296954e-06
+		 1000 1.7783358882919394e-06 1030 -2.7753962866279242e-06 1101 6.5331716845045417e-06;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 2 2 2 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 
 		18 2 18 18 18 9 9;
@@ -47417,15 +47423,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightFootEffector_rotateY";
 	rename -uid "57631F65-4111-F9FC-E8F7-13B7F53BB5B2";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 21.971471810219565 75 23.353607751172731
-		 150 21.971471810219565 225 23.353658526357854 301 21.971471810219565 330 21.97139098843893
-		 350 21.971390978871074 390 21.971390978824214 420 21.971425476850186 430 21.971392103664037
-		 460 21.971390619490091 470 21.971390978852742 500 21.971389917427668 530 21.971356135966637
-		 590 21.971282676173146 650 21.97128382040675 701 21.971462925149897 710 49.191555390966577
-		 715 63.08856310440612 760 70.689257362421088 775 70.867417339856928 810 70.689304682528558
-		 825 74.110568551643354 860 70.689257645506117 870 56.851644722702389 901 21.971462897581016
-		 930 21.499706768106968 990 21.971351840308873 1000 21.971351840308873 1030 21.971316931024795
-		 1101 21.971462897581013;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 21.971471478027908 75 23.353607251413546
+		 150 21.971471478027908 225 23.353658711476346 301 21.971471478027908 330 21.971390988088242
+		 350 21.971390978868303 390 21.971390978823784 420 21.971425525653448 430 21.971392062813848
+		 460 21.971390632536938 470 21.97139097884979 500 21.971389955970693 530 21.971356099681305
+		 590 21.971282704366672 650 21.97128380704774 701 21.971462915618325 710 49.19155604535424
+		 715 63.08856310440612 760 70.689257362420989 775 70.86741709784576 810 70.689304651522022
+		 825 74.110568190419215 860 70.689257550763131 870 56.851644469761368 901 21.971462889050603
+		 930 21.499706663273589 990 21.971351960019675 1000 21.971351960019675 1030 21.971317016861676
+		 1101 21.971462889050599;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -47437,16 +47443,17 @@ createNode animCurveTA -n "Eclair_Ctrl_RightFootEffector_rotateZ";
 	rename -uid "1700FDE0-404B-3BF1-F81D-6D953E4B3EB5";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 1.746161890893574e-05 75 -3.4546395586626441e-06
-		 150 1.746161890893574e-05 225 -4.6506956124268953e-06 301 1.746161890893574e-05 330 1.6002161854371221e-05
-		 350 1.0430687196401976e-05 390 1.0584727446452614e-05 420 1.2589119374028353e-05
-		 430 1.6050063129588871e-05 460 1.6626867588921511e-05 470 1.5925090886566408e-05
-		 500 -1.0005100263208602e-05 530 -3.353765164193067e-05 590 -4.4558319149559173e-05
-		 650 -5.1788428753227291e-05 701 1.7461610841886961e-05 710 -6.5499912459717217e-05
-		 715 -5.1251373501982497e-05 760 -7.1873507432456278e-05 775 -5.23235978881636e-05
-		 810 -6.9961400117104234e-05 825 -8.0260170730911824e-05 860 -8.5196158320313188e-05
-		 870 30.307243927868008 901 1.746161081871756e-05 930 -0.20434468548636539 990 1.252116635264211e-05
-		 1000 1.2521166352634834e-05 1030 -7.4180214130270132e-06 1101 1.746161081651227e-05;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 1.7461618607327917e-05 75 -3.4546394792555402e-06
+		 150 1.7461618607327917e-05 225 -4.6506956322382912e-06 301 1.7461618607327917e-05
+		 330 1.6002161853945438e-05 350 1.0430687196399525e-05 390 1.0584727446452274e-05
+		 420 1.2589119423306226e-05 430 1.6050063077217688e-05 460 1.6626867606240022e-05
+		 470 1.5925090886562691e-05 500 -1.000510026809624e-05 530 -3.3537651591258909e-05
+		 590 -4.455831920479123e-05 650 -5.1788428722197987e-05 701 1.7461610833232924e-05
+		 710 -6.5499913167985514e-05 715 -5.1251373501982524e-05 760 -7.1873507432456264e-05
+		 775 -5.2323598079193457e-05 810 -6.9961400105413553e-05 825 -8.0260170632307268e-05
+		 860 -8.5196158250975152e-05 870 30.30724354643645 901 1.7461610812356451e-05 930 -0.20434468429091818
+		 990 1.25211664273106e-05 1000 1.2521166427298838e-05 1030 -7.4180214461350679e-06
+		 1101 1.746161080876722e-05;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -47460,7 +47467,7 @@ createNode animCurveTL -n "Eclair_Ctrl_RightFootEffector_translateZ";
 	setAttr ".wgt" no;
 	setAttr -s 32 ".ktv[0:31]"  0 2.1322400569915771 1 0.77832221984863281
 		 75 0.61049246788024902 150 0.77832221984863281 225 0.6104966402053833 301 0.77832221984863281
-		 330 0.77852082252502441 350 0.78564310073852539 390 0.77852249145507813 420 0.7778785228729248
+		 330 0.77852082252502441 350 0.78564310073852539 390 0.77852249145507812 420 0.7778785228729248
 		 430 0.77779948711395264 460 0.778045654296875 470 0.77852153778076172 500 0.77318465709686279
 		 530 0.80037713050842285 590 0.58363735675811768 650 0.36672842502593994 701 0.77832221984863281
 		 710 -9.4683027267456055 715 -13.896830558776855 760 -15.549201965332031 775 -15.555661201477051
@@ -47579,15 +47586,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightHipEffector_rotateX";
 	rename -uid "DFB10972-4198-9469-4A65-43B3F6C7D38B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 0.28545390377414637 75 -0.65329755183095517
-		 150 0.28545390377414637 225 -0.75465535398768757 301 0.28545390377414598 330 -1.5833620463597604
-		 350 -2.6291251091954697 390 -1.5833922301911942 420 -1.2192646308478738 430 -1.0397208278802272
-		 460 -0.20612072268614423 470 0.010861809510750506 500 -1.765075870933017 530 0.78408945768009075
-		 590 1.4568165671157802 650 0.78555228790419707 701 0.28545468141678204 710 26.948938553005952
-		 715 50.690456361134473 760 61.827613928728482 775 74.785687667418046 810 77.658301767166492
-		 825 69.483581531961789 860 62.812383098940387 870 42.035416157144759 901 0.28545470229037501
-		 930 -0.16540847646607082 990 0.48664232958374243 1000 0.48664232958374243 1030 -1.116159196872643
-		 1101 0.28545470229037617;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 0.28545391308377371 75 -0.65329753762291387
+		 150 0.28545391308377366 225 -0.75465534674220602 301 0.28545391308377327 330 -1.5833620463147493
+		 350 -2.629125109362958 390 -1.5833922301980241 420 -1.219264636024497 430 -1.0397208219102791
+		 460 -0.20612072111715515 470 0.010861809517690899 500 -1.7650758805900428 530 0.78408945334043778
+		 590 1.4568165392063843 650 0.78555227000414984 701 0.28545468839554428 710 26.948938663760611
+		 715 50.690456361134473 760 61.827613928727509 775 74.78568693204376 810 77.658300908872093
+		 825 69.483580993176588 860 62.812382159779339 870 42.035415644465537 901 0.28545470920657384
+		 930 -0.16540847624158042 990 0.48664233672881468 1000 0.48664233672881468 1030 -1.1161592019741284
+		 1101 0.28545470920657284;
 	setAttr -s 32 ".kit[0:31]"  2 2 9 2 2 2 9 9 
 		2 18 18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 
 		18 2 18 18 18 9 9;
@@ -47599,15 +47606,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightHipEffector_rotateY";
 	rename -uid "9BB4B183-4D45-3C8A-34D3-6AA8D33E7979";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 -3.4150945850063657e-06 1 4.6573672635072114
-		 75 4.2829921596371561 150 4.6573672635072114 225 4.8739051185679445 301 4.6573672635072114
-		 330 15.739310311886491 350 16.930196455859015 390 15.739307318137167 420 15.70919188368835
-		 430 15.699979456260657 460 15.669135852455979 470 15.657463696178148 500 9.8643574298640502
-		 530 0.54040495794849486 590 -1.5540320248676249 650 -0.11865737848236496 701 4.6573751527855212
-		 710 29.351083561458967 715 36.086859894392092 760 39.749673011709653 775 45.268724737252107
-		 810 46.723597647290845 825 39.953735720217708 860 38.468529658446229 870 39.305977130759153
-		 901 4.6573753645505258 930 -0.50879779291556992 990 -0.97569365739756164 1000 -0.97569365739756164
-		 1030 -1.21673158186466 1101 4.6573753645505258;
+	setAttr -s 32 ".ktv[0:31]"  0 -3.415094585006364e-06 1 4.6573673579545636
+		 75 4.2829920970668196 150 4.6573673579545636 225 4.8739050867752818 301 4.6573673579545636
+		 330 15.739310311461404 350 16.930196456713027 390 15.739307318201664 420 15.70919195626079
+		 430 15.699979347849071 460 15.669135930327311 470 15.657463696351503 500 9.8643574686627495
+		 530 0.54040495437748415 590 -1.5540319983011872 650 -0.11865737661578726 701 4.6573752235858592
+		 710 29.351083676614284 715 36.086859894392092 760 39.749673011709362 775 45.268724557878443
+		 810 46.723597442892356 825 39.95373560871797 860 38.468529412666946 870 39.305976795444835
+		 901 4.6573754347161263 930 -0.50879779211811027 990 -0.9756936704502891 1000 -0.9756936704502891
+		 1030 -1.2167315878451717 1101 4.6573754347161271;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -47619,15 +47626,15 @@ createNode animCurveTA -n "Eclair_Ctrl_RightHipEffector_rotateZ";
 	rename -uid "20C8875A-460F-0B10-CD0D-03B397151711";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 32 ".ktv[0:31]"  0 0 1 4.2111255406785055 75 -8.1801420189369196
-		 150 4.2111255406785038 225 -7.993962108171087 301 4.2111255406785064 330 -0.22047910491727352
-		 350 -3.7220946294992756 390 -0.22055191484399572 420 0.96484948111707358 430 1.4613973749432412
-		 460 3.7206765019815271 470 4.3362832225753376 500 -7.3143487185747373 530 -9.7531992261667
-		 590 -6.5024458205216096 650 -5.2725350599842633 701 4.2111327328805279 710 -4.9643042092460892
-		 715 12.964461300725867 760 20.205259799794032 775 18.994297234036409 810 18.128829583117451
-		 825 25.108074934612368 860 22.528382123461828 870 5.4009000255189807 901 4.2111329259345291
-		 930 -4.5747792970175052 990 -4.3696138168046454 1000 -4.3696138168046454 1030 -4.1457956975281229
-		 1101 4.2111329259345291;
+	setAttr -s 32 ".ktv[0:31]"  0 0 1 4.2111256267807331 75 -8.1801418972660915
+		 150 4.2111256267807304 225 -7.993962054998426 301 4.211125626780734 330 -0.22047910490502043
+		 350 -3.7220946297157425 390 -0.22055191484585515 420 0.96484948491381162 430 1.461397365555698
+		 460 3.7206765209193104 470 4.3362832226249282 500 -7.3143487486931242 530 -9.7531991686975079
+		 590 -6.5024457025896831 650 -5.2725349405702362 701 4.211132797425134 710 -4.9643041998319299
+		 715 12.964461300725867 760 20.205259799793456 775 18.994296805566144 810 18.128829084907061
+		 825 25.10807460430885 860 22.528381554206312 870 5.4008997898242566 901 4.2111329899004799
+		 930 -4.5747792899363207 990 -4.3696138764873718 1000 -4.3696138764873718 1030 -4.1457957172067248
+		 1101 4.2111329899004817;
 	setAttr -s 32 ".kit[2:31]"  9 2 2 2 9 9 2 2 
 		2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 2 
 		2 2 2 9 9;
@@ -47684,7 +47691,7 @@ createNode animCurveTL -n "Eclair_Ctrl_RightHipEffector_translateY";
 	setAttr ".wgt" no;
 	setAttr -s 32 ".ktv[0:31]"  0 17.449502944946289 1 17.298181533813477
 		 75 16.968832015991211 150 17.298181533813477 225 16.968832015991211 301 17.298181533813477
-		 330 16.690261840820313 350 16.576192855834961 390 16.690261840820313 420 16.712297439575195
+		 330 16.690261840820312 350 16.576192855834961 390 16.690261840820312 420 16.712297439575195
 		 430 16.721437454223633 460 16.751110076904297 470 16.759454727172852 500 16.642032623291016
 		 530 16.688850402832031 590 16.860088348388672 650 16.87738037109375 701 17.298181533813477
 		 710 14.238180160522461 715 13.026335716247559 760 12.625426292419434 775 12.62663459777832
@@ -47991,13 +47998,13 @@ createNode animCurveTA -n "Eclair_Ctrl_HeadEffector_rotateX";
 	rename -uid "EE2C11C7-4D44-9461-66B7-1888D1D90935";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 31 ".ktv[0:30]"  0 0 1 0 75 -0.00023118550979557331 150 0
-		 225 -0.00023225673156191453 301 0 330 -0.0069646162236032521 350 -0.0069646162236032521
-		 390 -0.0069646263369463656 420 -43.219374624982727 430 -43.187240422058565 460 35.271975692462888
-		 500 34.789920750478025 530 34.789929693346252 590 18.082459919062959 650 2.6247810654939068
-		 701 0 710 4.27901748821089 715 3.4601070541050145 760 0.29413379441024073 775 -100.92281668570917
-		 810 -121.15271583113797 825 -22.670977118877211 860 0.29403651030296296 870 1.9404262896931315
-		 901 0 930 -8.2059886301756766 990 -9.9366196526059944 1000 -9.9366211842772945 1030 -9.9366201700580277
+	setAttr -s 31 ".ktv[0:30]"  0 0 1 0 75 -0.00023118554742317351 150 0
+		 225 -0.00023225669311190047 301 0 330 -0.0069646163857303052 350 -0.0069646163857303052
+		 390 -0.0069646264958373259 420 -43.219374625010531 430 -43.187240422086575 460 35.271975692380529
+		 500 34.789920751685678 530 34.78992969403496 590 18.082459874263254 650 2.6247810682521031
+		 701 0 710 4.2790175758184903 715 3.4601070580480444 760 0.29413379567844194 775 -100.92281709646804
+		 810 -121.15271586632737 825 -22.670976680151664 860 0.2940365179232094 870 1.9404262621952744
+		 901 0 930 -8.2059884700377808 990 -9.9366199042650099 1000 -9.93662141272371 1030 -9.9366200847040833
 		 1101 0;
 	setAttr -s 31 ".kit[1:30]"  2 9 9 2 2 9 9 2 
 		18 18 18 18 18 18 9 9 18 18 18 18 18 18 2 18 2 
@@ -48010,13 +48017,13 @@ createNode animCurveTA -n "Eclair_Ctrl_HeadEffector_rotateY";
 	rename -uid "5ABD5DC7-4972-FB22-70E4-6BB4472878EB";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 31 ".ktv[0:30]"  0 0 1 0 75 0.24327377774823705 150 0 225 0.24326402448375628
-		 301 0 330 2.0499892102703723 350 2.0499892102703723 390 2.0499921803563237 420 -2.0624904134939914
-		 430 -2.8523614449801573 460 -4.4625658844678862 500 -7.9346337880666944 530 -7.9347122259612428
-		 590 -9.2192495482906125 650 1.6434742450326145 701 0 710 -3.7230912623495378 715 -2.4216939496913938
-		 760 -0.072502457416091487 775 15.254621705932733 810 14.617267485457264 825 6.3676236840273903
-		 860 -0.072810754131923477 870 -1.9462738289294452 901 0 930 0.36373000787295812 990 0.77382057426107564
-		 1000 0.77382168368969517 1030 0.77385071578462272 1101 0;
+	setAttr -s 31 ".ktv[0:30]"  0 0 1 0 75 0.24327377590493898 150 0 225 0.24326402636781827
+		 301 0 330 2.0499892578838352 350 2.0499892578838352 390 2.0499922270194109 420 -2.0624904134964228
+		 430 -2.8523614449833485 460 -4.4625658844638396 500 -7.934633788290836 530 -7.9347122260890659
+		 590 -9.2192495252793236 650 1.6434742465665595 701 0 710 -3.7230913504138168 715 -2.4216939532395521
+		 760 -0.072502457936894596 775 15.254621738269 810 14.617267485333167 825 6.3676234959532181
+		 860 -0.072810757270762 870 -1.9462737942577912 901 0 930 0.36372999260552269 990 0.77382060844065959
+		 1000 0.77382171471663896 1030 0.77385070419188462 1101 0;
 	setAttr -s 31 ".kit[0:30]"  18 2 9 9 2 2 9 9 
 		2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 
 		2 2 2 2 9 9;
@@ -48028,14 +48035,14 @@ createNode animCurveTA -n "Eclair_Ctrl_HeadEffector_rotateZ";
 	rename -uid "D2897E1A-4A90-0C22-D386-F784BC3B62CD";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
-	setAttr -s 31 ".ktv[0:30]"  0 0 1 7.2456378056847206e-06 75 2.4477311597990012
-		 150 7.2456378056848113e-06 225 2.4476499046390616 301 7.2456378056848113e-06 330 -0.00067138543642935959
-		 350 -0.00067138543642935959 390 -0.00067138659030285906 420 -4.8047175768265582 430 -5.8144229924179553
-		 460 -8.3344186567737975 500 -3.7376890765711894 530 -3.7376671288855441 590 1.2396035518811677
-		 650 5.9185411243861079 701 7.2456378056848113e-06 710 8.3735386222501678 715 14.048975087725776
-		 760 16.958207484673427 775 -3.2860987647586635 810 -8.692578269599748 825 15.648502684730936
-		 860 16.958189491866644 870 13.024357449011271 901 7.2456378056848113e-06 930 5.8250843370022682
-		 990 6.5864228745574049 1000 6.5864250137058011 1030 6.5863655776276673 1101 7.2456378056848113e-06;
+	setAttr -s 31 ".ktv[0:30]"  0 0 1 7.2456378056847071e-06 75 2.4477311412498359
+		 150 7.2456378056848113e-06 225 2.4476499235985649 301 7.2456378056848113e-06 330 -0.00067138545492710731
+		 350 -0.00067138545492710731 390 -0.0006713866084313957 420 -4.8047175768290069 430 -5.8144229924208606
+		 460 -8.3344186567519039 500 -3.7376890767792208 530 -3.7376671290041821 590 1.2396035524506317
+		 650 5.9185411304531357 701 7.2456378056848113e-06 710 8.3735388025490423 715 14.048975105238023
+		 760 16.958207561138614 775 -3.2860988292862912 810 -8.6925782755885379 825 15.648502397442849
+		 860 16.958189951555312 870 13.024357240223305 901 7.2456378056848113e-06 930 5.8250842236768507
+		 990 6.5864230401739379 1000 6.5864251640461688 1030 6.5863655214568384 1101 7.2456378056848113e-06;
 	setAttr -s 31 ".kit[0:30]"  18 2 9 9 2 2 9 9 
 		2 2 2 2 2 2 2 9 9 9 9 9 9 9 9 2 2 
 		2 2 2 2 9 9;
@@ -49242,8 +49249,8 @@ createNode animCurveTU -n "LeftHandPinky1_scaleZ";
 	setAttr ".wgt" no;
 	setAttr ".ktv[0]"  1 1;
 select -ne :time1;
-	setAttr ".o" 901;
-	setAttr ".unw" 901;
+	setAttr ".o" 1100;
+	setAttr ".unw" 1100;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
