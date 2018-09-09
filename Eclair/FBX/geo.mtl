@@ -1,0 +1,26 @@
+newmtl Mesh:AhogeSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.14 0.08 0.05
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Mesh:ArmSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.47 0.23 0.23
+Ns 18.00
+newmtl Mesh:ArmSG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.21 0.05 0.05
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Mesh:ShirtSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
