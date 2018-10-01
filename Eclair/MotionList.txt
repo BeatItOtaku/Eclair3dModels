@@ -1,0 +1,24 @@
+Eclair_Motion
+
+StanceÅ@1~5
+BasePose 10
+
+Idle 
+IdleAdvanced1
+IdleAdvanced2
+IdleAdvanced3
+IdleAdvanced4
+
+Walk 20~72 111134m
+Run 100~140
+
+JampLoop 150~190
+Fall 200~240  eqwq
+JampEnd 250~300
+
+BeforeEto
+Transmission 320~400
+Attack1
+
+
+
